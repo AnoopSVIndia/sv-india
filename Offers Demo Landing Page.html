@@ -1,0 +1,1624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SuccessVisa — Exclusive Offers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Public+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   SUCCESSVISA OFFERS — single-file app
+   ============================================================ */
+:root{
+  --navy:#1D184B;
+  --navy-deep:#140F35;
+  --gold:#F8A51C;
+  --gold-soft:#FBC46B;
+  --white:#ffffff;
+  --bg:#FBFAF7;
+  --grey-exp:#9e9e9e;
+  --edu:#2f6fed;
+  --tou:#0fb5ba;
+  --mig:#2fae6a;
+  --ins:#f08a24;
+  --hea:#e2495a;
+  --ink:#322B6E;
+  --ink-soft:#4C5A6E;
+  --line:#D9D2C0;
+  --shadow-sm:0 2px 8px rgba(29,24,75,.07);
+  --shadow-md:0 10px 30px rgba(29,24,75,.12);
+  --shadow-lg:0 22px 50px rgba(29,24,75,.22);
+  --radius:16px;
+  --radius-sm:10px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Public Sans',sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4,.font-head{font-family:'Fraunces',sans-serif;line-height:1.2}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+.hidden{display:none !important}
+.container{width:min(1180px,92vw);margin:0 auto}
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:11px 22px;border-radius:50px;font-weight:600;font-size:.92rem;
+  transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+  white-space:nowrap;
+}
+.btn:active{transform:scale(.97)}
+.btn-gold{background:var(--gold);color:var(--navy)}
+.btn-gold:hover{background:var(--gold-soft);box-shadow:0 8px 20px rgba(248,165,28,.4)}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-navy:hover{background:var(--navy-deep);box-shadow:0 8px 20px rgba(29,24,75,.3)}
+.btn-outline{background:transparent;border:1.5px solid var(--navy);color:var(--navy)}
+.btn-outline:hover{background:var(--navy);color:#fff}
+.btn-wa{background:#25d366;color:#fff}
+.btn-wa:hover{background:#1eb958;box-shadow:0 8px 20px rgba(37,211,102,.4)}
+.btn-ghost{background:#fff;border:1.5px solid var(--line);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--navy)}
+.btn-book{background:var(--navy);color:#fff;border-radius:2px;padding:12px 22px;font-weight:700}
+.btn-book:hover{background:var(--gold);color:var(--navy);box-shadow:none}
+.btn-sm{padding:8px 16px;font-size:.85rem}
+.btn-block{width:100%}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.site-header{
+  position:sticky;top:0;z-index:120;
+  background:rgba(255,255,255,.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.logo{display:flex;align-items:center;gap:10px}
+.logo img{height:38px;width:auto;display:block}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{font-weight:600;font-size:.95rem;color:var(--ink-soft);position:relative;padding:4px 0;transition:color .2s}
+.nav-links a:hover{color:var(--navy)}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--gold);transition:width .25s}
+.nav-links a:hover::after{width:100%}
+.nav-links li{list-style:none}
+.nav-links > li,.nav-links > a{display:flex;align-items:center}
+.header-right{display:flex;align-items:center;gap:14px}
+.burger{display:none;flex-direction:column;gap:5px;padding:6px}
+.burger span{width:24px;height:2px;background:var(--navy);border-radius:2px;transition:.3s}
+
+/* dropdown nav groups, matching the rest of the SuccessVisa site */
+.has-dropdown{position:relative;display:flex;align-items:center;}
+.has-dropdown > a{display:flex;align-items:center;gap:5px;}
+.has-dropdown > a svg{transition:transform .18s ease;flex-shrink:0;}
+.has-dropdown:hover > a svg,.has-dropdown:focus-within > a svg{transform:rotate(180deg);}
+.dropdown-menu{
+  position:absolute;top:100%;left:-14px;margin-top:16px;min-width:200px;
+  background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-md);
+  padding:8px;opacity:0;visibility:hidden;transform:translateY(6px);
+  transition:opacity .18s ease,transform .18s ease,visibility .18s ease;z-index:10;
+}
+.has-dropdown:hover .dropdown-menu,.has-dropdown:focus-within .dropdown-menu{opacity:1;visibility:visible;transform:translateY(0);}
+.dropdown-menu a{display:block;padding:9px 12px;font-size:.85rem;font-weight:600;color:var(--ink-soft);position:static;}
+.dropdown-menu a::after{display:none;}
+.dropdown-menu a:hover{background:var(--bg);color:var(--navy);}
+.nav-offer{display:inline-flex;align-items:center;color:var(--gold) !important;font-weight:700 !important;border:1px solid var(--gold);border-radius:20px;padding:6px 15px !important;transition:background .18s ease,color .18s ease;}
+.nav-offer:hover{background:var(--gold);color:var(--navy) !important;}
+.nav-offer::after{display:none !important;}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{
+  position:relative;overflow:hidden;color:#fff;
+  background:linear-gradient(135deg,#140F35 0%,#1D184B 45%,#322B6E 100%);
+  padding:84px 0 96px;
+}
+.hero-glow{position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(248,165,28,.35),transparent 70%);top:-120px;left:-80px;filter:blur(8px)}
+.hero-inner{position:relative;display:flex;align-items:center;justify-content:space-between;gap:36px}
+.hero-text{max-width:600px}
+.hero-visual{flex-shrink:0;width:320px;height:320px}
+.hero-visual svg{width:100%;height:100%}
+.hero .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--gold-soft);background:rgba(248,165,28,.12);border:1px solid rgba(248,165,28,.3);padding:7px 16px;border-radius:50px;margin-bottom:22px}
+.hero h1{font-size:clamp(2.1rem,5vw,3.5rem);font-weight:800;letter-spacing:-.02em;margin-bottom:16px}
+.hero h1 .accent{color:var(--gold)}
+.hero p{font-size:1.12rem;color:#cdd7e6;max-width:560px;margin-bottom:30px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.hero-stats{display:flex;gap:34px;margin-top:46px;flex-wrap:wrap}
+.hero-stat .num{font-family:'Fraunces';font-weight:700;font-size:1.7rem;color:var(--gold)}
+.hero-stat .lbl{font-size:.82rem;color:#aab8cc;letter-spacing:.04em}
+
+/* ============================================================
+   FILTER TABS
+   ============================================================ */
+.offers-section{padding:56px 0 40px}
+.section-head{text-align:center;max-width:640px;margin:0 auto 32px}
+.section-head .kicker{color:var(--gold);font-weight:700;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase}
+.section-head h2{font-size:clamp(1.7rem,3.5vw,2.4rem);font-weight:700;color:var(--navy);margin:8px 0}
+.section-head p{color:var(--ink-soft)}
+.filter-tabs{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:38px}
+.pill{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:9px 20px;border-radius:50px;font-weight:600;font-size:.9rem;
+  background:#fff;border:1.5px solid var(--line);color:var(--ink-soft);
+  transition:all .2s;
+}
+.pill:hover{border-color:var(--gold);color:var(--navy)}
+.pill.active{background:var(--navy);border-color:var(--navy);color:#fff}
+.pill .count{font-size:.75rem;background:rgba(0,0,0,.08);padding:1px 8px;border-radius:50px;font-weight:700}
+.pill.active .count{background:var(--gold);color:var(--navy)}
+
+/* search + location + sort toolbar */
+.filter-toolbar{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:20px}
+.search-box{flex:1;min-width:240px;position:relative;display:flex;align-items:center}
+.search-box .search-ico{position:absolute;left:16px;color:var(--ink-soft);font-size:.95rem;pointer-events:none}
+.search-box input{width:100%;padding:13px 42px;border:1.5px solid var(--line);border-radius:50px;font-family:inherit;font-size:.95rem;background:#fff;color:var(--ink);transition:.2s}
+.search-box input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(248,165,28,.15)}
+.search-box .search-clear{position:absolute;right:13px;width:24px;height:24px;border-radius:50%;background:var(--bg);color:var(--ink-soft);font-size:1.05rem;display:grid;place-items:center;line-height:1}
+.search-box .search-clear:hover{background:var(--hea);color:#fff}
+.control{display:flex;align-items:center;gap:8px}
+.control label{font-size:.82rem;font-weight:600;color:var(--ink-soft);white-space:nowrap}
+.control select{padding:11px 16px;border:1.5px solid var(--line);border-radius:50px;font-family:inherit;font-size:.9rem;background:#fff;color:var(--ink);cursor:pointer;transition:.2s}
+.control select:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(248,165,28,.15)}
+.results-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:18px;min-height:22px}
+.results-bar .rc{font-size:.9rem;color:var(--ink-soft)}
+.results-bar .rc b{color:var(--navy);font-family:'Fraunces'}
+.results-bar .clear-filters{font-size:.85rem;font-weight:600;color:var(--hea);display:inline-flex;align-items:center;gap:5px}
+.results-bar .clear-filters:hover{text-decoration:underline}
+
+/* ============================================================
+   OFFER GRID + CARDS
+   ============================================================ */
+.offers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.offer-card{
+  background:#fff;border-radius:var(--radius);overflow:hidden;
+  border:1px solid var(--line);box-shadow:var(--shadow-sm);
+  display:flex;flex-direction:column;
+  transition:transform .28s cubic-bezier(.2,.7,.3,1),box-shadow .28s;
+  animation:cardIn .5s both;
+}
+@keyframes cardIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.offer-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-md)}
+.card-banner{position:relative;height:158px;overflow:hidden}
+.card-banner img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.offer-card:hover .card-banner img{transform:scale(1.06)}
+.card-banner .placeholder{width:100%;height:100%;display:grid;place-items:center;color:rgba(255,255,255,.9);font-family:'Fraunces';font-weight:700;font-size:2.4rem}
+.cat-anim-circle{width:92px;height:92px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:0 8px 20px rgba(0,0,0,.18);flex-shrink:0}
+.cat-anim-circle img{width:68%;height:68%;object-fit:contain;display:block}
+.modal-banner .cat-anim-circle{width:124px;height:124px}
+.cat-edu-bg{background:linear-gradient(135deg,#2f6fed,#1e4fbf)}
+.cat-tou-bg{background:linear-gradient(135deg,#0fb5ba,#0a8f94)}
+.cat-mig-bg{background:linear-gradient(135deg,#2fae6a,#1c8a50)}
+.cat-ins-bg{background:linear-gradient(135deg,#f08a24,#d96f0c)}
+.cat-hea-bg{background:linear-gradient(135deg,#e2495a,#c22f40)}
+.badge{
+  position:absolute;display:inline-flex;align-items:center;gap:5px;
+  font-size:.72rem;font-weight:700;letter-spacing:.04em;padding:5px 11px;border-radius:50px;color:#fff;
+}
+.cat-badge{top:12px;left:12px;backdrop-filter:blur(3px)}
+.cat-edu{background:var(--edu)}.cat-tou{background:var(--tou)}.cat-mig{background:var(--mig)}.cat-ins{background:var(--ins)}.cat-hea{background:var(--hea)}
+.expiring-badge{top:12px;right:12px;background:#e2495a;animation:pulse 1.6s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(226,73,90,.5)}50%{box-shadow:0 0 0 7px rgba(226,73,90,0)}}
+.card-body{padding:18px 20px 20px;display:flex;flex-direction:column;flex:1}
+.card-meta{display:flex;align-items:center;gap:10px;margin-bottom:8px;font-size:.78rem;color:var(--ink-soft)}
+.branch-tag{font-weight:600}
+.card-title{font-family:'Fraunces';font-weight:700;font-size:1.18rem;color:var(--navy);margin-bottom:8px;line-height:1.3}
+.card-desc{color:var(--ink-soft);font-size:.92rem;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:14px}
+.card-valid{font-size:.82rem;color:var(--ink-soft);margin-bottom:12px;display:flex;align-items:center;gap:6px}
+.card-valid b{color:var(--ink)}
+.countdown{display:flex;gap:6px;margin-bottom:16px}
+.cd-unit{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 0;text-align:center;flex:1}
+.cd-unit .n{font-family:'Fraunces';font-weight:700;font-size:1.05rem;color:var(--navy);display:block;line-height:1}
+.cd-unit .u{font-size:.62rem;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft)}
+.card-cta{display:flex;gap:8px;margin-top:auto}
+.card-cta .btn{flex:1}
+
+/* empty state */
+.empty-state{text-align:center;padding:60px 20px;color:var(--ink-soft);grid-column:1/-1}
+.empty-state .ico{font-size:3rem;margin-bottom:10px}
+
+/* see more */
+.more-wrap{text-align:center;margin-top:34px}
+.more-wrap:empty{margin-top:0}
+.btn-more{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:13px 30px;border-radius:50px;font-weight:600;font-size:.95rem;
+  background:#fff;border:1.5px solid var(--navy);color:var(--navy);
+  transition:all .25s;box-shadow:var(--shadow-sm);
+}
+.btn-more:hover{background:var(--navy);color:#fff;transform:translateY(-2px);box-shadow:var(--shadow-md)}
+.btn-more .more-count{font-size:.78rem;background:var(--gold);color:var(--navy);padding:2px 10px;border-radius:50px;font-weight:700}
+.btn-more:hover .more-count{background:var(--gold-soft)}
+
+/* ============================================================
+   NOTIFY STRIP
+   ============================================================ */
+.notify-strip{
+  background:linear-gradient(120deg,var(--navy),#27466b);color:#fff;border-radius:var(--radius);
+  padding:40px;display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap;
+  margin:50px 0;position:relative;overflow:hidden;
+}
+.notify-strip::after{content:"";position:absolute;right:-60px;top:-60px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(248,165,28,.25),transparent 70%)}
+.notify-strip h3{font-size:1.5rem;font-weight:700;margin-bottom:4px}
+.notify-strip p{color:#bccadb;font-size:.95rem}
+.notify-form{display:flex;gap:10px;position:relative;z-index:2}
+.notify-form input{padding:13px 18px;border-radius:50px;border:none;font-family:inherit;font-size:.95rem;width:260px;max-width:60vw}
+.notify-form input:focus{outline:2px solid var(--gold)}
+
+/* ============================================================
+   EXPIRED ACCORDION
+   ============================================================ */
+.expired-section{padding:20px 0 60px}
+.accordion-head{
+  width:100%;display:flex;align-items:center;justify-content:space-between;
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:18px 24px;
+  font-family:'Fraunces';font-weight:600;font-size:1.05rem;color:var(--navy);box-shadow:var(--shadow-sm);
+}
+.accordion-head .chev{transition:transform .3s;color:var(--gold)}
+.accordion-head.open .chev{transform:rotate(180deg)}
+.accordion-body{max-height:0;overflow:hidden;transition:max-height .5s ease}
+.accordion-inner{padding-top:24px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.offer-card.expired{filter:grayscale(.6);opacity:.82;position:relative}
+.offer-card.expired .card-banner .placeholder,.offer-card.expired .card-banner img{filter:saturate(.4)}
+.expired-stamp{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotate(-18deg);
+  border:4px solid var(--hea);color:var(--hea);font-family:'Fraunces';font-weight:800;
+  font-size:1.6rem;letter-spacing:.1em;padding:6px 22px;border-radius:8px;text-transform:uppercase;
+  background:rgba(255,255,255,.7);z-index:5;pointer-events:none;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-footer{background:var(--navy-deep);color:#cdd7e6;padding:56px 0 26px;margin-top:30px}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:36px}
+.site-footer .logo{color:#fff;margin-bottom:14px}
+.site-footer p{font-size:.9rem;color:#9fb0c6;max-width:320px}
+.footer-col h4{font-family:'Fraunces';color:#fff;font-size:1rem;margin-bottom:14px}
+.footer-col .branch{margin-bottom:14px;font-size:.88rem}
+.footer-col .branch b{color:var(--gold-soft);display:block;font-weight:600;margin-bottom:2px}
+.footer-col .branch a{transition:color .2s}
+.footer-col .branch a:hover{color:var(--gold-soft)}
+.social-row{display:flex;gap:12px;margin-top:16px}
+.social-row a{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.08);display:grid;place-items:center;transition:.25s}
+.social-row a:hover{background:var(--gold);color:var(--navy);transform:translateY(-3px)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:20px;text-align:center;font-size:.84rem;color:#8497ad}
+.footer-bottom a{color:var(--gold-soft)}
+
+/* ============================================================
+   MODAL (shared)
+   ============================================================ */
+.modal-overlay{
+  position:fixed;inset:0;z-index:200;background:rgba(20,35,57,.6);backdrop-filter:blur(5px);
+  display:flex;align-items:center;justify-content:center;padding:20px;
+  opacity:0;visibility:hidden;transition:.3s;
+}
+.modal-overlay.show{opacity:1;visibility:visible}
+.modal{
+  background:#fff;border-radius:20px;width:min(620px,100%);max-height:90vh;overflow-y:auto;
+  box-shadow:var(--shadow-lg);transform:translateY(20px) scale(.97);transition:.3s;
+}
+.modal-overlay.show .modal{transform:translateY(0) scale(1)}
+.modal-banner{height:180px;position:relative}
+.modal-banner img{width:100%;height:100%;object-fit:cover}
+.modal-banner .placeholder{width:100%;height:100%;display:grid;place-items:center;color:#fff;font-family:'Fraunces';font-weight:800;font-size:3rem}
+.modal-close{position:absolute;top:14px;right:14px;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.92);color:var(--navy);font-size:1.3rem;display:grid;place-items:center;box-shadow:var(--shadow-sm);z-index:3}
+.modal-close:hover{background:#fff;transform:rotate(90deg);transition:.3s}
+.modal-content{padding:26px 30px 30px}
+.modal-content .cat-badge-inline{display:inline-flex;align-items:center;gap:5px;font-size:.74rem;font-weight:700;padding:5px 12px;border-radius:50px;color:#fff;margin-bottom:14px}
+.modal-content h2{font-size:1.7rem;color:var(--navy);font-weight:700;margin-bottom:8px}
+.modal-detail-row{display:flex;gap:24px;flex-wrap:wrap;margin:14px 0;padding:14px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.modal-detail-row .item .lbl{font-size:.72rem;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-soft)}
+.modal-detail-row .item .val{font-weight:600;color:var(--navy)}
+.modal-full-desc{color:var(--ink-soft);margin:16px 0;white-space:pre-line}
+.modal-countdown{margin:18px 0}
+.modal-countdown .lbl{font-size:.78rem;color:var(--ink-soft);margin-bottom:6px;display:block}
+.modal-countdown .countdown{margin:0}
+.modal-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+.modal-actions .btn{flex:1;min-width:140px}
+
+/* ============================================================
+   TOAST
+   ============================================================ */
+.toast-wrap{position:fixed;bottom:26px;left:50%;transform:translateX(-50%);z-index:400;display:flex;flex-direction:column;gap:10px;align-items:center}
+.toast{
+  background:var(--navy);color:#fff;padding:13px 22px;border-radius:50px;font-size:.9rem;font-weight:500;
+  box-shadow:var(--shadow-lg);display:flex;align-items:center;gap:10px;
+  animation:toastIn .3s ease,toastOut .3s ease 2.7s forwards;
+}
+.toast .ico{color:var(--gold)}
+@keyframes toastIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes toastOut{to{opacity:0;transform:translateY(20px)}}
+
+/* ============================================================
+   ADMIN
+   ============================================================ */
+.admin-gate{position:fixed;inset:0;background:linear-gradient(135deg,#140F35,#1D184B);z-index:300;display:flex;align-items:center;justify-content:center;padding:20px}
+.gate-card{background:#fff;border-radius:20px;padding:40px;width:min(400px,100%);box-shadow:var(--shadow-lg);text-align:center}
+.gate-card .lock{width:64px;height:64px;border-radius:50%;background:var(--bg);display:grid;place-items:center;margin:0 auto 18px;font-size:1.8rem}
+.gate-card h2{color:var(--navy);font-size:1.5rem;margin-bottom:6px}
+.gate-card p{color:var(--ink-soft);font-size:.9rem;margin-bottom:22px}
+.gate-card input{width:100%;padding:13px 16px;border:1.5px solid var(--line);border-radius:10px;font-family:inherit;font-size:1rem;margin-bottom:14px}
+.gate-card input:focus{outline:none;border-color:var(--gold)}
+.gate-error{color:var(--hea);font-size:.85rem;margin-bottom:12px;min-height:18px}
+
+.admin-panel{min-height:100vh;background:var(--bg)}
+.admin-header{background:var(--navy);color:#fff;padding:18px 0}
+.admin-header .container{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.admin-header h1{font-size:1.3rem;color:#fff;display:flex;align-items:center;gap:10px}
+.admin-actions{display:flex;gap:10px;flex-wrap:wrap}
+.admin-body{padding:36px 0 60px}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:32px}
+.stat-card{background:#fff;border-radius:var(--radius);padding:22px;border:1px solid var(--line);box-shadow:var(--shadow-sm);position:relative;overflow:hidden}
+.stat-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px}
+.stat-card.s-active::before{background:var(--mig)}
+.stat-card.s-soon::before{background:var(--ins)}
+.stat-card.s-exp::before{background:var(--grey-exp)}
+.stat-card.s-sub::before{background:var(--gold)}
+.stat-card .num{font-family:'Fraunces';font-weight:800;font-size:2rem;color:var(--navy)}
+.stat-card .lbl{font-size:.84rem;color:var(--ink-soft);font-weight:500}
+
+.admin-toolbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;flex-wrap:wrap;gap:12px}
+.admin-toolbar h2{color:var(--navy);font-size:1.4rem}
+.admin-toolbar .tools{display:flex;gap:10px;flex-wrap:wrap}
+
+/* form panel */
+.form-panel{background:#fff;border-radius:var(--radius);border:1px solid var(--line);box-shadow:var(--shadow-md);padding:28px;margin-bottom:30px}
+.form-panel h3{color:var(--navy);font-size:1.25rem;margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.form-panel .form-hint{color:var(--ink-soft);font-size:.88rem;margin-bottom:20px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field.full{grid-column:1/-1}
+.field label{font-size:.85rem;font-weight:600;color:var(--ink)}
+.field label .req{color:var(--hea)}
+.field label .opt{font-weight:400;color:var(--ink-soft)}
+.field input,.field select,.field textarea{
+  padding:11px 14px;border:1.5px solid var(--line);border-radius:10px;font-family:inherit;font-size:.92rem;color:var(--ink);background:#fff;
+}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(248,165,28,.15)}
+.field textarea{resize:vertical;min-height:70px}
+.char-counter{font-size:.75rem;color:var(--ink-soft);text-align:right}
+.char-counter.over{color:var(--hea)}
+.toggle-wrap{display:flex;align-items:center;gap:12px}
+.switch{position:relative;width:50px;height:28px;flex-shrink:0}
+.switch input{opacity:0;width:0;height:0}
+.slider{position:absolute;inset:0;background:#cfd8e3;border-radius:50px;transition:.3s;cursor:pointer}
+.slider::before{content:"";position:absolute;width:22px;height:22px;left:3px;top:3px;background:#fff;border-radius:50%;transition:.3s}
+.switch input:checked+.slider{background:var(--mig)}
+.switch input:checked+.slider::before{transform:translateX(22px)}
+.form-actions{display:flex;gap:12px;margin-top:24px}
+
+/* table */
+.table-wrap{background:#fff;border-radius:var(--radius);border:1px solid var(--line);box-shadow:var(--shadow-sm);overflow:hidden;overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:720px}
+thead{background:var(--navy)}
+thead th{color:#fff;font-family:'Fraunces';font-weight:600;font-size:.82rem;text-align:left;padding:14px 18px;letter-spacing:.03em}
+tbody td{padding:14px 18px;border-bottom:1px solid var(--line);font-size:.9rem;vertical-align:middle}
+tbody tr:hover{background:var(--bg)}
+tbody tr.row-expired{background:#f6f6f6;color:var(--grey-exp)}
+tbody tr.row-expired .t-title{text-decoration:line-through}
+.t-title{font-weight:600;color:var(--navy)}
+tr.row-expired .t-title{color:var(--grey-exp)}
+.status-tag{display:inline-flex;align-items:center;gap:5px;font-size:.74rem;font-weight:700;padding:4px 11px;border-radius:50px;white-space:nowrap}
+.st-active{background:rgba(47,174,106,.13);color:#1c8a50}
+.st-soon{background:rgba(240,138,36,.15);color:#d96f0c}
+.st-exp{background:rgba(158,158,158,.18);color:#6c6c6c}
+.st-up{background:rgba(47,111,237,.13);color:#1e4fbf}
+.st-hidden{background:rgba(91,102,120,.14);color:#5b6678}
+.cat-chip{display:inline-flex;align-items:center;font-size:.74rem;font-weight:700;padding:3px 10px;border-radius:50px;color:#fff}
+.row-actions{display:flex;gap:6px}
+.icon-btn{width:34px;height:34px;border-radius:8px;display:grid;place-items:center;background:var(--bg);border:1px solid var(--line);transition:.2s;font-size:.95rem}
+.icon-btn:hover{transform:translateY(-2px)}
+.icon-btn.edit:hover{background:var(--edu);color:#fff;border-color:var(--edu)}
+.icon-btn.eye:hover{background:var(--ink-soft);color:#fff;border-color:var(--ink-soft)}
+.icon-btn.del:hover{background:var(--hea);color:#fff;border-color:var(--hea)}
+
+/* confirm dialog */
+.confirm-card{background:#fff;border-radius:18px;padding:30px;width:min(380px,100%);text-align:center;box-shadow:var(--shadow-lg)}
+.confirm-card .ic{font-size:2.4rem;margin-bottom:10px}
+.confirm-card h3{color:var(--navy);margin-bottom:8px}
+.confirm-card p{color:var(--ink-soft);font-size:.9rem;margin-bottom:22px}
+.confirm-actions{display:flex;gap:12px}
+.confirm-actions .btn{flex:1}
+.btn-danger{background:var(--hea);color:#fff}
+.btn-danger:hover{background:#c22f40}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media(max-width:980px){
+  .offers-grid,.accordion-inner{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .stats-row{grid-template-columns:repeat(2,1fr)}
+  .form-grid{grid-template-columns:1fr}
+}
+@media(max-width:680px){
+  .nav-links{
+    position:absolute;top:64px;left:0;right:0;background:#fff;flex-direction:column;
+    padding:18px 24px;gap:16px;border-bottom:1px solid var(--line);box-shadow:var(--shadow-md);
+    display:none;
+  }
+  .nav-links.open{display:flex}
+  .burger{display:flex}
+  .header-right .btn{display:none}
+  .has-dropdown{flex-direction:column;align-items:flex-start;width:100%}
+  .dropdown-menu{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;margin:6px 0 0 10px;padding:0;display:flex;flex-direction:column;gap:2px;width:100%}
+  .has-dropdown > a svg{margin-left:auto}
+  .offers-grid,.accordion-inner{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .stats-row{grid-template-columns:1fr 1fr}
+  .notify-strip{flex-direction:column;align-items:flex-start;padding:30px}
+  .notify-form{width:100%}
+  .notify-form input{flex:1;max-width:none}
+  .hero{padding:50px 0 60px}
+  .hero-inner{flex-direction:column;text-align:center}
+  .hero-visual{width:220px;height:220px;order:-1}
+  .hero-actions,.hero-stats{justify-content:center}
+  .filter-toolbar{flex-direction:column;align-items:stretch}
+  .control{justify-content:space-between}
+  .control select{flex:1}
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== PUBLIC PAGE ===================== -->
+<div id="publicPage">
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="SV%20India%20Landing%20Page.html" class="logo"><img src="assets/logo.webp" alt="SuccessVisa" width="300" height="95" decoding="async"></a>
+      <nav class="nav-links" id="navLinks">
+        <a href="SV%20India%20Landing%20Page.html">Home</a>
+        <a href="about.html">About</a>
+        <div class="has-dropdown">
+          <a href="Services%20Main%20Landing%20Page.html">Services
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.4"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="Education%20Visa%20Landing%20Page.html">Education Visa (500)</a>
+            <a href="Visitor%20Visa%20Landing%20Page.html">Visitor Visa (600)</a>
+            <a href="OSHC%20Sub%20Landing%20Page.html">Health Cover (OSHC)</a>
+          </div>
+        </div>
+        <a href="#offers" class="nav-offer">Offers</a>
+        <div class="has-dropdown">
+          <a href="resources.html">Resources
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.4"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="resources.html#blog">Blog</a>
+            <a href="resources.html#videos">Videos</a>
+            <a href="resources.html#checklist">Visa Checklists</a>
+            <a href="resources.html#news">Latest News</a>
+          </div>
+        </div>
+        <div class="has-dropdown">
+          <a href="contact.html">Contact
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.4"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="Chandigarh%20Branch%20Landing%20Page.html">Chandigarh, IN</a>
+            <a href="contact.html#parramatta">Parramatta, NSW</a>
+            <a href="contact.html#toongabbie">Toongabbie, NSW</a>
+            <a href="contact.html#melbourne">Melbourne, VIC</a>
+            <a href="contact.html#werribee">Werribee, VIC</a>
+          </div>
+        </div>
+      </nav>
+      <div class="header-right">
+        <a href="Booking%20Page.html" class="btn btn-book">Book Appointment</a>
+        <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-glow"></div>
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <span class="eyebrow">✦ Limited-Time Deals</span>
+        <h1>Exclusive <span class="accent">SuccessVisa</span> Offers</h1>
+        <p>Limited-time deals on Education, Tourist, Migration, Insurance &amp; Health services. Your Australian dream, made more affordable.</p>
+        <div class="hero-actions">
+          <a href="#offers" class="btn btn-gold">View Live Offers ↓</a>
+          <a href="Booking%20Page.html" class="btn btn-outline" style="border-color:rgba(255,255,255,.4);color:#fff">Talk to an Expert</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><span class="num">12k+</span><span class="lbl">Visas Approved</span></div>
+          <div class="hero-stat"><span class="num">98%</span><span class="lbl">Success Rate</span></div>
+          <div class="hero-stat"><span class="num">5</span><span class="lbl">Global Branches</span></div>
+        </div>
+      </div>
+      <div class="hero-visual" id="offerLottie" role="img" aria-label="Animated special offer badge"></div>
+    </div>
+  </section>
+
+  <!-- OFFERS -->
+  <section class="offers-section" id="offers">
+    <div class="container">
+      <div class="section-head" id="services">
+        <span class="kicker">Active Offers</span>
+        <h2>Deals You Don't Want To Miss</h2>
+        <p>Hand-picked savings across education, tourist, migration, insurance and health services.</p>
+      </div>
+      <div class="filter-toolbar">
+        <div class="search-box">
+          <span class="search-ico">🔍</span>
+          <input type="text" id="searchInput" placeholder="Search offers by keyword…" autocomplete="off">
+          <button class="search-clear" id="searchClear" style="display:none" aria-label="Clear search">×</button>
+        </div>
+        <div class="control">
+          <label for="branchFilter">📍 Location</label>
+          <select id="branchFilter">
+            <option value="All">All Locations</option>
+            <option value="Chandigarh">Chandigarh</option>
+            <option value="Parramatta">Parramatta</option>
+            <option value="Toongabbie">Toongabbie</option>
+            <option value="Melbourne">Melbourne</option>
+            <option value="Werribee">Werribee</option>
+          </select>
+        </div>
+        <div class="control">
+          <label for="sortMode">↕ Sort</label>
+          <select id="sortMode">
+            <option value="featured">Featured</option>
+            <option value="soon">Ending Soonest</option>
+            <option value="newest">Newest First</option>
+          </select>
+        </div>
+      </div>
+      <div class="filter-tabs" id="filterTabs"></div>
+      <div class="results-bar" id="resultsBar"></div>
+      <div class="offers-grid" id="offersGrid"></div>
+      <div class="more-wrap" id="moreWrap"></div>
+    </div>
+  </section>
+
+  <!-- NOTIFY STRIP -->
+  <section class="container">
+    <div class="notify-strip">
+      <div>
+        <h3>Don't miss our next offer! 🔔</h3>
+        <p>Subscribe and be the first to know about new education &amp; migration deals.</p>
+      </div>
+      <div class="notify-form">
+        <input type="email" id="notifyEmail" placeholder="you@example.com">
+        <button class="btn btn-gold" id="subscribeBtn">Subscribe</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPIRED -->
+  <section class="expired-section container" id="expiredSection">
+    <button class="accordion-head" id="accordionHead">
+      <span>🗂️ Past Offers <span id="expiredCount" style="color:var(--ink-soft);font-weight:400;font-size:.9rem"></span></span>
+      <span class="chev">▼</span>
+    </button>
+    <div class="accordion-body" id="accordionBody">
+      <div class="accordion-inner" id="expiredGrid"></div>
+      <div class="more-wrap" id="expiredMoreWrap"></div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="logo"><img src="assets/logo.webp" alt="SuccessVisa" style="height:34px" width="300" height="95" decoding="async"></div>
+          <p>Your trusted partner for Australian migration &amp; education. Turning aspirations into approvals since 2014.</p>
+          <div class="social-row">
+            <a href="#" aria-label="Facebook">f</a>
+            <a href="#" aria-label="Instagram">◎</a>
+            <a href="#" aria-label="LinkedIn">in</a>
+            <a href="#" aria-label="WhatsApp">✆</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Our Branches</h4>
+          <div class="branch"><b>🇮🇳 Chandigarh</b>SCO 437-438, 35C, Sector 35, Chandigarh, 160022</div>
+          <div class="branch"><b>🇦🇺 Parramatta</b>251 Church St, Parramatta NSW 2150, Australia</div>
+          <div class="branch"><b>🇦🇺 Toongabbie</b>30 Aurelia St, Toongabbie, NSW 2146</div>
+          <div class="branch"><b>🇦🇺 Melbourne</b>Level 3, Suite 301/227 Collins St, Melbourne, VIC 3000</div>
+          <div class="branch"><b>🇦🇺 Werribee</b>70 Watton Street, Werribee, VIC 3030</div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <div class="branch"><a href="#offers">Current Offers</a></div>
+          <div class="branch"><a href="Education%20Visa%20Landing%20Page.html">Education Services</a></div>
+          <div class="branch"><a href="Visitor%20Visa%20Landing%20Page.html">Migration Visas</a></div>
+          <div class="branch"><a href="Booking%20Page.html">Book Appointment</a></div>
+          <div class="branch"><a href="contact.html">Contact Us</a></div>
+          <div class="branch"><a href="#admin">🔐 Admin / Manage Offers</a></div>
+        </div>
+      </div>
+      <div class="footer-bottom" style="text-align:left;line-height:1.6;margin-bottom:14px;border-bottom:1px solid rgba(255,255,255,.1);padding-bottom:18px;">Reviewed by SuccessVisa's MARA registered migration agents &middot; last updated 16 September 2026. General information only, not migration advice. <a href="Disclaimer%20Page.html">See full disclaimer and sources</a>.</div>
+      <div class="footer-bottom" style="border-top:0;padding-top:0;">© <span id="year"></span> SuccessVisa Migration &amp; Education. All rights reserved. · <a href="#admin">Admin Login</a></div>
+    </div>
+  </footer>
+</div>
+
+<!-- ===================== OFFER MODAL ===================== -->
+<div class="modal-overlay" id="offerModal">
+  <div class="modal" id="offerModalInner"></div>
+</div>
+
+<!-- ===================== ADMIN GATE ===================== -->
+<div class="admin-gate hidden" id="adminGate">
+  <div class="gate-card">
+    <div class="lock">🔐</div>
+    <h2>Admin Access</h2>
+    <p>Enter the password to manage SuccessVisa offers.</p>
+    <input type="password" id="adminPass" placeholder="Password" autocomplete="off">
+    <div class="gate-error" id="gateError"></div>
+    <button class="btn btn-navy btn-block" id="gateBtn">Unlock Dashboard</button>
+    <button class="btn btn-ghost btn-block" style="margin-top:10px" onclick="location.hash='#offers'">← Back to Public Page</button>
+  </div>
+</div>
+
+<!-- ===================== ADMIN PANEL ===================== -->
+<div class="admin-panel hidden" id="adminPanel">
+  <header class="admin-header">
+    <div class="container">
+      <h1>⚙️ SuccessVisa Offers Admin</h1>
+      <div class="admin-actions">
+        <a href="#offers" class="btn btn-gold btn-sm" id="viewPublicBtn">View Public Page ↗</a>
+        <button class="btn btn-ghost btn-sm" id="logoutBtn">Logout</button>
+      </div>
+    </div>
+  </header>
+  <div class="admin-body">
+    <div class="container">
+      <div class="stats-row" id="statsRow"></div>
+
+      <div class="admin-toolbar">
+        <h2>Manage Offers</h2>
+        <div class="tools">
+          <button class="btn btn-ghost" id="resetDemoBtn" title="Restore the 52 sample offers">↺ Reset Demo Data</button>
+          <button class="btn btn-navy" id="addOfferBtn">＋ Add New Offer</button>
+        </div>
+      </div>
+
+      <!-- FORM PANEL -->
+      <div class="form-panel hidden" id="formPanel">
+        <h3 id="formTitle">＋ Add New Offer</h3>
+        <p class="form-hint">Fill in the offer details below. Fields marked <span style="color:var(--hea)">*</span> are required.</p>
+        <input type="hidden" id="fId">
+        <div class="form-grid">
+          <div class="field">
+            <label>Category</label>
+            <select id="fCategory">
+              <option value="Education">Education</option>
+              <option value="Tourist">Tourist</option>
+              <option value="Migration">Migration</option>
+              <option value="Insurance">Insurance</option>
+              <option value="Health">Health</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Branch <span class="opt">(applicable location)</span></label>
+            <select id="fBranch">
+              <option value="All Branches">🌐 All Branches</option>
+              <option value="Chandigarh">🇮🇳 Chandigarh</option>
+              <option value="Parramatta">🇦🇺 Parramatta</option>
+              <option value="Toongabbie">🇦🇺 Toongabbie</option>
+              <option value="Melbourne">🇦🇺 Melbourne</option>
+              <option value="Werribee">🇦🇺 Werribee</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Offer Heading / Title <span class="req">*</span></label>
+            <input type="text" id="fTitle" placeholder="e.g. Free IELTS Coaching">
+          </div>
+          <div class="field">
+            <label>Slug <span class="opt">(used in shareable URL)</span></label>
+            <input type="text" id="fSlug" placeholder="free-ielts-coaching">
+          </div>
+          <div class="field full">
+            <label>Short Description <span class="opt">(shown on card, max 150 chars)</span></label>
+            <textarea id="fShort" maxlength="160" placeholder="Brief 2-3 line teaser..."></textarea>
+            <span class="char-counter" id="shortCounter">0 / 150</span>
+          </div>
+          <div class="field full">
+            <label>Long Description <span class="opt">(shown in the pop-up card)</span></label>
+            <textarea id="fFull" rows="4" placeholder="Full offer details, what's included, terms..."></textarea>
+          </div>
+          <div class="field">
+            <label>Valid From <span class="opt">(leave blank = starts now)</span></label>
+            <input type="datetime-local" id="fFrom">
+          </div>
+          <div class="field">
+            <label>Valid To / Expiry <span class="req">*</span></label>
+            <input type="datetime-local" id="fTo">
+          </div>
+          <div class="field">
+            <label>WhatsApp Number</label>
+            <input type="text" id="fWhatsapp" placeholder="+61468791726">
+          </div>
+          <div class="field">
+            <label>WhatsApp Pre-filled Message</label>
+            <input type="text" id="fWaMsg" placeholder="Hi, I'm interested in...">
+          </div>
+          <div class="field">
+            <label>"Learn More" / Booking Link <span class="opt">(optional)</span></label>
+            <input type="url" id="fLink" placeholder="https://...">
+          </div>
+          <div class="field">
+            <label>Banner Image URL <span class="opt">(optional)</span></label>
+            <input type="url" id="fImage" placeholder="https://...image.jpg">
+          </div>
+          <div class="field">
+            <label>Status</label>
+            <div class="toggle-wrap">
+              <label class="switch"><input type="checkbox" id="fActive" checked><span class="slider"></span></label>
+              <span id="activeLabel">Active (visible)</span>
+            </div>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button class="btn btn-navy" id="saveOfferBtn">💾 Save Offer</button>
+          <button class="btn btn-ghost" id="cancelOfferBtn">Cancel</button>
+        </div>
+      </div>
+
+      <!-- TABLE -->
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Title</th><th>Category</th><th>Branch</th><th>Valid To</th><th>Status</th><th>Actions</th></tr>
+          </thead>
+          <tbody id="offersTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONFIRM DIALOG -->
+<div class="modal-overlay" id="confirmModal">
+  <div class="confirm-card">
+    <div class="ic" id="confirmIcon">🗑️</div>
+    <h3 id="confirmTitle">Delete this offer?</h3>
+    <p id="confirmText">This action cannot be undone.</p>
+    <div class="confirm-actions">
+      <button class="btn btn-ghost" id="confirmCancel">Cancel</button>
+      <button class="btn btn-danger" id="confirmOk">Delete</button>
+    </div>
+  </div>
+</div>
+
+<!-- TOASTS -->
+<div class="toast-wrap" id="toastWrap"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+<script>
+/* ============================================================
+   HERO SPECIAL-OFFER LOTTIE ANIMATION
+   ============================================================ */
+const OFFER_LOTTIE_DATA = {"v":"4.8.0","meta":{"g":"LottieFiles AE 3.4.5","a":"","k":"","d":"","tc":""},"fr":25,"ip":0,"op":75,"w":1080,"h":1080,"nm":"Comp 1","ddd":0,"assets":[{"id":"comp_0","layers":[{"ddd":0,"ind":1,"ty":4,"nm":"pentagon Outlines 4","td":1,"sr":1,"ks":{"o":{"a":0,"k":100,"ix":11},"r":{"a":0,"k":0,"ix":10},"p":{"a":0,"k":[313.95,671.733,0],"ix":2},"a":{"a":0,"k":[439.45,796.733,0],"ix":1},"s":{"a":0,"k":[100,100,100],"ix":6}},"ao":0,"shapes":[{"ty":"gr","it":[{"ind":0,"ty":"sh","ix":1,"ks":{"a":0,"k":{"i":[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],"o":[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],"v":[[-32.692,-120.59],[17.555,-86.742],[71.832,-95.987],[76.676,-35.603],[117.757,1.078],[73.544,42.529],[70.492,97.398],[10.55,88.753],[-34.333,120.589],[-64.899,68.323],[-117.757,53.115],[-95.987,-3.468],[-117.008,-54.242],[-59.229,-72.432]],"c":true},"ix":2},"nm":"Path 1","mn":"ADBE Vector Shape - Group","hd":false},{"ty":"fl","c":{"a":0,"k":[0.988235353956,0.698039215686,0.270588235294,1],"ix":4},"o":{"a":0,"k":100,"ix":5},"r":1,"bm":0,"nm":"Fill 1","mn":"ADBE Vector Graphic - Fill","hd":false},{"ty":"tr","p":{"a":0,"k":[439.45,796.733],"ix":2},"a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"r":{"a":0,"k":0,"ix":6},"o":{"a":0,"k":100,"ix":7},"sk":{"a":0,"k":0,"ix":4},"sa":{"a":0,"k":0,"ix":5},"nm":"Transform"}],"nm":"Group 1","np":2,"cix":2,"bm":0,"ix":1,"mn":"ADBE Vector Group","hd":false}],"ip":0,"op":75,"st":0,"bm":0},{"ddd":0,"ind":2,"ty":4,"nm":"% Outlines","tt":1,"sr":1,"ks":{"o":{"a":0,"k":100,"ix":11},"r":{"a":0,"k":0,"ix":10},"p":{"a":1,"k":[{"i":{"x":0,"y":1},"o":{"x":0.333,"y":0},"t":25,"s":[307.537,492.978,0],"to":[0,20.86,0],"ti":[0,-46.781,0]},{"i":{"x":0,"y":1},"o":{"x":0.333,"y":0},"t":40,"s":[307.537,734.728,0],"to":[0,19.377,0],"ti":[0,-8.64,0]},{"t":48,"s":[307.537,669.978,0]}],"ix":2},"a":{"a":0,"k":[433.037,794.978,0],"ix":1},"s":{"a":0,"k":[100,100,100],"ix":6}},"ao":0,"shapes":[{"ty":"gr","it":[{"ind":0,"ty":"sh","ix":1,"ks":{"a":0,"k":{"i":[[0,0],[-8.203,0.521],[0.521,9.167],[0,0],[8.203,-0.449],[-0.521,-9.173]],"o":[[0.521,9.173],[8.196,-0.449],[0,0],[-0.521,-9.173],[-8.203,0.521],[0,0]],"v":[[9.808,30.417],[23.226,43.913],[35.003,29.004],[33.363,-0.221],[19.945,-13.789],[8.161,1.198]],"c":true},"ix":2},"nm":"Path 1","mn":"ADBE Vector Shape - Group","hd":false},{"ind":1,"ty":"sh","ix":2,"ks":{"a":0,"k":{"i":[[0,0],[-2.761,0.157],[-0.228,-3.874],[0,0],[2.61,-0.143],[0.22,3.952]],"o":[[-0.228,-3.952],[2.604,-0.15],[0,0],[0.221,3.958],[-2.761,0.156],[0,0]],"v":[[16.442,0.079],[20.394,-5.742],[25.016,-0.449],[26.729,30.118],[22.777,35.931],[18.155,30.567]],"c":true},"ix":2},"nm":"Path 2","mn":"ADBE Vector Shape - Group","hd":false},{"ind":2,"ty":"sh","ix":3,"ks":{"a":0,"k":{"i":[[0,0],[0,0],[0,0],[0,0]],"o":[[0,0],[0,0],[0,0],[0,0]],"v":[[-18.076,45.625],[-10.4,45.183],[17.412,-45.625],[9.73,-45.182]],"c":true},"ix":2},"nm":"Path 3","mn":"ADBE Vector Shape - Group","hd":false},{"ind":3,"ty":"sh","ix":4,"ks":{"a":0,"k":{"i":[[0,0],[-8.203,0.527],[0.521,9.167],[0,0],[8.274,-0.443],[-0.521,-9.173]],"o":[[0.522,9.167],[8.196,-0.449],[0,0],[-0.45,-9.173],[-8.203,0.521],[0,0]],"v":[[-33.363,0.228],[-19.938,13.718],[-8.089,-1.191],[-9.801,-30.416],[-23.219,-43.984],[-35.003,-28.997]],"c":true},"ix":2},"nm":"Path 4","mn":"ADBE Vector Shape - Group","hd":false},{"ind":4,"ty":"sh","ix":5,"ks":{"a":0,"k":{"i":[[0,0],[-2.76,0.15],[-0.222,-3.88],[0,0],[2.61,-0.15],[0.222,3.951]],"o":[[-0.222,-3.952],[2.605,-0.149],[0,0],[0.221,3.873],[-2.689,0.149],[0,0]],"v":[[-26.728,-30.117],[-22.699,-35.931],[-18.154,-30.638],[-16.435,-0.071],[-20.387,5.743],[-24.938,0.372]],"c":true},"ix":2},"nm":"Path 5","mn":"ADBE Vector Shape - Group","hd":false},{"ty":"mm","mm":1,"nm":"Merge Paths 1","mn":"ADBE Vector Filter - Merge","hd":false},{"ty":"fl","c":{"a":0,"k":[0.03137254902,0.776470648074,0.635294117647,1],"ix":4},"o":{"a":0,"k":100,"ix":5},"r":1,"bm":0,"nm":"Fill 1","mn":"ADBE Vector Graphic - Fill","hd":false},{"ty":"tr","p":{"a":0,"k":[433.037,794.978],"ix":2},"a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"r":{"a":0,"k":0,"ix":6},"o":{"a":0,"k":100,"ix":7},"sk":{"a":0,"k":0,"ix":4},"sa":{"a":0,"k":0,"ix":5},"nm":"Transform"}],"nm":"Group 1","np":7,"cix":2,"bm":0,"ix":1,"mn":"ADBE Vector Group","hd":false}],"ip":0,"op":75,"st":0,"bm":0},{"ddd":0,"ind":3,"ty":4,"nm":"pentagon Outlines 3","td":1,"sr":1,"ks":{"o":{"a":0,"k":100,"ix":11},"r":{"a":0,"k":0,"ix":10},"p":{"a":0,"k":[313.95,671.733,0],"ix":2},"a":{"a":0,"k":[439.45,796.733,0],"ix":1},"s":{"a":0,"k":[100,100,100],"ix":6}},"ao":0,"shapes":[{"ty":"gr","it":[{"ind":0,"ty":"sh","ix":1,"ks":{"a":0,"k":{"i":[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],"o":[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],"v":[[-32.692,-120.59],[17.555,-86.742],[71.832,-95.987],[76.676,-35.603],[117.757,1.078],[73.544,42.529],[70.492,97.398],[10.55,88.753],[-34.333,120.589],[-64.899,68.323],[-117.757,53.115],[-95.987,-3.468],[-117.008,-54.242],[-59.229,-72.432]],"c":true},"ix":2},"nm":"Path 1","mn":"ADBE Vector Shape - Group","hd":false},{"ty":"fl","c":{"a":0,"k":[0.988235353956,0.698039215686,0.270588235294,1],"ix":4},"o":{"a":0,"k":100,"ix":5},"r":1,"bm":0,"nm":"Fill 1","mn":"ADBE Vector Graphic - Fill","hd":false},{"ty":"tr","p":{"a":0,"k":[439.45,796.733],"ix":2},"a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"r":{"a":0,"k":0,"ix":6},"o":{"a":0,"k":100,"ix":7},"sk":{"a":0,"k":0,"ix":4},"sa":{"a":0,"k":0,"ix":5},"nm":"Transform"}],"nm":"Group 1","np":2,"cix":2,"bm":0,"ix":1,"mn":"ADBE Vector Group","hd":false}],"ip":0,"op":75,"st":0,"bm":0},{"ddd":0,"ind":4,"ty":4,"nm":"pentagon Outlines 2","tt":1,"sr":1,"ks":{"o":{"a":0,"k":100,"ix":11},"r":{"a":0,"k":0,"ix":10},"p":{"a":1,"k":[{"i":{"x":0,"y":1},"o":{"x":0.333,"y":0},"t":20,"s":[311.524,464.832,0],"to":[0,21.294,0],"ti":[0,-51.294,0]},{"i":{"x":0,"y":1},"o":{"x":0.333,"y":0},"t":35,"s":[311.524,739.524,0],"to":[0,31.01,0],"ti":[0,-12.873,0]},{"t":43,"s":[311.524,669.832,0]}],"ix":2},"a":{"a":0,"k":[437.024,794.832,0],"ix":1},"s":{"a":0,"k":[100,100,100],"ix":6}},"ao":0,"shapes":[{"ty":"gr","it":[{"ind":0,"ty":"sh","ix":1,"ks":{"a":0,"k":{"i":[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],"o":[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],"v":[[-21.914,-81.039],[11.856,-58.305],[48.313,-64.49],[51.589,-23.935],[79.173,0.745],[49.505,28.552],[47.415,65.531],[7.083,59.638],[-23.034,81.038],[-43.613,45.921],[-79.173,35.707],[-64.485,-2.315],[-78.652,-36.461],[-39.812,-48.681]],"c":true},"ix":2},"nm":"Path 1","mn":"ADBE Vector Shape - Group","hd":false},{"ty":"fl","c":{"a":0,"k":[1,1,1,1],"ix":4},"o":{"a":0,"k":100,"ix":5},"r":1,"bm":0,"nm":"Fill 1","mn":"ADBE Vector Graphic - Fill","hd":false},{"ty":"tr","p":{"a":0,"k":[437.024,794.832],"ix":2},"a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"r":{"a":0,"k":0,"ix":6},"o":{"a":0,"k":100,"ix":7},"sk":{"a":0,"k":0,"ix":4},"sa":{"a":0,"k":0,"ix":5},"nm":"Transform"}],"nm":"Group 1","np":2,"cix":2,"bm":0,"ix":1,"mn":"ADBE Vector Group","hd":false}],"ip":0,"op":75,"st":0,"bm":0},{"ddd":0,"ind":5,"ty":4,"nm":"pentagon Outlines","sr":1,"ks":{"o":{"a":0,"k":100,"ix":11},"r":{"a":0,"k":0,"ix":10},"p":{"a":0,"k":[313.95,671.733,0],"ix":2},"a":{"a":0,"k":[439.45,796.733,0],"ix":1},"s":{"a":0,"k":[100,100,100],"ix":6}},"ao":0,"shapes":[{"ty":"gr","it":[{"ind":0,"ty":"sh","ix":1,"ks":{"a":0,"k":{"i":[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],"o":[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],"v":[[-32.692,-120.59],[17.555,-86.742],[71.832,-95.987],[76.676,-35.603],[117.757,1.078],[73.544,42.529],[70.492,97.398],[10.55,88.753],[-34.333,120.589],[-64.899,68.323],[-117.757,53.115],[-95.987,-3.468],[-117.008,-54.242],[-59.229,-72.432]],"c":true},"ix":2},"nm":"Path 1","mn":"ADBE Vector Shape - Group","hd":false},{"ty":"fl","c":{"a":0,"k":[0.988235353956,0.698039215686,0.270588235294,1],"ix":4},"o":{"a":0,"k":100,"ix":5},"r":1,"bm":0,"nm":"Fill 1","mn":"ADBE Vector Graphic - Fill","hd":false},{"ty":"tr","p":{"a":0,"k":[439.45,796.733],"ix":2},"a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"r":{"a":0,"k":0,"ix":6},"o":{"a":0,"k":100,"ix":7},"sk":{"a":0,"k":0,"ix":4},"sa":{"a":0,"k":0,"ix":5},"nm":"Transform"}],"nm":"Group 1","np":2,"cix":2,"bm":0,"ix":1,"mn":"ADBE Vector Group","hd":false}],"ip":0,"op":75,"st":0,"bm":0}]}],"layers":[{"ddd":0,"ind":1,"ty":4,"nm":"press Outlines","sr":1,"ks":{"o":{"a":0,"k":100,"ix":11},"r":{"a":0,"k":0,"ix":10},"p":{"a":0,"k":[556.915,793.328,0],"ix":2},"a":{"a":0,"k":[682.415,918.328,0],"ix":1},"s":{"a":0,"k":[100,100,100],"ix":6}},"ao":0,"shapes":[{"ty":"gr","it":[{"ind":0,"ty":"sh","ix":1,"ks":{"a":0,"k":{"i":[[-1.198,0],[0,0],[0,1.191],[0,0],[1.197,0],[0,0],[0,-1.198],[0,0]],"o":[[0,0],[1.197,0],[0,0],[0,-1.198],[0,0],[-1.198,0],[0,0],[0,1.191]],"v":[[-29.296,7.229],[29.298,7.229],[31.458,5.069],[31.458,-5.068],[29.298,-7.229],[-29.296,-7.229],[-31.458,-5.068],[-31.458,5.069]],"c":true},"ix":2},"nm":"Path 1","mn":"ADBE Vector Shape - Group","hd":false},{"ty":"fl","c":{"a":0,"k":[0.400000029919,0.400000029919,0.400000029919,1],"ix":4},"o":{"a":0,"k":100,"ix":5},"r":1,"bm":0,"nm":"Fill 1","mn":"ADBE Vector Graphic - Fill","hd":false},{"ty":"tr","p":{"a":0,"k":[309.765,844.929],"ix":2},"a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"r":{"a":0,"k":0,"ix":6},"o":{"a":0,"k":100,"ix":7},"sk":{"a":0,"k":0,"ix":4},"sa":{"a":0,"k":0,"ix":5},"nm":"Transform"}],"nm":"Group 1","np":2,"cix":2,"bm":0,"ix":1,"mn":"ADBE Vector Group","hd":false},{"ty":"gr","it":[{"ind":0,"ty":"sh","ix":1,"ks":{"a":0,"k":{"i":[[-7.461,0],[0,0],[0,-7.455],[0,0],[7.461,0],[0,0],[0,7.461],[0,0]],"o":[[0,0],[7.461,0],[0,0],[0,7.461],[0,0],[-7.461,0],[0,0],[0,-7.455]],"v":[[-31.458,-73.398],[31.459,-73.398],[45.026,-59.83],[45.026,59.825],[31.459,73.398],[-31.458,73.398],[-45.025,59.825],[-45.025,-59.83]],"c":true},"ix":2},"nm":"Path 1","mn":"ADBE Vector Shape - Group","hd":false},{"ty":"fl","c":{"a":0,"k":[0.301960784314,0.301960784314,0.301960784314,1],"ix":4},"o":{"a":0,"k":100,"ix":5},"r":1,"bm":0,"nm":"Fill 1","mn":"ADBE Vector Graphic - Fill","hd":false},{"ty":"tr","p":{"a":0,"k":[309.765,925.557],"ix":2},"a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"r":{"a":0,"k":0,"ix":6},"o":{"a":0,"k":100,"ix":7},"sk":{"a":0,"k":0,"ix":4},"sa":{"a":0,"k":0,"ix":5},"nm":"Transform"}],"nm":"Group 2","np":2,"cix":2,"bm":0,"ix":2,"mn":"ADBE Vector Group","hd":false},{"ty":"gr","it":[{"ind":0,"ty":"sh","ix":1,"ks":{"a":0,"k":{"i":[[0,0],[-19.453,0],[-13.568,-6.335],[-7.455,-15.13],[0,-15.43],[1.263,-3.952],[22.291,-6.555],[28.177,0],[25.937,8.496],[84.465,9.622],[69.707,-21.399],[16.848,0],[0,0],[-16.621,5.143],[-113.242,-12.891],[-35.71,-11.777],[-61.582,0],[-20.137,5.814],[-4.252,12.897],[0,3.353],[4.401,9.095],[11.777,5.443],[13.646,0],[11.934,-5.82]],"o":[[13.196,-6.484],[15.059,0],[13.789,6.413],[5.143,10.586],[0,4.401],[-5.442,16.628],[-21.25,6.192],[-62.624,0],[-35.417,-11.635],[-111.758,-12.741],[-17.891,5.443],[0,0],[16.028,0],[69.857,-21.393],[85.286,9.694],[25.273,8.275],[27.356,0],[19.01,-5.592],[0.891,-2.832],[0,-13.867],[-6.257,-12.747],[-12.078,-5.664],[-17.89,0],[0,0]],"v":[[253.404,-53.975],[301.34,-67.32],[345.403,-58.375],[378.502,-26.539],[386.627,12.301],[384.693,24.827],[340.631,58.747],[264.29,67.32],[106.243,46.898],[-117.416,-4.626],[-264.213,28.629],[-386.628,35.935],[-386.628,25.426],[-267.345,18.565],[-116.225,-15.061],[109.446,36.904],[264.29,56.806],[337.727,48.681],[374.7,21.547],[376.112,12.301],[369.107,-21.918],[341.002,-48.831],[301.34,-56.812],[253.404,-42.569]],"c":true},"ix":2},"nm":"Path 1","mn":"ADBE Vector Shape - Group","hd":false},{"ty":"fl","c":{"a":0,"k":[1,1,1,1],"ix":4},"o":{"a":0,"k":100,"ix":5},"r":1,"bm":0,"nm":"Fill 1","mn":"ADBE Vector Graphic - Fill","hd":false},{"ty":"tr","p":{"a":0,"k":[713.464,920.971],"ix":2},"a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"r":{"a":0,"k":0,"ix":6},"o":{"a":0,"k":100,"ix":7},"sk":{"a":0,"k":0,"ix":4},"sa":{"a":0,"k":0,"ix":5},"nm":"Transform"}],"nm":"Group 3","np":2,"cix":2,"bm":0,"ix":3,"mn":"ADBE Vector Group","hd":false}],"ip":0,"op":75,"st":0,"bm":0},{"ddd":0,"ind":2,"ty":4,"nm":"press Outlines 2","sr":1,"ks":{"o":{"a":0,"k":100,"ix":11},"r":{"a":0,"k":0,"ix":10},"p":{"a":1,"k":[{"i":{"x":0.721,"y":1},"o":{"x":1,"y":0.019},"t":0,"s":[184.266,645.714,0],"to":[0,10.167,0],"ti":[0,-10.167,0]},{"t":10,"s":[184.266,706.714,0]}],"ix":2},"a":{"a":0,"k":[309.766,770.714,0],"ix":1},"s":{"a":0,"k":[100,100,100],"ix":6}},"ao":0,"shapes":[{"ty":"gr","it":[{"ind":0,"ty":"sh","ix":1,"ks":{"a":0,"k":{"i":[[0,0],[0,0],[1.119,0],[0,0],[0,0.97],[0,0],[0,0],[0,1.412],[0,0],[-1.712,0],[0,0],[0,-1.341],[0,0],[1.712,0]],"o":[[0,0],[0,0.97],[0,0],[-1.12,0],[0,0],[0,0],[-1.712,0],[0,0],[0,-1.341],[0,0],[1.712,0],[0,0],[0,1.412],[0,0]],"v":[[6.934,-50.215],[6.934,65.267],[4.843,66.986],[-4.844,66.986],[-6.934,65.267],[-6.934,-50.215],[-38.471,-50.215],[-41.523,-52.747],[-41.523,-64.453],[-38.471,-66.986],[38.469,-66.986],[41.523,-64.453],[41.523,-52.747],[38.469,-50.215]],"c":true},"ix":2},"nm":"Path 1","mn":"ADBE Vector Shape - Group","hd":false},{"ty":"fl","c":{"a":0,"k":[1,1,1,1],"ix":4},"o":{"a":0,"k":100,"ix":5},"r":1,"bm":0,"nm":"Fill 1","mn":"ADBE Vector Graphic - Fill","hd":false},{"ty":"tr","p":{"a":0,"k":[309.766,770.714],"ix":2},"a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"r":{"a":0,"k":0,"ix":6},"o":{"a":0,"k":100,"ix":7},"sk":{"a":0,"k":0,"ix":4},"sa":{"a":0,"k":0,"ix":5},"nm":"Transform"}],"nm":"Group 1","np":2,"cix":2,"bm":0,"ix":1,"mn":"ADBE Vector Group","hd":false}],"ip":0,"op":75,"st":0,"bm":0},{"ddd":0,"ind":3,"ty":4,"nm":"dinamit Outlines","sr":1,"ks":{"o":{"a":0,"k":100,"ix":11},"r":{"a":0,"k":0,"ix":10},"p":{"a":0,"k":[728.016,759.105,0],"ix":2},"a":{"a":0,"k":[853.516,884.105,0],"ix":1},"s":{"a":1,"k":[{"i":{"x":[0,0,0.667],"y":[1,1,1]},"o":{"x":[0.39,0.39,0.333],"y":[-0.018,-0.018,0]},"t":5.877,"s":[100,100,100]},{"i":{"x":[0.571,0.571,0.667],"y":[1,1,1]},"o":{"x":[1,1,0.333],"y":[0,0,0]},"t":10,"s":[148,148,100]},{"t":14.2099609375,"s":[100,100,100]}],"ix":6}},"ao":0,"shapes":[{"ty":"gr","it":[{"ind":0,"ty":"sh","ix":1,"ks":{"a":0,"k":{"i":[[-4.03,0],[0,0],[-0.3,4.024],[0,0],[4.031,0],[0,0],[0.222,-4.023],[0,0]],"o":[[0,0],[4.029,0],[0,0],[0.299,-4.023],[0,0],[-4.03,0],[0,0],[-0.3,4.024]],"v":[[-12.932,86.966],[0.857,86.966],[8.689,79.661],[19.718,-79.661],[12.933,-86.966],[-0.927,-86.966],[-8.681,-79.661],[-19.716,79.661]],"c":true},"ix":2},"nm":"Path 1","mn":"ADBE Vector Shape - Group","hd":false},{"ty":"fl","c":{"a":0,"k":[0.20000001496,0.20000001496,0.20000001496,1],"ix":4},"o":{"a":0,"k":100,"ix":5},"r":1,"bm":0,"nm":"Fill 1","mn":"ADBE Vector Graphic - Fill","hd":false},{"ty":"tr","p":{"a":0,"k":[918.147,884.105],"ix":2},"a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"r":{"a":0,"k":0,"ix":6},"o":{"a":0,"k":100,"ix":7},"sk":{"a":0,"k":0,"ix":4},"sa":{"a":0,"k":0,"ix":5},"nm":"Transform"}],"nm":"Group 1","np":2,"cix":2,"bm":0,"ix":1,"mn":"ADBE Vector Group","hd":false},{"ty":"gr","it":[{"ind":0,"ty":"sh","ix":1,"ks":{"a":0,"k":{"i":[[-4.023,0],[0,0],[-0.3,4.024],[0,0],[4.03,0],[0,0],[0.222,-4.023],[0,0]],"o":[[0,0],[4.023,0],[0,0],[0.299,-4.023],[0,0],[-3.952,0],[0,0],[-0.3,4.024]],"v":[[-12.935,86.966],[0.859,86.966],[8.685,79.661],[19.72,-79.661],[12.93,-86.966],[-0.931,-86.966],[-8.685,-79.661],[-19.72,79.661]],"c":true},"ix":2},"nm":"Path 1","mn":"ADBE Vector Shape - Group","hd":false},{"ty":"fl","c":{"a":0,"k":[0.20000001496,0.20000001496,0.20000001496,1],"ix":4},"o":{"a":0,"k":100,"ix":5},"r":1,"bm":0,"nm":"Fill 1","mn":"ADBE Vector Graphic - Fill","hd":false},{"ty":"tr","p":{"a":0,"k":[770.162,884.105],"ix":2},"a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"r":{"a":0,"k":0,"ix":6},"o":{"a":0,"k":100,"ix":7},"sk":{"a":0,"k":0,"ix":4},"sa":{"a":0,"k":0,"ix":5},"nm":"Transform"}],"nm":"Group 2","np":2,"cix":2,"bm":0,"ix":2,"mn":"ADBE Vector Group","hd":false},{"ty":"gr","it":[{"ind":0,"ty":"sh","ix":1,"ks":{"a":0,"k":{"i":[[-2.761,1.94],[0,-3.58],[0,0],[2.683,-1.94],[0,3.503],[0,0]],"o":[[2.683,1.94],[0,0],[0,3.503],[-2.761,-1.94],[0,0],[0,-3.58]],"v":[[0.007,-25.274],[4.472,-16.622],[4.472,16.705],[0.007,25.273],[-4.472,16.705],[-4.472,-16.622]],"c":true},"ix":2},"nm":"Path 1","mn":"ADBE Vector Shape - Group","hd":false},{"ty":"fl","c":{"a":0,"k":[0.447058853449,0.082352941176,0.062745098039,1],"ix":4},"o":{"a":0,"k":100,"ix":5},"r":1,"bm":0,"nm":"Fill 1","mn":"ADBE Vector Graphic - Fill","hd":false},{"ty":"tr","p":{"a":0,"k":[961.647,938.116],"ix":2},"a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"r":{"a":0,"k":0,"ix":6},"o":{"a":0,"k":100,"ix":7},"sk":{"a":0,"k":0,"ix":4},"sa":{"a":0,"k":0,"ix":5},"nm":"Transform"}],"nm":"Group 3","np":2,"cix":2,"bm":0,"ix":3,"mn":"ADBE Vector Group","hd":false},{"ty":"gr","it":[{"ind":0,"ty":"sh","ix":1,"ks":{"a":0,"k":{"i":[[0,0],[5.221,0],[0,0],[0.82,5.065]],"o":[[-0.82,5.065],[0,0],[-5.222,0],[0,0]],"v":[[127.077,-4.473],[116.634,4.473],[-116.634,4.473],[-127.077,-4.473]],"c":true},"ix":2},"nm":"Path 1","mn":"ADBE Vector Shape - Group","hd":false},{"ty":"fl","c":{"a":0,"k":[0.870588295133,0.196078446332,0.149019607843,1],"ix":4},"o":{"a":0,"k":100,"ix":5},"r":1,"bm":0,"nm":"Fill 1","mn":"ADBE Vector Graphic - Fill","hd":false},{"ty":"tr","p":{"a":0,"k":[838.9,960.857],"ix":2},"a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"r":{"a":0,"k":0,"ix":6},"o":{"a":0,"k":100,"ix":7},"sk":{"a":0,"k":0,"ix":4},"sa":{"a":0,"k":0,"ix":5},"nm":"Transform"}],"nm":"Group 4","np":2,"cix":2,"bm":0,"ix":4,"mn":"ADBE Vector Group","hd":false},{"ty":"gr","it":[{"ind":0,"ty":"sh","ix":1,"ks":{"a":0,"k":{"i":[[-5.82,0],[0,0],[0,-5.813],[0,0],[5.814,0],[0,0],[0,5.814],[0,0]],"o":[[0,0],[5.814,0],[0,0],[0,5.814],[0,0],[-5.82,0],[0,0],[0,-5.813]],"v":[[-116.633,-27.211],[116.635,-27.211],[127.22,-16.624],[127.22,16.703],[116.635,27.211],[-116.633,27.211],[-127.219,16.703],[-127.219,-16.624]],"c":true},"ix":2},"nm":"Path 1","mn":"ADBE Vector Shape - Group","hd":false},{"ty":"fl","c":{"a":0,"k":[0.941176530427,0.250980392157,0.20000001496,1],"ix":4},"o":{"a":0,"k":100,"ix":5},"r":1,"bm":0,"nm":"Fill 1","mn":"ADBE Vector Graphic - Fill","hd":false},{"ty":"tr","p":{"a":0,"k":[838.899,938.119],"ix":2},"a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"r":{"a":0,"k":0,"ix":6},"o":{"a":0,"k":100,"ix":7},"sk":{"a":0,"k":0,"ix":4},"sa":{"a":0,"k":0,"ix":5},"nm":"Transform"}],"nm":"Group 5","np":2,"cix":2,"bm":0,"ix":5,"mn":"ADBE Vector Group","hd":false},{"ty":"gr","it":[{"ind":0,"ty":"sh","ix":1,"ks":{"a":0,"k":{"i":[[-2.683,1.862],[0,-3.502],[0,0],[2.761,-1.94],[0,3.574],[0,0]],"o":[[2.761,1.862],[0,0],[0,3.574],[-2.683,-1.94],[0,0],[0,-3.502]],"v":[[-0.036,-25.274],[4.437,-16.7],[4.437,16.627],[-0.036,25.273],[-4.437,16.627],[-4.437,-16.7]],"c":true},"ix":2},"nm":"Path 1","mn":"ADBE Vector Shape - Group","hd":false},{"ty":"fl","c":{"a":0,"k":[0.447058853449,0.082352941176,0.062745098039,1],"ix":4},"o":{"a":0,"k":100,"ix":5},"r":1,"bm":0,"nm":"Fill 1","mn":"ADBE Vector Graphic - Fill","hd":false},{"ty":"tr","p":{"a":0,"k":[962.432,884.516],"ix":2},"a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"r":{"a":0,"k":0,"ix":6},"o":{"a":0,"k":100,"ix":7},"sk":{"a":0,"k":0,"ix":4},"sa":{"a":0,"k":0,"ix":5},"nm":"Transform"}],"nm":"Group 6","np":2,"cix":2,"bm":0,"ix":6,"mn":"ADBE Vector Group","hd":false},{"ty":"gr","it":[{"ind":0,"ty":"sh","ix":1,"ks":{"a":0,"k":{"i":[[0,0],[5.215,0],[0,0],[0.82,5.072]],"o":[[-0.813,5.072],[0,0],[-5.222,0],[0,0]],"v":[[127.074,-4.476],[116.643,4.476],[-116.63,4.476],[-127.073,-4.476]],"c":true},"ix":2},"nm":"Path 1","mn":"ADBE Vector Shape - Group","hd":false},{"ty":"fl","c":{"a":0,"k":[0.870588295133,0.196078446332,0.149019607843,1],"ix":4},"o":{"a":0,"k":100,"ix":5},"r":1,"bm":0,"nm":"Fill 1","mn":"ADBE Vector Graphic - Fill","hd":false},{"ty":"tr","p":{"a":0,"k":[839.716,907.253],"ix":2},"a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"r":{"a":0,"k":0,"ix":6},"o":{"a":0,"k":100,"ix":7},"sk":{"a":0,"k":0,"ix":4},"sa":{"a":0,"k":0,"ix":5},"nm":"Transform"}],"nm":"Group 7","np":2,"cix":2,"bm":0,"ix":7,"mn":"ADBE Vector Group","hd":false},{"ty":"gr","it":[{"ind":0,"ty":"sh","ix":1,"ks":{"a":0,"k":{"i":[[-5.82,0],[0,0],[0,-5.814],[0,0],[5.813,0],[0,0],[0,5.814],[0,0]],"o":[[0,0],[5.813,0],[0,0],[0,5.814],[0,0],[-5.82,0],[0,0],[0,-5.814]],"v":[[-116.594,-27.214],[116.68,-27.214],[127.188,-16.7],[127.188,16.627],[116.68,27.214],[-116.594,27.214],[-127.188,16.627],[-127.188,-16.7]],"c":true},"ix":2},"nm":"Path 1","mn":"ADBE Vector Shape - Group","hd":false},{"ty":"fl","c":{"a":0,"k":[0.941176530427,0.250980392157,0.20000001496,1],"ix":4},"o":{"a":0,"k":100,"ix":5},"r":1,"bm":0,"nm":"Fill 1","mn":"ADBE Vector Graphic - Fill","hd":false},{"ty":"tr","p":{"a":0,"k":[839.68,884.516],"ix":2},"a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"r":{"a":0,"k":0,"ix":6},"o":{"a":0,"k":100,"ix":7},"sk":{"a":0,"k":0,"ix":4},"sa":{"a":0,"k":0,"ix":5},"nm":"Transform"}],"nm":"Group 8","np":2,"cix":2,"bm":0,"ix":8,"mn":"ADBE Vector Group","hd":false},{"ty":"gr","it":[{"ind":0,"ty":"sh","ix":1,"ks":{"a":0,"k":{"i":[[-2.683,1.94],[0,-3.575],[0,0],[2.683,-1.862],[0,3.496],[0,0]],"o":[[2.683,1.94],[0,0],[0,3.496],[-2.683,-1.862],[0,0],[0,-3.575]],"v":[[0,-25.273],[4.473,-16.627],[4.473,16.706],[0,25.274],[-4.473,16.706],[-4.473,-16.627]],"c":true},"ix":2},"nm":"Path 1","mn":"ADBE Vector Shape - Group","hd":false},{"ty":"fl","c":{"a":0,"k":[0.447058853449,0.082352941176,0.062745098039,1],"ix":4},"o":{"a":0,"k":100,"ix":5},"r":1,"bm":0,"nm":"Fill 1","mn":"ADBE Vector Graphic - Fill","hd":false},{"ty":"tr","p":{"a":0,"k":[965.677,830.017],"ix":2},"a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"r":{"a":0,"k":0,"ix":6},"o":{"a":0,"k":100,"ix":7},"sk":{"a":0,"k":0,"ix":4},"sa":{"a":0,"k":0,"ix":5},"nm":"Transform"}],"nm":"Group 9","np":2,"cix":2,"bm":0,"ix":9,"mn":"ADBE Vector Group","hd":false},{"ty":"gr","it":[{"ind":0,"ty":"sh","ix":1,"ks":{"a":0,"k":{"i":[[0,0],[5.293,0],[0,0],[0.749,5]],"o":[[-0.749,5],[0,0],[-5.293,0],[0,0]],"v":[[127.038,-4.473],[116.601,4.472],[-116.602,4.472],[-127.038,-4.473]],"c":true},"ix":2},"nm":"Path 1","mn":"ADBE Vector Shape - Group","hd":false},{"ty":"fl","c":{"a":0,"k":[0.870588295133,0.196078446332,0.149019607843,1],"ix":4},"o":{"a":0,"k":100,"ix":5},"r":1,"bm":0,"nm":"Fill 1","mn":"ADBE Vector Graphic - Fill","hd":false},{"ty":"tr","p":{"a":0,"k":[842.962,852.829],"ix":2},"a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"r":{"a":0,"k":0,"ix":6},"o":{"a":0,"k":100,"ix":7},"sk":{"a":0,"k":0,"ix":4},"sa":{"a":0,"k":0,"ix":5},"nm":"Transform"}],"nm":"Group 10","np":2,"cix":2,"bm":0,"ix":10,"mn":"ADBE Vector Group","hd":false},{"ty":"gr","it":[{"ind":0,"ty":"sh","ix":1,"ks":{"a":0,"k":{"i":[[-5.814,0],[0,0],[0,-5.813],[0,0],[5.814,0],[0,0],[0,5.807],[0,0]],"o":[[0,0],[5.814,0],[0,0],[0,5.807],[0,0],[-5.814,0],[0,0],[0,-5.813]],"v":[[-116.602,-27.25],[116.602,-27.25],[127.188,-16.663],[127.188,16.671],[116.602,27.25],[-116.602,27.25],[-127.188,16.671],[-127.188,-16.663]],"c":true},"ix":2},"nm":"Path 1","mn":"ADBE Vector Shape - Group","hd":false},{"ty":"fl","c":{"a":0,"k":[0.941176530427,0.250980392157,0.20000001496,1],"ix":4},"o":{"a":0,"k":100,"ix":5},"r":1,"bm":0,"nm":"Fill 1","mn":"ADBE Vector Graphic - Fill","hd":false},{"ty":"tr","p":{"a":0,"k":[842.962,830.053],"ix":2},"a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"r":{"a":0,"k":0,"ix":6},"o":{"a":0,"k":100,"ix":7},"sk":{"a":0,"k":0,"ix":4},"sa":{"a":0,"k":0,"ix":5},"nm":"Transform"}],"nm":"Group 11","np":2,"cix":2,"bm":0,"ix":11,"mn":"ADBE Vector Group","hd":false},{"ty":"gr","it":[{"ind":0,"ty":"sh","ix":1,"ks":{"a":0,"k":{"i":[[-2.761,1.94],[0,-3.581],[0,0],[2.683,-1.868],[0,3.503],[0,0]],"o":[[2.683,1.94],[0,0],[0,3.503],[-2.761,-1.868],[0,0],[0,-3.581]],"v":[[0,-25.273],[4.473,-16.627],[4.473,16.7],[0,25.274],[-4.473,16.7],[-4.473,-16.627]],"c":true},"ix":2},"nm":"Path 1","mn":"ADBE Vector Shape - Group","hd":false},{"ty":"fl","c":{"a":0,"k":[0.447058853449,0.082352941176,0.062745098039,1],"ix":4},"o":{"a":0,"k":100,"ix":5},"r":1,"bm":0,"nm":"Fill 1","mn":"ADBE Vector Graphic - Fill","hd":false},{"ty":"tr","p":{"a":0,"k":[977.903,912.921],"ix":2},"a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"r":{"a":0,"k":0,"ix":6},"o":{"a":0,"k":100,"ix":7},"sk":{"a":0,"k":0,"ix":4},"sa":{"a":0,"k":0,"ix":5},"nm":"Transform"}],"nm":"Group 12","np":2,"cix":2,"bm":0,"ix":12,"mn":"ADBE Vector Group","hd":false},{"ty":"gr","it":[{"ind":0,"ty":"sh","ix":1,"ks":{"a":0,"k":{"i":[[0,0],[5.215,0],[0,0],[0.821,4.994]],"o":[[-0.82,4.994],[0,0],[-5.215,0],[0,0]],"v":[[127.074,-4.437],[116.637,4.437],[-116.637,4.437],[-127.074,-4.437]],"c":true},"ix":2},"nm":"Path 1","mn":"ADBE Vector Shape - Group","hd":false},{"ty":"fl","c":{"a":0,"k":[0.870588295133,0.196078446332,0.149019607843,1],"ix":4},"o":{"a":0,"k":100,"ix":5},"r":1,"bm":0,"nm":"Fill 1","mn":"ADBE Vector Graphic - Fill","hd":false},{"ty":"tr","p":{"a":0,"k":[855.153,935.697],"ix":2},"a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"r":{"a":0,"k":0,"ix":6},"o":{"a":0,"k":100,"ix":7},"sk":{"a":0,"k":0,"ix":4},"sa":{"a":0,"k":0,"ix":5},"nm":"Transform"}],"nm":"Group 13","np":2,"cix":2,"bm":0,"ix":13,"mn":"ADBE Vector Group","hd":false},{"ty":"gr","it":[{"ind":0,"ty":"sh","ix":1,"ks":{"a":0,"k":{"i":[[-5.814,0],[0,0],[0,-5.814],[0,0],[5.814,0],[0,0],[0,5.814],[0,0]],"o":[[0,0],[5.814,0],[0,0],[0,5.814],[0,0],[-5.814,0],[0,0],[0,-5.814]],"v":[[-116.676,-27.214],[116.598,-27.214],[127.184,-16.627],[127.184,16.7],[116.598,27.214],[-116.676,27.214],[-127.184,16.7],[-127.184,-16.627]],"c":true},"ix":2},"nm":"Path 1","mn":"ADBE Vector Shape - Group","hd":false},{"ty":"fl","c":{"a":0,"k":[0.941176530427,0.250980392157,0.20000001496,1],"ix":4},"o":{"a":0,"k":100,"ix":5},"r":1,"bm":0,"nm":"Fill 1","mn":"ADBE Vector Graphic - Fill","hd":false},{"ty":"tr","p":{"a":0,"k":[855.192,912.921],"ix":2},"a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"r":{"a":0,"k":0,"ix":6},"o":{"a":0,"k":100,"ix":7},"sk":{"a":0,"k":0,"ix":4},"sa":{"a":0,"k":0,"ix":5},"nm":"Transform"}],"nm":"Group 14","np":2,"cix":2,"bm":0,"ix":14,"mn":"ADBE Vector Group","hd":false},{"ty":"gr","it":[{"ind":0,"ty":"sh","ix":1,"ks":{"a":0,"k":{"i":[[-2.761,1.94],[0,-3.503],[0,0],[2.683,-1.934],[0,3.581],[0,0]],"o":[[2.683,1.94],[0,0],[0,3.581],[-2.761,-1.934],[0,0],[0,-3.503]],"v":[[0,-25.273],[4.473,-16.7],[4.473,16.628],[0,25.273],[-4.473,16.628],[-4.473,-16.7]],"c":true},"ix":2},"nm":"Path 1","mn":"ADBE Vector Shape - Group","hd":false},{"ty":"fl","c":{"a":0,"k":[0.447058853449,0.082352941176,0.062745098039,1],"ix":4},"o":{"a":0,"k":100,"ix":5},"r":1,"bm":0,"nm":"Fill 1","mn":"ADBE Vector Graphic - Fill","hd":false},{"ty":"tr","p":{"a":0,"k":[977.903,858.494],"ix":2},"a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"r":{"a":0,"k":0,"ix":6},"o":{"a":0,"k":100,"ix":7},"sk":{"a":0,"k":0,"ix":4},"sa":{"a":0,"k":0,"ix":5},"nm":"Transform"}],"nm":"Group 15","np":2,"cix":2,"bm":0,"ix":15,"mn":"ADBE Vector Group","hd":false},{"ty":"gr","it":[{"ind":0,"ty":"sh","ix":1,"ks":{"a":0,"k":{"i":[[0,0],[5.215,0],[0,0],[0.821,5.072]],"o":[[-0.82,5.072],[0,0],[-5.215,0],[0,0]],"v":[[127.074,-4.473],[116.637,4.472],[-116.637,4.472],[-127.074,-4.473]],"c":true},"ix":2},"nm":"Path 1","mn":"ADBE Vector Shape - Group","hd":false},{"ty":"fl","c":{"a":0,"k":[0.870588295133,0.196078446332,0.149019607843,1],"ix":4},"o":{"a":0,"k":100,"ix":5},"r":1,"bm":0,"nm":"Fill 1","mn":"ADBE Vector Graphic - Fill","hd":false},{"ty":"tr","p":{"a":0,"k":[855.153,881.234],"ix":2},"a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"r":{"a":0,"k":0,"ix":6},"o":{"a":0,"k":100,"ix":7},"sk":{"a":0,"k":0,"ix":4},"sa":{"a":0,"k":0,"ix":5},"nm":"Transform"}],"nm":"Group 16","np":2,"cix":2,"bm":0,"ix":16,"mn":"ADBE Vector Group","hd":false},{"ty":"gr","it":[{"ind":0,"ty":"sh","ix":1,"ks":{"a":0,"k":{"i":[[-5.814,0],[0,0],[0,-5.814],[0,0],[5.814,0],[0,0],[0,5.814],[0,0]],"o":[[0,0],[5.814,0],[0,0],[0,5.814],[0,0],[-5.814,0],[0,0],[0,-5.814]],"v":[[-116.676,-27.21],[116.598,-27.21],[127.184,-16.702],[127.184,16.624],[116.598,27.21],[-116.676,27.21],[-127.184,16.624],[-127.184,-16.702]],"c":true},"ix":2},"nm":"Path 1","mn":"ADBE Vector Shape - Group","hd":false},{"ty":"fl","c":{"a":0,"k":[0.941176530427,0.250980392157,0.20000001496,1],"ix":4},"o":{"a":0,"k":100,"ix":5},"r":1,"bm":0,"nm":"Fill 1","mn":"ADBE Vector Graphic - Fill","hd":false},{"ty":"tr","p":{"a":0,"k":[855.192,858.497],"ix":2},"a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"r":{"a":0,"k":0,"ix":6},"o":{"a":0,"k":100,"ix":7},"sk":{"a":0,"k":0,"ix":4},"sa":{"a":0,"k":0,"ix":5},"nm":"Transform"}],"nm":"Group 17","np":2,"cix":2,"bm":0,"ix":17,"mn":"ADBE Vector Group","hd":false},{"ty":"gr","it":[{"ind":0,"ty":"sh","ix":1,"ks":{"a":0,"k":{"i":[[-2.683,1.934],[0,-3.581],[0,0],[2.688,-1.868],[0,3.503],[0,0]],"o":[[2.688,1.934],[0,0],[0,3.503],[-2.683,-1.868],[0,0],[0,-3.581]],"v":[[-0.003,-25.273],[4.477,-16.628],[4.477,16.7],[-0.003,25.273],[-4.477,16.7],[-4.477,-16.628]],"c":true},"ix":2},"nm":"Path 1","mn":"ADBE Vector Shape - Group","hd":false},{"ty":"fl","c":{"a":0,"k":[0.447058853449,0.082352941176,0.062745098039,1],"ix":4},"o":{"a":0,"k":100,"ix":5},"r":1,"bm":0,"nm":"Fill 1","mn":"ADBE Vector Graphic - Fill","hd":false},{"ty":"tr","p":{"a":0,"k":[990.876,886.905],"ix":2},"a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"r":{"a":0,"k":0,"ix":6},"o":{"a":0,"k":100,"ix":7},"sk":{"a":0,"k":0,"ix":4},"sa":{"a":0,"k":0,"ix":5},"nm":"Transform"}],"nm":"Group 18","np":2,"cix":2,"bm":0,"ix":18,"mn":"ADBE Vector Group","hd":false},{"ty":"gr","it":[{"ind":0,"ty":"sh","ix":1,"ks":{"a":0,"k":{"i":[[0,0],[5.299,0],[0,0],[0.742,5]],"o":[[-0.748,5],[0,0],[-5.293,0],[0,0]],"v":[[127.037,-4.473],[116.595,4.473],[-116.602,4.473],[-127.038,-4.473]],"c":true},"ix":2},"nm":"Path 1","mn":"ADBE Vector Shape - Group","hd":false},{"ty":"fl","c":{"a":0,"k":[0.870588295133,0.196078446332,0.149019607843,1],"ix":4},"o":{"a":0,"k":100,"ix":5},"r":1,"bm":0,"nm":"Fill 1","mn":"ADBE Vector Graphic - Fill","hd":false},{"ty":"tr","p":{"a":0,"k":[868.164,909.711],"ix":2},"a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"r":{"a":0,"k":0,"ix":6},"o":{"a":0,"k":100,"ix":7},"sk":{"a":0,"k":0,"ix":4},"sa":{"a":0,"k":0,"ix":5},"nm":"Transform"}],"nm":"Group 19","np":2,"cix":2,"bm":0,"ix":19,"mn":"ADBE Vector Group","hd":false},{"ty":"gr","it":[{"ind":0,"ty":"sh","ix":1,"ks":{"a":0,"k":{"i":[[-5.815,0],[0,0],[0,-5.814],[0,0],[5.821,0],[0,0],[0,5.814],[0,0]],"o":[[0,0],[5.821,0],[0,0],[0,5.814],[0,0],[-5.815,0],[0,0],[0,-5.814]],"v":[[-116.601,-27.246],[116.595,-27.246],[127.188,-16.66],[127.188,16.667],[116.595,27.246],[-116.601,27.246],[-127.188,16.667],[-127.188,-16.66]],"c":true},"ix":2},"nm":"Path 1","mn":"ADBE Vector Shape - Group","hd":false},{"ty":"fl","c":{"a":0,"k":[0.941176530427,0.250980392157,0.20000001496,1],"ix":4},"o":{"a":0,"k":100,"ix":5},"r":1,"bm":0,"nm":"Fill 1","mn":"ADBE Vector Graphic - Fill","hd":false},{"ty":"tr","p":{"a":0,"k":[868.164,886.937],"ix":2},"a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"r":{"a":0,"k":0,"ix":6},"o":{"a":0,"k":100,"ix":7},"sk":{"a":0,"k":0,"ix":4},"sa":{"a":0,"k":0,"ix":5},"nm":"Transform"}],"nm":"Group 20","np":2,"cix":2,"bm":0,"ix":20,"mn":"ADBE Vector Group","hd":false}],"ip":0,"op":75,"st":0,"bm":0},{"ddd":0,"ind":4,"ty":0,"nm":"%","refId":"comp_0","sr":1,"ks":{"o":{"a":0,"k":100,"ix":11},"r":{"a":0,"k":0,"ix":10},"p":{"a":1,"k":[{"i":{"x":0,"y":1},"o":{"x":0.333,"y":0},"t":7,"s":[735.468,748.289,0],"to":[-134.912,-179.333,0],"ti":[70.003,-170.289,0]},{"t":24,"s":[315.997,770.289,0]}],"ix":2},"a":{"a":0,"k":[277.662,704.88,0],"ix":1},"s":{"a":1,"k":[{"i":{"x":[0,0,0.667],"y":[1,1,1]},"o":{"x":[0.333,0.333,0.333],"y":[0,0,0]},"t":10,"s":[57,57,100]},{"t":27,"s":[100,100,100]}],"ix":6}},"ao":0,"w":1080,"h":1080,"ip":0,"op":75,"st":0,"bm":0},{"ddd":0,"ind":5,"ty":4,"nm":"gift Outlines 2","sr":1,"ks":{"o":{"a":0,"k":100,"ix":11},"r":{"a":1,"k":[{"i":{"x":[0],"y":[0.93]},"o":{"x":[0.037],"y":[0]},"t":10,"s":[-30]},{"t":75,"s":[0]}],"ix":10},"p":{"a":0,"k":[813.484,510.895,0],"ix":2},"a":{"a":0,"k":[943.984,637.895,0],"ix":1},"s":{"a":0,"k":[100,100,100],"ix":6}},"ao":0,"shapes":[{"ty":"gr","it":[{"ind":0,"ty":"sh","ix":1,"ks":{"a":0,"k":{"i":[[37.129,-53.607],[-13.568,23.633]],"o":[[-37.949,-4.18],[14.094,-24.603]],"v":[[-47.487,17.597],[-126.517,-67.169]],"c":true},"ix":2},"nm":"Path 1","mn":"ADBE Vector Shape - Group","hd":false},{"ind":1,"ty":"sh","ix":2,"ks":{"a":0,"k":{"i":[[27.885,-58.9],[-13.717,23.561]],"o":[[22.592,30.859],[14.238,-24.525]],"v":[[3.202,46.823],[116.152,72.911]],"c":true},"ix":2},"nm":"Path 2","mn":"ADBE Vector Shape - Group","hd":false},{"ind":2,"ty":"sh","ix":3,"ks":{"a":0,"k":{"i":[[0,0],[-11.628,25.951],[27.435,-102.734],[22.292,-30.859],[35.559,7.155],[0,0]],"o":[[-24.004,-27.214],[15.585,-34.739],[75.222,-75.15],[-16.621,23.04],[0,0],[0,0]],"v":[[-128.829,2.61],[-153.131,-82.233],[-13.568,17.448],[142.467,88.417],[56.81,109.818],[-35.931,56.14]],"c":true},"ix":2},"nm":"Path 3","mn":"ADBE Vector Shape - Group","hd":false},{"ty":"mm","mm":1,"nm":"Merge Paths 1","mn":"ADBE Vector Filter - Merge","hd":false},{"ty":"fl","c":{"a":0,"k":[1,0.541176470588,0,1],"ix":4},"o":{"a":0,"k":100,"ix":5},"r":1,"bm":0,"nm":"Fill 1","mn":"ADBE Vector Graphic - Fill","hd":false},{"ty":"tr","p":{"a":0,"k":[774.225,385.388],"ix":2},"a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"r":{"a":0,"k":0,"ix":6},"o":{"a":0,"k":100,"ix":7},"sk":{"a":0,"k":0,"ix":4},"sa":{"a":0,"k":0,"ix":5},"nm":"Transform"}],"nm":"Group 1","np":5,"cix":2,"bm":0,"ix":1,"mn":"ADBE Vector Group","hd":false},{"ty":"gr","it":[{"ind":0,"ty":"sh","ix":1,"ks":{"a":0,"k":{"i":[[0,0],[0,0],[0,0],[0,0]],"o":[[0,0],[0,0],[0,0],[0,0]],"v":[[-41.192,27.252],[-2.872,49.316],[41.191,-27.246],[2.871,-49.316]],"c":true},"ix":2},"nm":"Path 1","mn":"ADBE Vector Shape - Group","hd":false},{"ty":"fl","c":{"a":0,"k":[1,0.650980392157,0.235294132607,1],"ix":4},"o":{"a":0,"k":100,"ix":5},"r":1,"bm":0,"nm":"Fill 1","mn":"ADBE Vector Graphic - Fill","hd":false},{"ty":"tr","p":{"a":0,"k":[716.334,479.809],"ix":2},"a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"r":{"a":0,"k":0,"ix":6},"o":{"a":0,"k":100,"ix":7},"sk":{"a":0,"k":0,"ix":4},"sa":{"a":0,"k":0,"ix":5},"nm":"Transform"}],"nm":"Group 2","np":2,"cix":2,"bm":0,"ix":2,"mn":"ADBE Vector Group","hd":false},{"ty":"gr","it":[{"ind":0,"ty":"sh","ix":1,"ks":{"a":0,"k":{"i":[[0,0],[0,0],[0,0],[0,0]],"o":[[0,0],[0,0],[0,0],[0,0]],"v":[[-183.552,-156.562],[227.607,79.922],[183.545,156.562],[-227.608,-79.993]],"c":true},"ix":2},"nm":"Path 1","mn":"ADBE Vector Shape - Group","hd":false},{"ty":"fl","c":{"a":0,"k":[0.054901964524,0.454901990704,0.513725490196,1],"ix":4},"o":{"a":0,"k":100,"ix":5},"r":1,"bm":0,"nm":"Fill 1","mn":"ADBE Vector Graphic - Fill","hd":false},{"ty":"tr","p":{"a":0,"k":[716.377,479.848],"ix":2},"a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"r":{"a":0,"k":0,"ix":6},"o":{"a":0,"k":100,"ix":7},"sk":{"a":0,"k":0,"ix":4},"sa":{"a":0,"k":0,"ix":5},"nm":"Transform"}],"nm":"Group 3","np":2,"cix":2,"bm":0,"ix":3,"mn":"ADBE Vector Group","hd":false},{"ty":"gr","it":[{"ind":0,"ty":"sh","ix":1,"ks":{"a":0,"k":{"i":[[0,0],[0,0],[0,0],[0,0]],"o":[[0,0],[0,0],[0,0],[0,0]],"v":[[-181.237,-112.237],[187.799,100.758],[181.158,112.237],[-187.8,-100.831]],"c":true},"ix":2},"nm":"Path 1","mn":"ADBE Vector Shape - Group","hd":false},{"ty":"fl","c":{"a":0,"k":[0.235294132607,0.560784313725,0.603921568627,1],"ix":4},"o":{"a":0,"k":100,"ix":5},"r":1,"bm":0,"nm":"Fill 1","mn":"ADBE Vector Graphic - Fill","hd":false},{"ty":"tr","p":{"a":0,"k":[696.842,525.658],"ix":2},"a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"r":{"a":0,"k":0,"ix":6},"o":{"a":0,"k":100,"ix":7},"sk":{"a":0,"k":0,"ix":4},"sa":{"a":0,"k":0,"ix":5},"nm":"Transform"}],"nm":"Group 4","np":2,"cix":2,"bm":0,"ix":4,"mn":"ADBE Vector Group","hd":false}],"ip":0,"op":75,"st":0,"bm":0},{"ddd":0,"ind":6,"ty":4,"nm":"gift Outlines","sr":1,"ks":{"o":{"a":0,"k":100,"ix":11},"r":{"a":0,"k":0,"ix":10},"p":{"a":0,"k":[536.896,660.883,0],"ix":2},"a":{"a":0,"k":[662.396,785.883,0],"ix":1},"s":{"a":0,"k":[100,100,100],"ix":6}},"ao":0,"shapes":[{"ty":"gr","it":[{"ind":0,"ty":"sh","ix":1,"ks":{"a":0,"k":{"i":[[0,0],[0,0],[0,0],[0,0]],"o":[[0,0],[0,0],[0,0],[0,0]],"v":[[220.859,23.744],[-220.859,23.744],[-220.859,-23.743],[220.859,-23.743]],"c":true},"ix":2},"nm":"Path 1","mn":"ADBE Vector Shape - Group","hd":false},{"ty":"fl","c":{"a":0,"k":[1,0.650980392157,0.235294132607,1],"ix":4},"o":{"a":0,"k":100,"ix":5},"r":1,"bm":0,"nm":"Fill 1","mn":"ADBE Vector Graphic - Fill","hd":false},{"ty":"tr","p":{"a":0,"k":[662.435,795.089],"ix":2},"a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"r":{"a":0,"k":0,"ix":6},"o":{"a":0,"k":100,"ix":7},"sk":{"a":0,"k":0,"ix":4},"sa":{"a":0,"k":0,"ix":5},"nm":"Transform"}],"nm":"Group 1","np":2,"cix":2,"bm":0,"ix":1,"mn":"ADBE Vector Group","hd":false},{"ty":"gr","it":[{"ind":0,"ty":"sh","ix":1,"ks":{"a":0,"k":{"i":[[0,0],[0,0],[0,0],[0,0]],"o":[[0,0],[0,0],[0,0],[0,0]],"v":[[-22.102,151.231],[22.103,151.231],[22.103,-151.23],[-22.102,-151.23]],"c":true},"ix":2},"nm":"Path 1","mn":"ADBE Vector Shape - Group","hd":false},{"ty":"fl","c":{"a":0,"k":[1,0.541176470588,0,1],"ix":4},"o":{"a":0,"k":100,"ix":5},"r":1,"bm":0,"nm":"Fill 1","mn":"ADBE Vector Graphic - Fill","hd":false},{"ty":"tr","p":{"a":0,"k":[662.434,795.089],"ix":2},"a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"r":{"a":0,"k":0,"ix":6},"o":{"a":0,"k":100,"ix":7},"sk":{"a":0,"k":0,"ix":4},"sa":{"a":0,"k":0,"ix":5},"nm":"Transform"}],"nm":"Group 2","np":2,"cix":2,"bm":0,"ix":2,"mn":"ADBE Vector Group","hd":false},{"ty":"gr","it":[{"ind":0,"ty":"sh","ix":1,"ks":{"a":0,"k":{"i":[[0,0],[0,0],[0,0],[0,0]],"o":[[0,0],[0,0],[0,0],[0,0]],"v":[[-220.82,9.544],[220.898,8.867],[220.898,-9.544],[-220.898,-8.874]],"c":true},"ix":2},"nm":"Path 1","mn":"ADBE Vector Shape - Group","hd":false},{"ty":"fl","c":{"a":0,"k":[0.235294132607,0.560784313725,0.603921568627,1],"ix":4},"o":{"a":0,"k":100,"ix":5},"r":1,"bm":0,"nm":"Fill 1","mn":"ADBE Vector Graphic - Fill","hd":false},{"ty":"tr","p":{"a":0,"k":[662.396,634.991],"ix":2},"a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"r":{"a":0,"k":0,"ix":6},"o":{"a":0,"k":100,"ix":7},"sk":{"a":0,"k":0,"ix":4},"sa":{"a":0,"k":0,"ix":5},"nm":"Transform"}],"nm":"Group 3","np":2,"cix":2,"bm":0,"ix":3,"mn":"ADBE Vector Group","hd":false},{"ty":"gr","it":[{"ind":0,"ty":"sh","ix":1,"ks":{"a":0,"k":{"i":[[0,0],[0,0],[0,0],[0,0]],"o":[[0,0],[0,0],[0,0],[0,0]],"v":[[-220.859,151.231],[220.859,151.231],[220.859,-151.23],[-220.859,-151.23]],"c":true},"ix":2},"nm":"Path 1","mn":"ADBE Vector Shape - Group","hd":false},{"ty":"fl","c":{"a":0,"k":[0.054901964524,0.454901990704,0.513725490196,1],"ix":4},"o":{"a":0,"k":100,"ix":5},"r":1,"bm":0,"nm":"Fill 1","mn":"ADBE Vector Graphic - Fill","hd":false},{"ty":"tr","p":{"a":0,"k":[662.435,795.089],"ix":2},"a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"r":{"a":0,"k":0,"ix":6},"o":{"a":0,"k":100,"ix":7},"sk":{"a":0,"k":0,"ix":4},"sa":{"a":0,"k":0,"ix":5},"nm":"Transform"}],"nm":"Group 4","np":2,"cix":2,"bm":0,"ix":4,"mn":"ADBE Vector Group","hd":false}],"ip":0,"op":75,"st":0,"bm":0},{"ddd":0,"ind":7,"ty":4,"nm":"discount Outlines","parent":8,"sr":1,"ks":{"o":{"a":0,"k":100,"ix":11},"r":{"a":0,"k":0,"ix":10},"p":{"a":0,"k":[347.226,434.558,0],"ix":2},"a":{"a":0,"k":[347.226,434.558,0],"ix":1},"s":{"a":0,"k":[100,100,100],"ix":6}},"ao":0,"shapes":[{"ty":"gr","it":[{"ind":0,"ty":"sh","ix":1,"ks":{"a":0,"k":{"i":[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],"o":[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],"v":[[103.294,-25.088],[114.029,-25.088],[114.029,34.925],[124.316,34.925],[124.316,-25.088],[135.052,-25.088],[135.052,-35.075],[103.294,-35.075]],"c":true},"ix":2},"nm":"Path 1","mn":"ADBE Vector Shape - Group","hd":false},{"ind":1,"ty":"sh","ix":2,"ks":{"a":0,"k":{"i":[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],"o":[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],"v":[[88.307,34.925],[98.893,34.925],[98.893,-35.075],[89.727,-35.075],[89.727,6.82],[79.141,-35.075],[66.243,-35.075],[66.243,34.925],[75.488,34.925],[75.488,-15.771]],"c":true},"ix":2},"nm":"Path 2","mn":"ADBE Vector Shape - Group","hd":false},{"ind":2,"ty":"sh","ix":3,"ks":{"a":0,"k":{"i":[[0,0],[0,0],[-10.131,0],[0,11.185],[0,0],[0,0],[0,0],[3.275,0],[0,4.994],[0,0]],"o":[[0,0],[0,11.185],[10.072,0],[0,0],[0,0],[0,0],[0,4.994],[-3.288,0],[0,0],[0,0]],"v":[[28.594,-35.075],[28.594,18.227],[43.945,35.823],[59.31,18.227],[59.31,-35.075],[49.544,-35.075],[49.544,18.896],[44.251,25.68],[38.88,18.896],[38.88,-35.075]],"c":true},"ix":2},"nm":"Path 3","mn":"ADBE Vector Shape - Group","hd":false},{"ind":3,"ty":"sh","ix":4,"ks":{"a":0,"k":{"i":[[0,0],[-10.136,0],[0,11.263],[0,0],[10.066,0],[0,-11.263]],"o":[[0,11.263],[10.066,0],[0,0],[0,-11.263],[-10.136,0],[0,0]],"v":[[-8.828,18.076],[6.822,35.674],[22.408,18.076],[22.408,-18.225],[6.822,-35.823],[-8.828,-18.225]],"c":true},"ix":2},"nm":"Path 4","mn":"ADBE Vector Shape - Group","hd":false},{"ind":4,"ty":"sh","ix":5,"ks":{"a":0,"k":{"i":[[0,0],[-3.281,0],[0,-4.993],[0,0],[3.282,0],[0,4.993]],"o":[[0,-4.993],[3.282,0],[0,0],[0,4.993],[-3.281,0],[0,0]],"v":[[1.458,-18.974],[6.822,-25.829],[12.115,-18.974],[12.115,18.826],[6.822,25.68],[1.458,18.826]],"c":true},"ix":2},"nm":"Path 5","mn":"ADBE Vector Shape - Group","hd":false},{"ind":5,"ty":"sh","ix":6,"ks":{"a":0,"k":{"i":[[0,0],[0,0],[3.281,0],[0,4.993],[0,0],[-3.281,0],[0,-4.993],[0,0],[0,0],[0,0],[10.144,0],[0,-11.263],[0,0],[-10.065,0],[0,11.263],[0,0]],"o":[[0,0],[0,4.993],[-3.281,0],[0,0],[0,-4.993],[3.281,0],[0,0],[0,0],[0,0],[0,-11.263],[-10.065,0],[0,0],[0,11.263],[10.144,0],[0,0],[0,0]],"v":[[-23.965,8.831],[-23.965,18.826],[-29.336,25.609],[-34.629,18.826],[-34.629,-18.974],[-29.336,-25.829],[-23.965,-18.974],[-23.965,-11.441],[-14.271,-11.441],[-14.271,-18.225],[-29.635,-35.823],[-44.916,-18.225],[-44.916,18.076],[-29.635,35.674],[-14.271,18.076],[-14.271,8.831]],"c":true},"ix":2},"nm":"Path 6","mn":"ADBE Vector Shape - Group","hd":false},{"ind":6,"ty":"sh","ix":7,"ks":{"a":0,"k":{"i":[[0,-11.263],[0,-14.395],[3.276,0],[0,4.993],[0,0],[0,0],[0,0],[-10.136,0],[0,11.263],[0,14.388],[-3.275,0],[0,-4.993],[0,0],[0,0],[0,0],[9.987,0]],"o":[[0,19.974],[0,4.993],[-3.281,0],[0,0],[0,0],[0,0],[0,11.263],[10.066,0],[0,-19.98],[0,-4.993],[3.281,0],[0,0],[0,0],[0,0],[0,-11.263],[-9.994,0]],"v":[[-80.404,-18.225],[-60.273,18.826],[-65.639,25.609],[-70.937,18.826],[-70.937,13.831],[-80.703,13.831],[-80.703,18.076],[-65.346,35.674],[-49.987,18.076],[-70.117,-18.974],[-64.974,-25.829],[-59.824,-18.974],[-59.824,-16.065],[-50.059,-16.065],[-50.059,-18.225],[-65.267,-35.823]],"c":true},"ix":2},"nm":"Path 7","mn":"ADBE Vector Shape - Group","hd":false},{"ind":7,"ty":"sh","ix":8,"ks":{"a":0,"k":{"i":[[0,0],[0,0],[0,0],[0,0]],"o":[[0,0],[0,0],[0,0],[0,0]],"v":[[-96.875,34.925],[-86.589,34.925],[-86.589,-35.075],[-96.875,-35.075]],"c":true},"ix":2},"nm":"Path 8","mn":"ADBE Vector Shape - Group","hd":false},{"ind":8,"ty":"sh","ix":9,"ks":{"a":0,"k":{"i":[[0,0],[0,-5.072],[0,0],[3.281,0],[0,0],[0,0]],"o":[[3.281,0],[0,0],[0,5.071],[0,0],[0,0],[0,0]],"v":[[-118.945,-25.088],[-113.725,-18.225],[-113.725,18.076],[-118.945,24.938],[-124.76,24.938],[-124.76,-25.088]],"c":true},"ix":2},"nm":"Path 9","mn":"ADBE Vector Shape - Group","hd":false},{"ind":9,"ty":"sh","ix":10,"ks":{"a":0,"k":{"i":[[0,0],[0,0],[0,11.178],[0,0],[10.286,0],[0,0]],"o":[[0,0],[10.286,0],[0,0],[0,-11.185],[0,0],[0,0]],"v":[[-135.053,34.925],[-118.796,34.925],[-103.437,17.633],[-103.437,-17.782],[-118.796,-35.075],[-135.053,-35.075]],"c":true},"ix":2},"nm":"Path 10","mn":"ADBE Vector Shape - Group","hd":false},{"ty":"mm","mm":1,"nm":"Merge Paths 1","mn":"ADBE Vector Filter - Merge","hd":false},{"ty":"fl","c":{"a":0,"k":[0.03137254902,0.776470648074,0.635294117647,1],"ix":4},"o":{"a":0,"k":100,"ix":5},"r":1,"bm":0,"nm":"Fill 1","mn":"ADBE Vector Graphic - Fill","hd":false},{"ty":"tr","p":{"a":0,"k":[347.226,434.558],"ix":2},"a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"r":{"a":0,"k":0,"ix":6},"o":{"a":0,"k":100,"ix":7},"sk":{"a":0,"k":0,"ix":4},"sa":{"a":0,"k":0,"ix":5},"nm":"Transform"}],"nm":"Group 1","np":12,"cix":2,"bm":0,"ix":1,"mn":"ADBE Vector Group","hd":false}],"ip":0,"op":75,"st":0,"bm":0},{"ddd":0,"ind":8,"ty":4,"nm":"chat Outlines","sr":1,"ks":{"o":{"a":0,"k":100,"ix":11},"r":{"a":1,"k":[{"i":{"x":[0],"y":[1]},"o":{"x":[0.333],"y":[0]},"t":11,"s":[-15]},{"i":{"x":[0.82],"y":[0.921]},"o":{"x":[0.524],"y":[0]},"t":25.118,"s":[16.571]},{"i":{"x":[0.405],"y":[1]},"o":{"x":[0.612],"y":[-0.362]},"t":35,"s":[-13.564]},{"t":41,"s":[0]}],"ix":10},"p":{"a":0,"k":[439.461,466.898,0],"ix":2},"a":{"a":0,"k":[564.961,591.898,0],"ix":1},"s":{"a":1,"k":[{"i":{"x":[0,0,0.667],"y":[1,1,1]},"o":{"x":[0.333,0.333,0.333],"y":[0,0,0]},"t":11,"s":[0,0,100]},{"i":{"x":[0.667,0.667,0.667],"y":[1,1,1]},"o":{"x":[1,1,0.333],"y":[0,0,0]},"t":25.118,"s":[101.571,101.571,100]},{"t":41,"s":[96,96,100]}],"ix":6}},"ao":0,"shapes":[{"ty":"gr","it":[{"ind":0,"ty":"sh","ix":1,"ks":{"a":0,"k":{"i":[[-111.387,0],[0,-86.849],[21.392,-24.974],[0,0],[0,0],[47.708,0],[0,86.927]],"o":[[111.451,0],[0,32.278],[0,0],[0,0],[-34.519,21.621],[-111.387,0],[0,-86.849]],"v":[[-7.936,-157.38],[193.874,-0.075],[159.955,87.224],[209.681,157.38],[101.654,132.034],[-7.936,157.229],[-209.681,-0.075]],"c":true},"ix":2},"nm":"Path 1","mn":"ADBE Vector Shape - Group","hd":false},{"ty":"fl","c":{"a":0,"k":[1,1,1,1],"ix":4},"o":{"a":0,"k":100,"ix":5},"r":1,"bm":0,"nm":"Fill 1","mn":"ADBE Vector Graphic - Fill","hd":false},{"ty":"tr","p":{"a":0,"k":[355.28,434.519],"ix":2},"a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"r":{"a":0,"k":0,"ix":6},"o":{"a":0,"k":100,"ix":7},"sk":{"a":0,"k":0,"ix":4},"sa":{"a":0,"k":0,"ix":5},"nm":"Transform"}],"nm":"Group 1","np":2,"cix":2,"bm":0,"ix":1,"mn":"ADBE Vector Group","hd":false}],"ip":0,"op":75,"st":0,"bm":0},{"ddd":0,"ind":10,"ty":4,"nm":"red Outlines","sr":1,"ks":{"o":{"a":0,"k":100,"ix":11},"r":{"a":1,"k":[{"i":{"x":[0],"y":[1]},"o":{"x":[0.017],"y":[0]},"t":11,"s":[0]},{"i":{"x":[0],"y":[1]},"o":{"x":[0.333],"y":[0]},"t":58,"s":[257]},{"t":74,"s":[0]}],"ix":10},"p":{"a":0,"k":[895.231,632.133,0],"ix":2},"a":{"a":0,"k":[1020.731,757.133,0],"ix":1},"s":{"a":0,"k":[100,100,100],"ix":6}},"ao":0,"shapes":[{"ty":"gr","it":[{"ind":0,"ty":"sh","ix":1,"ks":{"a":0,"k":{"i":[[0,0],[0,0],[0,0],[0,0]],"o":[[0,0],[0,0],[0,0],[0,0]],"v":[[-31.201,31.198],[-6.826,14.87],[31.201,-31.198],[-14.873,6.823]],"c":true},"ix":2},"nm":"Path 1","mn":"ADBE Vector Shape - Group","hd":false},{"ty":"fl","c":{"a":0,"k":[0.941176530427,0.250980392157,0.20000001496,1],"ix":4},"o":{"a":0,"k":100,"ix":5},"r":1,"bm":0,"nm":"Fill 1","mn":"ADBE Vector Graphic - Fill","hd":false},{"ty":"tr","p":{"a":0,"k":[1031.767,746.332],"ix":2},"a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"r":{"a":0,"k":0,"ix":6},"o":{"a":0,"k":100,"ix":7},"sk":{"a":0,"k":0,"ix":4},"sa":{"a":0,"k":0,"ix":5},"nm":"Transform"}],"nm":"Group 1","np":2,"cix":2,"bm":0,"ix":1,"mn":"ADBE Vector Group","hd":false}],"ip":0,"op":75,"st":0,"bm":0},{"ddd":0,"ind":11,"ty":4,"nm":"clock Outlines","sr":1,"ks":{"o":{"a":0,"k":100,"ix":11},"r":{"a":0,"k":0,"ix":10},"p":{"a":0,"k":[895.382,632.221,0],"ix":2},"a":{"a":0,"k":[1020.882,757.221,0],"ix":1},"s":{"a":0,"k":[100,100,100],"ix":6}},"ao":0,"shapes":[{"ty":"gr","it":[{"ind":0,"ty":"sh","ix":1,"ks":{"a":0,"k":{"i":[[-2.389,0],[0,-2.383],[2.383,0],[0,2.389]],"o":[[2.383,0],[0,2.389],[-2.389,0],[0,-2.383]],"v":[[-0.036,-4.362],[4.287,-0.039],[-0.036,4.29],[-4.365,-0.039]],"c":true},"ix":2},"nm":"Path 1","mn":"ADBE Vector Shape - Group","hd":false},{"ind":1,"ty":"sh","ix":2,"ks":{"a":0,"k":{"i":[[-3.88,0],[0,-3.874],[3.952,0],[0,3.952]],"o":[[3.952,0],[0,3.952],[-3.88,0],[0,-3.874]],"v":[[-0.036,-7.044],[7.048,-0.039],[-0.036,7.044],[-7.048,-0.039]],"c":true},"ix":2},"nm":"Path 2","mn":"ADBE Vector Shape - Group","hd":false},{"ty":"mm","mm":1,"nm":"Merge Paths 1","mn":"ADBE Vector Filter - Merge","hd":false},{"ty":"fl","c":{"a":0,"k":[0,0,0,1],"ix":4},"o":{"a":0,"k":100,"ix":5},"r":1,"bm":0,"nm":"Fill 1","mn":"ADBE Vector Graphic - Fill","hd":false},{"ty":"tr","p":{"a":0,"k":[1020.882,757.218],"ix":2},"a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"r":{"a":0,"k":0,"ix":6},"o":{"a":0,"k":100,"ix":7},"sk":{"a":0,"k":0,"ix":4},"sa":{"a":0,"k":0,"ix":5},"nm":"Transform"}],"nm":"Group 1","np":4,"cix":2,"bm":0,"ix":1,"mn":"ADBE Vector Group","hd":false},{"ty":"gr","it":[{"ind":0,"ty":"sh","ix":1,"ks":{"a":0,"k":{"i":[[0,0],[0,0],[0,0],[0,0]],"o":[[0,0],[0,0],[0,0],[0,0]],"v":[[-5.593,-1.53],[5.592,-1.53],[5.592,1.53],[-5.593,1.53]],"c":true},"ix":2},"nm":"Path 1","mn":"ADBE Vector Shape - Group","hd":false},{"ty":"fl","c":{"a":0,"k":[0,0,0,1],"ix":4},"o":{"a":0,"k":100,"ix":5},"r":1,"bm":0,"nm":"Fill 1","mn":"ADBE Vector Graphic - Fill","hd":false},{"ty":"tr","p":{"a":0,"k":[947.859,757.218],"ix":2},"a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"r":{"a":0,"k":0,"ix":6},"o":{"a":0,"k":100,"ix":7},"sk":{"a":0,"k":0,"ix":4},"sa":{"a":0,"k":0,"ix":5},"nm":"Transform"}],"nm":"Group 2","np":2,"cix":2,"bm":0,"ix":2,"mn":"ADBE Vector Group","hd":false},{"ty":"gr","it":[{"ind":0,"ty":"sh","ix":1,"ks":{"a":0,"k":{"i":[[0,0],[0,0],[0,0],[0,0]],"o":[[0,0],[0,0],[0,0],[0,0]],"v":[[1.526,5.553],[-1.526,5.553],[-1.526,-5.554],[1.526,-5.554]],"c":true},"ix":2},"nm":"Path 1","mn":"ADBE Vector Shape - Group","hd":false},{"ty":"fl","c":{"a":0,"k":[0,0,0,1],"ix":4},"o":{"a":0,"k":100,"ix":5},"r":1,"bm":0,"nm":"Fill 1","mn":"ADBE Vector Graphic - Fill","hd":false},{"ty":"tr","p":{"a":0,"k":[1020.882,830.206],"ix":2},"a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"r":{"a":0,"k":0,"ix":6},"o":{"a":0,"k":100,"ix":7},"sk":{"a":0,"k":0,"ix":4},"sa":{"a":0,"k":0,"ix":5},"nm":"Transform"}],"nm":"Group 3","np":2,"cix":2,"bm":0,"ix":3,"mn":"ADBE Vector Group","hd":false},{"ty":"gr","it":[{"ind":0,"ty":"sh","ix":1,"ks":{"a":0,"k":{"i":[[0,0],[0,0],[0,0],[0,0]],"o":[[0,0],[0,0],[0,0],[0,0]],"v":[[5.553,1.53],[-5.553,1.53],[-5.553,-1.53],[5.553,-1.53]],"c":true},"ix":2},"nm":"Path 1","mn":"ADBE Vector Shape - Group","hd":false},{"ty":"fl","c":{"a":0,"k":[0,0,0,1],"ix":4},"o":{"a":0,"k":100,"ix":5},"r":1,"bm":0,"nm":"Fill 1","mn":"ADBE Vector Graphic - Fill","hd":false},{"ty":"tr","p":{"a":0,"k":[1093.867,757.218],"ix":2},"a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"r":{"a":0,"k":0,"ix":6},"o":{"a":0,"k":100,"ix":7},"sk":{"a":0,"k":0,"ix":4},"sa":{"a":0,"k":0,"ix":5},"nm":"Transform"}],"nm":"Group 4","np":2,"cix":2,"bm":0,"ix":4,"mn":"ADBE Vector Group","hd":false},{"ty":"gr","it":[{"ind":0,"ty":"sh","ix":1,"ks":{"a":0,"k":{"i":[[0,0],[0,0],[0,0],[0,0]],"o":[[0,0],[0,0],[0,0],[0,0]],"v":[[-1.526,5.592],[1.526,5.592],[1.526,-5.593],[-1.526,-5.593]],"c":true},"ix":2},"nm":"Path 1","mn":"ADBE Vector Shape - Group","hd":false},{"ty":"fl","c":{"a":0,"k":[0,0,0,1],"ix":4},"o":{"a":0,"k":100,"ix":5},"r":1,"bm":0,"nm":"Fill 1","mn":"ADBE Vector Graphic - Fill","hd":false},{"ty":"tr","p":{"a":0,"k":[1020.883,684.197],"ix":2},"a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"r":{"a":0,"k":0,"ix":6},"o":{"a":0,"k":100,"ix":7},"sk":{"a":0,"k":0,"ix":4},"sa":{"a":0,"k":0,"ix":5},"nm":"Transform"}],"nm":"Group 5","np":2,"cix":2,"bm":0,"ix":5,"mn":"ADBE Vector Group","hd":false},{"ty":"gr","it":[{"ind":0,"ty":"sh","ix":1,"ks":{"a":0,"k":{"i":[[0,0],[-0.898,0.521],[0,0],[0,0]],"o":[[0.82,-0.671],[0,0],[0,0],[0,0]],"v":[[-47.048,-63.636],[-44.509,-65.42],[-41.306,-61.026],[-43.838,-59.235]],"c":true},"ix":2},"nm":"Path 1","mn":"ADBE Vector Shape - Group","hd":false},{"ind":1,"ty":"sh","ix":2,"ks":{"a":0,"k":{"i":[[0,0],[-0.443,0.899],[0,0],[0,0]],"o":[[0.442,-0.971],[0,0],[0,0],[0,0]],"v":[[-70.452,-35.602],[-69.04,-38.363],[-64.118,-35.902],[-65.537,-33.07]],"c":true},"ix":2},"nm":"Path 2","mn":"ADBE Vector Shape - Group","hd":false},{"ind":2,"ty":"sh","ix":3,"ks":{"a":0,"k":{"i":[[0,0],[0.449,0.898],[0,0],[0,0]],"o":[[-0.52,-0.892],[0,0],[0,0],[0,0]],"v":[[-67.849,39.098],[-69.339,36.416],[-64.561,33.656],[-62.998,36.344]],"c":true},"ix":2},"nm":"Path 3","mn":"ADBE Vector Shape - Group","hd":false},{"ind":3,"ty":"sh","ix":4,"ks":{"a":0,"k":{"i":[[0,0],[0.899,0.599],[0,0],[0,0]],"o":[[-0.899,-0.521],[0,0],[0,0],[0,0]],"v":[[-42.497,65.42],[-45.108,63.701],[-42.048,59.079],[-39.515,60.798]],"c":true},"ix":2},"nm":"Path 4","mn":"ADBE Vector Shape - Group","hd":false},{"ind":4,"ty":"sh","ix":5,"ks":{"a":0,"k":{"i":[[0,0],[0.82,-0.527],[0,0],[0,0]],"o":[[-0.827,0.598],[0,0],[0,0],[0,0]],"v":[[45.179,63.552],[42.64,65.27],[39.658,60.798],[42.268,59.079]],"c":true},"ix":2},"nm":"Path 5","mn":"ADBE Vector Shape - Group","hd":false},{"ind":5,"ty":"sh","ix":6,"ks":{"a":0,"k":{"i":[[0,0],[0.52,-0.892],[0,0],[0,0]],"o":[[-0.522,0.899],[0,0],[0,0],[0,0]],"v":[[69.333,36.266],[67.764,38.948],[63.22,36.344],[64.782,33.656]],"c":true},"ix":2},"nm":"Path 6","mn":"ADBE Vector Shape - Group","hd":false},{"ind":6,"ty":"sh","ix":7,"ks":{"a":0,"k":{"i":[[0,0],[-0.527,-0.971],[0,0],[0,0]],"o":[[0.52,0.891],[0,0],[0,0],[0,0]],"v":[[68.962,-38.206],[70.452,-35.452],[65.752,-33.07],[64.339,-35.902]],"c":true},"ix":2},"nm":"Path 7","mn":"ADBE Vector Shape - Group","hd":false},{"ind":7,"ty":"sh","ix":8,"ks":{"a":0,"k":{"i":[[0,0],[-0.898,-0.67],[0,0],[0,0]],"o":[[0.814,0.599],[0,0],[0,0],[0,0]],"v":[[44.658,-65.348],[47.19,-63.487],[43.987,-59.235],[41.526,-61.026]],"c":true},"ix":2},"nm":"Path 8","mn":"ADBE Vector Shape - Group","hd":false},{"ty":"mm","mm":1,"nm":"Merge Paths 1","mn":"ADBE Vector Filter - Merge","hd":false},{"ty":"fl","c":{"a":0,"k":[0,0,0,1],"ix":4},"o":{"a":0,"k":100,"ix":5},"r":1,"bm":0,"nm":"Fill 1","mn":"ADBE Vector Graphic - Fill","hd":false},{"ty":"tr","p":{"a":0,"k":[1020.921,757.891],"ix":2},"a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"r":{"a":0,"k":0,"ix":6},"o":{"a":0,"k":100,"ix":7},"sk":{"a":0,"k":0,"ix":4},"sa":{"a":0,"k":0,"ix":5},"nm":"Transform"}],"nm":"Group 6","np":10,"cix":2,"bm":0,"ix":6,"mn":"ADBE Vector Group","hd":false},{"ty":"gr","it":[{"ind":0,"ty":"sh","ix":1,"ks":{"a":0,"k":{"i":[[-47.864,0],[0,47.936],[47.937,0],[0,-47.858]],"o":[[47.937,0],[0,-47.858],[-47.864,0],[0,47.936]],"v":[[-0.036,86.966],[86.963,-0.039],[-0.036,-86.966],[-86.963,-0.039]],"c":true},"ix":2},"nm":"Path 1","mn":"ADBE Vector Shape - Group","hd":false},{"ty":"fl","c":{"a":0,"k":[1,1,1,1],"ix":4},"o":{"a":0,"k":100,"ix":5},"r":1,"bm":0,"nm":"Fill 1","mn":"ADBE Vector Graphic - Fill","hd":false},{"ty":"tr","p":{"a":0,"k":[1020.882,757.218],"ix":2},"a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"r":{"a":0,"k":0,"ix":6},"o":{"a":0,"k":100,"ix":7},"sk":{"a":0,"k":0,"ix":4},"sa":{"a":0,"k":0,"ix":5},"nm":"Transform"}],"nm":"Group 7","np":2,"cix":2,"bm":0,"ix":7,"mn":"ADBE Vector Group","hd":false},{"ty":"gr","it":[{"ind":0,"ty":"sh","ix":1,"ks":{"a":0,"k":{"i":[[-52.115,0],[0,52.187],[52.188,0],[0,-52.11]],"o":[[52.188,0],[0,-52.11],[-52.115,0],[0,52.187]],"v":[[-0.036,94.717],[94.717,-0.042],[-0.036,-94.717],[-94.717,-0.042]],"c":true},"ix":2},"nm":"Path 1","mn":"ADBE Vector Shape - Group","hd":false},{"ty":"fl","c":{"a":0,"k":[0.20000001496,0.20000001496,0.20000001496,1],"ix":4},"o":{"a":0,"k":100,"ix":5},"r":1,"bm":0,"nm":"Fill 1","mn":"ADBE Vector Graphic - Fill","hd":false},{"ty":"tr","p":{"a":0,"k":[1020.882,757.221],"ix":2},"a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"r":{"a":0,"k":0,"ix":6},"o":{"a":0,"k":100,"ix":7},"sk":{"a":0,"k":0,"ix":4},"sa":{"a":0,"k":0,"ix":5},"nm":"Transform"}],"nm":"Group 8","np":2,"cix":2,"bm":0,"ix":8,"mn":"ADBE Vector Group","hd":false},{"ty":"gr","it":[{"ind":0,"ty":"sh","ix":1,"ks":{"a":0,"k":{"i":[[-61.875,0],[0,61.882],[61.953,0],[0,-61.875]],"o":[[61.953,0],[0,-61.875],[-61.875,0],[0,61.882]],"v":[[-0.036,112.386],[112.386,-0.043],[-0.036,-112.386],[-112.386,-0.043]],"c":true},"ix":2},"nm":"Path 1","mn":"ADBE Vector Shape - Group","hd":false},{"ty":"fl","c":{"a":0,"k":[0.054901964524,0.454901990704,0.513725490196,1],"ix":4},"o":{"a":0,"k":100,"ix":5},"r":1,"bm":0,"nm":"Fill 1","mn":"ADBE Vector Graphic - Fill","hd":false},{"ty":"tr","p":{"a":0,"k":[1020.882,757.221],"ix":2},"a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"r":{"a":0,"k":0,"ix":6},"o":{"a":0,"k":100,"ix":7},"sk":{"a":0,"k":0,"ix":4},"sa":{"a":0,"k":0,"ix":5},"nm":"Transform"}],"nm":"Group 9","np":2,"cix":2,"bm":0,"ix":9,"mn":"ADBE Vector Group","hd":false}],"ip":0,"op":75,"st":0,"bm":0},{"ddd":0,"ind":12,"ty":4,"nm":"pressclock Outlines 3","sr":1,"ks":{"o":{"a":0,"k":100,"ix":11},"r":{"a":0,"k":0,"ix":10},"p":{"a":1,"k":[{"i":{"x":0,"y":1},"o":{"x":0.333,"y":0},"t":3,"s":[988.064,532.119,0],"to":[-1.333,1.583,0],"ti":[0,0,0]},{"i":{"x":0.667,"y":1},"o":{"x":1,"y":0},"t":11,"s":[980.064,541.619,0],"to":[0,0,0],"ti":[-1.333,1.583,0]},{"t":17,"s":[988.064,532.119,0]}],"ix":2},"a":{"a":0,"k":[1113.564,657.119,0],"ix":1},"s":{"a":0,"k":[100,100,100],"ix":6}},"ao":0,"shapes":[{"ty":"gr","it":[{"ind":0,"ty":"sh","ix":1,"ks":{"a":0,"k":{"i":[[2.982,2.461],[0,0],[2.454,-2.982],[0,0],[-2.988,-2.46],[0,0],[-2.461,2.982],[0,0]],"o":[[0,0],[-2.981,-2.461],[0,0],[-2.461,2.982],[0,0],[2.982,2.383],[0,0],[2.468,-2.982]],"v":[[20.986,-1.449],[-2.725,-20.837],[-12.562,-19.867],[-21.956,-8.311],[-20.987,1.532],[2.718,20.914],[12.562,19.866],[21.95,8.388]],"c":true},"ix":2},"nm":"Path 1","mn":"ADBE Vector Shape - Group","hd":false},{"ty":"fl","c":{"a":0,"k":[0.054901964524,0.454901990704,0.513725490196,1],"ix":4},"o":{"a":0,"k":100,"ix":5},"r":1,"bm":0,"nm":"Fill 1","mn":"ADBE Vector Graphic - Fill","hd":false},{"ty":"tr","p":{"a":0,"k":[1116.012,653.067],"ix":2},"a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"r":{"a":0,"k":0,"ix":6},"o":{"a":0,"k":100,"ix":7},"sk":{"a":0,"k":0,"ix":4},"sa":{"a":0,"k":0,"ix":5},"nm":"Transform"}],"nm":"Group 1","np":2,"cix":2,"bm":0,"ix":1,"mn":"ADBE Vector Group","hd":false},{"ty":"gr","it":[{"ind":0,"ty":"sh","ix":1,"ks":{"a":0,"k":{"i":[[0,0],[0,0],[0,0],[0,0]],"o":[[0,0],[0,0],[0,0],[0,0]],"v":[[14.239,0.41],[-3.132,-13.906],[-14.239,-0.41],[3.132,13.906]],"c":true},"ix":2},"nm":"Path 1","mn":"ADBE Vector Shape - Group","hd":false},{"ty":"fl","c":{"a":0,"k":[0.20000001496,0.20000001496,0.20000001496,1],"ix":4},"o":{"a":0,"k":100,"ix":5},"r":1,"bm":0,"nm":"Fill 1","mn":"ADBE Vector Graphic - Fill","hd":false},{"ty":"tr","p":{"a":0,"k":[1101.809,669.692],"ix":2},"a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"r":{"a":0,"k":0,"ix":6},"o":{"a":0,"k":100,"ix":7},"sk":{"a":0,"k":0,"ix":4},"sa":{"a":0,"k":0,"ix":5},"nm":"Transform"}],"nm":"Group 2","np":2,"cix":2,"bm":0,"ix":2,"mn":"ADBE Vector Group","hd":false}],"ip":0,"op":75,"st":0,"bm":0},{"ddd":0,"ind":13,"ty":4,"nm":"pressclock Outlines 2","sr":1,"ks":{"o":{"a":0,"k":100,"ix":11},"r":{"a":0,"k":0,"ix":10},"p":{"a":1,"k":[{"i":{"x":0,"y":1},"o":{"x":0.333,"y":0},"t":3,"s":[802.7,532.119,0],"to":[1.25,1.667,0],"ti":[0,0,0]},{"i":{"x":0.667,"y":1},"o":{"x":1,"y":0},"t":11,"s":[810.2,542.119,0],"to":[0,0,0],"ti":[1.25,1.667,0]},{"t":17,"s":[802.7,532.119,0]}],"ix":2},"a":{"a":0,"k":[928.2,657.119,0],"ix":1},"s":{"a":0,"k":[100,100,100],"ix":6}},"ao":0,"shapes":[{"ty":"gr","it":[{"ind":0,"ty":"sh","ix":1,"ks":{"a":0,"k":{"i":[[-2.982,2.461],[0,0],[-2.461,-2.982],[0,0],[2.981,-2.46],[0,0],[2.389,2.982],[0,0]],"o":[[0,0],[2.981,-2.461],[0,0],[2.461,2.982],[0,0],[-2.982,2.383],[0,0],[-2.454,-2.982]],"v":[[-20.989,-1.449],[2.722,-20.837],[12.559,-19.867],[21.953,-8.311],[20.984,1.532],[-2.721,20.914],[-12.565,19.866],[-21.96,8.388]],"c":true},"ix":2},"nm":"Path 1","mn":"ADBE Vector Shape - Group","hd":false},{"ty":"fl","c":{"a":0,"k":[0.054901964524,0.454901990704,0.513725490196,1],"ix":4},"o":{"a":0,"k":100,"ix":5},"r":1,"bm":0,"nm":"Fill 1","mn":"ADBE Vector Graphic - Fill","hd":false},{"ty":"tr","p":{"a":0,"k":[925.755,653.067],"ix":2},"a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"r":{"a":0,"k":0,"ix":6},"o":{"a":0,"k":100,"ix":7},"sk":{"a":0,"k":0,"ix":4},"sa":{"a":0,"k":0,"ix":5},"nm":"Transform"}],"nm":"Group 1","np":2,"cix":2,"bm":0,"ix":1,"mn":"ADBE Vector Group","hd":false},{"ty":"gr","it":[{"ind":0,"ty":"sh","ix":1,"ks":{"a":0,"k":{"i":[[0,0],[0,0],[0,0],[0,0]],"o":[[0,0],[0,0],[0,0],[0,0]],"v":[[-14.274,0.41],[3.095,-13.906],[14.274,-0.41],[-3.096,13.906]],"c":true},"ix":2},"nm":"Path 1","mn":"ADBE Vector Shape - Group","hd":false},{"ty":"fl","c":{"a":0,"k":[0.20000001496,0.20000001496,0.20000001496,1],"ix":4},"o":{"a":0,"k":100,"ix":5},"r":1,"bm":0,"nm":"Fill 1","mn":"ADBE Vector Graphic - Fill","hd":false},{"ty":"tr","p":{"a":0,"k":[939.918,669.692],"ix":2},"a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"r":{"a":0,"k":0,"ix":6},"o":{"a":0,"k":100,"ix":7},"sk":{"a":0,"k":0,"ix":4},"sa":{"a":0,"k":0,"ix":5},"nm":"Transform"}],"nm":"Group 2","np":2,"cix":2,"bm":0,"ix":2,"mn":"ADBE Vector Group","hd":false}],"ip":0,"op":75,"st":0,"bm":0},{"ddd":0,"ind":14,"ty":4,"nm":"pressclock Outlines","sr":1,"ks":{"o":{"a":0,"k":100,"ix":11},"r":{"a":0,"k":0,"ix":10},"p":{"a":1,"k":[{"i":{"x":0,"y":1},"o":{"x":0.333,"y":0},"t":3,"s":[895.343,504.324,0],"to":[0,1.375,0],"ti":[0,0,0]},{"i":{"x":0.667,"y":1},"o":{"x":1,"y":0},"t":11,"s":[895.343,512.574,0],"to":[0,0,0],"ti":[0,1.375,0]},{"t":17,"s":[895.343,504.324,0]}],"ix":2},"a":{"a":0,"k":[1020.843,629.324,0],"ix":1},"s":{"a":0,"k":[100,100,100],"ix":6}},"ao":0,"shapes":[{"ty":"gr","it":[{"ind":0,"ty":"sh","ix":1,"ks":{"a":0,"k":{"i":[[-4.102,0],[0,0],[0,-4.102],[0,0],[4.102,0],[0,0],[0,4.024],[0,0]],"o":[[0,0],[4.102,0],[0,0],[0,4.024],[0,0],[-4.102,0],[0,0],[0,-4.102]],"v":[[-34.294,-13.532],[34.372,-13.532],[41.748,-6.149],[41.748,6.149],[34.372,13.532],[-34.294,13.532],[-41.748,6.149],[-41.748,-6.149]],"c":true},"ix":2},"nm":"Path 1","mn":"ADBE Vector Shape - Group","hd":false},{"ty":"fl","c":{"a":0,"k":[0.054901964524,0.454901990704,0.513725490196,1],"ix":4},"o":{"a":0,"k":100,"ix":5},"r":1,"bm":0,"nm":"Fill 1","mn":"ADBE Vector Graphic - Fill","hd":false},{"ty":"tr","p":{"a":0,"k":[1020.843,620.788],"ix":2},"a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"r":{"a":0,"k":0,"ix":6},"o":{"a":0,"k":100,"ix":7},"sk":{"a":0,"k":0,"ix":4},"sa":{"a":0,"k":0,"ix":5},"nm":"Transform"}],"nm":"Group 1","np":2,"cix":2,"bm":0,"ix":1,"mn":"ADBE Vector Group","hd":false},{"ty":"gr","it":[{"ind":0,"ty":"sh","ix":1,"ks":{"a":0,"k":{"i":[[0,0],[0,0],[0,0],[0,0]],"o":[[0,0],[0,0],[0,0],[0,0]],"v":[[-14.873,11.592],[14.873,11.592],[14.873,-11.592],[-14.873,-11.592]],"c":true},"ix":2},"nm":"Path 1","mn":"ADBE Vector Shape - Group","hd":false},{"ty":"fl","c":{"a":0,"k":[0.20000001496,0.20000001496,0.20000001496,1],"ix":4},"o":{"a":0,"k":100,"ix":5},"r":1,"bm":0,"nm":"Fill 1","mn":"ADBE Vector Graphic - Fill","hd":false},{"ty":"tr","p":{"a":0,"k":[1020.882,639.799],"ix":2},"a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"r":{"a":0,"k":0,"ix":6},"o":{"a":0,"k":100,"ix":7},"sk":{"a":0,"k":0,"ix":4},"sa":{"a":0,"k":0,"ix":5},"nm":"Transform"}],"nm":"Group 2","np":2,"cix":2,"bm":0,"ix":2,"mn":"ADBE Vector Group","hd":false}],"ip":0,"op":75,"st":0,"bm":0}],"markers":[]};
+function setupOfferLottie(){
+  const el = document.getElementById('offerLottie');
+  if(!el || typeof lottie === 'undefined') return;
+  lottie.loadAnimation({
+    container: el,
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    animationData: OFFER_LOTTIE_DATA
+  });
+}
+</script>
+
+<script>
+/* ============================================================
+   SUCCESSVISA — APP LOGIC
+   ============================================================ */
+const STORE_OFFERS='sv_offers';
+const STORE_SUBS='sv_subscribers';
+const STORE_VER='sv_seed_version';
+const SEED_VERSION='v4-52offers-5branches-wa';
+const ADMIN_PASS='sv@admin2024';
+const DAY=86400000;
+
+const CAT={
+  'Education':{cls:'edu',badge:'cat-edu',bg:'cat-edu-bg',icon:'🎓',color:'#2f6fed',anim:'assets/cat-education.webp'},
+  'Tourist':{cls:'tou',badge:'cat-tou',bg:'cat-tou-bg',icon:'🧳',color:'#0fb5ba',anim:'assets/cat-tourist.webp'},
+  'Migration':{cls:'mig',badge:'cat-mig',bg:'cat-mig-bg',icon:'✈️',color:'#2fae6a',anim:'assets/cat-migration.webp'},
+  'Insurance':{cls:'ins',badge:'cat-ins',bg:'cat-ins-bg',icon:'🛡️',color:'#f08a24',anim:'assets/cat-insurance.webp'},
+  'Health':{cls:'hea',badge:'cat-hea',bg:'cat-hea-bg',icon:'➕',color:'#e2495a',anim:'assets/cat-health.webp'}
+};
+const BRANCH={
+  'All Branches':'🌐 All Branches',
+  'Parramatta':'🇦🇺 Parramatta',
+  'Toongabbie':'🇦🇺 Toongabbie',
+  'Melbourne':'🇦🇺 Melbourne',
+  'Werribee':'🇦🇺 Werribee',
+  'Chandigarh':'🇮🇳 Chandigarh'
+};
+const AU_WA='+61468791726', MEL_WA='+61416946158', IN_WA='+919034899620';
+function waForBranch(branch){
+  if(branch==='Chandigarh')return IN_WA;
+  if(branch==='Melbourne'||branch==='Werribee')return MEL_WA;
+  return AU_WA;
+}
+
+let activeFilter='All';
+let countdownTimer=null;
+const PAGE=6;
+let liveLimit=PAGE;
+let expiredLimit=PAGE;
+let pendingDeleteId=null;
+let confirmMode='delete';
+let searchQuery='';
+let branchFilter='All';
+let sortMode='featured';
+
+/* ---------- storage helpers ---------- */
+function loadOffers(){try{return JSON.parse(localStorage.getItem(STORE_OFFERS))||[]}catch(e){return[]}}
+function saveOffers(arr){localStorage.setItem(STORE_OFFERS,JSON.stringify(arr))}
+function loadSubs(){try{return JSON.parse(localStorage.getItem(STORE_SUBS))||[]}catch(e){return[]}}
+function saveSubs(arr){localStorage.setItem(STORE_SUBS,JSON.stringify(arr))}
+
+/* ============================================================
+   DEMO DATA GENERATOR — 52 offers (32 live + 20 expired)
+   ============================================================ */
+function generateDemoOffers(){
+  const now=Date.now();
+  const branches=['All Branches','Chandigarh','Parramatta','Toongabbie','Melbourne','Werribee'];
+  const pools={
+    'Education':[
+      {t:"Free IELTS Prep Bundle",s:"Enrol in any student visa package this month and get our complete IELTS prep course — 40 hours of coaching — absolutely free.",f:"Planning to study in Australia? Sign up for any student visa package this month and receive our premium IELTS preparation bundle at zero cost.\n\nIncludes:\n• 40 hours of live coaching\n• 8 full-length mock tests\n• Speaking practice with certified trainers\n• Study materials & e-books\n\nFor new enrolments only. T&Cs apply."},
+      {t:"50% Off University Application Fees",s:"Apply to partner universities through SuccessVisa and pay only half our standard application processing fee.",f:"Save big on your study-abroad journey. When you apply to any of our 200+ partner universities through SuccessVisa, your application processing fee is cut in half.\n\nWhat's covered:\n• Course shortlisting\n• Application to up to 5 universities\n• Offer-letter follow-up\n\nLimited to applications lodged during the offer window."},
+      {t:"Free PTE Coaching with Visa Package",s:"Book a student visa package and receive complimentary PTE Academic coaching to hit your target score in one go.",f:"Need PTE for your student visa? Book any student visa package and get our PTE coaching program free.\n\nIncludes:\n• 30 hours of structured coaching\n• AI-scored practice tests\n• Templates for every question type\n• One-on-one doubt sessions\n\nNew bookings only."},
+      {t:"Scholarship Guidance — No Service Fee",s:"Find and apply for scholarships you qualify for, with zero service fee on our scholarship advisory.",f:"Why pay full tuition? Our scholarship advisors will map every scholarship and bursary you're eligible for — and right now our service fee is waived.\n\nYou get:\n• Personalised scholarship shortlist\n• Application & essay guidance\n• Deadline tracking\n\nAdvisory fee waived; university fees not included."},
+      {t:"Free Course Counselling Session",s:"Not sure what to study? Book a free 45-minute counselling session with our certified education advisors.",f:"Confused between courses, universities or countries? Sit down with a certified education counsellor for a free 45-minute session.\n\nWe'll cover:\n• Your goals and budget\n• Course & university options\n• Career outcomes and PR pathways\n\nOne free session per student."},
+      {t:"Student Visa + SOP Writing Combo",s:"Get your Statement of Purpose professionally written when you book a student visa filing package.",f:"A strong SOP can make or break your application. Book a student visa filing package and our writers will craft a tailored Statement of Purpose for you.\n\nIncludes:\n• Two SOP drafts with revisions\n• Course & country justification\n• Plagiarism-checked final copy\n\nAvailable with full visa packages only."},
+      {t:"Diploma-to-Degree Pathway Discount",s:"Transition from diploma to a full degree with discounted pathway counselling and credit-transfer support.",f:"Already hold a diploma? Convert it into a full degree with maximum credit transfer.\n\nWe help with:\n• Credit assessment & transfer\n• Pathway university selection\n• Application & visa support\n\nDiscounted pathway counselling for the offer period."},
+      {t:"Free Education Loan Assistance",s:"Secure funding for your studies with free guidance on education loans from leading lenders.",f:"Funding your education shouldn't be stressful. Our advisors connect you with the right education-loan products — completely free.\n\nWe assist with:\n• Lender comparison\n• Document preparation\n• Application follow-up\n\nWe are not a lender; we provide advisory support only."},
+      {t:"Group Discount: Refer a Friend",s:"Apply together with a friend and both of you saved on service fees. (This offer has now ended.)",f:"Studying abroad is better together. When you and a friend applied through SuccessVisa in the same intake, both received a service-fee discount.\n\nThis seasonal offer has now closed — contact us for current student deals."},
+      {t:"Free Credential Assessment",s:"We assessed your academic credentials for overseas equivalency at no charge. (Offer ended.)",f:"Knowing how your qualifications map overseas is the first step. During this offer we assessed academic credentials for equivalency free of charge.\n\nThe offer window has closed — reach out for current assessment options."},
+      {t:"Spring Intake Early-Bird Discount",s:"Early applicants for the Spring intake received a reduced processing fee. (Now expired.)",f:"Early birds saved the most. Students who lodged Spring-intake applications during the early-bird window paid a reduced processing fee.\n\nThe early-bird period has ended — ask us about the next intake."},
+      {t:"Free Resume + LinkedIn Makeover",s:"Graduating students got a professional resume and LinkedIn refresh free of charge. (Offer ended.)",f:"A polished profile opens doors. Graduating students received a professional resume rewrite and LinkedIn makeover during this offer.\n\nThis promotion has ended — contact us for career services."},
+      {t:"PhD Application Support Package",s:"Discounted end-to-end support for PhD applications and research proposals. (This offer has expired.)",f:"Pursuing research? Our discounted PhD package covered supervisor outreach, proposal review and application filing.\n\nThe discount period has closed — get in touch for current research-pathway support."}
+    ],
+    'Tourist':[
+      {t:"Tourist Visa Express Processing",s:"Need to travel soon? Get priority document prep and lodgement for your tourist visa application.",f:"Travelling on short notice? Our express service fast-tracks your tourist visa paperwork.\n\nIncludes:\n• Same-day document review\n• Cover letter & itinerary drafting\n• Priority lodgement guidance\n\nProcessing times depend on the issuing authority."},
+      {t:"Family Holiday Visa Bundle",s:"Applying as a family? Bundle multiple visitor visa applications and save on per-applicant service fees.",f:"Planning a family holiday? Lodge multiple visitor visa applications together and pay a reduced per-applicant service fee.\n\nWe handle:\n• Family document checklist\n• Combined cover letter\n• Funds & sponsorship guidance\n\nMinimum two applicants."},
+      {t:"Free Itinerary & Cover Letter Drafting",s:"Get a professionally drafted travel itinerary and visa cover letter free with any tourist visa filing.",f:"A clear itinerary strengthens your visitor visa. With any tourist visa filing we draft your itinerary and cover letter free.\n\nIncludes:\n• Day-by-day travel plan\n• Purpose-of-visit cover letter\n• Funds & ties-to-home guidance\n\nAvailable with paid filing packages."},
+      {t:"Visitor Visa + Travel Insurance Combo",s:"Apply for your visitor visa and add travel insurance at a bundled discount in one easy step.",f:"Cover the trip and the visa together. Apply for a visitor visa and add travel insurance at a special bundled rate.\n\nYou get:\n• Visitor visa filing support\n• Discounted travel insurance\n• One point of contact\n\nInsurance issued by licensed partners."},
+      {t:"Multiple-Entry Visa Consultation",s:"Travel often? Book a consultation on long-validity, multiple-entry visitor visa options.",f:"Frequent traveller? Learn whether a long-validity, multiple-entry visitor visa suits you in a focused consultation.\n\nWe cover:\n• Eligibility & validity options\n• Document requirements\n• Application strategy\n\nOutcome depends on issuing authority."},
+      {t:"Parent Visit Visa Assistance",s:"Bring your parents over for a visit with end-to-end guidance on sponsor documents and invitations.",f:"Want your parents to visit? We guide you through the visitor visa process for parents end to end.\n\nIncludes:\n• Invitation & sponsorship letters\n• Financial evidence checklist\n• Application review\n\nApproval is at the discretion of the issuing authority."},
+      {t:"Honeymoon Travel Visa Special",s:"Newlyweds received discounted visitor visa filing for their honeymoon trip. (Offer ended.)",f:"Starting married life with a getaway? Couples received discounted visitor visa filing during this honeymoon special.\n\nThe offer has ended — contact us for current travel deals."},
+      {t:"Festive Season Tourist Visa Deal",s:"Discounted holiday-season visitor visa lodgement for early applicants. (This offer has expired.)",f:"The festive-season deal gave travellers a reduced service fee on holiday visitor visas lodged early.\n\nThis seasonal offer has closed — ask about upcoming travel promotions."},
+      {t:"Last-Minute Tourist Visa Service",s:"Urgent same-week tourist visa preparation at a flat promotional rate. (Now expired.)",f:"Our last-minute service offered urgent, same-week tourist visa preparation at a flat promotional rate.\n\nThe promotion has ended — reach out for current express options."},
+      {t:"Free Travel Document Checklist",s:"Travellers received a personalised visa document checklist at no cost. (Offer ended.)",f:"During this offer, every traveller received a personalised, country-specific visa document checklist free of charge.\n\nThe offer has closed — contact us for tailored guidance."}
+    ],
+    'Migration':[
+      {t:"50% Off Skilled Migration Assessment",s:"Get your skills assessment and points evaluation done at half price and find out your PR eligibility.",f:"Thinking about Permanent Residency? Our migration experts evaluate your profile, calculate your points and map your best pathway — now at 50% off.\n\nIncludes:\n• Full points-test calculation\n• Occupation & state nomination guidance\n• Document checklist\n• 1-on-1 with a registered (MARA) agent\n\nBook before the offer ends."},
+      {t:"Free PR Points Calculator Session",s:"Sit with an agent to calculate your migration points and identify quick ways to boost your score.",f:"Every point counts. In this free session an agent calculates your migration points and shows where you can gain more.\n\nWe review:\n• Age, English, experience & education\n• Partner & study points\n• Realistic score-boosting steps\n\nOne free session per applicant."},
+      {t:"Partner Visa Documentation Package",s:"Discounted, structured support for assembling the evidence-heavy partner visa application.",f:"Partner visas demand strong evidence. Our discounted package structures your relationship documentation properly.\n\nIncludes:\n• Evidence checklist across all four pillars\n• Statement guidance for both partners\n• Application review before lodgement\n\nDiscount applies during the offer period."},
+      {t:"Free Occupation & Nomination Review",s:"Check whether your occupation is in demand and which states may nominate you — free of charge.",f:"Is your occupation on the list? We review your occupation against current demand and likely state nominations, free.\n\nWe cover:\n• Occupation list checks\n• State & regional nomination trends\n• Suggested next steps\n\nInformational; subject to policy changes."},
+      {t:"Employer Sponsorship (482) Consultation",s:"Explore employer-sponsored work visa options with a focused, discounted consultation.",f:"Have an employer willing to sponsor you? Explore your options in a discounted consultation on employer-sponsored work visas.\n\nWe discuss:\n• Eligibility for you and the employer\n• Occupation & stream selection\n• Document roadmap\n\nOutcomes depend on individual circumstances."},
+      {t:"Free Visa Pathway Roadmap",s:"Get a personalised step-by-step roadmap from your current status to permanent residency — free.",f:"Not sure how to get from here to PR? We build a personalised, step-by-step roadmap at no cost.\n\nYour roadmap covers:\n• Recommended visa sequence\n• Timeframes & key milestones\n• Risks and alternatives\n\nOne free roadmap per client."},
+      {t:"Regional Visa (491) Special",s:"Discounted guidance on regional skilled visa pathways and the benefits of regional nomination.",f:"Regional pathways can fast-track PR. Our discounted service guides you through regional skilled visa options.\n\nIncludes:\n• Regional area & occupation matching\n• Nomination requirements\n• Pathway-to-PR overview\n\nDiscount valid for the offer window."},
+      {t:"Citizenship Application Assistance",s:"Discounted help preparing citizenship applications and test readiness. (This offer has expired.)",f:"Eligible for citizenship? Our discounted service helped applicants prepare documents and get test-ready.\n\nThe offer has closed — contact us for current citizenship support."},
+      {t:"Skills Assessment Fast-Track",s:"Priority preparation of skills-assessment documentation at a promotional rate. (Offer ended.)",f:"This fast-track offer gave applicants priority preparation of their skills-assessment paperwork at a promotional rate.\n\nThe promotion has ended — ask about current assessment timelines."},
+      {t:"Business Innovation Visa Consultation",s:"Discounted consultation on business and investor visa streams. (Now expired.)",f:"Entrepreneurs and investors received a discounted consultation on business innovation and investment visa streams during this offer.\n\nThe offer has closed — reach out for current business-visa advice."},
+      {t:"Free Eligibility Pre-Check",s:"A quick, free assessment of your general migration eligibility. (This offer has ended.)",f:"Our free pre-check gave prospective migrants a quick read on their general eligibility before committing to a full assessment.\n\nThis offer has ended — book a current consultation instead."}
+    ],
+    'Insurance':[
+      {t:"OSHC Cover + $100 Cashback",s:"Buy your Overseas Student Health Cover through us and receive $100 cashback on annual plans.",f:"Every international student needs OSHC. Purchase your Overseas Student Health Cover through SuccessVisa and get $100 cashback on any 12-month policy.\n\nBenefits:\n• Compare top providers in one place\n• Instant policy certificate for your visa\n• Free claims-assistance support\n• $100 cashback within 14 days\n\nAnnual plans only."},
+      {t:"OVHC Discount for 482 Holders",s:"Working in Australia on a 482 visa? Get discounted Overseas Visitor Health Cover that meets visa rules.",f:"On a 482 work visa? We'll set you up with compliant Overseas Visitor Health Cover at a discounted rate.\n\nIncludes:\n• Visa-compliant policy selection\n• Family cover options\n• Fast certificate issuance\n\nIssued by licensed insurers."},
+      {t:"Travel Insurance Bundle Discount",s:"Add comprehensive travel insurance to any visa service and save with our bundled rate.",f:"Protect your trip for less. Add comprehensive travel insurance to any visa service and enjoy a bundled discount.\n\nCover can include:\n• Medical & emergency expenses\n• Trip cancellation\n• Baggage protection\n\nProvided by licensed partners; conditions apply."},
+      {t:"Free Family Health Cover Comparison",s:"Get a free side-by-side comparison of family health cover options suited to your visa.",f:"Choosing family cover is confusing. We provide a free side-by-side comparison tailored to your visa and family size.\n\nWe compare:\n• Premiums & inclusions\n• Waiting periods\n• Provider service ratings\n\nAdvisory only; no obligation."},
+      {t:"Student Insurance Renewal Offer",s:"Renew your student health cover through us and lock in a loyalty discount on your next policy.",f:"Staying longer? Renew your student health cover through SuccessVisa and lock in a loyalty discount.\n\nIncludes:\n• Continuous-cover certificate\n• Provider switch advice if cheaper\n• Renewal reminders\n\nApplies to renewals during the offer."},
+      {t:"Free Insurance Needs Assessment",s:"Not sure what cover you need? Book a free assessment to match insurance to your visa and lifestyle.",f:"Over-insured or under-covered? Our free needs assessment matches insurance to your visa, budget and lifestyle.\n\nWe review:\n• Mandatory visa cover\n• Optional add-ons worth having\n• Cost-saving opportunities\n\nNo obligation to purchase."},
+      {t:"Visitor Health Cover Special",s:"Discounted visitor health cover for visiting family members. (This offer has expired.)",f:"During this special, visiting family members received discounted visitor health cover arranged through our partners.\n\nThe offer has ended — contact us for current visitor-cover options."},
+      {t:"Annual Multi-Trip Insurance Deal",s:"Frequent travellers saved on annual multi-trip travel cover. (Offer ended.)",f:"Our annual multi-trip deal gave frequent travellers a discounted rate on year-round travel insurance.\n\nThe promotion has closed — ask about current multi-trip options."},
+      {t:"Working Holiday Insurance Discount",s:"Working-holiday visa holders received discounted health and travel cover. (Now expired.)",f:"Working-holiday makers received a bundled discount on health and travel cover during this offer.\n\nThe offer has ended — reach out for current backpacker-cover deals."},
+      {t:"Income Protection Consultation",s:"Free consultation on income protection options for new residents. (This offer has ended.)",f:"New residents received a free consultation on income-protection options suited to their situation during this offer.\n\nThe consultation offer has closed — contact us to discuss your needs."}
+    ],
+    'Health':[
+      {t:"Free Health Check Booking Assistance",s:"We help you book and prepare for required visa health checks at no service charge.",f:"Visa health checks can be confusing. We help you book the right panel clinic and prepare — at no service charge.\n\nWe assist with:\n• Finding an approved panel physician\n• Understanding what's tested\n• Appointment scheduling\n\nClinic fees are separate."},
+      {t:"Discounted Visa Medical Coordination",s:"Coordinate your visa medical exams with approved clinics at a reduced coordination fee.",f:"We coordinate your visa medical examinations end to end with approved clinics at a reduced coordination fee.\n\nIncludes:\n• Panel clinic booking\n• Document preparation\n• Results follow-up with your case\n\nMedical and clinic charges are not included."},
+      {t:"Free Immunisation & Records Guidance",s:"Get free guidance on the vaccination records and health documents your visa requires.",f:"Don't get caught out by missing records. We provide free guidance on the immunisation and health documents your visa needs.\n\nWe cover:\n• Required vaccination records\n• How to obtain missing documents\n• Submission tips\n\nInformational guidance only."},
+      {t:"Bridging Health Cover Special",s:"Stay covered between visas with discounted bridging health cover arranged through our partners.",f:"Changing visas? Avoid a cover gap. We arrange discounted bridging health cover through licensed partners.\n\nIncludes:\n• Gap-cover policy selection\n• Quick certificate issuance\n• Transition advice\n\nIssued by licensed insurers."},
+      {t:"Free Medicare Enrolment Help",s:"Eligible visa holders get free help enrolling in Medicare and understanding their entitlements.",f:"If your visa makes you eligible, we help you enrol in Medicare — free of charge.\n\nWe assist with:\n• Eligibility check\n• Enrolment paperwork\n• Understanding what's covered\n\nEligibility is determined by the relevant authority."},
+      {t:"Mental Health Support Session",s:"Free signposting session to mental-health resources for new arrivals. (Offer ended.)",f:"Settling into a new country is hard. During this offer, new arrivals received a free session signposting trusted mental-health resources and services.\n\nThe offer has ended — ask us about ongoing settlement support.\n\nThis is signposting only, not medical advice."},
+      {t:"Health Insurance Switch & Save",s:"We reviewed existing policies and helped clients switch to better-value health cover. (Expired.)",f:"During this offer we reviewed clients' existing health policies and helped them switch to better-value cover where possible.\n\nThe offer has closed — contact us for a current policy review."},
+      {t:"Aged Parent Health Cover Consult",s:"Discounted consultation on health cover for visiting aged parents. (This offer has expired.)",f:"Families received a discounted consultation on suitable health cover for visiting aged parents during this offer.\n\nThe offer has ended — reach out for current options."}
+    ]
+  };
+  const liveCounts={'Education':8,'Tourist':6,'Migration':7,'Insurance':6,'Health':5};
+  // spread of "valid to" day-offsets for live offers (mix of <7, <30, >30)
+  const liveToPattern=[3,12,5,28,45,2,18,60,7,21,9,33,4,50,14,6,25,40,11,2,17,55,8,30,5,22,4,38,13,7,26,48];
+  const expiredToPattern=[2,5,9,14,21,30,3,7,12,18,25,40,1,6,11,16,28,35,4,8];
+
+  const offers=[]; let li=0, ei=0, gi=0, created=now;
+  for(const cat in pools){
+    pools[cat].forEach((item,idx)=>{
+      const isLive=idx<liveCounts[cat];
+      const branch=branches[gi%6];
+      const wa=waForBranch(branch);
+      let from,to;
+      if(isLive){
+        const toD=liveToPattern[li%liveToPattern.length];
+        from=now-(15+(li%5)*6)*DAY;
+        to=now+toD*DAY;
+        li++;
+      }else{
+        const toD=expiredToPattern[ei%expiredToPattern.length];
+        to=now-toD*DAY;
+        from=to-(25+(ei%4)*6)*DAY;
+        ei++;
+      }
+      offers.push({
+        id:'sv_'+CAT[cat].cls+'_'+idx,
+        slug:slugify(item.t)+'-'+(++gi),
+        title:item.t,category:cat,branch:branch,
+        short:item.s,full:item.f,
+        whatsapp:wa,
+        waMsg:"Hi SuccessVisa, I'm interested in the offer: "+item.t+".",
+        link:'',image:'',
+        from:new Date(from).toISOString(),
+        to:new Date(to).toISOString(),
+        active:true,createdAt:created--
+      });
+    });
+  }
+  return offers;
+}
+
+function seedIfNeeded(){
+  const existing=localStorage.getItem(STORE_OFFERS);
+  const ver=localStorage.getItem(STORE_VER);
+  if(existing!==null && ver===SEED_VERSION) return;
+  saveOffers(generateDemoOffers());
+  localStorage.setItem(STORE_VER,SEED_VERSION);
+}
+function resetDemoData(){
+  saveOffers(generateDemoOffers());
+  localStorage.setItem(STORE_VER,SEED_VERSION);
+  renderStats();renderTable();
+  toast('Demo data restored — 52 offers loaded','↺');
+}
+
+/* ============================================================
+   STATUS + SORTING
+   ============================================================ */
+function getStatus(o){
+  const now=Date.now();
+  const to=new Date(o.to).getTime();
+  const from=o.from?new Date(o.from).getTime():0;
+  if(now>to)return 'expired';
+  if(from && now<from)return 'upcoming';
+  if(to-now<=7*DAY)return 'soon';
+  return 'active';
+}
+function isExpired(o){return Date.now()>new Date(o.to).getTime()}
+
+/* public live = visible + currently valid (active or soon), soonest expiry first */
+function liveVisible(){
+  return loadOffers().filter(o=>o.active&&['active','soon'].includes(getStatus(o)))
+    .sort((a,b)=>new Date(a.to)-new Date(b.to));
+}
+/* public expired = visible + expired, most recently expired first */
+function expiredVisible(){
+  return loadOffers().filter(o=>o.active&&getStatus(o)==='expired')
+    .sort((a,b)=>new Date(b.to)-new Date(a.to));
+}
+
+/* ---------- formatting ---------- */
+function fmtDate(iso){return new Date(iso).toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'})}
+function fmtDateTime(iso){const d=new Date(iso);return d.toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'})+' '+d.toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'})}
+function slugify(s){return(s||'').toLowerCase().trim().replace(/[^a-z0-9\s-]/g,'').replace(/\s+/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'')}
+function esc(s){return(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+
+/* ---------- toast ---------- */
+function toast(msg,icon='✓'){
+  const wrap=document.getElementById('toastWrap');
+  const el=document.createElement('div');
+  el.className='toast';
+  el.innerHTML='<span class="ico">'+icon+'</span><span>'+esc(msg)+'</span>';
+  wrap.appendChild(el);
+  setTimeout(()=>el.remove(),3100);
+}
+
+/* ============================================================
+   PUBLIC RENDERING
+   ============================================================ */
+function renderFilters(){
+  const list=baseLive();
+  const cats=['All','Education','Tourist','Migration','Insurance','Health'];
+  const tabs=document.getElementById('filterTabs');
+  tabs.innerHTML=cats.map(c=>{
+    const count=c==='All'?list.length:list.filter(o=>o.category===c).length;
+    return '<button class="pill '+(activeFilter===c?'active':'')+'" data-cat="'+c+'">'+c+'<span class="count">'+count+'</span></button>';
+  }).join('');
+  tabs.querySelectorAll('.pill').forEach(p=>{
+    p.onclick=()=>{activeFilter=p.dataset.cat;liveLimit=PAGE;renderFilters();renderGrid();};
+  });
+}
+
+function catFallbackHTML(category){
+  const c=CAT[category];
+  return '<div class="placeholder '+c.bg+'"><span class="cat-anim-circle"><img src="'+c.anim+'" alt="'+category+' icon" loading="lazy"></span></div>';
+}
+function catImgFallback(imgEl,category){
+  imgEl.parentNode.innerHTML=catFallbackHTML(category);
+}
+function cardBanner(o){
+  if(o.image){
+    return '<img src="'+esc(o.image)+'" alt="'+esc(o.title)+'" onerror="catImgFallback(this,\''+o.category+'\')">';
+  }
+  return catFallbackHTML(o.category);
+}
+
+function countdownHTML(o){
+  if(isExpired(o))return '';
+  const to=new Date(o.to).getTime();
+  if(to-Date.now()>30*DAY)return '';
+  return '<div class="countdown" data-to="'+o.to+'">'+
+    '<div class="cd-unit"><span class="n" data-u="d">--</span><span class="u">Days</span></div>'+
+    '<div class="cd-unit"><span class="n" data-u="h">--</span><span class="u">Hrs</span></div>'+
+    '<div class="cd-unit"><span class="n" data-u="m">--</span><span class="u">Min</span></div>'+
+    '<div class="cd-unit"><span class="n" data-u="s">--</span><span class="u">Sec</span></div></div>';
+}
+
+function waLink(o){
+  const num=(o.whatsapp||'').replace(/[^0-9]/g,'');
+  return 'https://wa.me/'+num+'?text='+encodeURIComponent(o.waMsg||('Hi SuccessVisa, I am interested in the offer: '+o.title));
+}
+
+function anyFilterActive(){
+  return searchQuery.trim()!==''||branchFilter!=='All'||activeFilter!=='All'||sortMode!=='featured';
+}
+function matchesSearch(o){
+  const q=searchQuery.trim().toLowerCase();
+  if(!q)return true;
+  return (o.title+' '+o.short+' '+(o.full||'')+' '+o.category+' '+o.branch).toLowerCase().includes(q);
+}
+function matchesBranch(o){
+  if(branchFilter==='All')return true;
+  // an "All Branches" offer applies to every location
+  return o.branch===branchFilter||o.branch==='All Branches';
+}
+/* live offers after search + location filters (NOT category) — used for pill counts */
+function baseLive(){
+  return liveVisible().filter(o=>matchesBranch(o)&&matchesSearch(o));
+}
+/* live offers in final display order: category filter + chosen sort.
+   "Featured" interleaves categories on the All view for variety;
+   liveVisible() is already sorted soonest-expiry first. */
+function orderedLive(){
+  let list=baseLive();
+  if(activeFilter!=='All')list=list.filter(o=>o.category===activeFilter);
+  if(sortMode==='newest')return list.slice().sort((a,b)=>new Date(b.createdAt||0)-new Date(a.createdAt||0));
+  if(sortMode==='soon')return list.slice().sort((a,b)=>new Date(a.to)-new Date(b.to));
+  // featured
+  if(activeFilter!=='All')return list;
+  const groups={};
+  list.forEach(o=>{(groups[o.category]=groups[o.category]||[]).push(o);});
+  const cats=Object.keys(groups);
+  const result=[];let i=0,added=true;
+  while(added){
+    added=false;
+    for(const c of cats){if(groups[c][i]){result.push(groups[c][i]);added=true;}}
+    i++;
+  }
+  return result;
+}
+
+function renderResultsBar(total){
+  const bar=document.getElementById('resultsBar');
+  if(!bar)return;
+  const q=searchQuery.trim();
+  let txt='<span class="rc"><b>'+total+'</b> '+(total===1?'offer':'offers')+(q?' matching “'+esc(q)+'”':'')+'</span>';
+  if(anyFilterActive())txt+='<button class="clear-filters" id="clearFiltersBtn">✕ Clear filters</button>';
+  bar.innerHTML=txt;
+  const cb=document.getElementById('clearFiltersBtn');
+  if(cb)cb.onclick=clearFilters;
+}
+function clearFilters(){
+  searchQuery='';branchFilter='All';activeFilter='All';sortMode='featured';liveLimit=PAGE;
+  const si=document.getElementById('searchInput');if(si)si.value='';
+  const sc=document.getElementById('searchClear');if(sc)sc.style.display='none';
+  const bf=document.getElementById('branchFilter');if(bf)bf.value='All';
+  const sm=document.getElementById('sortMode');if(sm)sm.value='featured';
+  renderFilters();renderGrid();
+}
+
+function renderGrid(){
+  const ordered=orderedLive();
+  const grid=document.getElementById('offersGrid');
+  const moreWrap=document.getElementById('moreWrap');
+  renderResultsBar(ordered.length);
+  if(!ordered.length){
+    const active=anyFilterActive();
+    grid.innerHTML='<div class="empty-state"><div class="ico">🔍</div><h3>'+
+      (active?'No offers match your filters':'No live offers right now')+'</h3><p>'+
+      (active?'Try a different keyword, location or category.':'Check back soon or subscribe to get notified!')+'</p>'+
+      (active?'<button class="btn btn-ghost" style="margin-top:14px" onclick="clearFilters()">✕ Clear filters</button>':'')+
+      '</div>';
+    moreWrap.innerHTML='';
+    restartCountdowns();return;
+  }
+  if(liveLimit>ordered.length)liveLimit=ordered.length;
+  const shown=ordered.slice(0,liveLimit);
+  grid.innerHTML=shown.map((o,i)=>{
+    const c=CAT[o.category];
+    const soon=getStatus(o)==='soon';
+    return '<div class="offer-card" style="animation-delay:'+((i%PAGE)*40)+'ms">'+
+      '<div class="card-banner">'+cardBanner(o)+
+        '<span class="badge cat-badge '+c.badge+'">'+c.icon+' '+o.category+'</span>'+
+        (soon?'<span class="badge expiring-badge">EXPIRING SOON 🔥</span>':'')+
+      '</div>'+
+      '<div class="card-body">'+
+        '<div class="card-meta"><span class="branch-tag">'+BRANCH[o.branch]+'</span></div>'+
+        '<h3 class="card-title">'+esc(o.title)+'</h3>'+
+        '<p class="card-desc">'+esc(o.short)+'</p>'+
+        '<div class="card-valid">⏳ Valid till: <b>'+fmtDate(o.to)+'</b></div>'+
+        countdownHTML(o)+
+        '<div class="card-cta">'+
+          '<button class="btn btn-navy btn-sm" data-know="'+esc(o.slug)+'">Know More</button>'+
+          '<a class="btn btn-wa btn-sm" href="'+waLink(o)+'" target="_blank" rel="noopener">💬 WhatsApp</a>'+
+        '</div>'+
+      '</div></div>';
+  }).join('');
+  grid.querySelectorAll('[data-know]').forEach(b=>{b.onclick=()=>{location.hash='#offer-'+b.dataset.know;};});
+  const remaining=ordered.length-liveLimit;
+  if(remaining>0){
+    moreWrap.innerHTML='<button class="btn-more" id="liveMoreBtn">See more offers <span class="more-count">+'+Math.min(PAGE,remaining)+'</span></button>';
+    document.getElementById('liveMoreBtn').onclick=()=>{liveLimit+=PAGE;renderGrid();};
+  }else{
+    moreWrap.innerHTML='';
+  }
+  restartCountdowns();
+}
+
+function renderExpired(){
+  const expired=expiredVisible();
+  const grid=document.getElementById('expiredGrid');
+  const section=document.getElementById('expiredSection');
+  const countEl=document.getElementById('expiredCount');
+  const moreWrap=document.getElementById('expiredMoreWrap');
+  if(!expired.length){section.style.display='none';return;}
+  section.style.display='';
+  countEl.textContent='('+expired.length+')';
+  if(expiredLimit>expired.length)expiredLimit=expired.length;
+  const shown=expired.slice(0,expiredLimit);
+  grid.innerHTML=shown.map(o=>{
+    const c=CAT[o.category];
+    return '<div class="offer-card expired">'+
+      '<span class="expired-stamp">Expired</span>'+
+      '<div class="card-banner">'+cardBanner(o)+
+        '<span class="badge cat-badge '+c.badge+'">'+c.icon+' '+o.category+'</span>'+
+      '</div>'+
+      '<div class="card-body">'+
+        '<div class="card-meta"><span class="branch-tag">'+BRANCH[o.branch]+'</span></div>'+
+        '<h3 class="card-title">'+esc(o.title)+'</h3>'+
+        '<p class="card-desc">'+esc(o.short)+'</p>'+
+        '<div class="card-valid">Expired on: <b>'+fmtDate(o.to)+'</b></div>'+
+        '<div class="card-cta"><button class="btn btn-ghost btn-sm btn-block" data-notify-similar>🔔 Get notified for similar offers</button></div>'+
+      '</div></div>';
+  }).join('');
+  grid.querySelectorAll('[data-notify-similar]').forEach(b=>{
+    b.onclick=()=>{const e=document.getElementById('notifyEmail');e.scrollIntoView({behavior:'smooth',block:'center'});e.focus();};
+  });
+  const remaining=expired.length-expiredLimit;
+  if(remaining>0){
+    moreWrap.innerHTML='<button class="btn-more" id="expiredMoreBtn">See more past offers <span class="more-count">+'+Math.min(PAGE,remaining)+'</span></button>';
+    document.getElementById('expiredMoreBtn').onclick=()=>{expiredLimit+=PAGE;renderExpired();};
+  }else{
+    moreWrap.innerHTML='';
+  }
+  // keep accordion height correct if open
+  const head=document.getElementById('accordionHead');
+  const body=document.getElementById('accordionBody');
+  if(head.classList.contains('open'))body.style.maxHeight=body.scrollHeight+'px';
+}
+
+/* ---------- countdown engine ---------- */
+function updateCountdowns(){
+  document.querySelectorAll('.countdown[data-to]').forEach(cd=>{
+    const diff=new Date(cd.dataset.to).getTime()-Date.now();
+    const set=(u,v)=>{const el=cd.querySelector('[data-u="'+u+'"]');if(el)el.textContent=String(v).padStart(2,'0');};
+    if(diff<=0){['d','h','m','s'].forEach(u=>set(u,0));return;}
+    set('d',Math.floor(diff/DAY));
+    set('h',Math.floor((diff%DAY)/3600000));
+    set('m',Math.floor((diff%3600000)/60000));
+    set('s',Math.floor((diff%60000)/1000));
+  });
+}
+function restartCountdowns(){
+  updateCountdowns();
+  if(countdownTimer)clearInterval(countdownTimer);
+  countdownTimer=setInterval(updateCountdowns,1000);
+}
+
+/* ============================================================
+   MODAL
+   ============================================================ */
+function openModal(slug){
+  const o=loadOffers().find(x=>x.slug===slug&&x.active);
+  const overlay=document.getElementById('offerModal');
+  const inner=document.getElementById('offerModalInner');
+  if(!o){toast('Offer not found or unavailable','⚠️');location.hash='#offers';return;}
+  const c=CAT[o.category];
+  const expired=isExpired(o);
+  const showCd=!expired&&(new Date(o.to)-Date.now()<=30*DAY);
+  inner.innerHTML=
+    '<div class="modal-banner">'+cardBanner(o)+'<button class="modal-close" id="modalClose">×</button></div>'+
+    '<div class="modal-content">'+
+      '<span class="cat-badge-inline '+c.badge+'">'+c.icon+' '+o.category+'</span>'+
+      '<h2>'+esc(o.title)+'</h2>'+
+      '<div class="modal-detail-row">'+
+        '<div class="item"><div class="lbl">Branch</div><div class="val">'+BRANCH[o.branch]+'</div></div>'+
+        (o.from?'<div class="item"><div class="lbl">Valid From</div><div class="val">'+fmtDate(o.from)+'</div></div>':'')+
+        '<div class="item"><div class="lbl">'+(expired?'Expired On':'Valid Till')+'</div><div class="val">'+fmtDateTime(o.to)+'</div></div>'+
+        '<div class="item"><div class="lbl">Status</div><div class="val" style="color:'+(expired?'var(--grey-exp)':'var(--mig)')+'">'+(expired?'Expired':'Active')+'</div></div>'+
+      '</div>'+
+      '<p class="modal-full-desc">'+esc(o.full||o.short)+'</p>'+
+      (showCd?'<div class="modal-countdown"><span class="lbl">⏳ Offer ends in:</span>'+countdownHTML(o)+'</div>':'')+
+      '<div class="modal-actions">'+
+        (!expired?'<a class="btn btn-wa" href="'+waLink(o)+'" target="_blank" rel="noopener">💬 Chat on WhatsApp</a>':'')+
+        (o.link?'<a class="btn btn-navy" href="'+esc(o.link)+'" target="_blank" rel="noopener">📅 Book Appointment</a>':'<a class="btn btn-navy" href="Booking%20Page.html" id="modalBook">📅 Book Appointment</a>')+
+        '<button class="btn btn-ghost" id="copyLinkBtn">🔗 Copy Link</button>'+
+      '</div>'+
+    '</div>';
+  overlay.classList.add('show');
+  document.body.style.overflow='hidden';
+  document.getElementById('modalClose').onclick=()=>{location.hash='#offers';};
+  const book=document.getElementById('modalBook');
+  if(book)book.onclick=()=>{closeModal();};
+  document.getElementById('copyLinkBtn').onclick=()=>{
+    const url=location.href;
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(url).then(()=>toast('Link copied to clipboard!','🔗')).catch(()=>fallbackCopy(url));
+    }else fallbackCopy(url);
+  };
+  restartCountdowns();
+}
+function fallbackCopy(url){
+  const ta=document.createElement('textarea');ta.value=url;document.body.appendChild(ta);ta.select();
+  try{document.execCommand('copy');toast('Link copied to clipboard!','🔗');}catch(e){toast('Could not copy link','⚠️');}
+  ta.remove();
+}
+function closeModal(){
+  document.getElementById('offerModal').classList.remove('show');
+  document.body.style.overflow='';
+}
+document.getElementById('offerModal').addEventListener('click',e=>{if(e.target.id==='offerModal')location.hash='#offers';});
+
+/* ============================================================
+   ROUTING (hash)
+   ============================================================ */
+function handleRoute(){
+  const hash=location.hash;
+  if(hash==='#admin'){showAdminGate();return;}
+  document.getElementById('adminGate').classList.add('hidden');
+  document.getElementById('adminPanel').classList.add('hidden');
+  document.getElementById('publicPage').classList.remove('hidden');
+  if(hash.indexOf('#offer-')===0){openModal(hash.slice(7));}
+  else{closeModal();}
+}
+window.addEventListener('hashchange',handleRoute);
+
+/* ============================================================
+   SUBSCRIBE
+   ============================================================ */
+function setupSubscribe(){
+  const btn=document.getElementById('subscribeBtn');
+  const input=document.getElementById('notifyEmail');
+  const go=()=>{
+    const email=input.value.trim();
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){toast('Enter a valid email address','⚠️');return;}
+    const subs=loadSubs();
+    if(subs.includes(email.toLowerCase())){toast('You are already subscribed!','✓');input.value='';return;}
+    subs.push(email.toLowerCase());saveSubs(subs);input.value='';
+    toast('Subscribed! We will keep you posted 🎉','🔔');
+  };
+  btn.onclick=go;
+  input.addEventListener('keydown',e=>{if(e.key==='Enter')go();});
+}
+
+/* ============================================================
+   ADMIN
+   ============================================================ */
+function showAdminGate(){
+  document.getElementById('publicPage').classList.add('hidden');
+  document.getElementById('adminPanel').classList.add('hidden');
+  closeModal();
+  if(sessionStorage.getItem('sv_admin')==='1'){showAdminPanel();return;}
+  document.getElementById('adminGate').classList.remove('hidden');
+  setTimeout(()=>document.getElementById('adminPass').focus(),100);
+}
+function showAdminPanel(){
+  document.getElementById('adminGate').classList.add('hidden');
+  document.getElementById('publicPage').classList.add('hidden');
+  document.getElementById('adminPanel').classList.remove('hidden');
+  renderStats();renderTable();
+}
+function setupGate(){
+  const tryLogin=()=>{
+    const val=document.getElementById('adminPass').value;
+    if(val===ADMIN_PASS){
+      sessionStorage.setItem('sv_admin','1');
+      document.getElementById('gateError').textContent='';
+      document.getElementById('adminPass').value='';
+      showAdminPanel();
+    }else{
+      document.getElementById('gateError').textContent='Incorrect password. Try again.';
+      document.getElementById('adminPass').value='';
+    }
+  };
+  document.getElementById('gateBtn').onclick=tryLogin;
+  document.getElementById('adminPass').addEventListener('keydown',e=>{if(e.key==='Enter')tryLogin();});
+  document.getElementById('logoutBtn').onclick=()=>{sessionStorage.removeItem('sv_admin');location.hash='#offers';toast('Logged out','👋');};
+}
+
+function renderStats(){
+  const list=loadOffers();
+  const active=list.filter(o=>o.active&&getStatus(o)==='active').length;
+  const soon=list.filter(o=>o.active&&getStatus(o)==='soon').length;
+  const expired=list.filter(o=>getStatus(o)==='expired').length;
+  const subs=loadSubs().length;
+  document.getElementById('statsRow').innerHTML=
+    '<div class="stat-card s-active"><div class="num">'+active+'</div><div class="lbl">Total Active</div></div>'+
+    '<div class="stat-card s-soon"><div class="num">'+soon+'</div><div class="lbl">Expiring Soon</div></div>'+
+    '<div class="stat-card s-exp"><div class="num">'+expired+'</div><div class="lbl">Expired</div></div>'+
+    '<div class="stat-card s-sub"><div class="num">'+subs+'</div><div class="lbl">Total Subscribers</div></div>';
+}
+
+function statusTag(o){
+  if(!o.active)return '<span class="status-tag st-hidden">⊘ Hidden</span>';
+  const s=getStatus(o);
+  if(s==='active')return '<span class="status-tag st-active">● Active</span>';
+  if(s==='soon')return '<span class="status-tag st-soon">🔥 Expiring Soon</span>';
+  if(s==='upcoming')return '<span class="status-tag st-up">⏱ Scheduled</span>';
+  return '<span class="status-tag st-exp">✕ Expired</span>';
+}
+
+function renderTable(){
+  const list=loadOffers().slice().sort((a,b)=>new Date(b.createdAt||0)-new Date(a.createdAt||0));
+  const body=document.getElementById('offersTableBody');
+  if(!list.length){
+    body.innerHTML='<tr><td colspan="6" style="text-align:center;padding:40px;color:var(--ink-soft)">No offers yet. Click "Add New Offer" to create one, or "Reset Demo Data".</td></tr>';
+    return;
+  }
+  body.innerHTML=list.map(o=>{
+    const exp=getStatus(o)==='expired';
+    return '<tr class="'+(exp?'row-expired':'')+'">'+
+      '<td class="t-title">'+esc(o.title)+'</td>'+
+      '<td><span class="cat-chip" style="background:'+CAT[o.category].color+'">'+o.category+'</span></td>'+
+      '<td>'+BRANCH[o.branch]+'</td>'+
+      '<td>'+fmtDate(o.to)+'</td>'+
+      '<td>'+statusTag(o)+'</td>'+
+      '<td><div class="row-actions">'+
+        '<button class="icon-btn edit" title="Edit" data-edit="'+o.id+'">✏️</button>'+
+        '<button class="icon-btn eye" title="'+(o.active?'Hide':'Show')+'" data-toggle="'+o.id+'">'+(o.active?'👁️':'🙈')+'</button>'+
+        '<button class="icon-btn del" title="Delete" data-del="'+o.id+'">🗑️</button>'+
+      '</div></td></tr>';
+  }).join('');
+  body.querySelectorAll('[data-edit]').forEach(b=>b.onclick=()=>editOffer(b.dataset.edit));
+  body.querySelectorAll('[data-toggle]').forEach(b=>b.onclick=()=>toggleOffer(b.dataset.toggle));
+  body.querySelectorAll('[data-del]').forEach(b=>b.onclick=()=>askDelete(b.dataset.del));
+}
+
+/* ---------- form ---------- */
+function openForm(edit){
+  const panel=document.getElementById('formPanel');
+  panel.classList.remove('hidden');
+  document.getElementById('formTitle').textContent=edit?'✏️ Edit Offer':'＋ Add New Offer';
+  panel.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function closeForm(){document.getElementById('formPanel').classList.add('hidden');clearForm();}
+function clearForm(){
+  ['fId','fTitle','fSlug','fShort','fFull','fWaMsg','fLink','fImage','fFrom','fTo'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('fCategory').value='Education';
+  document.getElementById('fBranch').value='All Branches';
+  document.getElementById('fWhatsapp').value=AU_WA;
+  document.getElementById('fActive').checked=true;
+  updateActiveLabel();updateShortCounter();
+}
+function toLocalInput(iso){
+  const d=new Date(iso);const pad=n=>String(n).padStart(2,'0');
+  return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate())+'T'+pad(d.getHours())+':'+pad(d.getMinutes());
+}
+function editOffer(id){
+  const o=loadOffers().find(x=>x.id===id);if(!o)return;
+  document.getElementById('fId').value=o.id;
+  document.getElementById('fTitle').value=o.title;
+  document.getElementById('fSlug').value=o.slug;
+  document.getElementById('fCategory').value=o.category;
+  document.getElementById('fBranch').value=o.branch;
+  document.getElementById('fShort').value=o.short;
+  document.getElementById('fFull').value=o.full||'';
+  document.getElementById('fWhatsapp').value=o.whatsapp||'';
+  document.getElementById('fWaMsg').value=o.waMsg||'';
+  document.getElementById('fLink').value=o.link||'';
+  document.getElementById('fImage').value=o.image||'';
+  document.getElementById('fFrom').value=o.from?toLocalInput(o.from):'';
+  document.getElementById('fTo').value=o.to?toLocalInput(o.to):'';
+  document.getElementById('fActive').checked=!!o.active;
+  updateActiveLabel();updateShortCounter();
+  openForm(true);
+}
+function saveOffer(){
+  const title=document.getElementById('fTitle').value.trim();
+  const toVal=document.getElementById('fTo').value;
+  const fromVal=document.getElementById('fFrom').value;
+  if(!title){toast('Offer heading/title is required','⚠️');document.getElementById('fTitle').focus();return;}
+  if(!toVal){toast('Please set a "Valid To" date','⚠️');document.getElementById('fTo').focus();return;}
+  if(fromVal&&new Date(fromVal)>=new Date(toVal)){toast('"Valid From" must be before "Valid To"','⚠️');return;}
+  let slug=document.getElementById('fSlug').value.trim();
+  slug=slug?slugify(slug):slugify(title);
+  const id=document.getElementById('fId').value;
+  let list=loadOffers();
+  let base=slug,n=1;
+  while(list.some(o=>o.slug===slug&&o.id!==id)){slug=base+'-'+(++n);}
+  const data={
+    id:id||('sv'+Date.now()),
+    slug,title,
+    category:document.getElementById('fCategory').value,
+    branch:document.getElementById('fBranch').value,
+    short:document.getElementById('fShort').value.trim(),
+    full:document.getElementById('fFull').value.trim(),
+    whatsapp:document.getElementById('fWhatsapp').value.trim(),
+    waMsg:document.getElementById('fWaMsg').value.trim(),
+    link:document.getElementById('fLink').value.trim(),
+    image:document.getElementById('fImage').value.trim(),
+    from:fromVal?new Date(fromVal).toISOString():'',
+    to:new Date(toVal).toISOString(),
+    active:document.getElementById('fActive').checked
+  };
+  if(id){
+    const idx=list.findIndex(o=>o.id===id);
+    data.createdAt=list[idx].createdAt||Date.now();
+    list[idx]=data;toast('Offer updated successfully','💾');
+  }else{
+    data.createdAt=Date.now();list.push(data);toast('New offer added!','💾');
+  }
+  saveOffers(list);closeForm();renderStats();renderTable();
+}
+function toggleOffer(id){
+  const list=loadOffers();const o=list.find(x=>x.id===id);if(!o)return;
+  o.active=!o.active;saveOffers(list);renderStats();renderTable();
+  toast(o.active?'Offer is now visible':'Offer hidden from public','👁️');
+}
+function askDelete(id){
+  pendingDeleteId=id;confirmMode='delete';
+  const o=loadOffers().find(x=>x.id===id);
+  document.getElementById('confirmIcon').textContent='🗑️';
+  document.getElementById('confirmTitle').textContent='Delete this offer?';
+  document.getElementById('confirmText').textContent='"'+(o?o.title:'This offer')+'" will be permanently removed.';
+  document.getElementById('confirmOk').textContent='Delete';
+  document.getElementById('confirmModal').classList.add('show');
+}
+function askReset(){
+  confirmMode='reset';
+  document.getElementById('confirmIcon').textContent='↺';
+  document.getElementById('confirmTitle').textContent='Reset demo data?';
+  document.getElementById('confirmText').textContent='This replaces ALL current offers with the 52 sample offers. Your offers will be lost.';
+  document.getElementById('confirmOk').textContent='Reset';
+  document.getElementById('confirmModal').classList.add('show');
+}
+function confirmYes(){
+  if(confirmMode==='delete'){
+    if(pendingDeleteId){
+      saveOffers(loadOffers().filter(o=>o.id!==pendingDeleteId));pendingDeleteId=null;
+      renderStats();renderTable();toast('Offer deleted','🗑️');
+    }
+  }else if(confirmMode==='reset'){
+    resetDemoData();
+  }
+  document.getElementById('confirmModal').classList.remove('show');
+}
+
+function updateShortCounter(){
+  const v=document.getElementById('fShort').value;
+  const el=document.getElementById('shortCounter');
+  el.textContent=v.length+' / 150';
+  el.classList.toggle('over',v.length>150);
+}
+function updateActiveLabel(){
+  document.getElementById('activeLabel').textContent=document.getElementById('fActive').checked?'Active (visible)':'Inactive (hidden)';
+}
+
+function setupAdminForm(){
+  document.getElementById('addOfferBtn').onclick=()=>{clearForm();openForm(false);};
+  document.getElementById('cancelOfferBtn').onclick=closeForm;
+  document.getElementById('saveOfferBtn').onclick=saveOffer;
+  document.getElementById('resetDemoBtn').onclick=askReset;
+  const titleEl=document.getElementById('fTitle');
+  const slugEl=document.getElementById('fSlug');
+  let slugTouched=false;
+  slugEl.addEventListener('input',()=>slugTouched=true);
+  titleEl.addEventListener('input',()=>{
+    if(!document.getElementById('fId').value && !slugTouched){slugEl.value=slugify(titleEl.value);}
+  });
+  document.getElementById('fShort').addEventListener('input',updateShortCounter);
+  document.getElementById('fActive').addEventListener('change',updateActiveLabel);
+  document.getElementById('fBranch').addEventListener('change',e=>{
+    document.getElementById('fWhatsapp').value=waForBranch(e.target.value);
+  });
+  document.getElementById('confirmOk').onclick=confirmYes;
+  document.getElementById('confirmCancel').onclick=()=>{pendingDeleteId=null;document.getElementById('confirmModal').classList.remove('show');};
+  document.getElementById('confirmModal').addEventListener('click',e=>{if(e.target.id==='confirmModal'){pendingDeleteId=null;e.currentTarget.classList.remove('show');}});
+}
+
+/* ============================================================
+   ACCORDION + NAV
+   ============================================================ */
+function setupAccordion(){
+  const head=document.getElementById('accordionHead');
+  const body=document.getElementById('accordionBody');
+  head.onclick=()=>{
+    head.classList.toggle('open');
+    body.style.maxHeight=head.classList.contains('open')?body.scrollHeight+'px':'0';
+  };
+}
+function setupNav(){
+  const burger=document.getElementById('burger');
+  const links=document.getElementById('navLinks');
+  burger.onclick=()=>links.classList.toggle('open');
+  links.querySelectorAll('a').forEach(a=>a.onclick=()=>links.classList.remove('open'));
+}
+
+function setupControls(){
+  const search=document.getElementById('searchInput');
+  const clear=document.getElementById('searchClear');
+  const branch=document.getElementById('branchFilter');
+  const sort=document.getElementById('sortMode');
+  search.addEventListener('input',()=>{
+    searchQuery=search.value;
+    clear.style.display=searchQuery?'grid':'none';
+    liveLimit=PAGE;renderFilters();renderGrid();
+  });
+  clear.onclick=()=>{
+    search.value='';searchQuery='';clear.style.display='none';
+    liveLimit=PAGE;renderFilters();renderGrid();search.focus();
+  };
+  branch.addEventListener('change',()=>{
+    branchFilter=branch.value;liveLimit=PAGE;renderFilters();renderGrid();
+  });
+  sort.addEventListener('change',()=>{
+    sortMode=sort.value;liveLimit=PAGE;renderGrid();
+  });
+}
+
+/* ============================================================
+   INIT
+   ============================================================ */
+function refreshPublic(){renderFilters();renderGrid();renderExpired();}
+function init(){
+  seedIfNeeded();
+  document.getElementById('year').textContent=new Date().getFullYear();
+  setupSubscribe();setupGate();setupAdminForm();setupAccordion();setupNav();setupControls();setupOfferLottie();
+  refreshPublic();handleRoute();
+  setInterval(()=>{
+    if(!document.getElementById('publicPage').classList.contains('hidden'))refreshPublic();
+    if(!document.getElementById('adminPanel').classList.contains('hidden')){renderStats();renderTable();}
+  },30000);
+  document.addEventListener('keydown',e=>{
+    if(e.key==='Escape'){
+      if(document.getElementById('offerModal').classList.contains('show'))location.hash='#offers';
+      if(document.getElementById('confirmModal').classList.contains('show')){pendingDeleteId=null;document.getElementById('confirmModal').classList.remove('show');}
+    }
+  });
+}
+document.addEventListener('DOMContentLoaded',init);
+</script>
+</body>
+</html>
