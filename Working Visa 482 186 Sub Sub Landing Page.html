@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<script>document.documentElement.classList.add('js-anim');</script>
+<head>
+<meta charset="UTF-8">
+<script>
+  // Home routing: same logic as the other pages (India visitors -> index.html, everyone else -> International Home.html).
+  (function(){
+    var HOME={'in':'index.html','au':'International%20Home.html'};
+    var r=null;
+    try{r=localStorage.getItem('sv_region');}catch(e){}
+    if(r!=='in'&&r!=='au'){var m=document.cookie.match(/(?:^|; )sv_region=(in|au)/);r=m?m[1]:null;}
+    if(!r){
+      var tz='';
+      try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||'';}catch(e){}
+      if(tz) r=/^Asia\/(Kolkata|Calcutta)$/.test(tz)?'in':'au';
+    }
+    var shown=document.documentElement.getAttribute('data-home')||r;
+    if(shown) document.documentElement.setAttribute('data-region',shown);
+    if(!r) return;
+    document.addEventListener('DOMContentLoaded',function(){
+      document.querySelectorAll('a[data-home-link]').forEach(function(a){a.setAttribute('href',HOME[r]);});
+      if(r!=='au') return;
+      document.querySelectorAll('.region-toggle').forEach(function(a){
+        a.setAttribute('href',HOME['in']);a.setAttribute('data-to','in');a.setAttribute('data-side','right');a.classList.add('is-right');
+        a.setAttribute('aria-label','Viewing the Australia site. Switch to the India site');a.setAttribute('title','Viewing the Australia site. Switch to the India site');
+      });
+    });
+  })();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Working Visa 482 and 186: Employer Sponsored Visas Explained | SuccessVisa</title>
+<meta name="description" content="Working visa guide for Australia: Skills in Demand 482 streams, income thresholds, employer sponsorship, and the 186 permanent pathway. Charges and steps for 2026. Reviewed by MARA agents.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.successvisa.in/working-visa-482-186.html">
+<link rel="alternate" hreflang="en-au" href="https://www.successvisa.com.au/">
+<link rel="alternate" hreflang="en-in" href="https://www.successvisa.in/">
+<link rel="alternate" hreflang="x-default" href="https://www.successvisa.in/">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="SuccessVisa">
+<meta property="og:title" content="Working Visa 482 and 186: Complete Employer Sponsored Guide | SuccessVisa">
+<meta property="og:description" content="How the Skills in Demand 482 visa and the 186 permanent visa work: streams, salary thresholds, employer duties, costs and the path to PR.">
+<meta property="og:url" content="https://www.successvisa.in/working-visa-482-186.html">
+<meta property="og:locale" content="en_IN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Working Visa 482 and 186: Complete Employer Sponsored Guide | SuccessVisa">
+<meta name="twitter:description" content="How the Skills in Demand 482 visa and the 186 permanent visa work: streams, salary thresholds, employer duties, costs and the path to PR.">
+<meta name="theme-color" content="#1D184B">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Public+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Working Visa 482 and 186: Employer Sponsored Visas Explained",
+  "url": "https://www.successvisa.in/working-visa-482-186.html",
+  "inLanguage": "en",
+  "dateModified": "2026-10-26",
+  "about": {"@type": "Service", "name": "Employer sponsored working visa (subclass 482 and 186) application assistance", "serviceType": "Australian employer sponsored migration advice",
+    "provider": {"@type": "Organization", "name": "SuccessVisa", "identifier": "MARN 2318228", "url": "https://www.successvisa.in/"},
+    "areaServed": ["IN", "AU"]}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.successvisa.in/"},
+    {"@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.successvisa.in/services.html"},
+    {"@type": "ListItem", "position": 3, "name": "Working Visa (482/186)", "item": "https://www.successvisa.in/working-visa-482-186.html"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "What is the difference between the 482 and the 186 visa?",
+      "acceptedAnswer": {"@type": "Answer", "text": "The Skills in Demand visa (subclass 482) is a temporary work visa, valid for up to four years, that lets an approved employer sponsor you for a skilled job. The Employer Nomination Scheme (subclass 186) is a permanent visa that an employer nominates you for. Many people move from a 482 to a 186 through the Temporary Residence Transition stream."}},
+    {"@type": "Question", "name": "What are the streams of the Skills in Demand 482 visa?",
+      "acceptedAnswer": {"@type": "Answer", "text": "There are three working streams: Core Skills, for occupations on the Core Skills Occupation List with a salary at or above the Core Skills Income Threshold; Specialist Skills, for higher-paid roles with a salary at or above the Specialist Skills Income Threshold and no occupation list; and the Labour Agreement stream. An Essential Skills stream has been announced but is not yet operating."}},
+    {"@type": "Question", "name": "What salary does the employer have to pay?",
+      "acceptedAnswer": {"@type": "Answer", "text": "From 1 July 2026 the Core Skills Income Threshold is AUD 79,423 and the Specialist Skills Income Threshold is AUD 146,576. The employer must also pay at least the Annual Market Salary Rate, which is what an equivalent Australian worker in the same job and location would earn, so the higher of the two figures applies."}},
+    {"@type": "Question", "name": "How much work experience do I need for the 482?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Generally at least one year of relevant work experience at the required skill level, within the last five years, plus any skills assessment, licence or registration your occupation needs. The employer must also be an approved sponsor and nominate a genuine position."}},
+    {"@type": "Question", "name": "How long can I stay on a 482, and can I change employer?",
+      "acceptedAnswer": {"@type": "Answer", "text": "The visa can last up to four years. If you stop working for your sponsor, you generally have up to 180 days at a time to find a new sponsor, leave Australia or apply for another visa, with a cap of 365 days in total. The new employer must be an approved sponsor and lodge a new nomination."}},
+    {"@type": "Question", "name": "How does a 482 lead to permanent residence?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Through the Employer Nomination Scheme (subclass 186). The Temporary Residence Transition stream generally needs two years of full-time work with the nominating employer in the same occupation, and no new skills assessment. The Direct Entry stream is for people who have not transitioned from a 482 with that employer, and needs a positive skills assessment and about three years of relevant experience."}},
+    {"@type": "Question", "name": "Is there an age limit for the 482 and the 186?",
+      "acceptedAnswer": {"@type": "Answer", "text": "There is no upper age limit for the 482. The 186 generally requires you to be under 45 when you apply, with limited exemptions, for example for some academics and for some high-earning 482 holders."}},
+    {"@type": "Question", "name": "What costs does the employer pay?",
+      "acceptedAnswer": {"@type": "Answer", "text": "The employer pays the sponsorship and nomination fees and the Skilling Australians Fund (SAF) levy, and these costs cannot be passed on to you. You pay the visa application charge for you and your family, plus your own checks such as health examinations and police certificates."}}
+  ]
+}
+</script>
+<style>
+  :root{
+    --ink:#1D184B; --ink-2:#322B6E; --paper:#FBFAF7; --paper-2:#F3EEE2;
+    --gold:#F8A51C; --gold-light:#FBC46B; --gold-deep:#8A5A12;
+    --text-muted:#4C5A6E; --line:#D9D2C0; --radius:2px; --maxw:1180px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:'Public Sans',sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:600;line-height:1.25;margin:0 0 .5em;color:var(--ink);letter-spacing:-0.01em;}
+  p{margin:0 0 1em;color:var(--text-muted);}
+  a{color:inherit;text-decoration:none;}
+  ul{margin:0;padding:0;list-style:none;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);display:flex;align-items:center;gap:10px;margin-bottom:16px;}
+  .eyebrow-line{display:inline-block;width:20px;height:2px;background:var(--gold);flex-shrink:0;}
+  :focus-visible{outline:2px solid var(--gold-deep);outline-offset:3px;}
+  .skip-link{position:absolute;left:-999px;top:auto;background:var(--ink);color:var(--paper);padding:10px 16px;z-index:100;}
+  .skip-link:focus{left:16px;top:16px;}
+  @media (prefers-reduced-motion: reduce){ *{animation:none !important; transition:none !important;} }
+
+  /* Header */
+  header.site{position:sticky;top:0;z-index:50;background:rgba(251,250,247,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+  .nav-row{display:flex;align-items:center;justify-content:space-between;padding:16px 28px;max-width:var(--maxw);margin:0 auto;}
+  .logo{display:flex;align-items:center;}
+  .logo img{height:42px;width:auto;display:block;}
+  nav.primary ul{display:flex;gap:34px;align-items:center;}
+  nav.primary a{font-size:14.5px;font-weight:600;color:var(--ink-2);position:relative;padding:4px 0;}
+  nav.primary a.active{color:var(--ink);}
+  nav.primary a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--gold);transition:width .2s ease;}
+  nav.primary a:hover::after,nav.primary a.active::after{width:100%;}
+  .nav-right{display:flex;align-items:center;gap:20px;}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-family:'Public Sans',sans-serif;font-weight:700;font-size:14px;padding:12px 22px;border-radius:var(--radius);cursor:pointer;border:1.5px solid transparent;transition:background .18s ease,color .18s ease,border-color .18s ease;}
+  .btn-primary{background:var(--ink);color:var(--paper);}
+  .btn-primary:hover{background:var(--gold);color:var(--ink);}
+  .btn-ghost{border-color:var(--ink);color:var(--ink);}
+  .btn-ghost:hover{background:var(--ink);color:var(--paper);}
+  .cta-banner .btn-ghost{border-color:var(--paper);color:var(--paper);}
+  .cta-banner .btn-ghost:hover{background:var(--paper);color:var(--ink);}
+  .menu-toggle{display:none;background:none;border:none;cursor:pointer;padding:6px;}
+  .menu-toggle span{display:block;width:22px;height:2px;background:var(--ink);margin:5px 0;}
+  .has-dropdown{position:relative;}
+  .has-dropdown > a{display:flex;align-items:center;gap:5px;}
+  .has-dropdown > a svg{transition:transform .18s ease;flex-shrink:0;}
+  .has-dropdown:hover > a svg,.has-dropdown:focus-within > a svg{transform:rotate(180deg);}
+  .dropdown-menu{position:absolute;top:100%;left:-14px;margin-top:16px;min-width:216px;background:var(--paper);border:1px solid var(--line);box-shadow:0 16px 34px rgba(15,42,74,.13);padding:8px;opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .18s ease,transform .18s ease,visibility .18s ease;}
+  .has-dropdown:hover .dropdown-menu,.has-dropdown:focus-within .dropdown-menu{opacity:1;visibility:visible;transform:translateY(0);}
+  .dropdown-menu a{display:block;padding:9px 12px;font-size:13.5px;font-weight:600;color:var(--ink-2);}
+  .dropdown-menu a:hover{background:var(--paper-2);color:var(--ink);}
+  .nav-offer{display:inline-flex;align-items:center;color:var(--gold) !important;font-weight:700 !important;border:1px solid var(--gold);border-radius:20px;padding:6px 15px !important;transition:background .18s ease,color .18s ease;}
+  .nav-offer:hover{background:var(--gold);color:var(--ink) !important;}
+  @media(max-width:920px){
+    nav.primary{display:none;} .menu-toggle{display:block;}
+    .dropdown-menu{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;margin:6px 0 6px 10px;padding:0;display:flex;flex-direction:column;gap:2px;}
+    .has-dropdown > a svg{margin-left:auto;}
+  }
+
+  /* Region toggle */
+  .region-toggle{display:inline-flex;align-items:center;gap:9px;cursor:pointer;white-space:nowrap;text-decoration:none;}
+  .rt-label{font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:600;letter-spacing:.04em;color:#4C5A6E;transition:color .2s ease;}
+  .rt-track{position:relative;display:block;width:58px;height:30px;border-radius:30px;flex-shrink:0;background:linear-gradient(135deg,#6EE7B7 0%,#5CA9E6 55%,#5B80EA 100%);box-shadow:inset 0 1px 3px rgba(29,24,75,.18);}
+  .rt-knob{position:absolute;top:3px;left:3px;width:24px;height:24px;border-radius:50%;background:#fff;box-shadow:0 3px 8px rgba(29,24,75,.32);transition:transform .3s cubic-bezier(.4,.2,.2,1);}
+  .region-toggle.is-right .rt-knob{transform:translateX(28px);}
+  .region-toggle .rt-in{color:#1D184B;} .region-toggle.is-right .rt-in{color:#4C5A6E;}
+  .region-toggle .rt-au{color:#4C5A6E;} .region-toggle.is-right .rt-au{color:#1D184B;}
+  .region-toggle::after{display:none;}
+  @media(max-width:1240px) and (min-width:1141px){nav.primary ul{gap:22px;} .nav-right{gap:14px;}}
+  @media(max-width:1140px){
+    .nav-row{flex-wrap:wrap;row-gap:10px;column-gap:24px;padding-bottom:12px;}
+    .nav-right{display:contents;}
+    .nav-right .btn{margin-left:auto;margin-right:10px;}
+    .region-toggle{order:5;width:100%;justify-content:center;padding-top:10px;border-top:1px solid #D9D2C0;}
+  }
+  @media(max-width:560px){
+    .nav-row{padding-left:16px;padding-right:16px;column-gap:12px;}
+    .logo img{height:34px;}
+    .nav-right .btn{padding:9px 14px;font-size:13px;margin-right:4px;}
+  }
+
+  /* Breadcrumb */
+  .crumbs{padding:18px 0 0;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.04em;color:var(--text-muted);}
+  .crumbs a{color:var(--gold-deep);text-decoration:underline;text-underline-offset:2px;}
+  .crumbs span{margin:0 6px;}
+
+  /* Hero: split layout with a "points ledger" card */
+  .hero{padding:44px 0 36px;}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;}
+  .hero h1{font-size:clamp(32px,4.2vw,48px);line-height:1.1;max-width:640px;}
+  .hero h1 span{color:var(--gold-deep);}
+  .hero .lede{font-size:16.5px;max-width:580px;color:var(--ink-2);}
+  .hero .buttons{display:flex;gap:14px;flex-wrap:wrap;margin:24px 0 18px;}
+  .hero .credential{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--text-muted);letter-spacing:.03em;margin:0;}
+  .ledger{background:var(--ink);color:var(--paper);border-radius:20px;padding:30px 28px;box-shadow:0 18px 40px rgba(29,24,75,.22);position:relative;}
+  .ledger::before{content:"";position:absolute;inset:10px;border:1.3px dashed rgba(248,165,28,.5);border-radius:14px;pointer-events:none;}
+  .ledger h2{color:var(--paper);font-size:20px;margin-bottom:4px;position:relative;}
+  .ledger .sub{color:#B9C6D6;font-size:13px;margin-bottom:18px;position:relative;}
+  .ledger dl{margin:0;position:relative;}
+  .ledger .row{display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-top:1px solid rgba(255,255,255,.14);font-size:14px;}
+  .ledger dt{color:#B9C6D6;}
+  .ledger dd{margin:0;font-family:'IBM Plex Mono',monospace;font-weight:600;color:var(--gold-light);text-align:right;}
+  @media(max-width:920px){.hero-grid{grid-template-columns:1fr;}}
+
+  /* Sections */
+  .section{padding:64px 0;box-shadow:inset 0 16px 18px -18px rgba(29,24,75,.16);}
+  .bg-alt{background:var(--paper-2);}
+  .section-head{max-width:700px;margin-bottom:34px;}
+  .section-head h2{font-size:30px;}
+  .section-head p{font-size:15.5px;margin-bottom:0;}
+  .prose{max-width:780px;}
+  .prose p{font-size:15.5px;}
+  .prose h3{font-size:21px;margin-top:1.6em;}
+  .prose a,.note-box a,.page-footnote a{color:var(--gold-deep);text-decoration:underline;text-underline-offset:2px;}
+
+  .qf-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+  .qf-card{background:var(--paper);border-radius:16px;padding:22px 18px;text-align:center;box-shadow:0 8px 22px rgba(29,24,75,.07);}
+  .qf-card b{display:block;font-family:'Fraunces',serif;font-size:22px;color:var(--ink);margin-bottom:4px;}
+  .qf-card span{font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--text-muted);}
+  @media(max-width:860px){.qf-grid{grid-template-columns:1fr 1fr;}}
+
+  .checklist{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:14px 28px;}
+  .checklist li{position:relative;padding-left:30px;font-size:14.5px;color:var(--ink-2);line-height:1.6;}
+  .checklist li::before{content:"";position:absolute;left:0;top:3px;width:18px;height:18px;border-radius:50%;border:2px solid var(--gold);background:var(--paper);}
+  .checklist li::after{content:"";position:absolute;left:6px;top:8px;width:6px;height:9px;border-right:2px solid var(--gold);border-bottom:2px solid var(--gold);transform:rotate(45deg);}
+  .checklist.one{grid-template-columns:1fr;}
+  @media(max-width:640px){.checklist{grid-template-columns:1fr;}}
+
+  /* Cards */
+  .card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .card-grid.two{grid-template-columns:repeat(2,1fr);}
+  .card{background:var(--paper);border-radius:20px;padding:28px 26px;box-shadow:0 10px 28px rgba(29,24,75,.08);transition:transform .25s ease,box-shadow .25s ease;}
+  .card:hover{transform:translateY(-5px);box-shadow:0 18px 34px rgba(29,24,75,.14);}
+  .card h3{font-size:19px;margin-bottom:10px;}
+  .card p{font-size:14.2px;margin-bottom:0;}
+  .card .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;background:var(--gold-light);color:var(--ink);display:inline-block;padding:4px 11px;border-radius:20px;margin-bottom:12px;}
+  @media(max-width:920px){.card-grid,.card-grid.two{grid-template-columns:1fr;}}
+
+  /* Tables */
+  .table-wrap{overflow-x:auto;border-radius:14px;box-shadow:0 8px 22px rgba(29,24,75,.07);background:var(--paper);}
+  table{width:100%;border-collapse:collapse;font-size:14.2px;min-width:560px;}
+  caption{text-align:left;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-deep);padding:16px 20px 6px;}
+  th,td{text-align:left;padding:13px 20px;border-top:1px solid var(--line);vertical-align:top;color:var(--ink-2);}
+  th{font-family:'Fraunces',serif;font-weight:600;color:var(--ink);background:var(--paper-2);border-top:none;}
+  .sep{color:var(--gold);font-weight:700;margin:0 .35em;}
+  td.pts{font-family:'IBM Plex Mono',monospace;font-weight:600;color:var(--ink);white-space:nowrap;}
+  tbody th{background:var(--paper);font-size:14.5px;}
+
+  /* Steps */
+  .step-list{position:relative;display:flex;flex-direction:column;gap:6px;}
+  .step-list::before{content:"";position:absolute;left:27px;top:14px;bottom:14px;width:2px;background:var(--line);}
+  .step{display:grid;grid-template-columns:56px 1fr;gap:22px;padding:18px 0;position:relative;}
+  .step-num{position:relative;z-index:1;width:56px;height:56px;border-radius:50%;background:var(--paper);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:700;color:var(--ink);}
+  .step h3{font-size:18px;margin-bottom:6px;}
+  .step p{font-size:14.5px;margin-bottom:0;max-width:700px;}
+
+  /* Fees */
+  .fee-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .fee-card{background:var(--paper);border-radius:18px;padding:26px 22px;box-shadow:0 8px 22px rgba(29,24,75,.07);text-align:center;}
+  .fee-card .stream{font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--gold-deep);margin-bottom:8px;display:block;}
+  .fee-card .amount{font-family:'Fraunces',serif;font-size:28px;color:var(--ink);margin-bottom:6px;}
+  .fee-card p{font-size:13px;margin-bottom:0;}
+  @media(max-width:860px){.fee-grid{grid-template-columns:1fr;}}
+  .note-box{max-width:900px;margin:28px 0 0;background:var(--paper);border-left:4px solid var(--gold);border-radius:4px;padding:18px 22px;}
+  .note-box p{font-size:13.5px;color:var(--ink-2);margin:0;}
+  .note-box p + p{margin-top:8px;}
+
+  /* FAQ */
+  .faq-list{max-width:860px;}
+  .faq-item{background:var(--paper);border-radius:14px;padding:4px 22px;margin-bottom:12px;box-shadow:0 6px 18px rgba(29,24,75,.06);}
+  .faq-item[open]{box-shadow:0 12px 26px rgba(29,24,75,.12);}
+  .faq-item summary{cursor:pointer;list-style:none;font-family:'Fraunces',serif;font-size:17px;font-weight:600;padding:18px 30px 18px 0;position:relative;}
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::after{content:"+";position:absolute;right:0;top:16px;font-family:'Public Sans',sans-serif;font-size:22px;color:var(--gold);transition:transform .2s ease;}
+  .faq-item[open] summary::after{transform:rotate(45deg);}
+  .faq-item p{font-size:14.5px;padding-bottom:20px;max-width:720px;}
+
+  /* Links / resources */
+  .pillar-link{font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:600;color:var(--gold-deep);display:inline-flex;align-items:center;gap:6px;letter-spacing:.04em;text-transform:uppercase;margin-top:14px;}
+  .pillar-link svg{transition:transform .18s ease;}
+  a.card:hover .pillar-link svg{transform:translateX(4px);}
+
+  .page-footnote{border-top:1px solid var(--line);padding:22px 0;}
+  .page-footnote p{font-size:13.5px;line-height:1.6;color:var(--text-muted);margin:0;max-width:900px;}
+
+  .cta-banner{padding:76px 0;text-align:center;background:var(--ink);color:var(--paper);}
+  .cta-banner h2{color:var(--paper);font-size:32px;max-width:620px;margin:0 auto 16px;}
+  .cta-banner p{color:#B9C6D6;max-width:520px;margin:0 auto 28px;}
+  .cta-banner .btns{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;}
+
+  /* Reveal */
+  .js-anim .reveal{opacity:0;transform:translateY(24px);transition:opacity .5s ease, transform .55s cubic-bezier(.22,1,.36,1);}
+  .js-anim .reveal.in-view{opacity:1;transform:none;}
+  @media (prefers-reduced-motion: reduce){.js-anim .reveal{opacity:1 !important;transform:none !important;}}
+
+  /* Quick actions */
+  .quick-actions{position:fixed;right:22px;bottom:22px;z-index:60;display:flex;flex-direction:column;align-items:flex-end;gap:12px;}
+  .qa-btn{position:relative;width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--ink);color:var(--paper);box-shadow:0 6px 18px rgba(29,24,75,.28);transition:transform .18s ease,box-shadow .18s ease;}
+  .qa-btn:hover{transform:translateY(-3px) scale(1.05);}
+  .qa-btn.qa-primary{background:var(--gold);color:var(--ink);}
+  .qa-label{position:absolute;right:64px;top:50%;transform:translateY(-50%) translateX(6px);background:var(--ink);color:var(--paper);font-size:12.5px;font-weight:600;padding:6px 12px;border-radius:6px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .18s ease,transform .18s ease;}
+  .qa-btn:hover .qa-label{opacity:1;transform:translateY(-50%) translateX(0);}
+  @media (max-width:640px){.quick-actions{right:14px;bottom:14px;gap:10px;}.qa-btn{width:46px;height:46px;}.qa-label{display:none;}}
+</style>
+
+<style>
+  /* ---------- Region-aware Services menu: India list or Australian mega menu (html[data-region] is set in <head>) ---------- */
+  html[data-region="au"] .svc-in{display:none !important;}
+  html:not([data-region="au"]) .svc-au{display:none !important;}
+  .dropdown-menu.mega{width:580px;min-width:0;display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;padding:14px;}
+  .mega-group{display:flex;flex-direction:column;}
+  .dropdown-menu .mega-head{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#8A5A12;padding:6px 12px;border-bottom:1px solid #D9D2C0;margin-bottom:4px;}
+  .dropdown-menu .mega-head:hover{background:none;color:#1D184B;}
+  .dropdown-menu .mega-head::after{display:none;}
+  @media(max-width:920px){
+    .dropdown-menu.mega{width:auto;display:flex;flex-direction:column;gap:10px;padding:0;}
+    .dropdown-menu .mega-head{padding:4px 12px;}
+  }
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header class="site">
+  <div class="nav-row">
+    <a href="index.html" data-home-link class="logo"><img src="assets/logo.webp" alt="SuccessVisa" width="300" height="95" decoding="async"></a>
+    <nav class="primary" aria-label="Primary">
+      <ul>
+        <li><a href="index.html" data-home-link>Home</a></li>
+        <li><a href="About%20Us%20Sub%20Landing%20Page.html">About</a></li>
+        <li class="has-dropdown svc-in">
+          <a href="Services%20Main%20Landing%20Page.html" class="active">Services
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.4"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="Education%20Visa%20Landing%20Page.html">Education Visa (500)</a>
+            <a href="Visitor%20Visa%20Landing%20Page.html">Visitor Visa (600)</a>
+            <a href="OSHC%20Sub%20Landing%20Page.html">Health Cover (OSHC)</a>
+          </div>
+        </li>
+        <li class="has-dropdown svc-au">
+          <a href="Australia%20Services%20Main%20Landing%20Page.html" class="active">Services
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.4"/></svg>
+          </a>
+          <div class="dropdown-menu mega">
+            <div class="mega-group">
+              <a href="Australia%20Services%20Main%20Landing%20Page.html#skilled" class="mega-head">Skilled Visas</a>
+              <a href="Skilled%20Independent%20189%20Sub%20Sub%20Landing%20Page.html">Skilled Independent (189)</a>
+              <a href="Skilled%20Nominated%20190%20Sub%20Sub%20Landing%20Page.html">Skilled Nominated (190)</a>
+              <a href="Skilled%20Work%20Regional%20491%20Sub%20Sub%20Landing%20Page.html">Skilled Work Regional (491)</a>
+              <a href="PR%20Skilled%20Regional%20191%20Sub%20Sub%20Landing%20Page.html">PR Skilled Regional (191)</a>
+              <a href="Skilled%20Recognised%20Graduate%20476%20Sub%20Sub%20Landing%20Page.html">Skilled Recognised Graduate (476)</a>
+              <a href="Recognition%20of%20Prior%20Learning%20RPL%20Sub%20Sub%20Landing%20Page.html">Recognition of Prior Learning (RPL)</a>
+            </div>
+            <div class="mega-group">
+              <a href="Australia%20Services%20Main%20Landing%20Page.html#family" class="mega-head">Partner &amp; Family</a>
+              <a href="Partner%20Visa%20820%20801%20Sub%20Sub%20Landing%20Page.html">Partner Visa (820/801)</a>
+              <a href="Family%20Visa%20Sub%20Sub%20Landing%20Page.html">Family Visa</a>
+              <a href="Carer%20Visa%20116%20836%20Sub%20Sub%20Landing%20Page.html">Carer Visa (116/836)</a>
+            </div>
+            <div class="mega-group">
+              <a href="Australia%20Services%20Main%20Landing%20Page.html#study-work" class="mega-head">Student, Working &amp; Training</a>
+              <a href="Student%20Visa%20500%20Sub%20Sub%20Landing%20Page.html">Student Visa (500)</a>
+              <a href="Working%20Visa%20482%20186%20Sub%20Sub%20Landing%20Page.html">Working Visa (482/186)</a>
+              <a href="Training%20Visa%20407%20Sub%20Sub%20Landing%20Page.html">Training Visa (407)</a>
+            </div>
+            <div class="mega-group">
+              <a href="Australia%20Services%20Main%20Landing%20Page.html#visitor-business" class="mega-head">Visitor, Business &amp; Health</a>
+              <a href="Visitor%20Visa%20Landing%20Page.html">Visitor Visa (600)</a>
+              <a href="Australia%20Business%20Visa%20Sub%20Sub%20Landing%20Page.html">Business Visa</a>
+              <a href="Health%20Insurance%20OSHC%20Sub%20Sub%20Landing%20Page.html">Health Insurance (OSHC)</a>
+            </div>
+          </div>
+        </li>
+        <li><a href="Offers%20Demo%20Landing%20Page.html" class="nav-offer">Offers</a></li>
+        <li class="has-dropdown">
+          <a href="resources.html">Resources
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.4"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="resources.html#blog">Blog</a>
+            <a href="resources.html#videos">Videos</a>
+            <a href="resources.html#checklist">Visa Checklists</a>
+            <a href="resources.html#news">Latest News</a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <a href="contact.html">Contact
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.4"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="Chandigarh%20Branch%20Landing%20Page.html">Chandigarh, IN</a>
+            <a href="Parramatta%20Branch%20Landing%20Page.html">Parramatta, NSW</a>
+            <a href="Toongabbie%20Branch%20Landing%20Page.html">Toongabbie, NSW</a>
+            <a href="Melbourne%20CBD%20Branch%20Landing%20Page.html">Melbourne, VIC</a>
+            <a href="Werribee%20Branch%20Landing%20Page.html">Werribee, VIC</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <a href="International%20Home.html" class="region-toggle" data-to="au" data-side="left" aria-label="Viewing the India site. Switch to the Australia site" title="Viewing the India site. Switch to the Australia site">
+        <span class="rt-label rt-in">India</span>
+        <span class="rt-track" aria-hidden="true"><span class="rt-knob"></span></span>
+        <span class="rt-label rt-au">Australia</span>
+      </a>
+      <a href="Booking%20Page.html" class="btn btn-primary">Book Appointment</a>
+      <button class="menu-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html" data-home-link>Home</a><span>/</span><a href="Services%20Main%20Landing%20Page.html">Services</a><span>/</span>Working Visa (482/186)</nav>
+    <div class="hero-grid" style="margin-top:28px;">
+      <div>
+        <div class="eyebrow"><span class="eyebrow-line"></span>Employer Sponsored Guide</div>
+        <h1>Working Visa (Subclass 482 and 186): <span>How Employer Sponsorship Leads to Permanent Residence</span></h1>
+        <p class="lede">The Skills in Demand visa (subclass 482) lets an approved Australian employer sponsor a skilled worker for up to four years. After a period of work, the Employer Nomination Scheme (subclass 186) can turn that job into permanent residence. This guide explains both visas, the salary thresholds, what employers must do and how the two steps connect.</p>
+        <div class="buttons">
+          <a href="Booking%20Page.html" class="btn btn-primary">Book a Work Visa Check</a>
+          <a href="#streams" class="btn btn-ghost">See the 482 Streams</a>
+        </div>
+        <p class="credential">Reviewed by MARA registered migration agents &middot; MARN 2318228</p>
+      </div>
+      <aside class="ledger" aria-label="Subclass 482 and 186 at a glance">
+        <h2>482 and 186 at a glance</h2>
+        <p class="sub">The numbers every worker and employer should know first.</p>
+        <dl>
+          <div class="row"><dt>482 stay</dt><dd>Up to 4 years</dd></div>
+          <div class="row"><dt>Core Skills salary floor</dt><dd>AUD 79,423</dd></div>
+          <div class="row"><dt>Specialist Skills floor</dt><dd>AUD 146,576</dd></div>
+          <div class="row"><dt>186 outcome</dt><dd>Permanent residence</dd></div>
+          <div class="row"><dt>482 main applicant charge</dt><dd>AUD 4,015</dd></div>
+        </dl>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="what-are-482-186">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>The Basics</div>
+      <h2>What Are the 482 and 186 Working Visas?</h2>
+      <p>Two employer sponsored visas that work as a two-step pathway: temporary first, then permanent.</p>
+    </div>
+    <div class="prose">
+      <p>The Skills in Demand visa (subclass 482) is a temporary work visa. It replaced the Temporary Skill Shortage (TSS) visa on 7 December 2024 and kept the 482 number. An Australian employer that is an approved sponsor nominates a skilled position and you apply to fill it. You work for that sponsor in the nominated occupation, and the visa can last up to four years.</p>
+      <p>The Employer Nomination Scheme (subclass 186) is a permanent visa. An employer nominates you, and there are separate streams for people who are already working for that employer on a 482 and for people who are not. Together, the two visas form a common pathway: work on a 482 and, once you meet the requirements, move to permanent residence through the 186.</p>
+    </div>
+    <div class="qf-grid" style="margin-top:34px;">
+      <div class="qf-card reveal"><b>Employer led</b><span>An approved sponsor nominates you</span></div>
+      <div class="qf-card reveal"><b>482 temporary</b><span>Up to four years</span></div>
+      <div class="qf-card reveal"><b>186 permanent</b><span>Permanent residence</span></div>
+      <div class="qf-card reveal"><b>Family included</b><span>Partner and dependent children</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-alt" id="streams">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Visa Streams</div>
+      <h2>Skills in Demand 482 Visa Streams Compared</h2>
+      <p>Which stream applies depends on your occupation and your salary.</p>
+    </div>
+    <div class="table-wrap reveal">
+      <table>
+        <caption>Subclass 482 streams</caption>
+        <thead><tr><th>Stream</th><th>Occupation rule</th><th>Salary rule</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Specialist Skills</th><td>Any occupation, except ANZSCO major groups 3, 7 and 8</td><td>At least AUD 146,576 (Specialist Skills Income Threshold) from 1 July 2026</td><td>No occupation list. Typically the fastest stream.</td></tr>
+          <tr><th scope="row">Core Skills</th><td>Occupation on the Core Skills Occupation List (CSOL)</td><td>At least AUD 79,423 (Core Skills Income Threshold) from 1 July 2026, and at least the market salary rate</td><td>The most common stream for skilled workers.</td></tr>
+          <tr><th scope="row">Labour Agreement</th><td>Set by the specific industry, company or regional agreement</td><td>Set by the agreement</td><td>Used where the employer has a negotiated labour agreement, including some regional agreements.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note-box">
+      <p>An Essential Skills stream has been announced for lower-paid essential roles, but it is not yet operating. Both income thresholds are indexed each 1 July, and a nomination is assessed against the figure in force when it is lodged.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="worker-eligibility">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Eligibility</div>
+      <h2>482 Visa Eligibility: What You Need as the Worker</h2>
+      <p>Your employer must qualify, and so must you.</p>
+    </div>
+    <ul class="checklist">
+      <li><strong>Sponsor and nomination:</strong> an approved employer must nominate you for a genuine position in an eligible occupation.</li>
+      <li><strong>Work experience:</strong> generally at least one year of relevant experience at the required skill level, within the last five years.</li>
+      <li><strong>Skills and licences:</strong> any skills assessment, licence or registration your occupation requires, for example for trades, engineering or health roles.</li>
+      <li><strong>English:</strong> the minimum English level set by the Department for your stream and occupation, shown through an approved test or an accepted passport.</li>
+      <li><strong>Salary:</strong> an offered salary at or above the threshold for your stream and the market salary rate.</li>
+      <li><strong>Health and character:</strong> meet the Australian health requirement and provide police certificates for the character requirement.</li>
+      <li><strong>Work for your sponsor:</strong> work in the nominated occupation for the sponsor, unless a new sponsor lodges a new nomination for you.</li>
+    </ul>
+    <div class="note-box">
+      <p>The 482 has no upper age limit. Requirements differ by occupation and stream, so we check your own occupation, experience and any licensing before an employer invests in nominating you.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-alt" id="employer-duties">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>For Employers</div>
+      <h2>What Employers Must Do to Sponsor a 482 Worker</h2>
+      <p>Sponsorship comes with legal duties, and the employer carries most of the cost.</p>
+    </div>
+    <div class="table-wrap reveal">
+      <table>
+        <caption>Main employer steps and obligations</caption>
+        <thead><tr><th>Step or duty</th><th>What it involves</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Become an approved sponsor</th><td>A standard business sponsor approval generally lasts five years, and the sponsorship application has its own fee.</td></tr>
+          <tr><th scope="row">Nominate a genuine position</th><td>The employer nominates the role and occupation, shows a genuine need and meets the salary rules.</td></tr>
+          <tr><th scope="row">Pay the right salary</th><td>The salary must be at least the income threshold for the stream and at least the market salary rate, which is what an equivalent Australian worker would earn in the same job and location.</td></tr>
+          <tr><th scope="row">Labour market testing</th><td>For the Specialist Skills and Core Skills streams, employers generally need to advertise the role, usually for at least 28 days on at least two national platforms, unless an exemption applies.</td></tr>
+          <tr><th scope="row">Pay the SAF levy</th><td>The Skilling Australians Fund levy is paid by the employer up front. It is AUD 1,200 per year of visa duration for businesses with turnover under AUD 10 million and AUD 1,800 per year for others.</td></tr>
+          <tr><th scope="row">Meet sponsor obligations</th><td>Keep records, tell the Department about changes such as the worker leaving, and not recover sponsorship costs from the worker.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note-box">
+      <p>The employer pays the nomination and sponsorship fees and the SAF levy, and these costs cannot be passed on to the worker. Breaching sponsor obligations can lead to sanctions on the business.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="pathway-186">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Permanent Residence</div>
+      <h2>The 186 Employer Nomination Scheme: The Path to Permanent Residence</h2>
+      <p>The 186 has separate streams depending on where you are in your sponsored career.</p>
+    </div>
+    <div class="table-wrap reveal">
+      <table>
+        <caption>Subclass 186 streams compared</caption>
+        <thead><tr><th>Feature</th><th>Temporary Residence Transition</th><th>Direct Entry</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Who it is for</th><td>Current or former 482 holders working for the nominating employer</td><td>Workers who are not transitioning from a 482 with that employer</td></tr>
+          <tr><th scope="row">Employment with the employer</th><td>Generally two years of full-time work with the employer in the same occupation</td><td>No time with the employer needed first</td></tr>
+          <tr><th scope="row">Skills assessment</th><td>Not usually required again</td><td>A positive skills assessment is required</td></tr>
+          <tr><th scope="row">Work experience</th><td>Covered by the two years of sponsored work</td><td>About three years of relevant experience</td></tr>
+          <tr><th scope="row">Age</th><td>Under 45, with limited exemptions</td><td>Under 45, with limited exemptions</td></tr>
+          <tr><th scope="row">English</th><td>Competent English (for example IELTS 6.0 in each band)</td><td>Competent English (for example IELTS 6.0 in each band)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note-box">
+      <p>The 186 also has a Labour Agreement stream for workers covered by a labour agreement. Age exemptions apply in limited cases, for example some academics, scientists at certain agencies and some high-earning 482 holders. Rules differ, so we map the exact stream for your situation before an employer lodges anything.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-alt" id="how-to-apply">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>The Process</div>
+      <h2>How to Get a Working Visa: From 482 to 186</h2>
+      <p>A typical path from first conversation to permanent residence.</p>
+    </div>
+    <div class="step-list">
+      <div class="step reveal"><div class="step-num">01</div><div><h3>Free work visa check</h3><p>We look at your occupation, experience, salary offer and English, and tell you which stream and pathway are realistic.</p></div></div>
+      <div class="step reveal"><div class="step-num">02</div><div><h3>Check or build the sponsorship</h3><p>We confirm the employer's sponsor status, and help new sponsors apply for approval if they need it.</p></div></div>
+      <div class="step reveal"><div class="step-num">03</div><div><h3>Prepare skills and licences</h3><p>We organise any skills assessment, registration or licence your occupation needs, and your English test.</p></div></div>
+      <div class="step reveal"><div class="step-num">04</div><div><h3>Labour market testing and nomination</h3><p>The employer completes any required advertising and lodges the nomination with the right salary and role details.</p></div></div>
+      <div class="step reveal"><div class="step-num">05</div><div><h3>Lodge the 482 visa application</h3><p>We lodge your application and your family's, with identity, qualification, experience, health and character evidence.</p></div></div>
+      <div class="step reveal"><div class="step-num">06</div><div><h3>Work, comply and plan</h3><p>You start work for the sponsor and keep to the conditions, while we track dates for the 186 step.</p></div></div>
+      <div class="step reveal"><div class="step-num">07</div><div><h3>Move to the 186</h3><p>When you meet the requirements, the employer nominates you for the permanent visa and we lodge the application.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="costs">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Costs</div>
+      <h2>482 and 186 Visa Costs</h2>
+      <p>Government charges, in effect since 1 July 2026, split between worker and employer.</p>
+    </div>
+    <div class="table-wrap reveal">
+      <table>
+        <caption>Visa application charges from 1 July 2026</caption>
+        <thead><tr><th>Visa</th><th>Main applicant</th><th>Additional adult</th><th>Child under 18</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Skills in Demand (482)</th><td class="pts">AUD 4,015</td><td class="pts">AUD 4,015</td><td class="pts">AUD 1,005</td></tr>
+          <tr><th scope="row">Employer Nomination Scheme (186)</th><td class="pts">AUD 6,140</td><td class="pts">AUD 3,070</td><td class="pts">AUD 1,535</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note-box">
+      <p><strong>Employer costs.</strong> The employer pays the sponsorship application, the nomination fee and the Skilling Australians Fund levy. The 482 levy is AUD 1,200 per year of visa duration for businesses with turnover under AUD 10 million and AUD 1,800 per year for others. The 186 levy is higher, at AUD 3,000 for businesses with turnover under AUD 10 million and AUD 5,000 for others. Fees for nomination and sponsorship are separate charges and also change over time.</p>
+      <p>Plan separately for health examinations, police certificates, English tests, skills assessments and professional fees. Charges are set by the Australian Government and normally change each 1 July. Confirm the current amounts in ImmiAccount or on the Department of Home Affairs visa pricing tool before you pay. The visa application charge is generally not refunded if an application is refused.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-alt" id="processing">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Timing</div>
+      <h2>How Long Do the 482 and 186 Visas Take?</h2>
+    </div>
+    <div class="table-wrap reveal">
+      <table>
+        <caption>Skills in Demand (482) processing times, Home Affairs data published 29 September 2026</caption>
+        <thead><tr><th>Application</th><th>25% decided within</th><th>50% decided within</th><th>75% decided within</th><th>90% decided within</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Specialist Skills visa</th><td class="pts">28 days</td><td class="pts">37 days</td><td class="pts">51 days</td><td class="pts">78 days</td></tr>
+          <tr><th scope="row">Core Skills visa</th><td class="pts">51 days</td><td class="pts">4 months</td><td class="pts">8 months</td><td class="pts">9 months</td></tr>
+          <tr><th scope="row">Labour Agreement visa</th><td class="pts">3 months</td><td class="pts">5 months</td><td class="pts">7 months</td><td class="pts">9 months</td></tr>
+          <tr><th scope="row">Employer nomination</th><td class="pts">Under 1 day</td><td class="pts">64 days</td><td class="pts">6 months</td><td class="pts">9 months</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="prose" style="margin-top:30px;">
+      <p>These figures are a guide, and the Department updates them regularly. Check the live processing times tool before you plan a start date. For the 186, published processing times differ widely by stream and between sources, and can run well over a year, so we do not quote one number.</p>
+      <p>From 19 September 2026, Ministerial Direction 122 sets the order in which the Department processes the 186 and several other permanent and provisional visas, with priority for listed sectors. It changes processing order, not eligibility.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="changing-employer">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>On the Visa</div>
+      <h2>Changing Employer, Conditions and Your Family on a 482</h2>
+      <p>What happens if your job or circumstances change.</p>
+    </div>
+    <div class="prose">
+      <p>A 482 is tied to your sponsor and your nominated occupation. If you stop working for your sponsor, you generally have up to 180 days at a time to find a new approved sponsor who lodges a nomination for you, apply for another visa or leave Australia, with a cap of 365 days in total. Working for someone other than your sponsor in the meantime can breach your conditions.</p>
+      <p>Your partner and dependent children can be included in your application, and the fee for each is separate. Because rules for family work and study rights, sponsor changes and the 186 timeline are detailed, we plan them with you before you accept a job offer.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-alt" id="who">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Fit Check</div>
+      <h2>Is a Working Visa Right for You?</h2>
+    </div>
+    <div class="card-grid two">
+      <div class="card reveal">
+        <h3>Employer sponsorship tends to suit you if</h3>
+        <ul class="checklist one" style="margin-top:14px;">
+          <li>You have a job offer, or a realistic route to one, from an employer who can sponsor.</li>
+          <li>Your occupation is on the CSOL, or your salary reaches the Specialist Skills threshold.</li>
+          <li>You have the experience, licences and English the occupation needs.</li>
+          <li>You want to work first and plan permanent residence through the 186 later.</li>
+        </ul>
+      </div>
+      <div class="card reveal">
+        <h3>Consider another route if</h3>
+        <ul class="checklist one" style="margin-top:14px;">
+          <li>You have no employer willing to sponsor you.</li>
+          <li>Your points are strong enough for a skilled visa such as the 189.</li>
+          <li>Your salary would fall below the threshold for your stream.</li>
+          <li>You want to stay flexible between employers without lodging new nominations.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="mistakes">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Avoid These</div>
+      <h2>Common Working Visa Mistakes That Cost Workers and Employers Time</h2>
+    </div>
+    <div class="card-grid">
+      <div class="card reveal"><h3>Starting before the visa is granted</h3><p>Work for the sponsor only once you hold a visa that allows it, and in the nominated occupation.</p></div>
+      <div class="card reveal"><h3>Salary that falls short</h3><p>The offer must meet both the income threshold and the market salary rate. The higher figure applies.</p></div>
+      <div class="card reveal"><h3>Skipping labour market testing</h3><p>Where it is required, a missing or weak advertising record can sink the nomination.</p></div>
+      <div class="card reveal"><h3>Choosing the wrong occupation</h3><p>An occupation that does not match your real duties or the employer's role invites refusal.</p></div>
+      <div class="card reveal"><h3>Losing track of the 186 timeline</h3><p>The Temporary Residence Transition stream needs a period of work with the nominating employer. Plan your dates from the start.</p></div>
+      <div class="card reveal"><h3>Sponsor non-compliance</h3><p>Employers who fail their obligations, or ask workers to pay sponsorship costs, risk sanctions and damage workers' pathways.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-alt" id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Common Questions</div>
+      <h2>Working Visa (482/186) FAQs</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item"><summary>What is the difference between the 482 and the 186 visa?</summary><p>The Skills in Demand visa (subclass 482) is a temporary work visa, valid for up to four years, that lets an approved employer sponsor you for a skilled job. The Employer Nomination Scheme (subclass 186) is a permanent visa that an employer nominates you for. Many people move from a 482 to a 186 through the Temporary Residence Transition stream.</p></details>
+      <details class="faq-item"><summary>What are the streams of the Skills in Demand 482 visa?</summary><p>There are three working streams: Core Skills, for occupations on the Core Skills Occupation List with a salary at or above the Core Skills Income Threshold; Specialist Skills, for higher-paid roles with a salary at or above the Specialist Skills Income Threshold and no occupation list; and the Labour Agreement stream. An Essential Skills stream has been announced but is not yet operating.</p></details>
+      <details class="faq-item"><summary>What salary does the employer have to pay?</summary><p>From 1 July 2026 the Core Skills Income Threshold is AUD 79,423 and the Specialist Skills Income Threshold is AUD 146,576. The employer must also pay at least the Annual Market Salary Rate, which is what an equivalent Australian worker in the same job and location would earn, so the higher of the two figures applies.</p></details>
+      <details class="faq-item"><summary>How much work experience do I need for the 482?</summary><p>Generally at least one year of relevant work experience at the required skill level, within the last five years, plus any skills assessment, licence or registration your occupation needs. The employer must also be an approved sponsor and nominate a genuine position.</p></details>
+      <details class="faq-item"><summary>How long can I stay on a 482, and can I change employer?</summary><p>The visa can last up to four years. If you stop working for your sponsor, you generally have up to 180 days at a time to find a new sponsor, leave Australia or apply for another visa, with a cap of 365 days in total. The new employer must be an approved sponsor and lodge a new nomination.</p></details>
+      <details class="faq-item"><summary>How does a 482 lead to permanent residence?</summary><p>Through the Employer Nomination Scheme (subclass 186). The Temporary Residence Transition stream generally needs two years of full-time work with the nominating employer in the same occupation, and no new skills assessment. The Direct Entry stream is for people who have not transitioned from a 482 with that employer, and needs a positive skills assessment and about three years of relevant experience.</p></details>
+      <details class="faq-item"><summary>Is there an age limit for the 482 and the 186?</summary><p>There is no upper age limit for the 482. The 186 generally requires you to be under 45 when you apply, with limited exemptions, for example for some academics and for some high-earning 482 holders.</p></details>
+      <details class="faq-item"><summary>What costs does the employer pay?</summary><p>The employer pays the sponsorship and nomination fees and the Skilling Australians Fund (SAF) levy, and these costs cannot be passed on to you. You pay the visa application charge for you and your family, plus your own checks such as health examinations and police certificates.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Keep Exploring</div>
+      <h2>Related Services</h2>
+    </div>
+    <div class="card-grid">
+      <a href="Skilled%20Independent%20189%20Sub%20Sub%20Landing%20Page.html" class="card reveal"><span class="tag">Subclass 189</span><h3>Skilled Independent Visa</h3><p>A points-tested route with no employer sponsor.</p><span class="pillar-link">Visa 189 <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M8 1L13 5L8 9M13 5H1" stroke="currentColor" stroke-width="1.4"/></svg></span></a>
+      <a href="Student%20Visa%20500%20Sub%20Sub%20Landing%20Page.html" class="card reveal"><span class="tag">Student Visa 500</span><h3>Study in Australia First</h3><p>Australian study can lead to graduate work and later sponsorship.</p><span class="pillar-link">Student visa <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M8 1L13 5L8 9M13 5H1" stroke="currentColor" stroke-width="1.4"/></svg></span></a>
+      <a href="Services%20Main%20Landing%20Page.html" class="card reveal"><span class="tag">All Services</span><h3>All Visa Services</h3><p>See every visa service we support, from student visas to permanent residency.</p><span class="pillar-link">View services <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M8 1L13 5L8 9M13 5H1" stroke="currentColor" stroke-width="1.4"/></svg></span></a>
+    </div>
+  </div>
+</section>
+
+<div class="wrap page-footnote">
+  <p>Reviewed by SuccessVisa's MARA registered migration agents &middot; last updated 26 October 2026. General information only, not migration advice. Visa criteria, income thresholds, charges and processing times are set by the Australian Government and can change. Always confirm against the Department of Home Affairs before you act. <a href="Disclaimer%20Page.html">See full disclaimer and sources</a>.</p>
+</div>
+
+<section class="cta-banner">
+  <div class="wrap">
+    <h2>Turn a Job Offer Into a Visa Plan</h2>
+    <p>Book a consultation for an honest check of your sponsorship options and your route to permanent residence.</p>
+    <div class="btns">
+      <a href="Booking%20Page.html" class="btn btn-primary">Book Appointment</a>
+      <a href="Services%20Main%20Landing%20Page.html" class="btn btn-ghost">Explore All Services</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="quick-actions" aria-label="Quick contact actions">
+  <a href="tel:+911800000000" class="qa-btn" aria-label="Call us"><span class="qa-label">Call us</span>
+    <svg width="21" height="21" viewBox="0 0 24 24" fill="none"><path d="M4 5c0-1 1-2 2-2h2l2 5-2 1.5c1 2.3 2.7 4 5 5L14.5 12l5 2v2c0 1-1 2-2 2C10.5 18 4 11.5 4 5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></a>
+  <a href="https://wa.me/911800000000" class="qa-btn" aria-label="Chat on WhatsApp" target="_blank" rel="noopener"><span class="qa-label">WhatsApp us</span>
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.7-1.2A9 9 0 1 0 12 3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M8.5 8.8c-.3.6-.3 1.6.6 2.9 1 1.4 2.3 2.6 3.9 3.1 1 .3 1.7.1 2.1-.4l.4-.6-2-1.3-.5.5c-.2.2-.5.2-.8 0-.7-.4-1.5-1.1-2-1.9-.2-.3-.1-.6.1-.8l.5-.5-1.1-2Z" fill="currentColor"/></svg></a>
+  <a href="Booking%20Page.html" class="qa-btn qa-primary" aria-label="Book Appointment"><span class="qa-label">Book Appointment</span>
+    <svg width="21" height="21" viewBox="0 0 24 24" fill="none"><rect x="3.5" y="5" width="17" height="15" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M3.5 9.5h17" stroke="currentColor" stroke-width="1.5"/><path d="M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M8 13.5l2.3 2.3L16 10.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+</div>
+
+<script>
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('nav.primary');
+  toggle.addEventListener('click', () => {
+    const open = nav.style.display === 'block';
+    nav.style.display = open ? 'none' : 'block';
+    if(!open){
+      nav.style.position='absolute';nav.style.top='100%';nav.style.left='0';nav.style.right='0';
+      nav.style.background='var(--paper)';nav.style.borderBottom='1px solid var(--line)';nav.style.padding='20px 28px';
+      nav.querySelector('ul').style.flexDirection='column';nav.querySelector('ul').style.alignItems='flex-start';nav.querySelector('ul').style.gap='16px';
+    }
+  });
+</script>
+
+<script>
+(function(){
+  const targets = document.querySelectorAll('.reveal');
+  if(!targets.length || !('IntersectionObserver' in window)){ targets.forEach(function(el){el.classList.add('in-view');}); return; }
+  let counter = 0;
+  const obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(!entry.isIntersecting) return;
+      const el = entry.target;
+      const delay = (counter++ % 6) * 70;
+      setTimeout(function(){ el.classList.add('in-view'); }, delay);
+      obs.unobserve(el);
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  targets.forEach(function(el){ obs.observe(el); });
+})();
+</script>
+
+<script>
+(function(){
+  document.querySelectorAll('.region-toggle').forEach(function(a){
+    window.addEventListener('pageshow',function(){a.classList.toggle('is-right',a.getAttribute('data-side')==='right');});
+    a.addEventListener('click',function(e){
+      if(e.metaKey||e.ctrlKey||e.shiftKey||e.button===1) return;
+      e.preventDefault();
+      var to=a.getAttribute('data-to');
+      try{localStorage.setItem('sv_region',to);}catch(err){}
+      document.cookie='sv_region='+to+'; path=/; max-age=31536000; SameSite=Lax';
+      a.classList.toggle('is-right');
+      var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      setTimeout(function(){window.location.href=a.href;},reduce?0:320);
+    });
+  });
+})();
+</script>
+</body>
+</html>

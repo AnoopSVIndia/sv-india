@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<script>document.documentElement.classList.add('js-anim');</script>
+<head>
+<meta charset="UTF-8">
+<script>
+  // Home routing: same logic as the other pages (India visitors -> index.html, everyone else -> International Home.html).
+  (function(){
+    var HOME={'in':'index.html','au':'International%20Home.html'};
+    var r=null;
+    try{r=localStorage.getItem('sv_region');}catch(e){}
+    if(r!=='in'&&r!=='au'){var m=document.cookie.match(/(?:^|; )sv_region=(in|au)/);r=m?m[1]:null;}
+    if(!r){
+      var tz='';
+      try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||'';}catch(e){}
+      if(tz) r=/^Asia\/(Kolkata|Calcutta)$/.test(tz)?'in':'au';
+    }
+    var shown=document.documentElement.getAttribute('data-home')||r;
+    if(shown) document.documentElement.setAttribute('data-region',shown);
+    if(!r) return;
+    document.addEventListener('DOMContentLoaded',function(){
+      document.querySelectorAll('a[data-home-link]').forEach(function(a){a.setAttribute('href',HOME[r]);});
+      if(r!=='au') return;
+      document.querySelectorAll('.region-toggle').forEach(function(a){
+        a.setAttribute('href',HOME['in']);a.setAttribute('data-to','in');a.setAttribute('data-side','right');a.classList.add('is-right');
+        a.setAttribute('aria-label','Viewing the Australia site. Switch to the India site');a.setAttribute('title','Viewing the Australia site. Switch to the India site');
+      });
+    });
+  })();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OSHC Australia: Overseas Student Health Cover Guide for Student Visa Holders | SuccessVisa</title>
+<meta name="description" content="OSHC guide: visa condition 8501, what Overseas Student Health Cover covers, waiting periods, approved providers, family cover and refunds. Reviewed by MARA agents.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.successvisa.in/health-insurance-oshc.html">
+<link rel="alternate" hreflang="en-au" href="https://www.successvisa.com.au/">
+<link rel="alternate" hreflang="en-in" href="https://www.successvisa.in/">
+<link rel="alternate" hreflang="x-default" href="https://www.successvisa.in/">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="SuccessVisa">
+<meta property="og:title" content="Overseas Student Health Cover (OSHC): Complete Guide | SuccessVisa">
+<meta property="og:description" content="What OSHC covers, who needs it, how long, waiting periods, providers and refunds for international students.">
+<meta property="og:url" content="https://www.successvisa.in/health-insurance-oshc.html">
+<meta property="og:locale" content="en_IN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Overseas Student Health Cover (OSHC): Complete Guide | SuccessVisa">
+<meta name="twitter:description" content="What OSHC covers, who needs it, how long, waiting periods, providers and refunds for international students.">
+<meta name="theme-color" content="#1D184B">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Public+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Overseas Student Health Cover (OSHC) Australia: Rules, Cover and Providers",
+  "url": "https://www.successvisa.in/health-insurance-oshc.html",
+  "inLanguage": "en",
+  "dateModified": "2026-10-26",
+  "about": {"@type": "Service", "name": "OSHC health insurance advice", "serviceType": "Overseas Student Health Cover advice",
+    "provider": {"@type": "Organization", "name": "SuccessVisa", "identifier": "MARN 2318228", "url": "https://www.successvisa.in/"},
+    "areaServed": ["IN", "AU"]}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.successvisa.in/"},
+    {"@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.successvisa.in/services.html"},
+    {"@type": "ListItem", "position": 3, "name": "Health Insurance (OSHC)", "item": "https://www.successvisa.in/health-insurance-oshc.html"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "What is OSHC?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Overseas Student Health Cover (OSHC) is private health insurance for international students in Australia. It helps pay for medical and hospital treatment, ambulance transport and limited pharmaceutical costs, and holding adequate cover is a condition of a Student visa."}},
+    {"@type": "Question", "name": "Is OSHC compulsory for a Student visa?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Yes. Student visas carry condition 8501, which requires you to maintain adequate health insurance for the whole time you hold the visa. Your accompanying family members must also be covered. Failing to do so can lead to visa cancellation."}},
+    {"@type": "Question", "name": "How long must my OSHC last?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Cover must be continuous for the whole period of your Student visa and should run to the visa end date. If your visa is extended, you need to extend your cover and pay the additional premium."}},
+    {"@type": "Question", "name": "Does OSHC cover dental and optical?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Standard OSHC does not cover general treatment such as dental, optical or physiotherapy. Some providers sell extras cover for these services, either as an add-on or as a separate policy."}},
+    {"@type": "Question", "name": "Is there a waiting period for pre-existing conditions?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Under the OSHC Deed, hospital or hospital-substitute treatment for a pre-existing condition can have a waiting period of up to 12 months, and psychiatric care up to 2 months. Emergency treatment has no waiting period. Waiting periods already served under a previous continuous OSHC policy are credited to a new one."}},
+    {"@type": "Question", "name": "Which companies provide OSHC?",
+      "acceptedAnswer": {"@type": "Answer", "text": "The Private Health Insurance Ombudsman lists a small number of approved providers: ahm OSHC, Allianz Care Australia, Bupa Australia, CBHS International Health, Medibank and nib OSHC. Policies differ in extras, mental health waiting periods and the level of benefits above the minimum."}},
+    {"@type": "Question", "name": "Can I get a refund on my OSHC?",
+      "acceptedAnswer": {"@type": "Answer", "text": "The OSHC Deed provides for refunds in set situations, for example if you never arrive, your visa is refused, you leave early for reasons beyond your control or you are granted another visa that ends the need for OSHC. A processing fee can apply in some cases. Ask your insurer about its process and keep your visa and travel evidence."}},
+    {"@type": "Question", "name": "Do I need OSHC for my partner and children?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Yes, if they accompany you on your Student visa. OSHC is sold for four groups: the student only, student and partner, student and dependent children, and student with partner and dependent children. Dependants must have cover at least equal to the student's."}}
+  ]
+}
+</script>
+<style>
+  :root{
+    --ink:#1D184B; --ink-2:#322B6E; --paper:#FBFAF7; --paper-2:#F3EEE2;
+    --gold:#F8A51C; --gold-light:#FBC46B; --gold-deep:#8A5A12;
+    --text-muted:#4C5A6E; --line:#D9D2C0; --radius:2px; --maxw:1180px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:'Public Sans',sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:600;line-height:1.25;margin:0 0 .5em;color:var(--ink);letter-spacing:-0.01em;}
+  p{margin:0 0 1em;color:var(--text-muted);}
+  a{color:inherit;text-decoration:none;}
+  ul{margin:0;padding:0;list-style:none;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);display:flex;align-items:center;gap:10px;margin-bottom:16px;}
+  .eyebrow-line{display:inline-block;width:20px;height:2px;background:var(--gold);flex-shrink:0;}
+  :focus-visible{outline:2px solid var(--gold-deep);outline-offset:3px;}
+  .skip-link{position:absolute;left:-999px;top:auto;background:var(--ink);color:var(--paper);padding:10px 16px;z-index:100;}
+  .skip-link:focus{left:16px;top:16px;}
+  @media (prefers-reduced-motion: reduce){ *{animation:none !important; transition:none !important;} }
+
+  /* Header */
+  header.site{position:sticky;top:0;z-index:50;background:rgba(251,250,247,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+  .nav-row{display:flex;align-items:center;justify-content:space-between;padding:16px 28px;max-width:var(--maxw);margin:0 auto;}
+  .logo{display:flex;align-items:center;}
+  .logo img{height:42px;width:auto;display:block;}
+  nav.primary ul{display:flex;gap:34px;align-items:center;}
+  nav.primary a{font-size:14.5px;font-weight:600;color:var(--ink-2);position:relative;padding:4px 0;}
+  nav.primary a.active{color:var(--ink);}
+  nav.primary a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--gold);transition:width .2s ease;}
+  nav.primary a:hover::after,nav.primary a.active::after{width:100%;}
+  .nav-right{display:flex;align-items:center;gap:20px;}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-family:'Public Sans',sans-serif;font-weight:700;font-size:14px;padding:12px 22px;border-radius:var(--radius);cursor:pointer;border:1.5px solid transparent;transition:background .18s ease,color .18s ease,border-color .18s ease;}
+  .btn-primary{background:var(--ink);color:var(--paper);}
+  .btn-primary:hover{background:var(--gold);color:var(--ink);}
+  .btn-ghost{border-color:var(--ink);color:var(--ink);}
+  .btn-ghost:hover{background:var(--ink);color:var(--paper);}
+  .cta-banner .btn-ghost{border-color:var(--paper);color:var(--paper);}
+  .cta-banner .btn-ghost:hover{background:var(--paper);color:var(--ink);}
+  .menu-toggle{display:none;background:none;border:none;cursor:pointer;padding:6px;}
+  .menu-toggle span{display:block;width:22px;height:2px;background:var(--ink);margin:5px 0;}
+  .has-dropdown{position:relative;}
+  .has-dropdown > a{display:flex;align-items:center;gap:5px;}
+  .has-dropdown > a svg{transition:transform .18s ease;flex-shrink:0;}
+  .has-dropdown:hover > a svg,.has-dropdown:focus-within > a svg{transform:rotate(180deg);}
+  .dropdown-menu{position:absolute;top:100%;left:-14px;margin-top:16px;min-width:216px;background:var(--paper);border:1px solid var(--line);box-shadow:0 16px 34px rgba(15,42,74,.13);padding:8px;opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .18s ease,transform .18s ease,visibility .18s ease;}
+  .has-dropdown:hover .dropdown-menu,.has-dropdown:focus-within .dropdown-menu{opacity:1;visibility:visible;transform:translateY(0);}
+  .dropdown-menu a{display:block;padding:9px 12px;font-size:13.5px;font-weight:600;color:var(--ink-2);}
+  .dropdown-menu a:hover{background:var(--paper-2);color:var(--ink);}
+  .nav-offer{display:inline-flex;align-items:center;color:var(--gold) !important;font-weight:700 !important;border:1px solid var(--gold);border-radius:20px;padding:6px 15px !important;transition:background .18s ease,color .18s ease;}
+  .nav-offer:hover{background:var(--gold);color:var(--ink) !important;}
+  @media(max-width:920px){
+    nav.primary{display:none;} .menu-toggle{display:block;}
+    .dropdown-menu{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;margin:6px 0 6px 10px;padding:0;display:flex;flex-direction:column;gap:2px;}
+    .has-dropdown > a svg{margin-left:auto;}
+  }
+
+  /* Region toggle */
+  .region-toggle{display:inline-flex;align-items:center;gap:9px;cursor:pointer;white-space:nowrap;text-decoration:none;}
+  .rt-label{font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:600;letter-spacing:.04em;color:#4C5A6E;transition:color .2s ease;}
+  .rt-track{position:relative;display:block;width:58px;height:30px;border-radius:30px;flex-shrink:0;background:linear-gradient(135deg,#6EE7B7 0%,#5CA9E6 55%,#5B80EA 100%);box-shadow:inset 0 1px 3px rgba(29,24,75,.18);}
+  .rt-knob{position:absolute;top:3px;left:3px;width:24px;height:24px;border-radius:50%;background:#fff;box-shadow:0 3px 8px rgba(29,24,75,.32);transition:transform .3s cubic-bezier(.4,.2,.2,1);}
+  .region-toggle.is-right .rt-knob{transform:translateX(28px);}
+  .region-toggle .rt-in{color:#1D184B;} .region-toggle.is-right .rt-in{color:#4C5A6E;}
+  .region-toggle .rt-au{color:#4C5A6E;} .region-toggle.is-right .rt-au{color:#1D184B;}
+  .region-toggle::after{display:none;}
+  @media(max-width:1240px) and (min-width:1141px){nav.primary ul{gap:22px;} .nav-right{gap:14px;}}
+  @media(max-width:1140px){
+    .nav-row{flex-wrap:wrap;row-gap:10px;column-gap:24px;padding-bottom:12px;}
+    .nav-right{display:contents;}
+    .nav-right .btn{margin-left:auto;margin-right:10px;}
+    .region-toggle{order:5;width:100%;justify-content:center;padding-top:10px;border-top:1px solid #D9D2C0;}
+  }
+  @media(max-width:560px){
+    .nav-row{padding-left:16px;padding-right:16px;column-gap:12px;}
+    .logo img{height:34px;}
+    .nav-right .btn{padding:9px 14px;font-size:13px;margin-right:4px;}
+  }
+
+  /* Breadcrumb */
+  .crumbs{padding:18px 0 0;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.04em;color:var(--text-muted);}
+  .crumbs a{color:var(--gold-deep);text-decoration:underline;text-underline-offset:2px;}
+  .crumbs span{margin:0 6px;}
+
+  /* Hero: split layout with a "points ledger" card */
+  .hero{padding:44px 0 36px;}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;}
+  .hero h1{font-size:clamp(32px,4.2vw,48px);line-height:1.1;max-width:640px;}
+  .hero h1 span{color:var(--gold-deep);}
+  .hero .lede{font-size:16.5px;max-width:580px;color:var(--ink-2);}
+  .hero .buttons{display:flex;gap:14px;flex-wrap:wrap;margin:24px 0 18px;}
+  .hero .credential{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--text-muted);letter-spacing:.03em;margin:0;}
+  .ledger{background:var(--ink);color:var(--paper);border-radius:20px;padding:30px 28px;box-shadow:0 18px 40px rgba(29,24,75,.22);position:relative;}
+  .ledger::before{content:"";position:absolute;inset:10px;border:1.3px dashed rgba(248,165,28,.5);border-radius:14px;pointer-events:none;}
+  .ledger h2{color:var(--paper);font-size:20px;margin-bottom:4px;position:relative;}
+  .ledger .sub{color:#B9C6D6;font-size:13px;margin-bottom:18px;position:relative;}
+  .ledger dl{margin:0;position:relative;}
+  .ledger .row{display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-top:1px solid rgba(255,255,255,.14);font-size:14px;}
+  .ledger dt{color:#B9C6D6;}
+  .ledger dd{margin:0;font-family:'IBM Plex Mono',monospace;font-weight:600;color:var(--gold-light);text-align:right;}
+  @media(max-width:920px){.hero-grid{grid-template-columns:1fr;}}
+
+  /* Sections */
+  .section{padding:64px 0;box-shadow:inset 0 16px 18px -18px rgba(29,24,75,.16);}
+  .bg-alt{background:var(--paper-2);}
+  .section-head{max-width:700px;margin-bottom:34px;}
+  .section-head h2{font-size:30px;}
+  .section-head p{font-size:15.5px;margin-bottom:0;}
+  .prose{max-width:780px;}
+  .prose p{font-size:15.5px;}
+  .prose h3{font-size:21px;margin-top:1.6em;}
+  .prose a,.note-box a,.page-footnote a{color:var(--gold-deep);text-decoration:underline;text-underline-offset:2px;}
+
+  .qf-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+  .qf-card{background:var(--paper);border-radius:16px;padding:22px 18px;text-align:center;box-shadow:0 8px 22px rgba(29,24,75,.07);}
+  .qf-card b{display:block;font-family:'Fraunces',serif;font-size:22px;color:var(--ink);margin-bottom:4px;}
+  .qf-card span{font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--text-muted);}
+  @media(max-width:860px){.qf-grid{grid-template-columns:1fr 1fr;}}
+
+  .checklist{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:14px 28px;}
+  .checklist li{position:relative;padding-left:30px;font-size:14.5px;color:var(--ink-2);line-height:1.6;}
+  .checklist li::before{content:"";position:absolute;left:0;top:3px;width:18px;height:18px;border-radius:50%;border:2px solid var(--gold);background:var(--paper);}
+  .checklist li::after{content:"";position:absolute;left:6px;top:8px;width:6px;height:9px;border-right:2px solid var(--gold);border-bottom:2px solid var(--gold);transform:rotate(45deg);}
+  .checklist.one{grid-template-columns:1fr;}
+  @media(max-width:640px){.checklist{grid-template-columns:1fr;}}
+
+  /* Cards */
+  .card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .card-grid.two{grid-template-columns:repeat(2,1fr);}
+  .card{background:var(--paper);border-radius:20px;padding:28px 26px;box-shadow:0 10px 28px rgba(29,24,75,.08);transition:transform .25s ease,box-shadow .25s ease;}
+  .card:hover{transform:translateY(-5px);box-shadow:0 18px 34px rgba(29,24,75,.14);}
+  .card h3{font-size:19px;margin-bottom:10px;}
+  .card p{font-size:14.2px;margin-bottom:0;}
+  .card .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;background:var(--gold-light);color:var(--ink);display:inline-block;padding:4px 11px;border-radius:20px;margin-bottom:12px;}
+  @media(max-width:920px){.card-grid,.card-grid.two{grid-template-columns:1fr;}}
+
+  /* Tables */
+  .table-wrap{overflow-x:auto;border-radius:14px;box-shadow:0 8px 22px rgba(29,24,75,.07);background:var(--paper);}
+  table{width:100%;border-collapse:collapse;font-size:14.2px;min-width:560px;}
+  caption{text-align:left;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-deep);padding:16px 20px 6px;}
+  th,td{text-align:left;padding:13px 20px;border-top:1px solid var(--line);vertical-align:top;color:var(--ink-2);}
+  th{font-family:'Fraunces',serif;font-weight:600;color:var(--ink);background:var(--paper-2);border-top:none;}
+  .sep{color:var(--gold);font-weight:700;margin:0 .35em;}
+  td.pts{font-family:'IBM Plex Mono',monospace;font-weight:600;color:var(--ink);white-space:nowrap;}
+  tbody th{background:var(--paper);font-size:14.5px;}
+
+  /* Steps */
+  .step-list{position:relative;display:flex;flex-direction:column;gap:6px;}
+  .step-list::before{content:"";position:absolute;left:27px;top:14px;bottom:14px;width:2px;background:var(--line);}
+  .step{display:grid;grid-template-columns:56px 1fr;gap:22px;padding:18px 0;position:relative;}
+  .step-num{position:relative;z-index:1;width:56px;height:56px;border-radius:50%;background:var(--paper);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:700;color:var(--ink);}
+  .step h3{font-size:18px;margin-bottom:6px;}
+  .step p{font-size:14.5px;margin-bottom:0;max-width:700px;}
+
+  /* Fees */
+  .fee-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .fee-card{background:var(--paper);border-radius:18px;padding:26px 22px;box-shadow:0 8px 22px rgba(29,24,75,.07);text-align:center;}
+  .fee-card .stream{font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--gold-deep);margin-bottom:8px;display:block;}
+  .fee-card .amount{font-family:'Fraunces',serif;font-size:28px;color:var(--ink);margin-bottom:6px;}
+  .fee-card p{font-size:13px;margin-bottom:0;}
+  @media(max-width:860px){.fee-grid{grid-template-columns:1fr;}}
+  .note-box{max-width:900px;margin:28px 0 0;background:var(--paper);border-left:4px solid var(--gold);border-radius:4px;padding:18px 22px;}
+  .note-box p{font-size:13.5px;color:var(--ink-2);margin:0;}
+  .note-box p + p{margin-top:8px;}
+
+  /* FAQ */
+  .faq-list{max-width:860px;}
+  .faq-item{background:var(--paper);border-radius:14px;padding:4px 22px;margin-bottom:12px;box-shadow:0 6px 18px rgba(29,24,75,.06);}
+  .faq-item[open]{box-shadow:0 12px 26px rgba(29,24,75,.12);}
+  .faq-item summary{cursor:pointer;list-style:none;font-family:'Fraunces',serif;font-size:17px;font-weight:600;padding:18px 30px 18px 0;position:relative;}
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::after{content:"+";position:absolute;right:0;top:16px;font-family:'Public Sans',sans-serif;font-size:22px;color:var(--gold);transition:transform .2s ease;}
+  .faq-item[open] summary::after{transform:rotate(45deg);}
+  .faq-item p{font-size:14.5px;padding-bottom:20px;max-width:720px;}
+
+  /* Links / resources */
+  .pillar-link{font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:600;color:var(--gold-deep);display:inline-flex;align-items:center;gap:6px;letter-spacing:.04em;text-transform:uppercase;margin-top:14px;}
+  .pillar-link svg{transition:transform .18s ease;}
+  a.card:hover .pillar-link svg{transform:translateX(4px);}
+
+  .page-footnote{border-top:1px solid var(--line);padding:22px 0;}
+  .page-footnote p{font-size:13.5px;line-height:1.6;color:var(--text-muted);margin:0;max-width:900px;}
+
+  .cta-banner{padding:76px 0;text-align:center;background:var(--ink);color:var(--paper);}
+  .cta-banner h2{color:var(--paper);font-size:32px;max-width:620px;margin:0 auto 16px;}
+  .cta-banner p{color:#B9C6D6;max-width:520px;margin:0 auto 28px;}
+  .cta-banner .btns{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;}
+
+  /* Reveal */
+  .js-anim .reveal{opacity:0;transform:translateY(24px);transition:opacity .5s ease, transform .55s cubic-bezier(.22,1,.36,1);}
+  .js-anim .reveal.in-view{opacity:1;transform:none;}
+  @media (prefers-reduced-motion: reduce){.js-anim .reveal{opacity:1 !important;transform:none !important;}}
+
+  /* Quick actions */
+  .quick-actions{position:fixed;right:22px;bottom:22px;z-index:60;display:flex;flex-direction:column;align-items:flex-end;gap:12px;}
+  .qa-btn{position:relative;width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--ink);color:var(--paper);box-shadow:0 6px 18px rgba(29,24,75,.28);transition:transform .18s ease,box-shadow .18s ease;}
+  .qa-btn:hover{transform:translateY(-3px) scale(1.05);}
+  .qa-btn.qa-primary{background:var(--gold);color:var(--ink);}
+  .qa-label{position:absolute;right:64px;top:50%;transform:translateY(-50%) translateX(6px);background:var(--ink);color:var(--paper);font-size:12.5px;font-weight:600;padding:6px 12px;border-radius:6px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .18s ease,transform .18s ease;}
+  .qa-btn:hover .qa-label{opacity:1;transform:translateY(-50%) translateX(0);}
+  @media (max-width:640px){.quick-actions{right:14px;bottom:14px;gap:10px;}.qa-btn{width:46px;height:46px;}.qa-label{display:none;}}
+</style>
+
+<style>
+  /* ---------- Region-aware Services menu: India list or Australian mega menu (html[data-region] is set in <head>) ---------- */
+  html[data-region="au"] .svc-in{display:none !important;}
+  html:not([data-region="au"]) .svc-au{display:none !important;}
+  .dropdown-menu.mega{width:580px;min-width:0;display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;padding:14px;}
+  .mega-group{display:flex;flex-direction:column;}
+  .dropdown-menu .mega-head{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#8A5A12;padding:6px 12px;border-bottom:1px solid #D9D2C0;margin-bottom:4px;}
+  .dropdown-menu .mega-head:hover{background:none;color:#1D184B;}
+  .dropdown-menu .mega-head::after{display:none;}
+  @media(max-width:920px){
+    .dropdown-menu.mega{width:auto;display:flex;flex-direction:column;gap:10px;padding:0;}
+    .dropdown-menu .mega-head{padding:4px 12px;}
+  }
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header class="site">
+  <div class="nav-row">
+    <a href="index.html" data-home-link class="logo"><img src="assets/logo.webp" alt="SuccessVisa" width="300" height="95" decoding="async"></a>
+    <nav class="primary" aria-label="Primary">
+      <ul>
+        <li><a href="index.html" data-home-link>Home</a></li>
+        <li><a href="About%20Us%20Sub%20Landing%20Page.html">About</a></li>
+        <li class="has-dropdown svc-in">
+          <a href="Services%20Main%20Landing%20Page.html" class="active">Services
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.4"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="Education%20Visa%20Landing%20Page.html">Education Visa (500)</a>
+            <a href="Visitor%20Visa%20Landing%20Page.html">Visitor Visa (600)</a>
+            <a href="OSHC%20Sub%20Landing%20Page.html">Health Cover (OSHC)</a>
+          </div>
+        </li>
+        <li class="has-dropdown svc-au">
+          <a href="Australia%20Services%20Main%20Landing%20Page.html" class="active">Services
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.4"/></svg>
+          </a>
+          <div class="dropdown-menu mega">
+            <div class="mega-group">
+              <a href="Australia%20Services%20Main%20Landing%20Page.html#skilled" class="mega-head">Skilled Visas</a>
+              <a href="Skilled%20Independent%20189%20Sub%20Sub%20Landing%20Page.html">Skilled Independent (189)</a>
+              <a href="Skilled%20Nominated%20190%20Sub%20Sub%20Landing%20Page.html">Skilled Nominated (190)</a>
+              <a href="Skilled%20Work%20Regional%20491%20Sub%20Sub%20Landing%20Page.html">Skilled Work Regional (491)</a>
+              <a href="PR%20Skilled%20Regional%20191%20Sub%20Sub%20Landing%20Page.html">PR Skilled Regional (191)</a>
+              <a href="Skilled%20Recognised%20Graduate%20476%20Sub%20Sub%20Landing%20Page.html">Skilled Recognised Graduate (476)</a>
+              <a href="Recognition%20of%20Prior%20Learning%20RPL%20Sub%20Sub%20Landing%20Page.html">Recognition of Prior Learning (RPL)</a>
+            </div>
+            <div class="mega-group">
+              <a href="Australia%20Services%20Main%20Landing%20Page.html#family" class="mega-head">Partner &amp; Family</a>
+              <a href="Partner%20Visa%20820%20801%20Sub%20Sub%20Landing%20Page.html">Partner Visa (820/801)</a>
+              <a href="Family%20Visa%20Sub%20Sub%20Landing%20Page.html">Family Visa</a>
+              <a href="Carer%20Visa%20116%20836%20Sub%20Sub%20Landing%20Page.html">Carer Visa (116/836)</a>
+            </div>
+            <div class="mega-group">
+              <a href="Australia%20Services%20Main%20Landing%20Page.html#study-work" class="mega-head">Student, Working &amp; Training</a>
+              <a href="Student%20Visa%20500%20Sub%20Sub%20Landing%20Page.html">Student Visa (500)</a>
+              <a href="Working%20Visa%20482%20186%20Sub%20Sub%20Landing%20Page.html">Working Visa (482/186)</a>
+              <a href="Training%20Visa%20407%20Sub%20Sub%20Landing%20Page.html">Training Visa (407)</a>
+            </div>
+            <div class="mega-group">
+              <a href="Australia%20Services%20Main%20Landing%20Page.html#visitor-business" class="mega-head">Visitor, Business &amp; Health</a>
+              <a href="Visitor%20Visa%20Landing%20Page.html">Visitor Visa (600)</a>
+              <a href="Australia%20Business%20Visa%20Sub%20Sub%20Landing%20Page.html">Business Visa</a>
+              <a href="Health%20Insurance%20OSHC%20Sub%20Sub%20Landing%20Page.html">Health Insurance (OSHC)</a>
+            </div>
+          </div>
+        </li>
+        <li><a href="Offers%20Demo%20Landing%20Page.html" class="nav-offer">Offers</a></li>
+        <li class="has-dropdown">
+          <a href="resources.html">Resources
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.4"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="resources.html#blog">Blog</a>
+            <a href="resources.html#videos">Videos</a>
+            <a href="resources.html#checklist">Visa Checklists</a>
+            <a href="resources.html#news">Latest News</a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <a href="contact.html">Contact
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.4"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="Chandigarh%20Branch%20Landing%20Page.html">Chandigarh, IN</a>
+            <a href="Parramatta%20Branch%20Landing%20Page.html">Parramatta, NSW</a>
+            <a href="Toongabbie%20Branch%20Landing%20Page.html">Toongabbie, NSW</a>
+            <a href="Melbourne%20CBD%20Branch%20Landing%20Page.html">Melbourne, VIC</a>
+            <a href="Werribee%20Branch%20Landing%20Page.html">Werribee, VIC</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <a href="International%20Home.html" class="region-toggle" data-to="au" data-side="left" aria-label="Viewing the India site. Switch to the Australia site" title="Viewing the India site. Switch to the Australia site">
+        <span class="rt-label rt-in">India</span>
+        <span class="rt-track" aria-hidden="true"><span class="rt-knob"></span></span>
+        <span class="rt-label rt-au">Australia</span>
+      </a>
+      <a href="Booking%20Page.html" class="btn btn-primary">Book Appointment</a>
+      <button class="menu-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html" data-home-link>Home</a><span>/</span><a href="Services%20Main%20Landing%20Page.html">Services</a><span>/</span>Health Insurance (OSHC)</nav>
+    <div class="hero-grid" style="margin-top:28px;">
+      <div>
+        <div class="eyebrow"><span class="eyebrow-line"></span>Student Health Cover Guide</div>
+        <h1>Overseas Student Health Cover (OSHC): <span>What It Covers, Who Needs It and How to Choose</span></h1>
+        <p class="lede">OSHC is private health insurance for international students in Australia, and holding adequate cover is a condition of your Student visa. This guide explains what OSHC covers, how long it must last, the waiting periods, the approved providers, family cover and refunds, so you can buy the right policy once.</p>
+        <div class="buttons">
+          <a href="Booking%20Page.html" class="btn btn-primary">Get OSHC Advice</a>
+          <a href="#what-it-covers" class="btn btn-ghost">See What It Covers</a>
+        </div>
+        <p class="credential">Reviewed by MARA registered migration agents &middot; MARN 2318228</p>
+      </div>
+      <aside class="ledger" aria-label="OSHC at a glance">
+        <h2>OSHC at a glance</h2>
+        <p class="sub">The rules that matter first.</p>
+        <dl>
+          <div class="row"><dt>Visa condition</dt><dd>8501</dd></div>
+          <div class="row"><dt>Cover period</dt><dd>Whole visa</dd></div>
+          <div class="row"><dt>Family</dt><dd>Must be covered</dd></div>
+          <div class="row"><dt>Approved providers</dt><dd>Six</dd></div>
+          <div class="row"><dt>Pharmacy minimum</dt><dd>AUD 500 / year</dd></div>
+        </dl>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="what-is-oshc">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>The Basics</div>
+      <h2>What Is Overseas Student Health Cover (OSHC)?</h2>
+      <p>A condition of the Student visa, not an optional extra.</p>
+    </div>
+    <div class="prose">
+      <p>Overseas Student Health Cover (OSHC) is a type of health insurance designed for international students who are studying in Australia on a Student visa. It helps pay for doctor visits, hospital treatment, ambulance transport and some medicines. Most international students are not covered by Medicare, so OSHC is how you pay for medical care while you study.</p>
+      <p>The minimum cover and the rules for insurers are set by the Australian Government through the OSHC Deed, an agreement between the Department of Health and Aged Care and each approved insurer. That is why every OSHC policy has the same minimum benefits, even though the insurers add extras and service differences on top.</p>
+    </div>
+    <div class="qf-grid" style="margin-top:34px;">
+      <div class="qf-card reveal"><b>Visa condition</b><span>Condition 8501</span></div>
+      <div class="qf-card reveal"><b>Whole stay</b><span>Continuous for the visa period</span></div>
+      <div class="qf-card reveal"><b>Government set</b><span>Minimum benefits in the OSHC Deed</span></div>
+      <div class="qf-card reveal"><b>Family</b><span>Dependants need cover too</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-alt" id="visa-requirement">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Visa Rules</div>
+      <h2>OSHC and Your Student Visa: Condition 8501</h2>
+      <p>What the Department of Home Affairs expects you to hold.</p>
+    </div>
+    <div class="table-wrap reveal">
+      <table>
+        <caption>OSHC visa requirements</caption>
+        <thead><tr><th>Requirement</th><th>What it means for you</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Condition 8501</th><td>Student visas carry condition 8501, which requires you to maintain adequate health insurance while you hold the visa.</td></tr>
+          <tr><th scope="row">Start date</th><td>Cover must be in place from the day you arrive in Australia. You can buy it before you travel.</td></tr>
+          <tr><th scope="row">End date</th><td>The policy should run to the last date you may be in Australia on the visa, usually the visa end date.</td></tr>
+          <tr><th scope="row">Family members</th><td>Accompanying family members must also hold OSHC for their whole stay on a Student visa.</td></tr>
+          <tr><th scope="row">Gaps in cover</th><td>Avoid gaps. If you move between courses and providers, you must arrange extra cover for any gap, and the visa will not be granted until evidence is given to the Department of Home Affairs.</td></tr>
+          <tr><th scope="row">If you are uninsured</th><td>Failing to maintain cover can lead to visa cancellation and unpaid health debts can affect future applications.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note-box">
+      <p>Your education provider or agent may arrange OSHC for you, but you are still responsible for making sure it is adequate. Confirm the insurer's name, the policy number and the start and end dates. See our <a href="Student%20Visa%20500%20Sub%20Sub%20Landing%20Page.html">Student Visa (500)</a> guide for the full visa process.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="what-it-covers">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Benefits</div>
+      <h2>What Does OSHC Cover?</h2>
+      <p>The minimum benefits every OSHC policy must provide under the OSHC Deed.</p>
+    </div>
+    <div class="table-wrap reveal">
+      <table>
+        <caption>Minimum OSHC benefits under the OSHC Deed (1 July 2025 to 30 June 2028)</caption>
+        <thead><tr><th>Service</th><th>Minimum benefit</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Out-of-hospital medical services (for example, GP and specialist visits)</th><td>85% of the Medicare Benefits Schedule (MBS) fee</td></tr>
+          <tr><th scope="row">In-hospital medical services</th><td>100% of the MBS fee</td></tr>
+          <tr><th scope="row">Ambulance</th><td>100% of the charge for medically necessary transport to hospital or in an emergency, by an approved ambulance service</td></tr>
+          <tr><th scope="row">Public hospital</th><td>100% of charges for shared ward and other listed services, at state-set rates, for patients not eligible for Medicare</td></tr>
+          <tr><th scope="row">Private hospital</th><td>Contracted amounts, or the minimum benefit set by the rules</td></tr>
+          <tr><th scope="row">Pharmaceuticals</th><td>Amounts above the PBS general co-payment, up to AUD 50 per item, with a minimum total of AUD 500 a year for a single student and AUD 1,000 a year for other insured groups</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note-box">
+      <p>These are minimums. Individual insurers can pay more, for example by covering GP visits at a higher percentage than the minimum, so compare policy documents. Because benefits are paid as a percentage of the MBS fee, you may still pay a gap if your doctor charges more than the MBS fee.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-alt" id="not-covered">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Limits</div>
+      <h2>What OSHC Does Not Cover</h2>
+      <p>Standard OSHC is hospital and medical cover, not general treatment cover.</p>
+    </div>
+    <ul class="checklist">
+      <li><strong>General treatment:</strong> dental, optical (glasses and contact lenses) and physiotherapy are not part of standard OSHC. Some providers sell extras cover for these, as an add-on or separate policy.</li>
+      <li><strong>Treatment outside Australia:</strong> OSHC pays for care in Australia, so you need separate travel insurance for trips home or overseas.</li>
+      <li><strong>Costs above the benefit:</strong> you may pay the difference if a provider charges more than the benefit, and medicine costs above the cap can be significant, particularly for ongoing or cancer treatment.</li>
+      <li><strong>Treatment during a waiting period:</strong> some claims can be refused until the waiting period has passed (see below).</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="waiting-periods">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Waiting Periods</div>
+      <h2>OSHC Waiting Periods Explained</h2>
+      <p>Waiting periods are the main reason a claim can be declined.</p>
+    </div>
+    <div class="table-wrap reveal">
+      <table>
+        <caption>Maximum waiting periods under the OSHC Deed</caption>
+        <thead><tr><th>Type of treatment</th><th>Maximum waiting period</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Emergency treatment</th><td>None</td></tr>
+          <tr><th scope="row">Hospital or hospital-substitute treatment for a pre-existing condition</th><td>Up to 12 months</td></tr>
+          <tr><th scope="row">Psychiatric hospital or hospital-substitute care (excluding emergency treatment)</th><td>Up to 2 months</td></tr>
+          <tr><th scope="row">Pregnancy-related care</th><td>Up to 12 months for products under two years. Products of two years or more may have none, depending on when premiums changed.</td></tr>
+          <tr><th scope="row">Other listed services</th><td>Up to 2 months</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note-box">
+      <p>Waiting periods you have already served under a previous continuous OSHC policy are credited to a new one, which is another reason to avoid gaps. Some insurers waive or shorten certain waiting periods, so check each policy. Pregnancy rules in particular should be read before you buy.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-alt" id="providers">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Approved Providers</div>
+      <h2>OSHC Providers in Australia</h2>
+      <p>Only a small number of registered insurers offer OSHC.</p>
+    </div>
+    <p style="font-size:15.5px;color:var(--text-muted);max-width:760px;margin-bottom:26px;">The Private Health Insurance Ombudsman lists these providers. The policies meet the same government minimums but differ in extras, waiting periods and service.</p>
+    <div class="card-grid">
+      <div class="card reveal"><h3>ahm OSHC</h3><p>Offers OSHC with extras sold separately.</p></div>
+      <div class="card reveal"><h3>Allianz Care Australia</h3><p>Offers OSHC with optional extras.</p></div>
+      <div class="card reveal"><h3>Bupa Australia</h3><p>Offers OSHC with optional extras.</p></div>
+      <div class="card reveal"><h3>CBHS International Health</h3><p>Offers OSHC for international students.</p></div>
+      <div class="card reveal"><h3>Medibank</h3><p>Offers OSHC with extras sold separately.</p></div>
+      <div class="card reveal"><h3>nib OSHC</h3><p>Offers OSHC for international students.</p></div>
+    </div>
+    <div class="note-box">
+      <p>Your university or college may have a preferred provider. You are usually free to choose a different approved provider, but check how your education provider includes OSHC in its Confirmation of Enrolment and fee arrangements.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="family-cover">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Who Is Covered</div>
+      <h2>OSHC for Partners and Children</h2>
+      <p>OSHC is sold for four insured groups.</p>
+    </div>
+    <div class="table-wrap reveal">
+      <table>
+        <caption>OSHC insured groups</caption>
+        <thead><tr><th>Group</th><th>Who it covers</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Student only</th><td>The overseas student</td></tr>
+          <tr><th scope="row">Student and partner</th><td>The student and their partner</td></tr>
+          <tr><th scope="row">Student and dependent children</th><td>The student and their dependent children</td></tr>
+          <tr><th scope="row">Student, partner and dependent children</th><td>The whole family</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note-box">
+      <p>Each dependant must receive cover at least equal to the student's, and one premium applies to each insured group. Partners and children must be eligible family members for the Student visa. Family members of a student cannot rely on the student's policy after the student's visa ends, so plan any change of visa ahead of time.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-alt" id="exemptions">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Exceptions</div>
+      <h2>Do Any Students Not Need OSHC?</h2>
+      <p>A few exceptions exist, but most students must buy it.</p>
+    </div>
+    <div class="prose">
+      <p>Some students from countries with reciprocal healthcare arrangements may have access to Medicare, for example the UK, Sweden, the Netherlands, Belgium, Slovenia, Italy and New Zealand. The Private Health Insurance Ombudsman notes that this does not replace the OSHC requirement. Separately, the Commonwealth Ombudsman notes that students from Sweden, Norway or Belgium have some exceptions to the OSHC requirement through their national schemes.</p>
+      <p>Because these rules are detailed and have conditions, do not assume you are exempt. Check with the Department of Home Affairs, or ask us, before you decide not to buy OSHC.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="costs">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Costs</div>
+      <h2>How Much Does OSHC Cost?</h2>
+      <p>There is no single price, because it depends on you and your visa.</p>
+    </div>
+    <div class="prose">
+      <p>The premium depends on the insurer, the policy, the insured group, your location and, most importantly, how long you need cover. A longer visa means a larger total premium, though some policies of two years or more can have better waiting-period terms. Prices change regularly.</p>
+      <p>For a rough idea only, one September 2026 comparison of entry-level 12-month single cover from five providers showed prices between roughly AUD 665 and AUD 725, with couple and family cover costing considerably more. Treat that as a guide and get a quote for your exact visa dates, because it is not a government figure.</p>
+    </div>
+    <div class="note-box">
+      <p>Check what the premium includes, including extras, waiting periods and any benefit above the minimum, instead of choosing on price alone. A very low premium can mean fewer extras or a longer wait for mental health cover.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-alt" id="refunds">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Refunds</div>
+      <h2>OSHC Refunds and Changing Policies</h2>
+      <p>The OSHC Deed sets out when a premium can be refunded.</p>
+    </div>
+    <div class="table-wrap reveal">
+      <table>
+        <caption>When an OSHC premium may be refunded</caption>
+        <thead><tr><th>Situation</th><th>Refund under the OSHC Deed</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">You never arrive in Australia</th><td>Full refund, less a reasonable processing fee</td></tr>
+          <tr><th scope="row">Visa refused at entry or extension refused</th><td>Full refund, less a reasonable processing fee</td></tr>
+          <tr><th scope="row">Delayed arrival</th><td>Pro rata for the delay</td></tr>
+          <tr><th scope="row">Required to leave early for reasons beyond your control</th><td>Pro rata until the visa expiry</td></tr>
+          <tr><th scope="row">Granted permanent residence or another non-student visa</th><td>Pro rata for the remaining visa period</td></tr>
+          <tr><th scope="row">Not living in Australia for three or more continuous months</th><td>Pro rata for the absence</td></tr>
+          <tr><th scope="row">Overlapping cover with another insurer</th><td>Pro rata for the overlap</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note-box">
+      <p>Insurers can ask for evidence, such as your visa outcome and travel records, before processing a refund. Dependants' premiums are included in refunds. Check your insurer's process, because you will usually need to apply and keep your documents.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="how-to-buy">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>The Process</div>
+      <h2>How to Buy OSHC for Your Student Visa</h2>
+    </div>
+    <div class="step-list">
+      <div class="step reveal"><div class="step-num">01</div><div><h3>Confirm your visa and dates</h3><p>Check your Confirmation of Enrolment and the visa length so that your cover lines up with it.</p></div></div>
+      <div class="step reveal"><div class="step-num">02</div><div><h3>Decide on the insured group</h3><p>Choose student only, student and partner, student and children, or the whole family.</p></div></div>
+      <div class="step reveal"><div class="step-num">03</div><div><h3>Compare approved providers</h3><p>Compare benefits above the minimum, extras options, waiting periods and any waivers, not just price.</p></div></div>
+      <div class="step reveal"><div class="step-num">04</div><div><h3>Buy cover for the full visa period</h3><p>Arrange the policy and keep the certificate showing the insurer, the policy number and the start and end dates.</p></div></div>
+      <div class="step reveal"><div class="step-num">05</div><div><h3>Use the certificate in your visa application</h3><p>Keep the certificate for your visa application and arrival, and hold it in a safe place.</p></div></div>
+      <div class="step reveal"><div class="step-num">06</div><div><h3>Extend, change or claim a refund</h3><p>If your visa is extended, extend your cover. If your plans change, ask your insurer about refunds early.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-alt" id="mistakes">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Avoid These</div>
+      <h2>Common OSHC Mistakes</h2>
+    </div>
+    <div class="card-grid">
+      <div class="card reveal"><h3>Buying too short a policy</h3><p>Cover must run for the whole visa. A short policy can leave a gap that delays the visa.</p></div>
+      <div class="card reveal"><h3>Leaving family uncovered</h3><p>Accompanying partners and children need OSHC too.</p></div>
+      <div class="card reveal"><h3>Choosing on price only</h3><p>Cheap policies can have longer waiting periods or fewer extras.</p></div>
+      <div class="card reveal"><h3>Expecting dental and optical</h3><p>These are not in standard OSHC. Buy extras if you need them.</p></div>
+      <div class="card reveal"><h3>Ignoring waiting periods</h3><p>Pre-existing conditions and pregnancy care can have long waits, so read the terms before you buy.</p></div>
+      <div class="card reveal"><h3>Assuming you are exempt</h3><p>Medicare arrangements do not replace OSHC for most students, so confirm before skipping it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Common Questions</div>
+      <h2>Overseas Student Health Cover (OSHC) FAQs</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item"><summary>What is OSHC?</summary><p>Overseas Student Health Cover (OSHC) is private health insurance for international students in Australia. It helps pay for medical and hospital treatment, ambulance transport and limited pharmaceutical costs, and holding adequate cover is a condition of a Student visa.</p></details>
+      <details class="faq-item"><summary>Is OSHC compulsory for a Student visa?</summary><p>Yes. Student visas carry condition 8501, which requires you to maintain adequate health insurance for the whole time you hold the visa. Your accompanying family members must also be covered. Failing to do so can lead to visa cancellation.</p></details>
+      <details class="faq-item"><summary>How long must my OSHC last?</summary><p>Cover must be continuous for the whole period of your Student visa and should run to the visa end date. If your visa is extended, you need to extend your cover and pay the additional premium.</p></details>
+      <details class="faq-item"><summary>Does OSHC cover dental and optical?</summary><p>Standard OSHC does not cover general treatment such as dental, optical or physiotherapy. Some providers sell extras cover for these services, either as an add-on or as a separate policy.</p></details>
+      <details class="faq-item"><summary>Is there a waiting period for pre-existing conditions?</summary><p>Under the OSHC Deed, hospital or hospital-substitute treatment for a pre-existing condition can have a waiting period of up to 12 months, and psychiatric care up to 2 months. Emergency treatment has no waiting period. Waiting periods already served under a previous continuous OSHC policy are credited to a new one.</p></details>
+      <details class="faq-item"><summary>Which companies provide OSHC?</summary><p>The Private Health Insurance Ombudsman lists a small number of approved providers: ahm OSHC, Allianz Care Australia, Bupa Australia, CBHS International Health, Medibank and nib OSHC. Policies differ in extras, mental health waiting periods and the level of benefits above the minimum.</p></details>
+      <details class="faq-item"><summary>Can I get a refund on my OSHC?</summary><p>The OSHC Deed provides for refunds in set situations, for example if you never arrive, your visa is refused, you leave early for reasons beyond your control or you are granted another visa that ends the need for OSHC. A processing fee can apply in some cases. Ask your insurer about its process and keep your visa and travel evidence.</p></details>
+      <details class="faq-item"><summary>Do I need OSHC for my partner and children?</summary><p>Yes, if they accompany you on your Student visa. OSHC is sold for four groups: the student only, student and partner, student and dependent children, and student with partner and dependent children. Dependants must have cover at least equal to the student's.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-alt">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Keep Exploring</div>
+      <h2>Related Services</h2>
+    </div>
+    <div class="card-grid">
+      <a href="Student%20Visa%20500%20Sub%20Sub%20Landing%20Page.html" class="card reveal"><span class="tag">Student Visa 500</span><h3>Study in Australia</h3><p>The visa that carries the OSHC requirement.</p><span class="pillar-link">Student visa <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M8 1L13 5L8 9M13 5H1" stroke="currentColor" stroke-width="1.4"/></svg></span></a>
+      <a href="Partner%20Visa%20820%20801%20Sub%20Sub%20Landing%20Page.html" class="card reveal"><span class="tag">Partner Visa</span><h3>Partner Visa (820/801)</h3><p>For a partner relationship with an Australian citizen or resident.</p><span class="pillar-link">Partner visa <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M8 1L13 5L8 9M13 5H1" stroke="currentColor" stroke-width="1.4"/></svg></span></a>
+      <a href="Tourist%20Visa%20Sub%20Landing%20Page.html" class="card reveal"><span class="tag">Tourist Visa</span><h3>Visitor visas</h3><p>Leisure and family visits to Australia.</p><span class="pillar-link">Tourist visa <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M8 1L13 5L8 9M13 5H1" stroke="currentColor" stroke-width="1.4"/></svg></span></a>
+    </div>
+  </div>
+</section>
+
+<div class="wrap page-footnote">
+  <p>Reviewed by SuccessVisa's MARA registered migration agents &middot; last updated 26 October 2026. General information only, not migration or insurance advice. Policy benefits, premiums and visa rules can change, and the policy wording always applies. Confirm against the Department of Home Affairs and your insurer before you act. <a href="Disclaimer%20Page.html">See full disclaimer and sources</a>.</p>
+</div>
+
+<section class="cta-banner">
+  <div class="wrap">
+    <h2>Get Your OSHC Right the First Time</h2>
+    <p>Book a consultation and we will check your visa dates, family cover and policy before you buy.</p>
+    <div class="btns">
+      <a href="Booking%20Page.html" class="btn btn-primary">Book Appointment</a>
+      <a href="Services%20Main%20Landing%20Page.html" class="btn btn-ghost">Explore All Services</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="quick-actions" aria-label="Quick contact actions">
+  <a href="tel:+911800000000" class="qa-btn" aria-label="Call us"><span class="qa-label">Call us</span>
+    <svg width="21" height="21" viewBox="0 0 24 24" fill="none"><path d="M4 5c0-1 1-2 2-2h2l2 5-2 1.5c1 2.3 2.7 4 5 5L14.5 12l5 2v2c0 1-1 2-2 2C10.5 18 4 11.5 4 5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></a>
+  <a href="https://wa.me/911800000000" class="qa-btn" aria-label="Chat on WhatsApp" target="_blank" rel="noopener"><span class="qa-label">WhatsApp us</span>
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.7-1.2A9 9 0 1 0 12 3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M8.5 8.8c-.3.6-.3 1.6.6 2.9 1 1.4 2.3 2.6 3.9 3.1 1 .3 1.7.1 2.1-.4l.4-.6-2-1.3-.5.5c-.2.2-.5.2-.8 0-.7-.4-1.5-1.1-2-1.9-.2-.3-.1-.6.1-.8l.5-.5-1.1-2Z" fill="currentColor"/></svg></a>
+  <a href="Booking%20Page.html" class="qa-btn qa-primary" aria-label="Book Appointment"><span class="qa-label">Book Appointment</span>
+    <svg width="21" height="21" viewBox="0 0 24 24" fill="none"><rect x="3.5" y="5" width="17" height="15" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M3.5 9.5h17" stroke="currentColor" stroke-width="1.5"/><path d="M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M8 13.5l2.3 2.3L16 10.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+</div>
+
+<script>
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('nav.primary');
+  toggle.addEventListener('click', () => {
+    const open = nav.style.display === 'block';
+    nav.style.display = open ? 'none' : 'block';
+    if(!open){
+      nav.style.position='absolute';nav.style.top='100%';nav.style.left='0';nav.style.right='0';
+      nav.style.background='var(--paper)';nav.style.borderBottom='1px solid var(--line)';nav.style.padding='20px 28px';
+      nav.querySelector('ul').style.flexDirection='column';nav.querySelector('ul').style.alignItems='flex-start';nav.querySelector('ul').style.gap='16px';
+    }
+  });
+</script>
+
+<script>
+(function(){
+  const targets = document.querySelectorAll('.reveal');
+  if(!targets.length || !('IntersectionObserver' in window)){ targets.forEach(function(el){el.classList.add('in-view');}); return; }
+  let counter = 0;
+  const obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(!entry.isIntersecting) return;
+      const el = entry.target;
+      const delay = (counter++ % 6) * 70;
+      setTimeout(function(){ el.classList.add('in-view'); }, delay);
+      obs.unobserve(el);
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  targets.forEach(function(el){ obs.observe(el); });
+})();
+</script>
+
+<script>
+(function(){
+  document.querySelectorAll('.region-toggle').forEach(function(a){
+    window.addEventListener('pageshow',function(){a.classList.toggle('is-right',a.getAttribute('data-side')==='right');});
+    a.addEventListener('click',function(e){
+      if(e.metaKey||e.ctrlKey||e.shiftKey||e.button===1) return;
+      e.preventDefault();
+      var to=a.getAttribute('data-to');
+      try{localStorage.setItem('sv_region',to);}catch(err){}
+      document.cookie='sv_region='+to+'; path=/; max-age=31536000; SameSite=Lax';
+      a.classList.toggle('is-right');
+      var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      setTimeout(function(){window.location.href=a.href;},reduce?0:320);
+    });
+  });
+})();
+</script>
+</body>
+</html>

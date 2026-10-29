@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<script>document.documentElement.classList.add('js-anim');</script>
+<head>
+<meta charset="UTF-8">
+<script>
+  // Home routing: same logic as the other pages (India visitors -> index.html, everyone else -> International Home.html).
+  (function(){
+    var HOME={'in':'index.html','au':'International%20Home.html'};
+    var r=null;
+    try{r=localStorage.getItem('sv_region');}catch(e){}
+    if(r!=='in'&&r!=='au'){var m=document.cookie.match(/(?:^|; )sv_region=(in|au)/);r=m?m[1]:null;}
+    if(!r){
+      var tz='';
+      try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||'';}catch(e){}
+      if(tz) r=/^Asia\/(Kolkata|Calcutta)$/.test(tz)?'in':'au';
+    }
+    var shown=document.documentElement.getAttribute('data-home')||r;
+    if(shown) document.documentElement.setAttribute('data-region',shown);
+    if(!r) return;
+    document.addEventListener('DOMContentLoaded',function(){
+      document.querySelectorAll('a[data-home-link]').forEach(function(a){a.setAttribute('href',HOME[r]);});
+      if(r!=='au') return;
+      document.querySelectorAll('.region-toggle').forEach(function(a){
+        a.setAttribute('href',HOME['in']);a.setAttribute('data-to','in');a.setAttribute('data-side','right');a.classList.add('is-right');
+        a.setAttribute('aria-label','Viewing the Australia site. Switch to the India site');a.setAttribute('title','Viewing the Australia site. Switch to the India site');
+      });
+    });
+  })();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Family Visa Australia: Partner, Child, Parent and Relative Visas Explained | SuccessVisa</title>
+<meta name="description" content="Family visa guide for Australia: partner, child, parent, carer and other relative visas, 2026-27 places, queue estimates and which visa fits your family. Reviewed by MARA agents.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.successvisa.in/family-visa.html">
+<link rel="alternate" hreflang="en-au" href="https://www.successvisa.com.au/">
+<link rel="alternate" hreflang="en-in" href="https://www.successvisa.in/">
+<link rel="alternate" hreflang="x-default" href="https://www.successvisa.in/">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="SuccessVisa">
+<meta property="og:title" content="Family Visa Australia: Complete Guide to Partner, Child, Parent and Relative Visas | SuccessVisa">
+<meta property="og:description" content="Which Australian family visa fits you? Partner, child, parent, carer and other relative options, with 2026-27 places and current queue estimates.">
+<meta property="og:url" content="https://www.successvisa.in/family-visa.html">
+<meta property="og:locale" content="en_IN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Family Visa Australia: Complete Guide to Partner, Child, Parent and Relative Visas | SuccessVisa">
+<meta name="twitter:description" content="Which Australian family visa fits you? Partner, child, parent, carer and other relative options, with 2026-27 places and current queue estimates.">
+<meta name="theme-color" content="#1D184B">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Public+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Family Visa Australia: Partner, Child, Parent and Relative Visas Explained",
+  "url": "https://www.successvisa.in/family-visa.html",
+  "inLanguage": "en",
+  "dateModified": "2026-10-26",
+  "about": {"@type": "Service", "name": "Australian family visa application assistance", "serviceType": "Australian family migration advice",
+    "provider": {"@type": "Organization", "name": "SuccessVisa", "identifier": "MARN 2318228", "url": "https://www.successvisa.in/"},
+    "areaServed": ["IN", "AU"]}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.successvisa.in/"},
+    {"@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.successvisa.in/services.html"},
+    {"@type": "ListItem", "position": 3, "name": "Family Visa", "item": "https://www.successvisa.in/family-visa.html"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "What counts as a family visa in Australia?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Family visas are the permanent and temporary visas in the Family stream of the Migration Program. They cover partners, dependent children, parents, carers, remaining relatives, aged dependent relatives and orphan relatives. Each category has its own sponsor rules, and some are capped and queued."}},
+    {"@type": "Question", "name": "How many family visa places are there in 2026-27?",
+      "acceptedAnswer": {"@type": "Answer", "text": "The Family stream has a planning level of 52,460 places for 2026-27. Within that, the planning levels are about 41,500 for Partner, 7,060 for Parent, 3,500 for Child and 400 for Other Family. Partner and Child visas are demand-driven, so their levels are indicative, while Parent and Other Family places are capped."}},
+    {"@type": "Question", "name": "How long does a parent visa take?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Parent visas are capped and queued, so waits are very long. Home Affairs estimates, as at 31 August 2026, about 18 years for new Contributory Parent applications and about 42 years for new Parent and Aged Parent applications. These are estimates based on current annual places, not a forecast for any one application."}},
+    {"@type": "Question", "name": "Is there a faster way to have my parents with me in Australia?",
+      "acceptedAnswer": {"@type": "Answer", "text": "The Sponsored Parent (Temporary) visa, subclass 870, is a temporary option for up to three or five years at a time, with a maximum of ten years in total. It does not lead to permanent residence, and the sponsor must be approved first. Some families use it while a permanent parent application waits in the queue."}},
+    {"@type": "Question", "name": "What is the Balance of Family test?",
+      "acceptedAnswer": {"@type": "Answer", "text": "It is a test for most parent visas. Generally, at least half of the parent's children must be Australian citizens or permanent residents living in Australia, or more of the children must live in Australia than in any other single country. All of the parent's children count, and the test can be checked again at decision."}},
+    {"@type": "Question", "name": "How long do Carer, Remaining Relative and Aged Dependent Relative visas take?",
+      "acceptedAnswer": {"@type": "Answer", "text": "These visas are capped and queued. Home Affairs estimates, as at 31 August 2026, about 16 years for new Carer applications and about 26 years for new Remaining Relative and Aged Dependent Relative applications."}},
+    {"@type": "Question", "name": "Can my child get a visa to live in Australia with me?",
+      "acceptedAnswer": {"@type": "Answer", "text": "If you are an Australian citizen, permanent resident or eligible New Zealand citizen, your dependent child may be eligible for a Child visa, or an Adoption visa if the child is adopted. Age and dependency rules apply. If you hold a temporary partner visa, a child can usually be included in the permanent partner stage instead."}},
+    {"@type": "Question", "name": "Are partner visas part of the family visa stream?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Yes. Partner visas are the largest part of the Family stream, with a planning level of 41,500 places for 2026-27. We cover them in detail on our Partner Visa (820/801) page."}}
+  ]
+}
+</script>
+<style>
+  :root{
+    --ink:#1D184B; --ink-2:#322B6E; --paper:#FBFAF7; --paper-2:#F3EEE2;
+    --gold:#F8A51C; --gold-light:#FBC46B; --gold-deep:#8A5A12;
+    --text-muted:#4C5A6E; --line:#D9D2C0; --radius:2px; --maxw:1180px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:'Public Sans',sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:600;line-height:1.25;margin:0 0 .5em;color:var(--ink);letter-spacing:-0.01em;}
+  p{margin:0 0 1em;color:var(--text-muted);}
+  a{color:inherit;text-decoration:none;}
+  ul{margin:0;padding:0;list-style:none;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);display:flex;align-items:center;gap:10px;margin-bottom:16px;}
+  .eyebrow-line{display:inline-block;width:20px;height:2px;background:var(--gold);flex-shrink:0;}
+  :focus-visible{outline:2px solid var(--gold-deep);outline-offset:3px;}
+  .skip-link{position:absolute;left:-999px;top:auto;background:var(--ink);color:var(--paper);padding:10px 16px;z-index:100;}
+  .skip-link:focus{left:16px;top:16px;}
+  @media (prefers-reduced-motion: reduce){ *{animation:none !important; transition:none !important;} }
+
+  /* Header */
+  header.site{position:sticky;top:0;z-index:50;background:rgba(251,250,247,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+  .nav-row{display:flex;align-items:center;justify-content:space-between;padding:16px 28px;max-width:var(--maxw);margin:0 auto;}
+  .logo{display:flex;align-items:center;}
+  .logo img{height:42px;width:auto;display:block;}
+  nav.primary ul{display:flex;gap:34px;align-items:center;}
+  nav.primary a{font-size:14.5px;font-weight:600;color:var(--ink-2);position:relative;padding:4px 0;}
+  nav.primary a.active{color:var(--ink);}
+  nav.primary a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--gold);transition:width .2s ease;}
+  nav.primary a:hover::after,nav.primary a.active::after{width:100%;}
+  .nav-right{display:flex;align-items:center;gap:20px;}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-family:'Public Sans',sans-serif;font-weight:700;font-size:14px;padding:12px 22px;border-radius:var(--radius);cursor:pointer;border:1.5px solid transparent;transition:background .18s ease,color .18s ease,border-color .18s ease;}
+  .btn-primary{background:var(--ink);color:var(--paper);}
+  .btn-primary:hover{background:var(--gold);color:var(--ink);}
+  .btn-ghost{border-color:var(--ink);color:var(--ink);}
+  .btn-ghost:hover{background:var(--ink);color:var(--paper);}
+  .cta-banner .btn-ghost{border-color:var(--paper);color:var(--paper);}
+  .cta-banner .btn-ghost:hover{background:var(--paper);color:var(--ink);}
+  .menu-toggle{display:none;background:none;border:none;cursor:pointer;padding:6px;}
+  .menu-toggle span{display:block;width:22px;height:2px;background:var(--ink);margin:5px 0;}
+  .has-dropdown{position:relative;}
+  .has-dropdown > a{display:flex;align-items:center;gap:5px;}
+  .has-dropdown > a svg{transition:transform .18s ease;flex-shrink:0;}
+  .has-dropdown:hover > a svg,.has-dropdown:focus-within > a svg{transform:rotate(180deg);}
+  .dropdown-menu{position:absolute;top:100%;left:-14px;margin-top:16px;min-width:216px;background:var(--paper);border:1px solid var(--line);box-shadow:0 16px 34px rgba(15,42,74,.13);padding:8px;opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .18s ease,transform .18s ease,visibility .18s ease;}
+  .has-dropdown:hover .dropdown-menu,.has-dropdown:focus-within .dropdown-menu{opacity:1;visibility:visible;transform:translateY(0);}
+  .dropdown-menu a{display:block;padding:9px 12px;font-size:13.5px;font-weight:600;color:var(--ink-2);}
+  .dropdown-menu a:hover{background:var(--paper-2);color:var(--ink);}
+  .nav-offer{display:inline-flex;align-items:center;color:var(--gold) !important;font-weight:700 !important;border:1px solid var(--gold);border-radius:20px;padding:6px 15px !important;transition:background .18s ease,color .18s ease;}
+  .nav-offer:hover{background:var(--gold);color:var(--ink) !important;}
+  @media(max-width:920px){
+    nav.primary{display:none;} .menu-toggle{display:block;}
+    .dropdown-menu{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;margin:6px 0 6px 10px;padding:0;display:flex;flex-direction:column;gap:2px;}
+    .has-dropdown > a svg{margin-left:auto;}
+  }
+
+  /* Region toggle */
+  .region-toggle{display:inline-flex;align-items:center;gap:9px;cursor:pointer;white-space:nowrap;text-decoration:none;}
+  .rt-label{font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:600;letter-spacing:.04em;color:#4C5A6E;transition:color .2s ease;}
+  .rt-track{position:relative;display:block;width:58px;height:30px;border-radius:30px;flex-shrink:0;background:linear-gradient(135deg,#6EE7B7 0%,#5CA9E6 55%,#5B80EA 100%);box-shadow:inset 0 1px 3px rgba(29,24,75,.18);}
+  .rt-knob{position:absolute;top:3px;left:3px;width:24px;height:24px;border-radius:50%;background:#fff;box-shadow:0 3px 8px rgba(29,24,75,.32);transition:transform .3s cubic-bezier(.4,.2,.2,1);}
+  .region-toggle.is-right .rt-knob{transform:translateX(28px);}
+  .region-toggle .rt-in{color:#1D184B;} .region-toggle.is-right .rt-in{color:#4C5A6E;}
+  .region-toggle .rt-au{color:#4C5A6E;} .region-toggle.is-right .rt-au{color:#1D184B;}
+  .region-toggle::after{display:none;}
+  @media(max-width:1240px) and (min-width:1141px){nav.primary ul{gap:22px;} .nav-right{gap:14px;}}
+  @media(max-width:1140px){
+    .nav-row{flex-wrap:wrap;row-gap:10px;column-gap:24px;padding-bottom:12px;}
+    .nav-right{display:contents;}
+    .nav-right .btn{margin-left:auto;margin-right:10px;}
+    .region-toggle{order:5;width:100%;justify-content:center;padding-top:10px;border-top:1px solid #D9D2C0;}
+  }
+  @media(max-width:560px){
+    .nav-row{padding-left:16px;padding-right:16px;column-gap:12px;}
+    .logo img{height:34px;}
+    .nav-right .btn{padding:9px 14px;font-size:13px;margin-right:4px;}
+  }
+
+  /* Breadcrumb */
+  .crumbs{padding:18px 0 0;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.04em;color:var(--text-muted);}
+  .crumbs a{color:var(--gold-deep);text-decoration:underline;text-underline-offset:2px;}
+  .crumbs span{margin:0 6px;}
+
+  /* Hero: split layout with a "points ledger" card */
+  .hero{padding:44px 0 36px;}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;}
+  .hero h1{font-size:clamp(32px,4.2vw,48px);line-height:1.1;max-width:640px;}
+  .hero h1 span{color:var(--gold-deep);}
+  .hero .lede{font-size:16.5px;max-width:580px;color:var(--ink-2);}
+  .hero .buttons{display:flex;gap:14px;flex-wrap:wrap;margin:24px 0 18px;}
+  .hero .credential{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--text-muted);letter-spacing:.03em;margin:0;}
+  .ledger{background:var(--ink);color:var(--paper);border-radius:20px;padding:30px 28px;box-shadow:0 18px 40px rgba(29,24,75,.22);position:relative;}
+  .ledger::before{content:"";position:absolute;inset:10px;border:1.3px dashed rgba(248,165,28,.5);border-radius:14px;pointer-events:none;}
+  .ledger h2{color:var(--paper);font-size:20px;margin-bottom:4px;position:relative;}
+  .ledger .sub{color:#B9C6D6;font-size:13px;margin-bottom:18px;position:relative;}
+  .ledger dl{margin:0;position:relative;}
+  .ledger .row{display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-top:1px solid rgba(255,255,255,.14);font-size:14px;}
+  .ledger dt{color:#B9C6D6;}
+  .ledger dd{margin:0;font-family:'IBM Plex Mono',monospace;font-weight:600;color:var(--gold-light);text-align:right;}
+  @media(max-width:920px){.hero-grid{grid-template-columns:1fr;}}
+
+  /* Sections */
+  .section{padding:64px 0;box-shadow:inset 0 16px 18px -18px rgba(29,24,75,.16);}
+  .bg-alt{background:var(--paper-2);}
+  .section-head{max-width:700px;margin-bottom:34px;}
+  .section-head h2{font-size:30px;}
+  .section-head p{font-size:15.5px;margin-bottom:0;}
+  .prose{max-width:780px;}
+  .prose p{font-size:15.5px;}
+  .prose h3{font-size:21px;margin-top:1.6em;}
+  .prose a,.note-box a,.page-footnote a{color:var(--gold-deep);text-decoration:underline;text-underline-offset:2px;}
+
+  .qf-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+  .qf-card{background:var(--paper);border-radius:16px;padding:22px 18px;text-align:center;box-shadow:0 8px 22px rgba(29,24,75,.07);}
+  .qf-card b{display:block;font-family:'Fraunces',serif;font-size:22px;color:var(--ink);margin-bottom:4px;}
+  .qf-card span{font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--text-muted);}
+  @media(max-width:860px){.qf-grid{grid-template-columns:1fr 1fr;}}
+
+  .checklist{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:14px 28px;}
+  .checklist li{position:relative;padding-left:30px;font-size:14.5px;color:var(--ink-2);line-height:1.6;}
+  .checklist li::before{content:"";position:absolute;left:0;top:3px;width:18px;height:18px;border-radius:50%;border:2px solid var(--gold);background:var(--paper);}
+  .checklist li::after{content:"";position:absolute;left:6px;top:8px;width:6px;height:9px;border-right:2px solid var(--gold);border-bottom:2px solid var(--gold);transform:rotate(45deg);}
+  .checklist.one{grid-template-columns:1fr;}
+  @media(max-width:640px){.checklist{grid-template-columns:1fr;}}
+
+  /* Cards */
+  .card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .card-grid.two{grid-template-columns:repeat(2,1fr);}
+  .card{background:var(--paper);border-radius:20px;padding:28px 26px;box-shadow:0 10px 28px rgba(29,24,75,.08);transition:transform .25s ease,box-shadow .25s ease;}
+  .card:hover{transform:translateY(-5px);box-shadow:0 18px 34px rgba(29,24,75,.14);}
+  .card h3{font-size:19px;margin-bottom:10px;}
+  .card p{font-size:14.2px;margin-bottom:0;}
+  .card .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;background:var(--gold-light);color:var(--ink);display:inline-block;padding:4px 11px;border-radius:20px;margin-bottom:12px;}
+  @media(max-width:920px){.card-grid,.card-grid.two{grid-template-columns:1fr;}}
+
+  /* Tables */
+  .table-wrap{overflow-x:auto;border-radius:14px;box-shadow:0 8px 22px rgba(29,24,75,.07);background:var(--paper);}
+  table{width:100%;border-collapse:collapse;font-size:14.2px;min-width:560px;}
+  caption{text-align:left;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-deep);padding:16px 20px 6px;}
+  th,td{text-align:left;padding:13px 20px;border-top:1px solid var(--line);vertical-align:top;color:var(--ink-2);}
+  th{font-family:'Fraunces',serif;font-weight:600;color:var(--ink);background:var(--paper-2);border-top:none;}
+  .sep{color:var(--gold);font-weight:700;margin:0 .35em;}
+  td.pts{font-family:'IBM Plex Mono',monospace;font-weight:600;color:var(--ink);white-space:nowrap;}
+  tbody th{background:var(--paper);font-size:14.5px;}
+
+  /* Steps */
+  .step-list{position:relative;display:flex;flex-direction:column;gap:6px;}
+  .step-list::before{content:"";position:absolute;left:27px;top:14px;bottom:14px;width:2px;background:var(--line);}
+  .step{display:grid;grid-template-columns:56px 1fr;gap:22px;padding:18px 0;position:relative;}
+  .step-num{position:relative;z-index:1;width:56px;height:56px;border-radius:50%;background:var(--paper);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:700;color:var(--ink);}
+  .step h3{font-size:18px;margin-bottom:6px;}
+  .step p{font-size:14.5px;margin-bottom:0;max-width:700px;}
+
+  /* Fees */
+  .fee-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .fee-card{background:var(--paper);border-radius:18px;padding:26px 22px;box-shadow:0 8px 22px rgba(29,24,75,.07);text-align:center;}
+  .fee-card .stream{font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--gold-deep);margin-bottom:8px;display:block;}
+  .fee-card .amount{font-family:'Fraunces',serif;font-size:28px;color:var(--ink);margin-bottom:6px;}
+  .fee-card p{font-size:13px;margin-bottom:0;}
+  @media(max-width:860px){.fee-grid{grid-template-columns:1fr;}}
+  .note-box{max-width:900px;margin:28px 0 0;background:var(--paper);border-left:4px solid var(--gold);border-radius:4px;padding:18px 22px;}
+  .note-box p{font-size:13.5px;color:var(--ink-2);margin:0;}
+  .note-box p + p{margin-top:8px;}
+
+  /* FAQ */
+  .faq-list{max-width:860px;}
+  .faq-item{background:var(--paper);border-radius:14px;padding:4px 22px;margin-bottom:12px;box-shadow:0 6px 18px rgba(29,24,75,.06);}
+  .faq-item[open]{box-shadow:0 12px 26px rgba(29,24,75,.12);}
+  .faq-item summary{cursor:pointer;list-style:none;font-family:'Fraunces',serif;font-size:17px;font-weight:600;padding:18px 30px 18px 0;position:relative;}
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::after{content:"+";position:absolute;right:0;top:16px;font-family:'Public Sans',sans-serif;font-size:22px;color:var(--gold);transition:transform .2s ease;}
+  .faq-item[open] summary::after{transform:rotate(45deg);}
+  .faq-item p{font-size:14.5px;padding-bottom:20px;max-width:720px;}
+
+  /* Links / resources */
+  .pillar-link{font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:600;color:var(--gold-deep);display:inline-flex;align-items:center;gap:6px;letter-spacing:.04em;text-transform:uppercase;margin-top:14px;}
+  .pillar-link svg{transition:transform .18s ease;}
+  a.card:hover .pillar-link svg{transform:translateX(4px);}
+
+  .page-footnote{border-top:1px solid var(--line);padding:22px 0;}
+  .page-footnote p{font-size:13.5px;line-height:1.6;color:var(--text-muted);margin:0;max-width:900px;}
+
+  .cta-banner{padding:76px 0;text-align:center;background:var(--ink);color:var(--paper);}
+  .cta-banner h2{color:var(--paper);font-size:32px;max-width:620px;margin:0 auto 16px;}
+  .cta-banner p{color:#B9C6D6;max-width:520px;margin:0 auto 28px;}
+  .cta-banner .btns{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;}
+
+  /* Reveal */
+  .js-anim .reveal{opacity:0;transform:translateY(24px);transition:opacity .5s ease, transform .55s cubic-bezier(.22,1,.36,1);}
+  .js-anim .reveal.in-view{opacity:1;transform:none;}
+  @media (prefers-reduced-motion: reduce){.js-anim .reveal{opacity:1 !important;transform:none !important;}}
+
+  /* Quick actions */
+  .quick-actions{position:fixed;right:22px;bottom:22px;z-index:60;display:flex;flex-direction:column;align-items:flex-end;gap:12px;}
+  .qa-btn{position:relative;width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--ink);color:var(--paper);box-shadow:0 6px 18px rgba(29,24,75,.28);transition:transform .18s ease,box-shadow .18s ease;}
+  .qa-btn:hover{transform:translateY(-3px) scale(1.05);}
+  .qa-btn.qa-primary{background:var(--gold);color:var(--ink);}
+  .qa-label{position:absolute;right:64px;top:50%;transform:translateY(-50%) translateX(6px);background:var(--ink);color:var(--paper);font-size:12.5px;font-weight:600;padding:6px 12px;border-radius:6px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .18s ease,transform .18s ease;}
+  .qa-btn:hover .qa-label{opacity:1;transform:translateY(-50%) translateX(0);}
+  @media (max-width:640px){.quick-actions{right:14px;bottom:14px;gap:10px;}.qa-btn{width:46px;height:46px;}.qa-label{display:none;}}
+</style>
+
+<style>
+  /* ---------- Region-aware Services menu: India list or Australian mega menu (html[data-region] is set in <head>) ---------- */
+  html[data-region="au"] .svc-in{display:none !important;}
+  html:not([data-region="au"]) .svc-au{display:none !important;}
+  .dropdown-menu.mega{width:580px;min-width:0;display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;padding:14px;}
+  .mega-group{display:flex;flex-direction:column;}
+  .dropdown-menu .mega-head{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#8A5A12;padding:6px 12px;border-bottom:1px solid #D9D2C0;margin-bottom:4px;}
+  .dropdown-menu .mega-head:hover{background:none;color:#1D184B;}
+  .dropdown-menu .mega-head::after{display:none;}
+  @media(max-width:920px){
+    .dropdown-menu.mega{width:auto;display:flex;flex-direction:column;gap:10px;padding:0;}
+    .dropdown-menu .mega-head{padding:4px 12px;}
+  }
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header class="site">
+  <div class="nav-row">
+    <a href="index.html" data-home-link class="logo"><img src="assets/logo.webp" alt="SuccessVisa" width="300" height="95" decoding="async"></a>
+    <nav class="primary" aria-label="Primary">
+      <ul>
+        <li><a href="index.html" data-home-link>Home</a></li>
+        <li><a href="About%20Us%20Sub%20Landing%20Page.html">About</a></li>
+        <li class="has-dropdown svc-in">
+          <a href="Services%20Main%20Landing%20Page.html" class="active">Services
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.4"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="Education%20Visa%20Landing%20Page.html">Education Visa (500)</a>
+            <a href="Visitor%20Visa%20Landing%20Page.html">Visitor Visa (600)</a>
+            <a href="OSHC%20Sub%20Landing%20Page.html">Health Cover (OSHC)</a>
+          </div>
+        </li>
+        <li class="has-dropdown svc-au">
+          <a href="Australia%20Services%20Main%20Landing%20Page.html" class="active">Services
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.4"/></svg>
+          </a>
+          <div class="dropdown-menu mega">
+            <div class="mega-group">
+              <a href="Australia%20Services%20Main%20Landing%20Page.html#skilled" class="mega-head">Skilled Visas</a>
+              <a href="Skilled%20Independent%20189%20Sub%20Sub%20Landing%20Page.html">Skilled Independent (189)</a>
+              <a href="Skilled%20Nominated%20190%20Sub%20Sub%20Landing%20Page.html">Skilled Nominated (190)</a>
+              <a href="Skilled%20Work%20Regional%20491%20Sub%20Sub%20Landing%20Page.html">Skilled Work Regional (491)</a>
+              <a href="PR%20Skilled%20Regional%20191%20Sub%20Sub%20Landing%20Page.html">PR Skilled Regional (191)</a>
+              <a href="Skilled%20Recognised%20Graduate%20476%20Sub%20Sub%20Landing%20Page.html">Skilled Recognised Graduate (476)</a>
+              <a href="Recognition%20of%20Prior%20Learning%20RPL%20Sub%20Sub%20Landing%20Page.html">Recognition of Prior Learning (RPL)</a>
+            </div>
+            <div class="mega-group">
+              <a href="Australia%20Services%20Main%20Landing%20Page.html#family" class="mega-head">Partner &amp; Family</a>
+              <a href="Partner%20Visa%20820%20801%20Sub%20Sub%20Landing%20Page.html">Partner Visa (820/801)</a>
+              <a href="Family%20Visa%20Sub%20Sub%20Landing%20Page.html">Family Visa</a>
+              <a href="Carer%20Visa%20116%20836%20Sub%20Sub%20Landing%20Page.html">Carer Visa (116/836)</a>
+            </div>
+            <div class="mega-group">
+              <a href="Australia%20Services%20Main%20Landing%20Page.html#study-work" class="mega-head">Student, Working &amp; Training</a>
+              <a href="Student%20Visa%20500%20Sub%20Sub%20Landing%20Page.html">Student Visa (500)</a>
+              <a href="Working%20Visa%20482%20186%20Sub%20Sub%20Landing%20Page.html">Working Visa (482/186)</a>
+              <a href="Training%20Visa%20407%20Sub%20Sub%20Landing%20Page.html">Training Visa (407)</a>
+            </div>
+            <div class="mega-group">
+              <a href="Australia%20Services%20Main%20Landing%20Page.html#visitor-business" class="mega-head">Visitor, Business &amp; Health</a>
+              <a href="Visitor%20Visa%20Landing%20Page.html">Visitor Visa (600)</a>
+              <a href="Australia%20Business%20Visa%20Sub%20Sub%20Landing%20Page.html">Business Visa</a>
+              <a href="Health%20Insurance%20OSHC%20Sub%20Sub%20Landing%20Page.html">Health Insurance (OSHC)</a>
+            </div>
+          </div>
+        </li>
+        <li><a href="Offers%20Demo%20Landing%20Page.html" class="nav-offer">Offers</a></li>
+        <li class="has-dropdown">
+          <a href="resources.html">Resources
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.4"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="resources.html#blog">Blog</a>
+            <a href="resources.html#videos">Videos</a>
+            <a href="resources.html#checklist">Visa Checklists</a>
+            <a href="resources.html#news">Latest News</a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <a href="contact.html">Contact
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.4"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="Chandigarh%20Branch%20Landing%20Page.html">Chandigarh, IN</a>
+            <a href="Parramatta%20Branch%20Landing%20Page.html">Parramatta, NSW</a>
+            <a href="Toongabbie%20Branch%20Landing%20Page.html">Toongabbie, NSW</a>
+            <a href="Melbourne%20CBD%20Branch%20Landing%20Page.html">Melbourne, VIC</a>
+            <a href="Werribee%20Branch%20Landing%20Page.html">Werribee, VIC</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <a href="International%20Home.html" class="region-toggle" data-to="au" data-side="left" aria-label="Viewing the India site. Switch to the Australia site" title="Viewing the India site. Switch to the Australia site">
+        <span class="rt-label rt-in">India</span>
+        <span class="rt-track" aria-hidden="true"><span class="rt-knob"></span></span>
+        <span class="rt-label rt-au">Australia</span>
+      </a>
+      <a href="Booking%20Page.html" class="btn btn-primary">Book Appointment</a>
+      <button class="menu-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html" data-home-link>Home</a><span>/</span><a href="Services%20Main%20Landing%20Page.html">Services</a><span>/</span>Family Visa</nav>
+    <div class="hero-grid" style="margin-top:28px;">
+      <div>
+        <div class="eyebrow"><span class="eyebrow-line"></span>Family Migration Guide</div>
+        <h1>Family Visa Australia: <span>Partner, Child, Parent and Relative Visas Explained</span></h1>
+        <p class="lede">Australia's Family stream lets citizens, permanent residents and eligible New Zealand citizens bring close family members to live in Australia. Some family visas are processed in months, while others sit in a queue for decades, so choosing the right one matters. This guide explains each family visa, what is capped, and what you can realistically expect.</p>
+        <div class="buttons">
+          <a href="Booking%20Page.html" class="btn btn-primary">Book a Family Visa Check</a>
+          <a href="#which-visa" class="btn btn-ghost">Find Your Visa</a>
+        </div>
+        <p class="credential">Reviewed by MARA registered migration agents &middot; MARN 2318228</p>
+      </div>
+      <aside class="ledger" aria-label="Family visas at a glance">
+        <h2>Family stream 2026-27</h2>
+        <p class="sub">Planning levels set by the Australian Government.</p>
+        <dl>
+          <div class="row"><dt>Family stream total</dt><dd>52,460</dd></div>
+          <div class="row"><dt>Partner</dt><dd>41,500</dd></div>
+          <div class="row"><dt>Parent</dt><dd>7,060</dd></div>
+          <div class="row"><dt>Child</dt><dd>3,500</dd></div>
+          <div class="row"><dt>Other Family</dt><dd>400</dd></div>
+        </dl>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="what-is-family-visa">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>The Basics</div>
+      <h2>What Is a Family Visa in Australia?</h2>
+      <p>The Family stream is one part of the permanent Migration Program, run by the Department of Home Affairs.</p>
+    </div>
+    <div class="prose">
+      <p>A family visa is a visa that lets a person live in Australia because of their relationship to an Australian citizen, permanent resident or eligible New Zealand citizen. It is not points tested and does not need a skills assessment. Instead, it depends on the relationship, the sponsor's status, and the criteria set for each category. Most family visas also need health and character checks, and some need an Assurance of Support.</p>
+      <p>The big difference between categories is how they are managed. Partner and Child visas are demand-driven, so eligible applications are assessed without a fixed annual cap. Parent and Other Family visas are capped and queued, so a valid application receives a queue date and waits for a place in a future program year.</p>
+    </div>
+    <div class="table-wrap reveal" style="margin-top:30px;">
+      <table>
+        <caption>Family visa categories at a glance</caption>
+        <thead><tr><th>Category</th><th>Main visas</th><th>Who it is for</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Partner</th><td>820/801 (onshore), 309/100 (offshore), 300 (prospective marriage)</td><td>Spouses, de facto partners and fiancés of Australian citizens, permanent residents or eligible New Zealand citizens</td></tr>
+          <tr><th scope="row">Child</th><td>101, 802, 102 (adoption), 445 (dependent child)</td><td>Dependent children, including adopted children</td></tr>
+          <tr><th scope="row">Parent</th><td>103, 804, 143, 173, 864, 884, and temporary 870</td><td>Parents of an Australian citizen, permanent resident or eligible New Zealand citizen who meet the Balance of Family test</td></tr>
+          <tr><th scope="row">Other Family</th><td>Carer 116/836, Remaining Relative 115/835, Aged Dependent Relative 114/838, Orphan Relative 117/837</td><td>Relatives with a specific need or dependency on an Australian family member</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-alt" id="places">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>The Numbers</div>
+      <h2>How Many Family Visas Does Australia Grant? 2026-27 Planning Levels</h2>
+      <p>The Government sets planning levels each year. Parent and Other Family places have been cut, while Partner and Child places rose.</p>
+    </div>
+    <div class="table-wrap reveal">
+      <table>
+        <caption>Family stream planning levels</caption>
+        <thead><tr><th>Category</th><th>2025-26</th><th>2026-27</th><th>Change</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Partner</th><td class="pts">40,500</td><td class="pts">41,500</td><td class="pts">+1,000</td></tr>
+          <tr><th scope="row">Child</th><td class="pts">3,000</td><td class="pts">3,500</td><td class="pts">+500</td></tr>
+          <tr><th scope="row">Parent</th><td class="pts">8,500</td><td class="pts">7,060</td><td class="pts">-1,440</td></tr>
+          <tr><th scope="row">Other Family</th><td class="pts">500</td><td class="pts">400</td><td class="pts">-100</td></tr>
+          <tr><th scope="row">Family stream total</th><td class="pts">52,500</td><td class="pts">52,460</td><td class="pts">-40</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note-box">
+      <p>Partner and Child planning levels are indicative because those visas are demand-driven. Parent and Other Family places are capped, so fewer places means longer queues. Planning levels can change each program year.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="partner">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Partners</div>
+      <h2>Partner Visas: The Largest Part of the Family Stream</h2>
+      <p>Most family visas granted each year are Partner visas.</p>
+    </div>
+    <div class="prose">
+      <p>The Partner visa pathway is for the spouse or de facto partner of an Australian citizen, permanent resident or eligible New Zealand citizen. Applicants in Australia apply for the subclass 820 and then the permanent 801, in a single application. Applicants overseas apply for the 309 and then the 100. Engaged applicants overseas can apply for the Prospective Marriage visa (subclass 300). The main applicant charge for the 820/801 is AUD 11,710 from 1 July 2026.</p>
+      <p>Because partner visas have their own evidence rules, sponsor limits and two stages, we cover them in full on a separate page.</p>
+      <a href="Partner%20Visa%20820%20801%20Sub%20Sub%20Landing%20Page.html" class="pillar-link">Read the Partner Visa (820/801) guide <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M8 1L13 5L8 9M13 5H1" stroke="currentColor" stroke-width="1.4"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-alt" id="child">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Children</div>
+      <h2>Child Visas: 101, 802, 102 and 445</h2>
+      <p>Visas for dependent children of Australian citizens and permanent residents.</p>
+    </div>
+    <div class="table-wrap reveal">
+      <table>
+        <caption>Child visa options</caption>
+        <thead><tr><th>Visa</th><th>Where the child is</th><th>Key points</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Child (subclass 101)</th><td>Outside Australia</td><td>Permanent visa for a dependent child of an Australian citizen, permanent resident or eligible New Zealand citizen.</td></tr>
+          <tr><th scope="row">Child (subclass 802)</th><td>In Australia</td><td>The onshore equivalent, for a dependent child already in Australia.</td></tr>
+          <tr><th scope="row">Adoption (subclass 102)</th><td>Outside Australia</td><td>For a child who has been adopted, or is about to be adopted, by an Australian citizen or permanent resident.</td></tr>
+          <tr><th scope="row">Dependent Child (subclass 445)</th><td>Inside or outside Australia</td><td>For a child of a person who holds a temporary partner visa and has applied for the permanent stage. The child is included in that application.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note-box">
+      <p>Child visas depend on the child's age and dependency, the parent's status and any custody or consent arrangements. Check these before applying. We review the details of your family with you first.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="parent">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Parents</div>
+      <h2>Parent Visas: Options, Queues and the Balance of Family Test</h2>
+      <p>Parent visas are capped and queued, so the wait is the most important thing to understand before you apply.</p>
+    </div>
+    <div class="table-wrap reveal">
+      <table>
+        <caption>Parent visa options</caption>
+        <thead><tr><th>Visa</th><th>Type</th><th>What to know</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Parent (103) and Aged Parent (804)</th><td>Permanent, non-contributory</td><td>Lower visa charge, but Home Affairs estimates about 42 years for new applications. The 804 is the onshore version for Aged Parent applicants.</td></tr>
+          <tr><th scope="row">Contributory Parent (143) and (173)</th><td>Permanent (143) or temporary (173)</td><td>A much higher cost, paid in two instalments, with an estimated wait of about 18 years for new applications. The 173 is a temporary visa that can lead to the 143.</td></tr>
+          <tr><th scope="row">Contributory Aged Parent (864) and (884)</th><td>Permanent (864) or temporary (884)</td><td>Similar contributory structure, lodged onshore by older applicants. Home Affairs groups these with the other contributory parent visas for the same estimate.</td></tr>
+          <tr><th scope="row">Sponsored Parent, Temporary (870)</th><td>Temporary only</td><td>Valid for three or five years at a time, up to ten years in total. It does not lead to permanent residence, and the sponsor must be approved first.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="table-wrap reveal" style="margin-top:30px;">
+      <table>
+        <caption>Parent visa queues: Home Affairs data as at 31 August 2026</caption>
+        <thead><tr><th>Visa</th><th>Queue dates released up to</th><th>Estimated wait for new applications</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Contributory Parent (143, 173)</th><td class="pts">November 2018</td><td class="pts">About 18 years</td></tr>
+          <tr><th scope="row">Contributory Aged Parent (864, 884)</th><td class="pts">November 2020</td><td class="pts">About 18 years</td></tr>
+          <tr><th scope="row">Parent (103)</th><td class="pts">March 2014</td><td class="pts">About 42 years</td></tr>
+          <tr><th scope="row">Aged Parent (804)</th><td class="pts">October 2014</td><td class="pts">About 42 years</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="prose" style="margin-top:34px;">
+      <h3>The Balance of Family test</h3>
+      <p>Most parent visas require your family to pass the Balance of Family test. Generally, at least half of your parent's children must be Australian citizens or permanent residents living in Australia, or more of their children must live in Australia than in any other single country. All children count, including step-children and adopted children, and the test can be checked again at decision. The temporary 870 does not use this test.</p>
+      <h3>Assurance of Support</h3>
+      <p>Most parent visas require an Assurance of Support, usually for ten years. It is a financial guarantee that your parent will not rely on certain social security payments, and it is secured by a bond. Contributory parent visas also carry a second instalment of the visa charge, which runs to tens of thousands of dollars per applicant. Confirm the current amounts before you plan.</p>
+    </div>
+    <div class="note-box">
+      <p><strong>Be realistic about timing.</strong> The estimated waits are Home Affairs figures based on current annual places. They are not a forecast for any one application and can change, and the 2026-27 Parent planning level was cut. Many families plan around a temporary option while a permanent application waits.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-alt" id="other-family">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Other Relatives</div>
+      <h2>Carer, Remaining Relative, Aged Dependent Relative and Orphan Relative Visas</h2>
+      <p>These visas are for specific situations, and most are capped and queued.</p>
+    </div>
+    <div class="table-wrap reveal">
+      <table>
+        <caption>Other Family visa options</caption>
+        <thead><tr><th>Visa</th><th>For</th><th>Key points</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Carer (116 offshore, 836 onshore)</th><td>A person who needs to give long-term care to an Australian relative with a medical condition</td><td>Permanent visa. The relative's condition and the lack of other care options are assessed closely.</td></tr>
+          <tr><th scope="row">Remaining Relative (115 offshore, 835 onshore)</th><td>A person whose closest relatives are settled in Australia</td><td>Permanent visa. The test is strict, and applicants usually need no other near relatives outside Australia.</td></tr>
+          <tr><th scope="row">Aged Dependent Relative (114 offshore, 838 onshore)</th><td>An older person who relies on an Australian relative for most or all of their living costs</td><td>Permanent visa, with a dependency requirement.</td></tr>
+          <tr><th scope="row">Orphan Relative (117 offshore, 837 onshore)</th><td>A single child under 18 who has no parent able to care for them</td><td>The sponsor is an Australian relative. Parents are deceased, unable to care for the child, or their whereabouts are unknown.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="table-wrap reveal" style="margin-top:30px;">
+      <table>
+        <caption>Other Family queues: Home Affairs data as at 31 August 2026</caption>
+        <thead><tr><th>Visa</th><th>Queue dates released up to</th><th>Estimated wait for new applications</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Carer (116, 836)</th><td class="pts">31 December 2023</td><td class="pts">About 16 years</td></tr>
+          <tr><th scope="row">Remaining Relative (115, 835)</th><td class="pts">30 June 2013</td><td class="pts">About 26 years</td></tr>
+          <tr><th scope="row">Aged Dependent Relative (114, 838)</th><td class="pts">30 June 2013</td><td class="pts">About 26 years</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note-box">
+      <p>Home Affairs publishes these queue figures for the Carer, Remaining Relative and Aged Dependent Relative visas. It does not publish a queue estimate for Orphan Relative visas on that page, so we check the current position for your case.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="priority">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Processing Order</div>
+      <h2>How Family Visas Are Prioritised for Processing</h2>
+      <p>Ministerial Directions decide which family applications are assessed first.</p>
+    </div>
+    <div class="prose">
+      <p>The Department of Home Affairs processes family visas in an order set by Ministerial Direction, and it publishes the current priorities on its website. A processing direction that came into effect in July 2026 is reported to place applicants who are in Australia, and who can be granted a visa in Australia, ahead of applicants who are offshore. Within each group, Partner and Dependent Child applications rank ahead of the other family categories.</p>
+      <p>Priority only changes processing order. It does not change who is eligible, and it does not remove the caps and queues on Parent and Other Family visas. Because directions are updated from time to time, we check the current one before we advise you on lodging onshore or offshore.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-alt" id="which-visa">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Choose Your Route</div>
+      <h2>Which Family Visa Fits Your Situation?</h2>
+      <p>Start with who you want to bring, and where they are now.</p>
+    </div>
+    <div class="table-wrap reveal">
+      <table>
+        <caption>Matching your situation to a visa</caption>
+        <thead><tr><th>Your situation</th><th>Visa to consider</th><th>Reality check</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Married or in a genuine de facto relationship</th><td>Partner visa (820/801 onshore, 309/100 offshore)</td><td>Decided on evidence of a genuine relationship. Timeframes are in months to a few years, not decades.</td></tr>
+          <tr><th scope="row">Engaged and your partner is overseas</th><td>Prospective Marriage visa (300)</td><td>You must marry after arrival, then apply for the Partner visa.</td></tr>
+          <tr><th scope="row">A dependent child</th><td>Child visa (101 or 802), Adoption (102) or Dependent Child (445)</td><td>Demand-driven, but age, dependency and consent rules apply.</td></tr>
+          <tr><th scope="row">Parents who can pass the Balance of Family test</th><td>Contributory Parent, or the non-contributory Parent visa</td><td>Waits of about 18 and 42 years respectively for new applications, so plan with a temporary option.</td></tr>
+          <tr><th scope="row">Parents for a long visit</th><td>Sponsored Parent (870) or a Visitor visa</td><td>Temporary only. Neither leads to permanent residence.</td></tr>
+          <tr><th scope="row">A relative who needs care, or who depends on you</th><td>Carer, Remaining Relative or Aged Dependent Relative</td><td>Specific criteria and waits of about 16 to 26 years for new applications.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="how-to-apply">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>The Process</div>
+      <h2>How to Apply for a Family Visa</h2>
+      <p>A typical path from first conversation to lodgement.</p>
+    </div>
+    <div class="step-list">
+      <div class="step reveal"><div class="step-num">01</div><div><h3>Free family visa check</h3><p>We look at who you want to bring, their age, where they are and your status as a sponsor, and tell you honestly which routes exist.</p></div></div>
+      <div class="step reveal"><div class="step-num">02</div><div><h3>Check the sponsor and the family</h3><p>We confirm your citizenship or permanent residence status, and run any Balance of Family or dependency tests that apply.</p></div></div>
+      <div class="step reveal"><div class="step-num">03</div><div><h3>Choose the pathway</h3><p>We compare permanent, temporary, onshore and offshore options against your goals and the current queues.</p></div></div>
+      <div class="step reveal"><div class="step-num">04</div><div><h3>Collect evidence</h3><p>Relationship, identity, financial and family evidence is gathered and checked for consistency before lodging.</p></div></div>
+      <div class="step reveal"><div class="step-num">05</div><div><h3>Health and character</h3><p>We plan health examinations and police certificates, which can take weeks or months to arrange.</p></div></div>
+      <div class="step reveal"><div class="step-num">06</div><div><h3>Lodge and track</h3><p>We lodge the application, watch deadlines and respond to Department requests, and keep you updated on your queue or processing position.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-alt" id="documents">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Get Organised</div>
+      <h2>Documents Most Family Visa Applications Need</h2>
+      <p>The exact list depends on the visa, but most files include these.</p>
+    </div>
+    <ul class="checklist">
+      <li>Passports and identity documents for every applicant.</li>
+      <li>Evidence of your sponsor's citizenship, permanent residence or New Zealand status.</li>
+      <li>Birth certificates and family records that prove the relationship.</li>
+      <li>Marriage certificates, or evidence of a de facto relationship, for partner applications.</li>
+      <li>For parent visas, family composition details for the Balance of Family test.</li>
+      <li>Evidence of dependency, such as financial support records, for aged dependent or child applications.</li>
+      <li>Medical evidence for carer applications, from the relative's treating doctor.</li>
+      <li>Police certificates for each country where you have lived for 12 months or more in the last 10 years.</li>
+      <li>Health examination results where required.</li>
+      <li>Financial documents for the sponsor and any Assurance of Support assurer.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="costs">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Costs</div>
+      <h2>Family Visa Costs: What to Expect</h2>
+      <p>Charges vary a lot between categories, and some are paid in two instalments.</p>
+    </div>
+    <div class="table-wrap reveal">
+      <table>
+        <caption>Family visa costs in brief</caption>
+        <thead><tr><th>Visa group</th><th>What to know</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Partner (820/801, 309/100)</th><td>AUD 11,710 for the main applicant from 1 July 2026, AUD 5,860 for each additional applicant aged 18 or over and AUD 2,935 for each applicant under 18. The charge covers both stages.</td></tr>
+          <tr><th scope="row">Child, Carer, Remaining Relative, Aged Dependent Relative, Orphan Relative</th><td>Each has its own charge. Check the amount for your subclass on the Department of Home Affairs visa pricing estimator before you plan.</td></tr>
+          <tr><th scope="row">Parent (103, 804)</th><td>A lower charge than contributory visas, but a very long queue.</td></tr>
+          <tr><th scope="row">Contributory Parent (143, 173, 864, 884)</th><td>A first instalment at lodgement and a second instalment, which runs to tens of thousands of dollars per applicant, paid before grant.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note-box">
+      <p><strong>Beyond the visa charge.</strong> Plan for health examinations, police certificates, translations, any Assurance of Support bond and professional fees. A bond for an Assurance of Support has been about AUD 10,000 for one person and AUD 14,000 for a couple at last review.</p>
+      <p>Charges are set by the Australian Government and normally change each 1 July. Confirm every amount in ImmiAccount or on the Department of Home Affairs pricing tool before you pay. Application charges are generally not refunded if an application is refused.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-alt" id="mistakes">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Avoid These</div>
+      <h2>Common Family Visa Mistakes</h2>
+    </div>
+    <div class="card-grid">
+      <div class="card reveal"><h3>Underestimating the queue</h3><p>Parent and Other Family visas are measured in decades. Plan how your family will live and travel in the meantime.</p></div>
+      <div class="card reveal"><h3>Skipping the Balance of Family test</h3><p>A parent application can fail if your family does not pass it. Check before paying any instalment.</p></div>
+      <div class="card reveal"><h3>Assuming temporary means permanent</h3><p>The Sponsored Parent (870) visa and visitor visas do not lead to permanent residence.</p></div>
+      <div class="card reveal"><h3>Ignoring sponsor eligibility</h3><p>Sponsorship rules and limits can stop an application. Check your own status and history early.</p></div>
+      <div class="card reveal"><h3>Weak or mismatched evidence</h3><p>Dates, names and relationships that do not match across documents raise doubts. Check everything lines up.</p></div>
+      <div class="card reveal"><h3>Relying on outdated guides</h3><p>Fees, planning levels and queue estimates change each year. Use current Home Affairs figures.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Common Questions</div>
+      <h2>Family Visa FAQs</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item"><summary>What counts as a family visa in Australia?</summary><p>Family visas are the permanent and temporary visas in the Family stream of the Migration Program. They cover partners, dependent children, parents, carers, remaining relatives, aged dependent relatives and orphan relatives. Each category has its own sponsor rules, and some are capped and queued.</p></details>
+      <details class="faq-item"><summary>How many family visa places are there in 2026-27?</summary><p>The Family stream has a planning level of 52,460 places for 2026-27. Within that, the planning levels are about 41,500 for Partner, 7,060 for Parent, 3,500 for Child and 400 for Other Family. Partner and Child visas are demand-driven, so their levels are indicative, while Parent and Other Family places are capped.</p></details>
+      <details class="faq-item"><summary>How long does a parent visa take?</summary><p>Parent visas are capped and queued, so waits are very long. Home Affairs estimates, as at 31 August 2026, about 18 years for new Contributory Parent applications and about 42 years for new Parent and Aged Parent applications. These are estimates based on current annual places, not a forecast for any one application.</p></details>
+      <details class="faq-item"><summary>Is there a faster way to have my parents with me in Australia?</summary><p>The Sponsored Parent (Temporary) visa, subclass 870, is a temporary option for up to three or five years at a time, with a maximum of ten years in total. It does not lead to permanent residence, and the sponsor must be approved first. Some families use it while a permanent parent application waits in the queue.</p></details>
+      <details class="faq-item"><summary>What is the Balance of Family test?</summary><p>It is a test for most parent visas. Generally, at least half of the parent's children must be Australian citizens or permanent residents living in Australia, or more of the children must live in Australia than in any other single country. All of the parent's children count, and the test can be checked again at decision.</p></details>
+      <details class="faq-item"><summary>How long do Carer, Remaining Relative and Aged Dependent Relative visas take?</summary><p>These visas are capped and queued. Home Affairs estimates, as at 31 August 2026, about 16 years for new Carer applications and about 26 years for new Remaining Relative and Aged Dependent Relative applications.</p></details>
+      <details class="faq-item"><summary>Can my child get a visa to live in Australia with me?</summary><p>If you are an Australian citizen, permanent resident or eligible New Zealand citizen, your dependent child may be eligible for a Child visa, or an Adoption visa if the child is adopted. Age and dependency rules apply. If you hold a temporary partner visa, a child can usually be included in the permanent partner stage instead.</p></details>
+      <details class="faq-item"><summary>Are partner visas part of the family visa stream?</summary><p>Yes. Partner visas are the largest part of the Family stream, with a planning level of 41,500 places for 2026-27. We cover them in detail on our Partner Visa (820/801) page.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-alt">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Keep Exploring</div>
+      <h2>Related Services</h2>
+    </div>
+    <div class="card-grid">
+      <a href="Partner%20Visa%20820%20801%20Sub%20Sub%20Landing%20Page.html" class="card reveal"><span class="tag">Partner Visa</span><h3>Partner Visa (820/801)</h3><p>The full guide to the onshore partner visa and its two stages.</p><span class="pillar-link">Partner visa <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M8 1L13 5L8 9M13 5H1" stroke="currentColor" stroke-width="1.4"/></svg></span></a>
+      <a href="Visitor%20Visa%20Landing%20Page.html" class="card reveal"><span class="tag">Visitor Visa 600</span><h3>Visit Your Family</h3><p>A short-stay option for relatives while a longer-term plan is made.</p><span class="pillar-link">Visitor visa <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M8 1L13 5L8 9M13 5H1" stroke="currentColor" stroke-width="1.4"/></svg></span></a>
+      <a href="Services%20Main%20Landing%20Page.html" class="card reveal"><span class="tag">All Services</span><h3>All Visa Services</h3><p>See every visa service we support, from student visas to permanent residency.</p><span class="pillar-link">View services <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M8 1L13 5L8 9M13 5H1" stroke="currentColor" stroke-width="1.4"/></svg></span></a>
+    </div>
+  </div>
+</section>
+
+<div class="wrap page-footnote">
+  <p>Reviewed by SuccessVisa's MARA registered migration agents &middot; last updated 26 October 2026. General information only, not migration advice. Visa criteria, planning levels, queue estimates and charges are set by the Australian Government and can change. Always confirm against the Department of Home Affairs before you act. <a href="Disclaimer%20Page.html">See full disclaimer and sources</a>.</p>
+</div>
+
+<section class="cta-banner">
+  <div class="wrap">
+    <h2>Find the Right Visa for Your Family</h2>
+    <p>Book a consultation for an honest look at your options and realistic timeframes, before you lodge.</p>
+    <div class="btns">
+      <a href="Booking%20Page.html" class="btn btn-primary">Book Appointment</a>
+      <a href="Services%20Main%20Landing%20Page.html" class="btn btn-ghost">Explore All Services</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="quick-actions" aria-label="Quick contact actions">
+  <a href="tel:+911800000000" class="qa-btn" aria-label="Call us"><span class="qa-label">Call us</span>
+    <svg width="21" height="21" viewBox="0 0 24 24" fill="none"><path d="M4 5c0-1 1-2 2-2h2l2 5-2 1.5c1 2.3 2.7 4 5 5L14.5 12l5 2v2c0 1-1 2-2 2C10.5 18 4 11.5 4 5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></a>
+  <a href="https://wa.me/911800000000" class="qa-btn" aria-label="Chat on WhatsApp" target="_blank" rel="noopener"><span class="qa-label">WhatsApp us</span>
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.7-1.2A9 9 0 1 0 12 3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M8.5 8.8c-.3.6-.3 1.6.6 2.9 1 1.4 2.3 2.6 3.9 3.1 1 .3 1.7.1 2.1-.4l.4-.6-2-1.3-.5.5c-.2.2-.5.2-.8 0-.7-.4-1.5-1.1-2-1.9-.2-.3-.1-.6.1-.8l.5-.5-1.1-2Z" fill="currentColor"/></svg></a>
+  <a href="Booking%20Page.html" class="qa-btn qa-primary" aria-label="Book Appointment"><span class="qa-label">Book Appointment</span>
+    <svg width="21" height="21" viewBox="0 0 24 24" fill="none"><rect x="3.5" y="5" width="17" height="15" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M3.5 9.5h17" stroke="currentColor" stroke-width="1.5"/><path d="M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M8 13.5l2.3 2.3L16 10.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+</div>
+
+<script>
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('nav.primary');
+  toggle.addEventListener('click', () => {
+    const open = nav.style.display === 'block';
+    nav.style.display = open ? 'none' : 'block';
+    if(!open){
+      nav.style.position='absolute';nav.style.top='100%';nav.style.left='0';nav.style.right='0';
+      nav.style.background='var(--paper)';nav.style.borderBottom='1px solid var(--line)';nav.style.padding='20px 28px';
+      nav.querySelector('ul').style.flexDirection='column';nav.querySelector('ul').style.alignItems='flex-start';nav.querySelector('ul').style.gap='16px';
+    }
+  });
+</script>
+
+<script>
+(function(){
+  const targets = document.querySelectorAll('.reveal');
+  if(!targets.length || !('IntersectionObserver' in window)){ targets.forEach(function(el){el.classList.add('in-view');}); return; }
+  let counter = 0;
+  const obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(!entry.isIntersecting) return;
+      const el = entry.target;
+      const delay = (counter++ % 6) * 70;
+      setTimeout(function(){ el.classList.add('in-view'); }, delay);
+      obs.unobserve(el);
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  targets.forEach(function(el){ obs.observe(el); });
+})();
+</script>
+
+<script>
+(function(){
+  document.querySelectorAll('.region-toggle').forEach(function(a){
+    window.addEventListener('pageshow',function(){a.classList.toggle('is-right',a.getAttribute('data-side')==='right');});
+    a.addEventListener('click',function(e){
+      if(e.metaKey||e.ctrlKey||e.shiftKey||e.button===1) return;
+      e.preventDefault();
+      var to=a.getAttribute('data-to');
+      try{localStorage.setItem('sv_region',to);}catch(err){}
+      document.cookie='sv_region='+to+'; path=/; max-age=31536000; SameSite=Lax';
+      a.classList.toggle('is-right');
+      var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      setTimeout(function(){window.location.href=a.href;},reduce?0:320);
+    });
+  });
+})();
+</script>
+</body>
+</html>

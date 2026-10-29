@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<script>document.documentElement.classList.add('js-anim');</script>
+<head>
+<meta charset="UTF-8">
+<script>
+  // Home routing: same logic as the other pages (India visitors -> index.html, everyone else -> International Home.html).
+  (function(){
+    var HOME={'in':'index.html','au':'International%20Home.html'};
+    var r=null;
+    try{r=localStorage.getItem('sv_region');}catch(e){}
+    if(r!=='in'&&r!=='au'){var m=document.cookie.match(/(?:^|; )sv_region=(in|au)/);r=m?m[1]:null;}
+    if(!r){
+      var tz='';
+      try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||'';}catch(e){}
+      if(tz) r=/^Asia\/(Kolkata|Calcutta)$/.test(tz)?'in':'au';
+    }
+    var shown=document.documentElement.getAttribute('data-home')||r;
+    if(shown) document.documentElement.setAttribute('data-region',shown);
+    if(!r) return;
+    document.addEventListener('DOMContentLoaded',function(){
+      document.querySelectorAll('a[data-home-link]').forEach(function(a){a.setAttribute('href',HOME[r]);});
+      if(r!=='au') return;
+      document.querySelectorAll('.region-toggle').forEach(function(a){
+        a.setAttribute('href',HOME['in']);a.setAttribute('data-to','in');a.setAttribute('data-side','right');a.classList.add('is-right');
+        a.setAttribute('aria-label','Viewing the Australia site. Switch to the India site');a.setAttribute('title','Viewing the Australia site. Switch to the India site');
+      });
+    });
+  })();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skilled Recognised Graduate Visa 476 (Closed): Alternatives for Engineers | SuccessVisa</title>
+<meta name="description" content="The Skilled Recognised Graduate visa (subclass 476) closed on 1 July 2024. See what it was, what current holders should do and the visas engineering graduates can use now.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.successvisa.in/skilled-recognised-graduate-476.html">
+<link rel="alternate" hreflang="en-au" href="https://www.successvisa.com.au/">
+<link rel="alternate" hreflang="en-in" href="https://www.successvisa.in/">
+<link rel="alternate" hreflang="x-default" href="https://www.successvisa.in/">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="SuccessVisa">
+<meta property="og:title" content="Skilled Recognised Graduate Visa (Subclass 476): Closed, and What to Do Now | SuccessVisa">
+<meta property="og:description" content="The 476 closed to new applications on 1 July 2024. Here is what changed and which visas engineering graduates can use instead.">
+<meta property="og:url" content="https://www.successvisa.in/skilled-recognised-graduate-476.html">
+<meta property="og:locale" content="en_IN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Skilled Recognised Graduate Visa (Subclass 476): Closed, and What to Do Now | SuccessVisa">
+<meta name="twitter:description" content="The 476 closed to new applications on 1 July 2024. Here is what changed and which visas engineering graduates can use instead.">
+<meta name="theme-color" content="#1D184B">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Public+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Skilled Recognised Graduate Visa (Subclass 476): Closed, and What Engineering Graduates Can Do Now",
+  "url": "https://www.successvisa.in/skilled-recognised-graduate-476.html",
+  "inLanguage": "en",
+  "dateModified": "2026-10-26",
+  "about": {"@type": "Service", "name": "Australian skilled migration advice for engineering graduates (subclass 476 closed)", "serviceType": "Australian skilled migration advice",
+    "provider": {"@type": "Organization", "name": "SuccessVisa", "identifier": "MARN 2318228", "url": "https://www.successvisa.in/"},
+    "areaServed": ["IN", "AU"]}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.successvisa.in/"},
+    {"@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.successvisa.in/services.html"},
+    {"@type": "ListItem", "position": 3, "name": "Skilled Recognised Graduate Visa (476)", "item": "https://www.successvisa.in/skilled-recognised-graduate-476.html"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Is the Skilled Recognised Graduate visa (subclass 476) still open?",
+      "acceptedAnswer": {"@type": "Answer", "text": "No. The subclass 476 was permanently closed to new applications from 1 July 2024. Home Affairs will not grant any new 476 visas, so there is no way to apply for it today."}},
+    {"@type": "Question", "name": "What happens if I applied for a 476 before it closed?",
+      "acceptedAnswer": {"@type": "Answer", "text": "The 476 was capped for the 2023-24 program year, and the cap was reached in January 2024. Applications still undecided at that point were treated as not made, and Home Affairs invited those applicants to request a refund of the visa application charge."}},
+    {"@type": "Question", "name": "I already hold a 476 visa. What should I do?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Your visa stays valid until its expiry date, and you can keep working and studying on it. Check your expiry date and conditions in VEVO, keep complying with the conditions, and plan your next visa early, because you must leave Australia when it expires unless you have been granted another visa."}},
+    {"@type": "Question", "name": "Is there a direct replacement for the 476 visa?",
+      "acceptedAnswer": {"@type": "Answer", "text": "No. Home Affairs did not create a like-for-like replacement. Engineering graduates now look at the Temporary Graduate visa (subclass 485) after Australian study, the employer-sponsored Skills in Demand visa (subclass 482), or the points-tested 189, 190 and 491 visas."}},
+    {"@type": "Question", "name": "Do I still need an Engineers Australia skills assessment?",
+      "acceptedAnswer": {"@type": "Answer", "text": "If you want to apply for the 189, 190 or 491 in an engineering occupation, yes. Engineers Australia is the assessing authority for engineering occupations. Employer-sponsored and graduate visas have their own requirements, which we check with you."}},
+    {"@type": "Question", "name": "Did the 476 lead to permanent residence?",
+      "acceptedAnswer": {"@type": "Answer", "text": "No. It was a temporary visa of up to 18 months that gave you time to live and work in Australia. Permanent residence needed a separate visa, such as the 189, 190, 491-then-191 route or an employer-sponsored permanent visa."}},
+    {"@type": "Question", "name": "Can an overseas engineering graduate get the 485 instead?",
+      "acceptedAnswer": {"@type": "Answer", "text": "The 485 is for people who have completed eligible study in Australia, so an overseas degree alone does not qualify. It also has an age limit, an English test requirement and a six-month window after your course ends."}},
+    {"@type": "Question", "name": "Where can I check the official status of the 476?",
+      "acceptedAnswer": {"@type": "Answer", "text": "The Department of Home Affairs lists the 476 among visas that are no longer available. Current holders can check their own visa details and expiry date using VEVO."}}
+  ]
+}
+</script>
+<style>
+  :root{
+    --ink:#1D184B; --ink-2:#322B6E; --paper:#FBFAF7; --paper-2:#F3EEE2;
+    --gold:#F8A51C; --gold-light:#FBC46B; --gold-deep:#8A5A12;
+    --text-muted:#4C5A6E; --line:#D9D2C0; --radius:2px; --maxw:1180px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:'Public Sans',sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:600;line-height:1.25;margin:0 0 .5em;color:var(--ink);letter-spacing:-0.01em;}
+  p{margin:0 0 1em;color:var(--text-muted);}
+  a{color:inherit;text-decoration:none;}
+  ul{margin:0;padding:0;list-style:none;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);display:flex;align-items:center;gap:10px;margin-bottom:16px;}
+  .eyebrow-line{display:inline-block;width:20px;height:2px;background:var(--gold);flex-shrink:0;}
+  :focus-visible{outline:2px solid var(--gold-deep);outline-offset:3px;}
+  .skip-link{position:absolute;left:-999px;top:auto;background:var(--ink);color:var(--paper);padding:10px 16px;z-index:100;}
+  .skip-link:focus{left:16px;top:16px;}
+  @media (prefers-reduced-motion: reduce){ *{animation:none !important; transition:none !important;} }
+
+  /* Header */
+  header.site{position:sticky;top:0;z-index:50;background:rgba(251,250,247,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+  .nav-row{display:flex;align-items:center;justify-content:space-between;padding:16px 28px;max-width:var(--maxw);margin:0 auto;}
+  .logo{display:flex;align-items:center;}
+  .logo img{height:42px;width:auto;display:block;}
+  nav.primary ul{display:flex;gap:34px;align-items:center;}
+  nav.primary a{font-size:14.5px;font-weight:600;color:var(--ink-2);position:relative;padding:4px 0;}
+  nav.primary a.active{color:var(--ink);}
+  nav.primary a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--gold);transition:width .2s ease;}
+  nav.primary a:hover::after,nav.primary a.active::after{width:100%;}
+  .nav-right{display:flex;align-items:center;gap:20px;}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-family:'Public Sans',sans-serif;font-weight:700;font-size:14px;padding:12px 22px;border-radius:var(--radius);cursor:pointer;border:1.5px solid transparent;transition:background .18s ease,color .18s ease,border-color .18s ease;}
+  .btn-primary{background:var(--ink);color:var(--paper);}
+  .btn-primary:hover{background:var(--gold);color:var(--ink);}
+  .btn-ghost{border-color:var(--ink);color:var(--ink);}
+  .btn-ghost:hover{background:var(--ink);color:var(--paper);}
+  .cta-banner .btn-ghost{border-color:var(--paper);color:var(--paper);}
+  .cta-banner .btn-ghost:hover{background:var(--paper);color:var(--ink);}
+  .menu-toggle{display:none;background:none;border:none;cursor:pointer;padding:6px;}
+  .menu-toggle span{display:block;width:22px;height:2px;background:var(--ink);margin:5px 0;}
+  .has-dropdown{position:relative;}
+  .has-dropdown > a{display:flex;align-items:center;gap:5px;}
+  .has-dropdown > a svg{transition:transform .18s ease;flex-shrink:0;}
+  .has-dropdown:hover > a svg,.has-dropdown:focus-within > a svg{transform:rotate(180deg);}
+  .dropdown-menu{position:absolute;top:100%;left:-14px;margin-top:16px;min-width:216px;background:var(--paper);border:1px solid var(--line);box-shadow:0 16px 34px rgba(15,42,74,.13);padding:8px;opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .18s ease,transform .18s ease,visibility .18s ease;}
+  .has-dropdown:hover .dropdown-menu,.has-dropdown:focus-within .dropdown-menu{opacity:1;visibility:visible;transform:translateY(0);}
+  .dropdown-menu a{display:block;padding:9px 12px;font-size:13.5px;font-weight:600;color:var(--ink-2);}
+  .dropdown-menu a:hover{background:var(--paper-2);color:var(--ink);}
+  .nav-offer{display:inline-flex;align-items:center;color:var(--gold) !important;font-weight:700 !important;border:1px solid var(--gold);border-radius:20px;padding:6px 15px !important;transition:background .18s ease,color .18s ease;}
+  .nav-offer:hover{background:var(--gold);color:var(--ink) !important;}
+  @media(max-width:920px){
+    nav.primary{display:none;} .menu-toggle{display:block;}
+    .dropdown-menu{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;margin:6px 0 6px 10px;padding:0;display:flex;flex-direction:column;gap:2px;}
+    .has-dropdown > a svg{margin-left:auto;}
+  }
+
+  /* Region toggle */
+  .region-toggle{display:inline-flex;align-items:center;gap:9px;cursor:pointer;white-space:nowrap;text-decoration:none;}
+  .rt-label{font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:600;letter-spacing:.04em;color:#4C5A6E;transition:color .2s ease;}
+  .rt-track{position:relative;display:block;width:58px;height:30px;border-radius:30px;flex-shrink:0;background:linear-gradient(135deg,#6EE7B7 0%,#5CA9E6 55%,#5B80EA 100%);box-shadow:inset 0 1px 3px rgba(29,24,75,.18);}
+  .rt-knob{position:absolute;top:3px;left:3px;width:24px;height:24px;border-radius:50%;background:#fff;box-shadow:0 3px 8px rgba(29,24,75,.32);transition:transform .3s cubic-bezier(.4,.2,.2,1);}
+  .region-toggle.is-right .rt-knob{transform:translateX(28px);}
+  .region-toggle .rt-in{color:#1D184B;} .region-toggle.is-right .rt-in{color:#4C5A6E;}
+  .region-toggle .rt-au{color:#4C5A6E;} .region-toggle.is-right .rt-au{color:#1D184B;}
+  .region-toggle::after{display:none;}
+  @media(max-width:1240px) and (min-width:1141px){nav.primary ul{gap:22px;} .nav-right{gap:14px;}}
+  @media(max-width:1140px){
+    .nav-row{flex-wrap:wrap;row-gap:10px;column-gap:24px;padding-bottom:12px;}
+    .nav-right{display:contents;}
+    .nav-right .btn{margin-left:auto;margin-right:10px;}
+    .region-toggle{order:5;width:100%;justify-content:center;padding-top:10px;border-top:1px solid #D9D2C0;}
+  }
+  @media(max-width:560px){
+    .nav-row{padding-left:16px;padding-right:16px;column-gap:12px;}
+    .logo img{height:34px;}
+    .nav-right .btn{padding:9px 14px;font-size:13px;margin-right:4px;}
+  }
+
+  /* Breadcrumb */
+  .crumbs{padding:18px 0 0;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.04em;color:var(--text-muted);}
+  .crumbs a{color:var(--gold-deep);text-decoration:underline;text-underline-offset:2px;}
+  .crumbs span{margin:0 6px;}
+
+  /* Hero: split layout with a "points ledger" card */
+  .hero{padding:44px 0 36px;}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;}
+  .hero h1{font-size:clamp(32px,4.2vw,48px);line-height:1.1;max-width:640px;}
+  .hero h1 span{color:var(--gold-deep);}
+  .hero .lede{font-size:16.5px;max-width:580px;color:var(--ink-2);}
+  .hero .buttons{display:flex;gap:14px;flex-wrap:wrap;margin:24px 0 18px;}
+  .hero .credential{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--text-muted);letter-spacing:.03em;margin:0;}
+  .ledger{background:var(--ink);color:var(--paper);border-radius:20px;padding:30px 28px;box-shadow:0 18px 40px rgba(29,24,75,.22);position:relative;}
+  .ledger::before{content:"";position:absolute;inset:10px;border:1.3px dashed rgba(248,165,28,.5);border-radius:14px;pointer-events:none;}
+  .ledger h2{color:var(--paper);font-size:20px;margin-bottom:4px;position:relative;}
+  .ledger .sub{color:#B9C6D6;font-size:13px;margin-bottom:18px;position:relative;}
+  .ledger dl{margin:0;position:relative;}
+  .ledger .row{display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-top:1px solid rgba(255,255,255,.14);font-size:14px;}
+  .ledger dt{color:#B9C6D6;}
+  .ledger dd{margin:0;font-family:'IBM Plex Mono',monospace;font-weight:600;color:var(--gold-light);text-align:right;}
+  @media(max-width:920px){.hero-grid{grid-template-columns:1fr;}}
+
+  /* Sections */
+  .section{padding:64px 0;box-shadow:inset 0 16px 18px -18px rgba(29,24,75,.16);}
+  .bg-alt{background:var(--paper-2);}
+  .section-head{max-width:700px;margin-bottom:34px;}
+  .section-head h2{font-size:30px;}
+  .section-head p{font-size:15.5px;margin-bottom:0;}
+  .prose{max-width:780px;}
+  .prose p{font-size:15.5px;}
+  .prose h3{font-size:21px;margin-top:1.6em;}
+  .prose a,.note-box a,.page-footnote a{color:var(--gold-deep);text-decoration:underline;text-underline-offset:2px;}
+
+  .qf-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+  .qf-card{background:var(--paper);border-radius:16px;padding:22px 18px;text-align:center;box-shadow:0 8px 22px rgba(29,24,75,.07);}
+  .qf-card b{display:block;font-family:'Fraunces',serif;font-size:22px;color:var(--ink);margin-bottom:4px;}
+  .qf-card span{font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--text-muted);}
+  @media(max-width:860px){.qf-grid{grid-template-columns:1fr 1fr;}}
+
+  .checklist{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:14px 28px;}
+  .checklist li{position:relative;padding-left:30px;font-size:14.5px;color:var(--ink-2);line-height:1.6;}
+  .checklist li::before{content:"";position:absolute;left:0;top:3px;width:18px;height:18px;border-radius:50%;border:2px solid var(--gold);background:var(--paper);}
+  .checklist li::after{content:"";position:absolute;left:6px;top:8px;width:6px;height:9px;border-right:2px solid var(--gold);border-bottom:2px solid var(--gold);transform:rotate(45deg);}
+  .checklist.one{grid-template-columns:1fr;}
+  @media(max-width:640px){.checklist{grid-template-columns:1fr;}}
+
+  /* Cards */
+  .card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .card-grid.two{grid-template-columns:repeat(2,1fr);}
+  .card{background:var(--paper);border-radius:20px;padding:28px 26px;box-shadow:0 10px 28px rgba(29,24,75,.08);transition:transform .25s ease,box-shadow .25s ease;}
+  .card:hover{transform:translateY(-5px);box-shadow:0 18px 34px rgba(29,24,75,.14);}
+  .card h3{font-size:19px;margin-bottom:10px;}
+  .card p{font-size:14.2px;margin-bottom:0;}
+  .card .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;background:var(--gold-light);color:var(--ink);display:inline-block;padding:4px 11px;border-radius:20px;margin-bottom:12px;}
+  @media(max-width:920px){.card-grid,.card-grid.two{grid-template-columns:1fr;}}
+
+  /* Tables */
+  .table-wrap{overflow-x:auto;border-radius:14px;box-shadow:0 8px 22px rgba(29,24,75,.07);background:var(--paper);}
+  table{width:100%;border-collapse:collapse;font-size:14.2px;min-width:560px;}
+  caption{text-align:left;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-deep);padding:16px 20px 6px;}
+  th,td{text-align:left;padding:13px 20px;border-top:1px solid var(--line);vertical-align:top;color:var(--ink-2);}
+  th{font-family:'Fraunces',serif;font-weight:600;color:var(--ink);background:var(--paper-2);border-top:none;}
+  .sep{color:var(--gold);font-weight:700;margin:0 .35em;}
+  td.pts{font-family:'IBM Plex Mono',monospace;font-weight:600;color:var(--ink);white-space:nowrap;}
+  tbody th{background:var(--paper);font-size:14.5px;}
+
+  /* Steps */
+  .step-list{position:relative;display:flex;flex-direction:column;gap:6px;}
+  .step-list::before{content:"";position:absolute;left:27px;top:14px;bottom:14px;width:2px;background:var(--line);}
+  .step{display:grid;grid-template-columns:56px 1fr;gap:22px;padding:18px 0;position:relative;}
+  .step-num{position:relative;z-index:1;width:56px;height:56px;border-radius:50%;background:var(--paper);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:700;color:var(--ink);}
+  .step h3{font-size:18px;margin-bottom:6px;}
+  .step p{font-size:14.5px;margin-bottom:0;max-width:700px;}
+
+  /* Fees */
+  .fee-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .fee-card{background:var(--paper);border-radius:18px;padding:26px 22px;box-shadow:0 8px 22px rgba(29,24,75,.07);text-align:center;}
+  .fee-card .stream{font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--gold-deep);margin-bottom:8px;display:block;}
+  .fee-card .amount{font-family:'Fraunces',serif;font-size:28px;color:var(--ink);margin-bottom:6px;}
+  .fee-card p{font-size:13px;margin-bottom:0;}
+  @media(max-width:860px){.fee-grid{grid-template-columns:1fr;}}
+  .note-box{max-width:900px;margin:28px 0 0;background:var(--paper);border-left:4px solid var(--gold);border-radius:4px;padding:18px 22px;}
+  .note-box p{font-size:13.5px;color:var(--ink-2);margin:0;}
+  .note-box p + p{margin-top:8px;}
+
+  /* FAQ */
+  .faq-list{max-width:860px;}
+  .faq-item{background:var(--paper);border-radius:14px;padding:4px 22px;margin-bottom:12px;box-shadow:0 6px 18px rgba(29,24,75,.06);}
+  .faq-item[open]{box-shadow:0 12px 26px rgba(29,24,75,.12);}
+  .faq-item summary{cursor:pointer;list-style:none;font-family:'Fraunces',serif;font-size:17px;font-weight:600;padding:18px 30px 18px 0;position:relative;}
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::after{content:"+";position:absolute;right:0;top:16px;font-family:'Public Sans',sans-serif;font-size:22px;color:var(--gold);transition:transform .2s ease;}
+  .faq-item[open] summary::after{transform:rotate(45deg);}
+  .faq-item p{font-size:14.5px;padding-bottom:20px;max-width:720px;}
+
+  /* Links / resources */
+  .pillar-link{font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:600;color:var(--gold-deep);display:inline-flex;align-items:center;gap:6px;letter-spacing:.04em;text-transform:uppercase;margin-top:14px;}
+  .pillar-link svg{transition:transform .18s ease;}
+  a.card:hover .pillar-link svg{transform:translateX(4px);}
+
+  .page-footnote{border-top:1px solid var(--line);padding:22px 0;}
+  .page-footnote p{font-size:13.5px;line-height:1.6;color:var(--text-muted);margin:0;max-width:900px;}
+
+  .cta-banner{padding:76px 0;text-align:center;background:var(--ink);color:var(--paper);}
+  .cta-banner h2{color:var(--paper);font-size:32px;max-width:620px;margin:0 auto 16px;}
+  .cta-banner p{color:#B9C6D6;max-width:520px;margin:0 auto 28px;}
+  .cta-banner .btns{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;}
+
+  /* Reveal */
+  .js-anim .reveal{opacity:0;transform:translateY(24px);transition:opacity .5s ease, transform .55s cubic-bezier(.22,1,.36,1);}
+  .js-anim .reveal.in-view{opacity:1;transform:none;}
+  @media (prefers-reduced-motion: reduce){.js-anim .reveal{opacity:1 !important;transform:none !important;}}
+
+  /* Quick actions */
+  .quick-actions{position:fixed;right:22px;bottom:22px;z-index:60;display:flex;flex-direction:column;align-items:flex-end;gap:12px;}
+  .qa-btn{position:relative;width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--ink);color:var(--paper);box-shadow:0 6px 18px rgba(29,24,75,.28);transition:transform .18s ease,box-shadow .18s ease;}
+  .qa-btn:hover{transform:translateY(-3px) scale(1.05);}
+  .qa-btn.qa-primary{background:var(--gold);color:var(--ink);}
+  .qa-label{position:absolute;right:64px;top:50%;transform:translateY(-50%) translateX(6px);background:var(--ink);color:var(--paper);font-size:12.5px;font-weight:600;padding:6px 12px;border-radius:6px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .18s ease,transform .18s ease;}
+  .qa-btn:hover .qa-label{opacity:1;transform:translateY(-50%) translateX(0);}
+  @media (max-width:640px){.quick-actions{right:14px;bottom:14px;gap:10px;}.qa-btn{width:46px;height:46px;}.qa-label{display:none;}}
+</style>
+
+<style>
+  /* ---------- Region-aware Services menu: India list or Australian mega menu (html[data-region] is set in <head>) ---------- */
+  html[data-region="au"] .svc-in{display:none !important;}
+  html:not([data-region="au"]) .svc-au{display:none !important;}
+  .dropdown-menu.mega{width:580px;min-width:0;display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;padding:14px;}
+  .mega-group{display:flex;flex-direction:column;}
+  .dropdown-menu .mega-head{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#8A5A12;padding:6px 12px;border-bottom:1px solid #D9D2C0;margin-bottom:4px;}
+  .dropdown-menu .mega-head:hover{background:none;color:#1D184B;}
+  .dropdown-menu .mega-head::after{display:none;}
+  @media(max-width:920px){
+    .dropdown-menu.mega{width:auto;display:flex;flex-direction:column;gap:10px;padding:0;}
+    .dropdown-menu .mega-head{padding:4px 12px;}
+  }
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header class="site">
+  <div class="nav-row">
+    <a href="index.html" data-home-link class="logo"><img src="assets/logo.webp" alt="SuccessVisa" width="300" height="95" decoding="async"></a>
+    <nav class="primary" aria-label="Primary">
+      <ul>
+        <li><a href="index.html" data-home-link>Home</a></li>
+        <li><a href="About%20Us%20Sub%20Landing%20Page.html">About</a></li>
+        <li class="has-dropdown svc-in">
+          <a href="Services%20Main%20Landing%20Page.html" class="active">Services
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.4"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="Education%20Visa%20Landing%20Page.html">Education Visa (500)</a>
+            <a href="Visitor%20Visa%20Landing%20Page.html">Visitor Visa (600)</a>
+            <a href="OSHC%20Sub%20Landing%20Page.html">Health Cover (OSHC)</a>
+          </div>
+        </li>
+        <li class="has-dropdown svc-au">
+          <a href="Australia%20Services%20Main%20Landing%20Page.html" class="active">Services
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.4"/></svg>
+          </a>
+          <div class="dropdown-menu mega">
+            <div class="mega-group">
+              <a href="Australia%20Services%20Main%20Landing%20Page.html#skilled" class="mega-head">Skilled Visas</a>
+              <a href="Skilled%20Independent%20189%20Sub%20Sub%20Landing%20Page.html">Skilled Independent (189)</a>
+              <a href="Skilled%20Nominated%20190%20Sub%20Sub%20Landing%20Page.html">Skilled Nominated (190)</a>
+              <a href="Skilled%20Work%20Regional%20491%20Sub%20Sub%20Landing%20Page.html">Skilled Work Regional (491)</a>
+              <a href="PR%20Skilled%20Regional%20191%20Sub%20Sub%20Landing%20Page.html">PR Skilled Regional (191)</a>
+              <a href="Skilled%20Recognised%20Graduate%20476%20Sub%20Sub%20Landing%20Page.html">Skilled Recognised Graduate (476)</a>
+              <a href="Recognition%20of%20Prior%20Learning%20RPL%20Sub%20Sub%20Landing%20Page.html">Recognition of Prior Learning (RPL)</a>
+            </div>
+            <div class="mega-group">
+              <a href="Australia%20Services%20Main%20Landing%20Page.html#family" class="mega-head">Partner &amp; Family</a>
+              <a href="Partner%20Visa%20820%20801%20Sub%20Sub%20Landing%20Page.html">Partner Visa (820/801)</a>
+              <a href="Family%20Visa%20Sub%20Sub%20Landing%20Page.html">Family Visa</a>
+              <a href="Carer%20Visa%20116%20836%20Sub%20Sub%20Landing%20Page.html">Carer Visa (116/836)</a>
+            </div>
+            <div class="mega-group">
+              <a href="Australia%20Services%20Main%20Landing%20Page.html#study-work" class="mega-head">Student, Working &amp; Training</a>
+              <a href="Student%20Visa%20500%20Sub%20Sub%20Landing%20Page.html">Student Visa (500)</a>
+              <a href="Working%20Visa%20482%20186%20Sub%20Sub%20Landing%20Page.html">Working Visa (482/186)</a>
+              <a href="Training%20Visa%20407%20Sub%20Sub%20Landing%20Page.html">Training Visa (407)</a>
+            </div>
+            <div class="mega-group">
+              <a href="Australia%20Services%20Main%20Landing%20Page.html#visitor-business" class="mega-head">Visitor, Business &amp; Health</a>
+              <a href="Visitor%20Visa%20Landing%20Page.html">Visitor Visa (600)</a>
+              <a href="Australia%20Business%20Visa%20Sub%20Sub%20Landing%20Page.html">Business Visa</a>
+              <a href="Health%20Insurance%20OSHC%20Sub%20Sub%20Landing%20Page.html">Health Insurance (OSHC)</a>
+            </div>
+          </div>
+        </li>
+        <li><a href="Offers%20Demo%20Landing%20Page.html" class="nav-offer">Offers</a></li>
+        <li class="has-dropdown">
+          <a href="resources.html">Resources
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.4"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="resources.html#blog">Blog</a>
+            <a href="resources.html#videos">Videos</a>
+            <a href="resources.html#checklist">Visa Checklists</a>
+            <a href="resources.html#news">Latest News</a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <a href="contact.html">Contact
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.4"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="Chandigarh%20Branch%20Landing%20Page.html">Chandigarh, IN</a>
+            <a href="Parramatta%20Branch%20Landing%20Page.html">Parramatta, NSW</a>
+            <a href="Toongabbie%20Branch%20Landing%20Page.html">Toongabbie, NSW</a>
+            <a href="Melbourne%20CBD%20Branch%20Landing%20Page.html">Melbourne, VIC</a>
+            <a href="Werribee%20Branch%20Landing%20Page.html">Werribee, VIC</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <a href="International%20Home.html" class="region-toggle" data-to="au" data-side="left" aria-label="Viewing the India site. Switch to the Australia site" title="Viewing the India site. Switch to the Australia site">
+        <span class="rt-label rt-in">India</span>
+        <span class="rt-track" aria-hidden="true"><span class="rt-knob"></span></span>
+        <span class="rt-label rt-au">Australia</span>
+      </a>
+      <a href="Booking%20Page.html" class="btn btn-primary">Book Appointment</a>
+      <button class="menu-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html" data-home-link>Home</a><span>/</span><a href="Services%20Main%20Landing%20Page.html">Services</a><span>/</span>Skilled Recognised Graduate Visa (476)</nav>
+    <div class="hero-grid" style="margin-top:28px;">
+      <div>
+        <div class="eyebrow"><span class="eyebrow-line"></span>Engineering Graduate Guide</div>
+        <h1>Skilled Recognised Graduate Visa (Subclass 476): <span>Closed Since 1 July 2024, and What to Do Now</span></h1>
+        <p class="lede">The Skilled Recognised Graduate visa (subclass 476) once let recent engineering graduates from recognised overseas universities live and work in Australia for up to 18 months. It no longer accepts applications. This guide explains what the 476 was, what current holders should do, and which visas engineering graduates can use today.</p>
+        <div class="buttons">
+          <a href="Booking%20Page.html" class="btn btn-primary">Book a Pathway Check</a>
+          <a href="#alternatives" class="btn btn-ghost">See Your Options</a>
+        </div>
+        <p class="credential">Reviewed by MARA registered migration agents &middot; MARN 2318228</p>
+      </div>
+      <aside class="ledger" aria-label="Subclass 476 at a glance">
+        <h2>476 at a glance</h2>
+        <p class="sub">Where the visa stands today.</p>
+        <dl>
+          <div class="row"><dt>Status</dt><dd>Closed</dd></div>
+          <div class="row"><dt>Closed from</dt><dd>1 July 2024</dd></div>
+          <div class="row"><dt>Former stay</dt><dd>Up to 18 months</dd></div>
+          <div class="row"><dt>Existing holders</dt><dd>Valid to expiry</dd></div>
+          <div class="row"><dt>New applications</dt><dd>Not accepted</dd></div>
+        </dl>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="status">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Current Status</div>
+      <h2>Is the Skilled Recognised Graduate Visa (476) Still Available?</h2>
+      <p>Short answer: no. The subclass 476 was permanently closed to new applicants from 1 July 2024.</p>
+    </div>
+    <div class="prose">
+      <p>The Australian Government closed the Skilled Recognised Graduate visa to all new applicants, including family members, from 1 July 2024. Home Affairs will not grant any new 476 visas. The change was part of the government's Migration Strategy, which aimed to remove visas that no longer matched its priorities and to simplify the system. The government's explanatory statement notes that the visa was mostly used by applicants outside Australia, and that overseas-trained engineers have other pathways to work in Australia.</p>
+      <p>The 476 had been capped for the 2023-24 program year, and the cap was reached in January 2024. Applications that were still undecided were treated as not made, and those applicants could request a refund of the visa application charge. If you have seen older websites that still describe how to apply for the 476, they are out of date.</p>
+    </div>
+    <div class="qf-grid" style="margin-top:34px;">
+      <div class="qf-card reveal"><b>Closed</b><span>No new applications</span></div>
+      <div class="qf-card reveal"><b>1 July 2024</b><span>Permanent closure date</span></div>
+      <div class="qf-card reveal"><b>Holders safe</b><span>Visas valid to expiry</span></div>
+      <div class="qf-card reveal"><b>Other routes</b><span>485, 482, 189, 190, 491</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-alt" id="what-it-was">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Background</div>
+      <h2>What the Skilled Recognised Graduate Visa Was</h2>
+      <p>Understanding the old rules helps you see why it closed and what to use instead.</p>
+    </div>
+    <div class="table-wrap reveal">
+      <table>
+        <caption>Subclass 476 before closure</caption>
+        <thead><tr><th>Feature</th><th>How the 476 worked</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Who it was for</th><td>Recent engineering graduates from recognised institutions, mainly outside Australia.</td></tr>
+          <tr><th scope="row">Age</th><td>Under 31 at the time of application.</td></tr>
+          <tr><th scope="row">Qualification</th><td>An engineering bachelor degree or higher, completed within the two years before applying, at a recognised institution with an accredited engineering program (such as one covered by the Washington Accord).</td></tr>
+          <tr><th scope="row">Stay</th><td>Up to 18 months, with full work and study rights.</td></tr>
+          <tr><th scope="row">Sponsor and points</th><td>No employer sponsor and no points test.</td></tr>
+          <tr><th scope="row">Link to the 485</th><td>You could not hold both. People who had held or applied for a Temporary Graduate (485) visa were not eligible.</td></tr>
+          <tr><th scope="row">Permanent residence</th><td>None directly. It was a temporary visa, so permanent residence needed a separate visa.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note-box">
+      <p>This table describes the visa as it worked before it closed. It is background only and no longer an application route.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="current-holders">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>If You Already Hold One</div>
+      <h2>What to Do If You Already Hold a 476 Visa</h2>
+      <p>Existing visas were not cancelled, but the clock is running.</p>
+    </div>
+    <div class="prose">
+      <p>If you were granted a 476 before it closed, your visa remains valid until its expiry date and the work and study rights continue. The stay is generally up to 18 months from your first entry to Australia. You can check your exact expiry date and conditions using VEVO, the Department of Home Affairs' free online check.</p>
+      <p>When the visa ends, you must leave Australia unless you have been granted another visa, so the planning needs to start well before the expiry date. Babies born in Australia to a 476 holder are still granted a 476 visa automatically. Family members who did not apply with the main holder may find they cannot join or stay under this visa, though other visa options may be available.</p>
+    </div>
+    <ul class="checklist" style="margin-top:28px;">
+      <li>Check your expiry date and conditions in VEVO this week.</li>
+      <li>Keep complying with every visa condition and keep adequate health insurance.</li>
+      <li>Tell Home Affairs if your contact details or circumstances change.</li>
+      <li>Start your skills assessment or sponsorship discussions at least a year before expiry.</li>
+      <li>Book advice early, because assessments and nominations can take months.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section bg-alt" id="alternatives">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Your Options</div>
+      <h2>Visa Options for Engineering Graduates Now That the 476 Has Closed</h2>
+      <p>There is no direct replacement, but several routes can work depending on where you studied and what you want.</p>
+    </div>
+    <div class="table-wrap reveal">
+      <table>
+        <caption>Current routes for engineering graduates</caption>
+        <thead><tr><th>Visa</th><th>Who it suits</th><th>Key points</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Temporary Graduate (485)</th><td>Graduates who finish eligible study in Australia</td><td>Age 35 or under when you apply (higher for research degrees). Apply within six months of finishing your course. Needs an English test result. Stay of about two years for a bachelor or coursework master degree, and up to three years for a research master or doctorate.</td></tr>
+          <tr><th scope="row">Skills in Demand (482)</th><td>Graduates with a job offer from an approved sponsor</td><td>Employer sponsored. It needs a sponsoring employer, and may lead to permanent residence through the employer-sponsored 186.</td></tr>
+          <tr><th scope="row">Skilled Independent (189)</th><td>High-scoring engineers with a positive assessment</td><td>Points tested, with no sponsor. Needs a skills assessment from Engineers Australia.</td></tr>
+          <tr><th scope="row">Skilled Nominated (190)</th><td>Engineers a state or territory wants to attract</td><td>Adds 5 points. Needs state nomination and an Engineers Australia assessment.</td></tr>
+          <tr><th scope="row">Skilled Work Regional (491)</th><td>Engineers who are open to regional life</td><td>Adds 15 points. Five-year provisional visa with a pathway to the 191 permanent visa.</td></tr>
+          <tr><th scope="row">Student visa (500)</th><td>Graduates who want an Australian qualification first</td><td>Australian study can add points and can open the 485 route.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note-box">
+      <p><strong>Eligibility changes often.</strong> Age limits, English requirements and processing rules for graduate and sponsored visas have changed in recent years. We check the current rules for your qualification, age and country before recommending a route.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="skills-assessment">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Engineering Skills</div>
+      <h2>Engineers Australia Skills Assessment: The Step That Still Matters</h2>
+      <p>Whichever route you choose, your engineering qualifications will probably be assessed.</p>
+    </div>
+    <div class="prose">
+      <p>Engineers Australia is the assessing authority for engineering occupations. A positive skills assessment is required for the points-tested 189, 190 and 491 visas, and it also helps show employers and states that your qualifications meet Australian standards. The assessment looks at your degree, how it maps to an engineering occupation, and in many cases your work experience.</p>
+      <p>Each occupation is linked to an ANZSCO code, and picking the wrong one can waste months and the assessment fee. We help you match your degree and your duties to the right occupation before you apply, and check whether that occupation suits the route and state you are considering.</p>
+    </div>
+    <div class="card-grid" style="margin-top:34px;">
+      <div class="card reveal"><span class="tag">Match</span><h3>Pick the right occupation</h3><p>Your degree and duties, not your job title, decide which engineering code fits.</p></div>
+      <div class="card reveal"><span class="tag">Prepare</span><h3>Build the evidence</h3><p>Transcripts, syllabi, reference letters and payslips support both the assessment and your later applications.</p></div>
+      <div class="card reveal"><span class="tag">Plan</span><h3>Allow lead time</h3><p>Assessment timeframes vary and can run for months, so start before other deadlines are close.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-alt" id="costs">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Costs</div>
+      <h2>What the Main Alternatives Cost</h2>
+      <p>Government visa application charges for the routes most engineering graduates consider, in effect since 1 July 2026.</p>
+    </div>
+    <div class="table-wrap reveal">
+      <table>
+        <caption>Main applicant visa application charges</caption>
+        <thead><tr><th>Visa</th><th>Main applicant</th><th>Additional adult</th><th>Child under 18</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Temporary Graduate (485), Post-Higher Education Work</th><td class="pts">AUD 5,750</td><td class="pts">AUD 2,875</td><td class="pts">AUD 1,450</td></tr>
+          <tr><th scope="row">Skilled Independent (189)</th><td class="pts">AUD 6,135</td><td class="pts">AUD 3,070</td><td class="pts">AUD 1,540</td></tr>
+          <tr><th scope="row">Skilled Nominated (190)</th><td class="pts">AUD 6,140</td><td class="pts">AUD 3,070</td><td class="pts">AUD 1,535</td></tr>
+          <tr><th scope="row">Skilled Work Regional (491)</th><td class="pts">AUD 6,140</td><td class="pts">AUD 3,070</td><td class="pts">AUD 1,535</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note-box">
+      <p><strong>Budget beyond the visa charge.</strong> Plan separately for the skills assessment fee, English test, health examinations, police certificates, translations, any state nomination fee and professional fees. Lower charges apply to some Pacific passport holders.</p>
+      <p>Charges are set by the Australian Government and normally change each 1 July. Confirm the current amount on the Department of Home Affairs visa pricing tool before you pay. The visa application charge is generally not refunded if an application is refused.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="how-we-help">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>The Process</div>
+      <h2>How We Plan Your Pathway After the 476</h2>
+      <p>A typical path from first conversation to lodging the right application.</p>
+    </div>
+    <div class="step-list">
+      <div class="step reveal"><div class="step-num">01</div><div><h3>Free pathway check</h3><p>We look at your degree, age, English level, work experience and where you want to live, and tell you which routes are realistic.</p></div></div>
+      <div class="step reveal"><div class="step-num">02</div><div><h3>Confirm your occupation and assessment</h3><p>We match your engineering qualification to an occupation and check what Engineers Australia needs.</p></div></div>
+      <div class="step reveal"><div class="step-num">03</div><div><h3>Choose a route</h3><p>We compare the 485, 482, 189, 190 and 491 against your goals, budget and timeline.</p></div></div>
+      <div class="step reveal"><div class="step-num">04</div><div><h3>Prepare your English test and evidence</h3><p>We plan the English test, document list and any study or sponsorship steps in the right order.</p></div></div>
+      <div class="step reveal"><div class="step-num">05</div><div><h3>Lodge and track</h3><p>We prepare your application or EOI, watch deadlines and respond to any requests from the Department.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-alt" id="mistakes">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Avoid These</div>
+      <h2>Common Mistakes Engineering Graduates Make After the 476 Closure</h2>
+    </div>
+    <div class="card-grid">
+      <div class="card reveal"><h3>Following outdated guides</h3><p>Many older sites still describe how to apply for the 476. It closed on 1 July 2024, so any agent promising a 476 today should be questioned.</p></div>
+      <div class="card reveal"><h3>Waiting until the visa expires</h3><p>Assessments, tests and nominations take months. Start planning at least a year before your current visa ends.</p></div>
+      <div class="card reveal"><h3>Missing the 485 window</h3><p>The 485 must be lodged within six months of finishing your course. A late application is not valid.</p></div>
+      <div class="card reveal"><h3>Assessing the wrong occupation</h3><p>An engineering assessment for the wrong code can fail or fit poorly with the visa route and wastes the fee.</p></div>
+      <div class="card reveal"><h3>Ignoring age limits</h3><p>The 485 and the points-tested visas have age limits, so your timeline matters.</p></div>
+      <div class="card reveal"><h3>Breaking visa conditions</h3><p>If you hold a 476, keep complying with its conditions. A breach can affect later applications.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Common Questions</div>
+      <h2>Subclass 476 Visa FAQs</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item"><summary>Is the Skilled Recognised Graduate visa (subclass 476) still open?</summary><p>No. The subclass 476 was permanently closed to new applications from 1 July 2024. Home Affairs will not grant any new 476 visas, so there is no way to apply for it today.</p></details>
+      <details class="faq-item"><summary>What happens if I applied for a 476 before it closed?</summary><p>The 476 was capped for the 2023-24 program year, and the cap was reached in January 2024. Applications still undecided at that point were treated as not made, and Home Affairs invited those applicants to request a refund of the visa application charge.</p></details>
+      <details class="faq-item"><summary>I already hold a 476 visa. What should I do?</summary><p>Your visa stays valid until its expiry date, and you can keep working and studying on it. Check your expiry date and conditions in VEVO, keep complying with the conditions, and plan your next visa early, because you must leave Australia when it expires unless you have been granted another visa.</p></details>
+      <details class="faq-item"><summary>Is there a direct replacement for the 476 visa?</summary><p>No. Home Affairs did not create a like-for-like replacement. Engineering graduates now look at the Temporary Graduate visa (subclass 485) after Australian study, the employer-sponsored Skills in Demand visa (subclass 482), or the points-tested 189, 190 and 491 visas.</p></details>
+      <details class="faq-item"><summary>Do I still need an Engineers Australia skills assessment?</summary><p>If you want to apply for the 189, 190 or 491 in an engineering occupation, yes. Engineers Australia is the assessing authority for engineering occupations. Employer-sponsored and graduate visas have their own requirements, which we check with you.</p></details>
+      <details class="faq-item"><summary>Did the 476 lead to permanent residence?</summary><p>No. It was a temporary visa of up to 18 months that gave you time to live and work in Australia. Permanent residence needed a separate visa, such as the 189, 190, 491-then-191 route or an employer-sponsored permanent visa.</p></details>
+      <details class="faq-item"><summary>Can an overseas engineering graduate get the 485 instead?</summary><p>The 485 is for people who have completed eligible study in Australia, so an overseas degree alone does not qualify. It also has an age limit, an English test requirement and a six-month window after your course ends.</p></details>
+      <details class="faq-item"><summary>Where can I check the official status of the 476?</summary><p>The Department of Home Affairs lists the 476 among visas that are no longer available. Current holders can check their own visa details and expiry date using VEVO.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-alt">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Keep Exploring</div>
+      <h2>Related Services</h2>
+    </div>
+    <div class="card-grid">
+      <a href="Skilled%20Independent%20189%20Sub%20Sub%20Landing%20Page.html" class="card reveal"><span class="tag">Subclass 189</span><h3>Skilled Independent Visa</h3><p>The points-tested route with no state or employer sponsor.</p><span class="pillar-link">Visa 189 <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M8 1L13 5L8 9M13 5H1" stroke="currentColor" stroke-width="1.4"/></svg></span></a>
+      <a href="Skilled%20Nominated%20190%20Sub%20Sub%20Landing%20Page.html" class="card reveal"><span class="tag">Subclass 190</span><h3>Skilled Nominated Visa</h3><p>Permanent residence with state or territory nomination.</p><span class="pillar-link">Visa 190 <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M8 1L13 5L8 9M13 5H1" stroke="currentColor" stroke-width="1.4"/></svg></span></a>
+      <a href="Skilled%20Work%20Regional%20491%20Sub%20Sub%20Landing%20Page.html" class="card reveal"><span class="tag">Subclass 491</span><h3>Skilled Work Regional Visa</h3><p>A provisional regional visa with a pathway to permanent residence.</p><span class="pillar-link">Visa 491 <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M8 1L13 5L8 9M13 5H1" stroke="currentColor" stroke-width="1.4"/></svg></span></a>
+    </div>
+  </div>
+</section>
+
+<div class="wrap page-footnote">
+  <p>Reviewed by SuccessVisa's MARA registered migration agents &middot; last updated 26 October 2026. General information only, not migration advice. Visa criteria, closures and charges are set by the Australian Government and can change. Always confirm against the Department of Home Affairs before you act. <a href="Disclaimer%20Page.html">See full disclaimer and sources</a>.</p>
+</div>
+
+<section class="cta-banner">
+  <div class="wrap">
+    <h2>Find the Right Visa After the 476</h2>
+    <p>Book a consultation for an honest look at your options and a clear plan, before you spend on assessments or tests.</p>
+    <div class="btns">
+      <a href="Booking%20Page.html" class="btn btn-primary">Book Appointment</a>
+      <a href="Services%20Main%20Landing%20Page.html" class="btn btn-ghost">Explore All Services</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="quick-actions" aria-label="Quick contact actions">
+  <a href="tel:+911800000000" class="qa-btn" aria-label="Call us"><span class="qa-label">Call us</span>
+    <svg width="21" height="21" viewBox="0 0 24 24" fill="none"><path d="M4 5c0-1 1-2 2-2h2l2 5-2 1.5c1 2.3 2.7 4 5 5L14.5 12l5 2v2c0 1-1 2-2 2C10.5 18 4 11.5 4 5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></a>
+  <a href="https://wa.me/911800000000" class="qa-btn" aria-label="Chat on WhatsApp" target="_blank" rel="noopener"><span class="qa-label">WhatsApp us</span>
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.7-1.2A9 9 0 1 0 12 3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M8.5 8.8c-.3.6-.3 1.6.6 2.9 1 1.4 2.3 2.6 3.9 3.1 1 .3 1.7.1 2.1-.4l.4-.6-2-1.3-.5.5c-.2.2-.5.2-.8 0-.7-.4-1.5-1.1-2-1.9-.2-.3-.1-.6.1-.8l.5-.5-1.1-2Z" fill="currentColor"/></svg></a>
+  <a href="Booking%20Page.html" class="qa-btn qa-primary" aria-label="Book Appointment"><span class="qa-label">Book Appointment</span>
+    <svg width="21" height="21" viewBox="0 0 24 24" fill="none"><rect x="3.5" y="5" width="17" height="15" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M3.5 9.5h17" stroke="currentColor" stroke-width="1.5"/><path d="M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M8 13.5l2.3 2.3L16 10.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+</div>
+
+<script>
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('nav.primary');
+  toggle.addEventListener('click', () => {
+    const open = nav.style.display === 'block';
+    nav.style.display = open ? 'none' : 'block';
+    if(!open){
+      nav.style.position='absolute';nav.style.top='100%';nav.style.left='0';nav.style.right='0';
+      nav.style.background='var(--paper)';nav.style.borderBottom='1px solid var(--line)';nav.style.padding='20px 28px';
+      nav.querySelector('ul').style.flexDirection='column';nav.querySelector('ul').style.alignItems='flex-start';nav.querySelector('ul').style.gap='16px';
+    }
+  });
+</script>
+
+<script>
+(function(){
+  const targets = document.querySelectorAll('.reveal');
+  if(!targets.length || !('IntersectionObserver' in window)){ targets.forEach(function(el){el.classList.add('in-view');}); return; }
+  let counter = 0;
+  const obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(!entry.isIntersecting) return;
+      const el = entry.target;
+      const delay = (counter++ % 6) * 70;
+      setTimeout(function(){ el.classList.add('in-view'); }, delay);
+      obs.unobserve(el);
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  targets.forEach(function(el){ obs.observe(el); });
+})();
+</script>
+
+<script>
+(function(){
+  document.querySelectorAll('.region-toggle').forEach(function(a){
+    window.addEventListener('pageshow',function(){a.classList.toggle('is-right',a.getAttribute('data-side')==='right');});
+    a.addEventListener('click',function(e){
+      if(e.metaKey||e.ctrlKey||e.shiftKey||e.button===1) return;
+      e.preventDefault();
+      var to=a.getAttribute('data-to');
+      try{localStorage.setItem('sv_region',to);}catch(err){}
+      document.cookie='sv_region='+to+'; path=/; max-age=31536000; SameSite=Lax';
+      a.classList.toggle('is-right');
+      var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      setTimeout(function(){window.location.href=a.href;},reduce?0:320);
+    });
+  });
+})();
+</script>
+</body>
+</html>

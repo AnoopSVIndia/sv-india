@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+<script>document.documentElement.classList.add('js-anim');</script>
+<head>
+<meta charset="UTF-8">
+<script>
+  // Home routing: same logic as the other pages (India visitors -> index.html, everyone else -> International Home.html).
+  (function(){
+    var HOME={'in':'index.html','au':'International%20Home.html'};
+    var r=null;
+    try{r=localStorage.getItem('sv_region');}catch(e){}
+    if(r!=='in'&&r!=='au'){var m=document.cookie.match(/(?:^|; )sv_region=(in|au)/);r=m?m[1]:null;}
+    if(!r){
+      var tz='';
+      try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||'';}catch(e){}
+      if(tz) r=/^Asia\/(Kolkata|Calcutta)$/.test(tz)?'in':'au';
+    }
+    var shown=document.documentElement.getAttribute('data-home')||r;
+    if(shown) document.documentElement.setAttribute('data-region',shown);
+    if(!r) return;
+    document.addEventListener('DOMContentLoaded',function(){
+      document.querySelectorAll('a[data-home-link]').forEach(function(a){a.setAttribute('href',HOME[r]);});
+      if(r!=='au') return;
+      document.querySelectorAll('.region-toggle').forEach(function(a){
+        a.setAttribute('href',HOME['in']);a.setAttribute('data-to','in');a.setAttribute('data-side','right');a.classList.add('is-right');
+        a.setAttribute('aria-label','Viewing the Australia site. Switch to the India site');a.setAttribute('title','Viewing the Australia site. Switch to the India site');
+      });
+    });
+  })();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Training Visa 407 Australia: Sponsorship, Training Plan and 2026 Rules | SuccessVisa</title>
+<meta name="description" content="Training visa (subclass 407) guide: temporary activities sponsor, approved nomination first from 11 March 2026, training plan, work limits, AUD 535 charge. Reviewed by MARA agents.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.successvisa.in/training-visa-407.html">
+<link rel="alternate" hreflang="en-au" href="https://www.successvisa.com.au/">
+<link rel="alternate" hreflang="en-in" href="https://www.successvisa.in/">
+<link rel="alternate" hreflang="x-default" href="https://www.successvisa.in/">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="SuccessVisa">
+<meta property="og:title" content="Training Visa (Subclass 407): Complete Guide and 2026 Rules | SuccessVisa">
+<meta property="og:description" content="How the Training visa works: sponsor and nomination steps, the training plan, work limits, costs and the March 2026 change.">
+<meta property="og:url" content="https://www.successvisa.in/training-visa-407.html">
+<meta property="og:locale" content="en_IN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Training Visa (Subclass 407): Complete Guide and 2026 Rules | SuccessVisa">
+<meta name="twitter:description" content="How the Training visa works: sponsor and nomination steps, the training plan, work limits, costs and the March 2026 change.">
+<meta name="theme-color" content="#1D184B">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Public+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Training Visa (Subclass 407) Australia: Sponsorship, Training Plan and 2026 Rules",
+  "url": "https://www.successvisa.in/training-visa-407.html",
+  "inLanguage": "en",
+  "dateModified": "2026-10-26",
+  "about": {"@type": "Service", "name": "Training visa (subclass 407) application assistance", "serviceType": "Australian training visa and sponsorship advice",
+    "provider": {"@type": "Organization", "name": "SuccessVisa", "identifier": "MARN 2318228", "url": "https://www.successvisa.in/"},
+    "areaServed": ["IN", "AU"]}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.successvisa.in/"},
+    {"@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.successvisa.in/services.html"},
+    {"@type": "ListItem", "position": 3, "name": "Training Visa (407)", "item": "https://www.successvisa.in/training-visa-407.html"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "What is the Training visa (subclass 407)?",
+      "acceptedAnswer": {"@type": "Answer", "text": "The Training visa (subclass 407) is a temporary visa for people who come to Australia for structured, workplace-based occupational training or professional development with an approved sponsor. It can be granted for up to two years, and your work is limited to the sponsored training."}},
+    {"@type": "Question", "name": "What changed for the 407 visa in 2026?",
+      "acceptedAnswer": {"@type": "Answer", "text": "From 11 March 2026, you can no longer lodge a valid 407 visa application until your sponsor is an approved temporary activities sponsor and, unless the sponsor is a Commonwealth agency, the nomination for your training has been approved. Before that, sponsorship, nomination and the visa application could be lodged together."}},
+    {"@type": "Question", "name": "Who can sponsor me for a Training visa?",
+      "acceptedAnswer": {"@type": "Answer", "text": "The sponsor must be approved as a Temporary Activities Sponsor, or be a Commonwealth Government agency. A standard business sponsor approval, used for the 482 and 186 visas, does not by itself allow an employer to sponsor a 407 applicant."}},
+    {"@type": "Question", "name": "Can I work for any employer on a 407 visa?",
+      "acceptedAnswer": {"@type": "Answer", "text": "No. The visa is generally subject to condition 8102, which limits your work to the approved training activity. It is not an open work visa and should not be used to fill a job, supplement a workforce or extend a stay."}},
+    {"@type": "Question", "name": "Does the 407 lead to permanent residence?",
+      "acceptedAnswer": {"@type": "Answer", "text": "No, it is a temporary visa and not a direct pathway to permanent residence. The experience may help with a later skilled application if you meet that visa's own criteria."}},
+    {"@type": "Question", "name": "How much does the 407 visa cost?",
+      "acceptedAnswer": {"@type": "Answer", "text": "The visa application charge in effect from 1 July 2026 is AUD 535 for the main applicant, AUD 535 for each additional applicant aged 18 or over and AUD 135 for each applicant under 18. The sponsor's nomination and sponsorship fees are separate, and a sponsor cannot recover them from you. Confirm the amounts before you lodge."}},
+    {"@type": "Question", "name": "How long does a 407 visa take?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Published figures vary, and the Department does not publish processing times for sponsorship or nomination applications. With the nomination-first rule, the total timeline is now longer than before, so employers and applicants should lodge early and expect months, not weeks."}},
+    {"@type": "Question", "name": "What is the difference between the 407 and the 482?",
+      "acceptedAnswer": {"@type": "Answer", "text": "The 407 is for training and is tied to an approved training plan, with a stay of up to two years and no pathway to permanent residence. The 482 is for filling a skilled job, can last up to four years and can lead to permanent residence through the 186. We help you decide which fits your situation."}}
+  ]
+}
+</script>
+<style>
+  :root{
+    --ink:#1D184B; --ink-2:#322B6E; --paper:#FBFAF7; --paper-2:#F3EEE2;
+    --gold:#F8A51C; --gold-light:#FBC46B; --gold-deep:#8A5A12;
+    --text-muted:#4C5A6E; --line:#D9D2C0; --radius:2px; --maxw:1180px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:'Public Sans',sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:600;line-height:1.25;margin:0 0 .5em;color:var(--ink);letter-spacing:-0.01em;}
+  p{margin:0 0 1em;color:var(--text-muted);}
+  a{color:inherit;text-decoration:none;}
+  ul{margin:0;padding:0;list-style:none;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);display:flex;align-items:center;gap:10px;margin-bottom:16px;}
+  .eyebrow-line{display:inline-block;width:20px;height:2px;background:var(--gold);flex-shrink:0;}
+  :focus-visible{outline:2px solid var(--gold-deep);outline-offset:3px;}
+  .skip-link{position:absolute;left:-999px;top:auto;background:var(--ink);color:var(--paper);padding:10px 16px;z-index:100;}
+  .skip-link:focus{left:16px;top:16px;}
+  @media (prefers-reduced-motion: reduce){ *{animation:none !important; transition:none !important;} }
+
+  /* Header */
+  header.site{position:sticky;top:0;z-index:50;background:rgba(251,250,247,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+  .nav-row{display:flex;align-items:center;justify-content:space-between;padding:16px 28px;max-width:var(--maxw);margin:0 auto;}
+  .logo{display:flex;align-items:center;}
+  .logo img{height:42px;width:auto;display:block;}
+  nav.primary ul{display:flex;gap:34px;align-items:center;}
+  nav.primary a{font-size:14.5px;font-weight:600;color:var(--ink-2);position:relative;padding:4px 0;}
+  nav.primary a.active{color:var(--ink);}
+  nav.primary a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--gold);transition:width .2s ease;}
+  nav.primary a:hover::after,nav.primary a.active::after{width:100%;}
+  .nav-right{display:flex;align-items:center;gap:20px;}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-family:'Public Sans',sans-serif;font-weight:700;font-size:14px;padding:12px 22px;border-radius:var(--radius);cursor:pointer;border:1.5px solid transparent;transition:background .18s ease,color .18s ease,border-color .18s ease;}
+  .btn-primary{background:var(--ink);color:var(--paper);}
+  .btn-primary:hover{background:var(--gold);color:var(--ink);}
+  .btn-ghost{border-color:var(--ink);color:var(--ink);}
+  .btn-ghost:hover{background:var(--ink);color:var(--paper);}
+  .cta-banner .btn-ghost{border-color:var(--paper);color:var(--paper);}
+  .cta-banner .btn-ghost:hover{background:var(--paper);color:var(--ink);}
+  .menu-toggle{display:none;background:none;border:none;cursor:pointer;padding:6px;}
+  .menu-toggle span{display:block;width:22px;height:2px;background:var(--ink);margin:5px 0;}
+  .has-dropdown{position:relative;}
+  .has-dropdown > a{display:flex;align-items:center;gap:5px;}
+  .has-dropdown > a svg{transition:transform .18s ease;flex-shrink:0;}
+  .has-dropdown:hover > a svg,.has-dropdown:focus-within > a svg{transform:rotate(180deg);}
+  .dropdown-menu{position:absolute;top:100%;left:-14px;margin-top:16px;min-width:216px;background:var(--paper);border:1px solid var(--line);box-shadow:0 16px 34px rgba(15,42,74,.13);padding:8px;opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .18s ease,transform .18s ease,visibility .18s ease;}
+  .has-dropdown:hover .dropdown-menu,.has-dropdown:focus-within .dropdown-menu{opacity:1;visibility:visible;transform:translateY(0);}
+  .dropdown-menu a{display:block;padding:9px 12px;font-size:13.5px;font-weight:600;color:var(--ink-2);}
+  .dropdown-menu a:hover{background:var(--paper-2);color:var(--ink);}
+  .nav-offer{display:inline-flex;align-items:center;color:var(--gold) !important;font-weight:700 !important;border:1px solid var(--gold);border-radius:20px;padding:6px 15px !important;transition:background .18s ease,color .18s ease;}
+  .nav-offer:hover{background:var(--gold);color:var(--ink) !important;}
+  @media(max-width:920px){
+    nav.primary{display:none;} .menu-toggle{display:block;}
+    .dropdown-menu{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;margin:6px 0 6px 10px;padding:0;display:flex;flex-direction:column;gap:2px;}
+    .has-dropdown > a svg{margin-left:auto;}
+  }
+
+  /* Region toggle */
+  .region-toggle{display:inline-flex;align-items:center;gap:9px;cursor:pointer;white-space:nowrap;text-decoration:none;}
+  .rt-label{font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:600;letter-spacing:.04em;color:#4C5A6E;transition:color .2s ease;}
+  .rt-track{position:relative;display:block;width:58px;height:30px;border-radius:30px;flex-shrink:0;background:linear-gradient(135deg,#6EE7B7 0%,#5CA9E6 55%,#5B80EA 100%);box-shadow:inset 0 1px 3px rgba(29,24,75,.18);}
+  .rt-knob{position:absolute;top:3px;left:3px;width:24px;height:24px;border-radius:50%;background:#fff;box-shadow:0 3px 8px rgba(29,24,75,.32);transition:transform .3s cubic-bezier(.4,.2,.2,1);}
+  .region-toggle.is-right .rt-knob{transform:translateX(28px);}
+  .region-toggle .rt-in{color:#1D184B;} .region-toggle.is-right .rt-in{color:#4C5A6E;}
+  .region-toggle .rt-au{color:#4C5A6E;} .region-toggle.is-right .rt-au{color:#1D184B;}
+  .region-toggle::after{display:none;}
+  @media(max-width:1240px) and (min-width:1141px){nav.primary ul{gap:22px;} .nav-right{gap:14px;}}
+  @media(max-width:1140px){
+    .nav-row{flex-wrap:wrap;row-gap:10px;column-gap:24px;padding-bottom:12px;}
+    .nav-right{display:contents;}
+    .nav-right .btn{margin-left:auto;margin-right:10px;}
+    .region-toggle{order:5;width:100%;justify-content:center;padding-top:10px;border-top:1px solid #D9D2C0;}
+  }
+  @media(max-width:560px){
+    .nav-row{padding-left:16px;padding-right:16px;column-gap:12px;}
+    .logo img{height:34px;}
+    .nav-right .btn{padding:9px 14px;font-size:13px;margin-right:4px;}
+  }
+
+  /* Breadcrumb */
+  .crumbs{padding:18px 0 0;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.04em;color:var(--text-muted);}
+  .crumbs a{color:var(--gold-deep);text-decoration:underline;text-underline-offset:2px;}
+  .crumbs span{margin:0 6px;}
+
+  /* Hero: split layout with a "points ledger" card */
+  .hero{padding:44px 0 36px;}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;}
+  .hero h1{font-size:clamp(32px,4.2vw,48px);line-height:1.1;max-width:640px;}
+  .hero h1 span{color:var(--gold-deep);}
+  .hero .lede{font-size:16.5px;max-width:580px;color:var(--ink-2);}
+  .hero .buttons{display:flex;gap:14px;flex-wrap:wrap;margin:24px 0 18px;}
+  .hero .credential{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--text-muted);letter-spacing:.03em;margin:0;}
+  .ledger{background:var(--ink);color:var(--paper);border-radius:20px;padding:30px 28px;box-shadow:0 18px 40px rgba(29,24,75,.22);position:relative;}
+  .ledger::before{content:"";position:absolute;inset:10px;border:1.3px dashed rgba(248,165,28,.5);border-radius:14px;pointer-events:none;}
+  .ledger h2{color:var(--paper);font-size:20px;margin-bottom:4px;position:relative;}
+  .ledger .sub{color:#B9C6D6;font-size:13px;margin-bottom:18px;position:relative;}
+  .ledger dl{margin:0;position:relative;}
+  .ledger .row{display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-top:1px solid rgba(255,255,255,.14);font-size:14px;}
+  .ledger dt{color:#B9C6D6;}
+  .ledger dd{margin:0;font-family:'IBM Plex Mono',monospace;font-weight:600;color:var(--gold-light);text-align:right;}
+  @media(max-width:920px){.hero-grid{grid-template-columns:1fr;}}
+
+  /* Sections */
+  .section{padding:64px 0;box-shadow:inset 0 16px 18px -18px rgba(29,24,75,.16);}
+  .bg-alt{background:var(--paper-2);}
+  .section-head{max-width:700px;margin-bottom:34px;}
+  .section-head h2{font-size:30px;}
+  .section-head p{font-size:15.5px;margin-bottom:0;}
+  .prose{max-width:780px;}
+  .prose p{font-size:15.5px;}
+  .prose h3{font-size:21px;margin-top:1.6em;}
+  .prose a,.note-box a,.page-footnote a{color:var(--gold-deep);text-decoration:underline;text-underline-offset:2px;}
+
+  .qf-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+  .qf-card{background:var(--paper);border-radius:16px;padding:22px 18px;text-align:center;box-shadow:0 8px 22px rgba(29,24,75,.07);}
+  .qf-card b{display:block;font-family:'Fraunces',serif;font-size:22px;color:var(--ink);margin-bottom:4px;}
+  .qf-card span{font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--text-muted);}
+  @media(max-width:860px){.qf-grid{grid-template-columns:1fr 1fr;}}
+
+  .checklist{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:14px 28px;}
+  .checklist li{position:relative;padding-left:30px;font-size:14.5px;color:var(--ink-2);line-height:1.6;}
+  .checklist li::before{content:"";position:absolute;left:0;top:3px;width:18px;height:18px;border-radius:50%;border:2px solid var(--gold);background:var(--paper);}
+  .checklist li::after{content:"";position:absolute;left:6px;top:8px;width:6px;height:9px;border-right:2px solid var(--gold);border-bottom:2px solid var(--gold);transform:rotate(45deg);}
+  .checklist.one{grid-template-columns:1fr;}
+  @media(max-width:640px){.checklist{grid-template-columns:1fr;}}
+
+  /* Cards */
+  .card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .card-grid.two{grid-template-columns:repeat(2,1fr);}
+  .card{background:var(--paper);border-radius:20px;padding:28px 26px;box-shadow:0 10px 28px rgba(29,24,75,.08);transition:transform .25s ease,box-shadow .25s ease;}
+  .card:hover{transform:translateY(-5px);box-shadow:0 18px 34px rgba(29,24,75,.14);}
+  .card h3{font-size:19px;margin-bottom:10px;}
+  .card p{font-size:14.2px;margin-bottom:0;}
+  .card .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;background:var(--gold-light);color:var(--ink);display:inline-block;padding:4px 11px;border-radius:20px;margin-bottom:12px;}
+  @media(max-width:920px){.card-grid,.card-grid.two{grid-template-columns:1fr;}}
+
+  /* Tables */
+  .table-wrap{overflow-x:auto;border-radius:14px;box-shadow:0 8px 22px rgba(29,24,75,.07);background:var(--paper);}
+  table{width:100%;border-collapse:collapse;font-size:14.2px;min-width:560px;}
+  caption{text-align:left;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-deep);padding:16px 20px 6px;}
+  th,td{text-align:left;padding:13px 20px;border-top:1px solid var(--line);vertical-align:top;color:var(--ink-2);}
+  th{font-family:'Fraunces',serif;font-weight:600;color:var(--ink);background:var(--paper-2);border-top:none;}
+  .sep{color:var(--gold);font-weight:700;margin:0 .35em;}
+  td.pts{font-family:'IBM Plex Mono',monospace;font-weight:600;color:var(--ink);white-space:nowrap;}
+  tbody th{background:var(--paper);font-size:14.5px;}
+
+  /* Steps */
+  .step-list{position:relative;display:flex;flex-direction:column;gap:6px;}
+  .step-list::before{content:"";position:absolute;left:27px;top:14px;bottom:14px;width:2px;background:var(--line);}
+  .step{display:grid;grid-template-columns:56px 1fr;gap:22px;padding:18px 0;position:relative;}
+  .step-num{position:relative;z-index:1;width:56px;height:56px;border-radius:50%;background:var(--paper);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:700;color:var(--ink);}
+  .step h3{font-size:18px;margin-bottom:6px;}
+  .step p{font-size:14.5px;margin-bottom:0;max-width:700px;}
+
+  /* Fees */
+  .fee-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .fee-card{background:var(--paper);border-radius:18px;padding:26px 22px;box-shadow:0 8px 22px rgba(29,24,75,.07);text-align:center;}
+  .fee-card .stream{font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--gold-deep);margin-bottom:8px;display:block;}
+  .fee-card .amount{font-family:'Fraunces',serif;font-size:28px;color:var(--ink);margin-bottom:6px;}
+  .fee-card p{font-size:13px;margin-bottom:0;}
+  @media(max-width:860px){.fee-grid{grid-template-columns:1fr;}}
+  .note-box{max-width:900px;margin:28px 0 0;background:var(--paper);border-left:4px solid var(--gold);border-radius:4px;padding:18px 22px;}
+  .note-box p{font-size:13.5px;color:var(--ink-2);margin:0;}
+  .note-box p + p{margin-top:8px;}
+
+  /* FAQ */
+  .faq-list{max-width:860px;}
+  .faq-item{background:var(--paper);border-radius:14px;padding:4px 22px;margin-bottom:12px;box-shadow:0 6px 18px rgba(29,24,75,.06);}
+  .faq-item[open]{box-shadow:0 12px 26px rgba(29,24,75,.12);}
+  .faq-item summary{cursor:pointer;list-style:none;font-family:'Fraunces',serif;font-size:17px;font-weight:600;padding:18px 30px 18px 0;position:relative;}
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::after{content:"+";position:absolute;right:0;top:16px;font-family:'Public Sans',sans-serif;font-size:22px;color:var(--gold);transition:transform .2s ease;}
+  .faq-item[open] summary::after{transform:rotate(45deg);}
+  .faq-item p{font-size:14.5px;padding-bottom:20px;max-width:720px;}
+
+  /* Links / resources */
+  .pillar-link{font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:600;color:var(--gold-deep);display:inline-flex;align-items:center;gap:6px;letter-spacing:.04em;text-transform:uppercase;margin-top:14px;}
+  .pillar-link svg{transition:transform .18s ease;}
+  a.card:hover .pillar-link svg{transform:translateX(4px);}
+
+  .page-footnote{border-top:1px solid var(--line);padding:22px 0;}
+  .page-footnote p{font-size:13.5px;line-height:1.6;color:var(--text-muted);margin:0;max-width:900px;}
+
+  .cta-banner{padding:76px 0;text-align:center;background:var(--ink);color:var(--paper);}
+  .cta-banner h2{color:var(--paper);font-size:32px;max-width:620px;margin:0 auto 16px;}
+  .cta-banner p{color:#B9C6D6;max-width:520px;margin:0 auto 28px;}
+  .cta-banner .btns{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;}
+
+  /* Reveal */
+  .js-anim .reveal{opacity:0;transform:translateY(24px);transition:opacity .5s ease, transform .55s cubic-bezier(.22,1,.36,1);}
+  .js-anim .reveal.in-view{opacity:1;transform:none;}
+  @media (prefers-reduced-motion: reduce){.js-anim .reveal{opacity:1 !important;transform:none !important;}}
+
+  /* Quick actions */
+  .quick-actions{position:fixed;right:22px;bottom:22px;z-index:60;display:flex;flex-direction:column;align-items:flex-end;gap:12px;}
+  .qa-btn{position:relative;width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--ink);color:var(--paper);box-shadow:0 6px 18px rgba(29,24,75,.28);transition:transform .18s ease,box-shadow .18s ease;}
+  .qa-btn:hover{transform:translateY(-3px) scale(1.05);}
+  .qa-btn.qa-primary{background:var(--gold);color:var(--ink);}
+  .qa-label{position:absolute;right:64px;top:50%;transform:translateY(-50%) translateX(6px);background:var(--ink);color:var(--paper);font-size:12.5px;font-weight:600;padding:6px 12px;border-radius:6px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .18s ease,transform .18s ease;}
+  .qa-btn:hover .qa-label{opacity:1;transform:translateY(-50%) translateX(0);}
+  @media (max-width:640px){.quick-actions{right:14px;bottom:14px;gap:10px;}.qa-btn{width:46px;height:46px;}.qa-label{display:none;}}
+</style>
+
+<style>
+  /* ---------- Region-aware Services menu: India list or Australian mega menu (html[data-region] is set in <head>) ---------- */
+  html[data-region="au"] .svc-in{display:none !important;}
+  html:not([data-region="au"]) .svc-au{display:none !important;}
+  .dropdown-menu.mega{width:580px;min-width:0;display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;padding:14px;}
+  .mega-group{display:flex;flex-direction:column;}
+  .dropdown-menu .mega-head{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#8A5A12;padding:6px 12px;border-bottom:1px solid #D9D2C0;margin-bottom:4px;}
+  .dropdown-menu .mega-head:hover{background:none;color:#1D184B;}
+  .dropdown-menu .mega-head::after{display:none;}
+  @media(max-width:920px){
+    .dropdown-menu.mega{width:auto;display:flex;flex-direction:column;gap:10px;padding:0;}
+    .dropdown-menu .mega-head{padding:4px 12px;}
+  }
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header class="site">
+  <div class="nav-row">
+    <a href="index.html" data-home-link class="logo"><img src="assets/logo.webp" alt="SuccessVisa" width="300" height="95" decoding="async"></a>
+    <nav class="primary" aria-label="Primary">
+      <ul>
+        <li><a href="index.html" data-home-link>Home</a></li>
+        <li><a href="About%20Us%20Sub%20Landing%20Page.html">About</a></li>
+        <li class="has-dropdown svc-in">
+          <a href="Services%20Main%20Landing%20Page.html" class="active">Services
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.4"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="Education%20Visa%20Landing%20Page.html">Education Visa (500)</a>
+            <a href="Visitor%20Visa%20Landing%20Page.html">Visitor Visa (600)</a>
+            <a href="OSHC%20Sub%20Landing%20Page.html">Health Cover (OSHC)</a>
+          </div>
+        </li>
+        <li class="has-dropdown svc-au">
+          <a href="Australia%20Services%20Main%20Landing%20Page.html" class="active">Services
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.4"/></svg>
+          </a>
+          <div class="dropdown-menu mega">
+            <div class="mega-group">
+              <a href="Australia%20Services%20Main%20Landing%20Page.html#skilled" class="mega-head">Skilled Visas</a>
+              <a href="Skilled%20Independent%20189%20Sub%20Sub%20Landing%20Page.html">Skilled Independent (189)</a>
+              <a href="Skilled%20Nominated%20190%20Sub%20Sub%20Landing%20Page.html">Skilled Nominated (190)</a>
+              <a href="Skilled%20Work%20Regional%20491%20Sub%20Sub%20Landing%20Page.html">Skilled Work Regional (491)</a>
+              <a href="PR%20Skilled%20Regional%20191%20Sub%20Sub%20Landing%20Page.html">PR Skilled Regional (191)</a>
+              <a href="Skilled%20Recognised%20Graduate%20476%20Sub%20Sub%20Landing%20Page.html">Skilled Recognised Graduate (476)</a>
+              <a href="Recognition%20of%20Prior%20Learning%20RPL%20Sub%20Sub%20Landing%20Page.html">Recognition of Prior Learning (RPL)</a>
+            </div>
+            <div class="mega-group">
+              <a href="Australia%20Services%20Main%20Landing%20Page.html#family" class="mega-head">Partner &amp; Family</a>
+              <a href="Partner%20Visa%20820%20801%20Sub%20Sub%20Landing%20Page.html">Partner Visa (820/801)</a>
+              <a href="Family%20Visa%20Sub%20Sub%20Landing%20Page.html">Family Visa</a>
+              <a href="Carer%20Visa%20116%20836%20Sub%20Sub%20Landing%20Page.html">Carer Visa (116/836)</a>
+            </div>
+            <div class="mega-group">
+              <a href="Australia%20Services%20Main%20Landing%20Page.html#study-work" class="mega-head">Student, Working &amp; Training</a>
+              <a href="Student%20Visa%20500%20Sub%20Sub%20Landing%20Page.html">Student Visa (500)</a>
+              <a href="Working%20Visa%20482%20186%20Sub%20Sub%20Landing%20Page.html">Working Visa (482/186)</a>
+              <a href="Training%20Visa%20407%20Sub%20Sub%20Landing%20Page.html">Training Visa (407)</a>
+            </div>
+            <div class="mega-group">
+              <a href="Australia%20Services%20Main%20Landing%20Page.html#visitor-business" class="mega-head">Visitor, Business &amp; Health</a>
+              <a href="Visitor%20Visa%20Landing%20Page.html">Visitor Visa (600)</a>
+              <a href="Australia%20Business%20Visa%20Sub%20Sub%20Landing%20Page.html">Business Visa</a>
+              <a href="Health%20Insurance%20OSHC%20Sub%20Sub%20Landing%20Page.html">Health Insurance (OSHC)</a>
+            </div>
+          </div>
+        </li>
+        <li><a href="Offers%20Demo%20Landing%20Page.html" class="nav-offer">Offers</a></li>
+        <li class="has-dropdown">
+          <a href="resources.html">Resources
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.4"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="resources.html#blog">Blog</a>
+            <a href="resources.html#videos">Videos</a>
+            <a href="resources.html#checklist">Visa Checklists</a>
+            <a href="resources.html#news">Latest News</a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <a href="contact.html">Contact
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.4"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="Chandigarh%20Branch%20Landing%20Page.html">Chandigarh, IN</a>
+            <a href="Parramatta%20Branch%20Landing%20Page.html">Parramatta, NSW</a>
+            <a href="Toongabbie%20Branch%20Landing%20Page.html">Toongabbie, NSW</a>
+            <a href="Melbourne%20CBD%20Branch%20Landing%20Page.html">Melbourne, VIC</a>
+            <a href="Werribee%20Branch%20Landing%20Page.html">Werribee, VIC</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <a href="International%20Home.html" class="region-toggle" data-to="au" data-side="left" aria-label="Viewing the India site. Switch to the Australia site" title="Viewing the India site. Switch to the Australia site">
+        <span class="rt-label rt-in">India</span>
+        <span class="rt-track" aria-hidden="true"><span class="rt-knob"></span></span>
+        <span class="rt-label rt-au">Australia</span>
+      </a>
+      <a href="Booking%20Page.html" class="btn btn-primary">Book Appointment</a>
+      <button class="menu-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html" data-home-link>Home</a><span>/</span><a href="Services%20Main%20Landing%20Page.html">Services</a><span>/</span>Training Visa (407)</nav>
+    <div class="hero-grid" style="margin-top:28px;">
+      <div>
+        <div class="eyebrow"><span class="eyebrow-line"></span>Workplace Training Guide</div>
+        <h1>Training Visa (Subclass 407): <span>Sponsorship, Training Plan and the 2026 Rules</span></h1>
+        <p class="lede">The Training visa (subclass 407) lets a sponsored person take part in structured, workplace-based occupational training or professional development in Australia, for up to two years. It is not a work visa, and since 11 March 2026 the sponsor and the nomination must be approved before you can lodge. This guide explains how it works and where it fits.</p>
+        <div class="buttons">
+          <a href="Booking%20Page.html" class="btn btn-primary">Book a Training Visa Check</a>
+          <a href="#changes-2026" class="btn btn-ghost">See the 2026 Change</a>
+        </div>
+        <p class="credential">Reviewed by MARA registered migration agents &middot; MARN 2318228</p>
+      </div>
+      <aside class="ledger" aria-label="Subclass 407 at a glance">
+        <h2>407 at a glance</h2>
+        <p class="sub">What every applicant and sponsor should know first.</p>
+        <dl>
+          <div class="row"><dt>Purpose</dt><dd>Workplace training</dd></div>
+          <div class="row"><dt>Maximum grant</dt><dd>Up to 2 years</dd></div>
+          <div class="row"><dt>Sponsor</dt><dd>Temporary Activities</dd></div>
+          <div class="row"><dt>Lodge after</dt><dd>Nomination approved</dd></div>
+          <div class="row"><dt>Main applicant charge</dt><dd>AUD 535</dd></div>
+        </dl>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="what-is-407">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>The Basics</div>
+      <h2>What Is the Training Visa (Subclass 407)?</h2>
+      <p>A temporary visa for genuine, structured workplace training with an approved sponsor.</p>
+    </div>
+    <div class="prose">
+      <p>The Training visa (subclass 407) is a temporary visa for people who are sponsored to complete workplace-based occupational training or professional development in Australia. Training can be needed for registration or licensing, to improve skills in an eligible occupation, or to build capacity that benefits an organisation overseas. The visa can be granted for up to two years, and it is not a direct pathway to permanent residence.</p>
+      <p>The key idea is that the training is the purpose, and any work you do is part of that training. The visa does not let you take any job you like. A sponsor, which is an organisation approved as a Temporary Activities Sponsor, nominates a program of training for you, and that nomination includes the training plan. The Department of Home Affairs assesses whether the training is genuine, structured and suited to you.</p>
+    </div>
+    <div class="qf-grid" style="margin-top:34px;">
+      <div class="qf-card reveal"><b>Training first</b><span>Work is part of the plan</span></div>
+      <div class="qf-card reveal"><b>Up to 2 years</b><span>Temporary stay</span></div>
+      <div class="qf-card reveal"><b>Sponsor led</b><span>Temporary Activities Sponsor</span></div>
+      <div class="qf-card reveal"><b>Family</b><span>May be included, with conditions</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-alt" id="changes-2026">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Latest Change</div>
+      <h2>The March 2026 Rule: Sponsor and Nomination Must Be Approved First</h2>
+      <p>The government changed the order of the 407 process for applications made on or after 11 March 2026.</p>
+    </div>
+    <div class="table-wrap reveal">
+      <table>
+        <caption>Before and after the 2026 change</caption>
+        <thead><tr><th>Item</th><th>Before 11 March 2026</th><th>From 11 March 2026</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Order of lodgement</th><td>The sponsorship, the nomination and the visa application could be lodged together.</td><td>The sponsor must already be approved, and the nomination must be approved, before a valid visa application can be lodged.</td></tr>
+          <tr><th scope="row">Nomination</th><td>Approval was needed before the visa was granted.</td><td>For sponsors other than Commonwealth agencies, the nomination must be approved, must not have ceased and must be identified in the visa application.</td></tr>
+          <tr><th scope="row">Commonwealth agency sponsors</th><td>Exempt from the nomination requirement.</td><td>Still exempt from the nomination requirement, but the agency must be an approved sponsor.</td></tr>
+          <tr><th scope="row">Effect on applicants</th><td>You could lodge early and stay on a bridging visa while processing continued.</td><td>You may need to wait for approvals first, which can mean planning another visa or travel in the meantime.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note-box">
+      <p>The Migration Amendment (Training Visas&mdash;Sponsorship Requirements) Regulations 2026 made this change. The Government's stated reasons include integrity concerns about the visa being used to extend an onshore stay or to bypass skilled migration pathways, a rise in onshore applications since mid-2024, and nominations that did not meet the legal requirements. Applications that look like ongoing work, or that have disproportionate training periods or low pay, can attract closer checking.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="eligibility">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Eligibility</div>
+      <h2>Training Visa 407 Eligibility Requirements</h2>
+      <p>Both the sponsor and the applicant must qualify.</p>
+    </div>
+    <ul class="checklist">
+      <li><strong>Sponsor:</strong> your sponsor must be an approved Temporary Activities Sponsor, or a Commonwealth Government agency where that pathway applies.</li>
+      <li><strong>Nomination:</strong> an approved nomination of a program of occupational training for you, unless the sponsor is a Commonwealth agency.</li>
+      <li><strong>Age:</strong> you must be at least 18 when you apply.</li>
+      <li><strong>Genuine temporary stay:</strong> you must show you genuinely intend to stay temporarily and take part only in the approved activities.</li>
+      <li><strong>English:</strong> functional English, shown through an approved test or an accepted passport, and signing the Australian values statement.</li>
+      <li><strong>Health and insurance:</strong> meet the Australian health requirement and hold adequate health insurance for you and any family members.</li>
+      <li><strong>Character:</strong> provide police certificates and meet the character requirement. Prior visa refusals, cancellations or debts to the Australian Government can affect your application.</li>
+      <li><strong>Onshore applicants:</strong> you must hold an eligible temporary substantive visa and meet its conditions. Some visa types cannot be used to apply onshore.</li>
+    </ul>
+    <div class="note-box">
+      <p>Requirements differ by sponsor type and training, and the Department can request more evidence. We check your visa history, your sponsor's approval and the training plan before anyone lodges.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-alt" id="sponsor-nomination">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Sponsor and Nomination</div>
+      <h2>How Sponsorship and Nomination Work for the 407</h2>
+      <p>Under the current rules, the sponsor does most of the work before you lodge.</p>
+    </div>
+    <div class="table-wrap reveal">
+      <table>
+        <caption>The three stages in order</caption>
+        <thead><tr><th>Stage</th><th>Who does it</th><th>What happens</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">1. Sponsorship approval</th><td>The sponsoring organisation</td><td>The organisation applies to be an approved Temporary Activities Sponsor. A standard business sponsor approval used for the 482 and 186 does not by itself allow a 407 sponsorship.</td></tr>
+          <tr><th scope="row">2. Nomination</th><td>The sponsor</td><td>The sponsor nominates a program of occupational training for you, including a detailed training plan. The Department must approve it.</td></tr>
+          <tr><th scope="row">3. Visa application</th><td>You</td><td>Once the sponsor and the nomination are approved, you lodge a valid visa application that identifies the nomination.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note-box">
+      <p>A sponsor cannot recover sponsorship or nomination charges from you. The Department does not publish processing times for sponsorship and nomination applications, so sponsors should lodge early and prepare decision-ready documents.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="training-plan">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Training Plan</div>
+      <h2>What a Genuine Training Plan Looks Like</h2>
+      <p>The training plan is the heart of the application and the sponsor's legal responsibility.</p>
+    </div>
+    <div class="prose">
+      <p>The Department expects the training to be structured, genuine and tied to a specific occupation. A strong plan sets out what you will learn, how it will be taught and supervised, how progress is measured, and how the training will end with a clear outcome, for example registration, a licence or a defined skill. It also shows that the arrangement is a real training program and not a way to fill a vacancy.</p>
+    </div>
+    <div class="card-grid" style="margin-top:34px;">
+      <div class="card reveal"><span class="tag">Structure</span><h3>A real schedule</h3><p>Weekly activities, supervision and stages of progression, with named trainers who have suitable qualifications and industry experience.</p></div>
+      <div class="card reveal"><span class="tag">Purpose</span><h3>A clear outcome</h3><p>A defined reason for the training, such as registration or a specific skill, and a link to your background and plans.</p></div>
+      <div class="card reveal"><span class="tag">Fairness</span><h3>Appropriate pay and duration</h3><p>Training of a reasonable length with suitable remuneration. Disproportionate durations or very low pay can trigger refusal or closer checks.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-alt" id="work-rights">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Conditions</div>
+      <h2>Work Rights and Conditions on a Training Visa</h2>
+      <p>The visa is for training, and the conditions say so.</p>
+    </div>
+    <div class="table-wrap reveal">
+      <table>
+        <caption>What a 407 does and does not allow</caption>
+        <thead><tr><th>Allowed</th><th>Not allowed</th></tr></thead>
+        <tbody>
+          <tr><td>Work that is directly part of the approved training plan</td><td>General employment outside the training program</td></tr>
+          <tr><td>Workplace-based training for skills, registration or professional development</td><td>Regular work to fill staff shortages or supplement a workforce</td></tr>
+          <tr><td>Travel in and out of Australia while the visa is valid</td><td>Using the visa as a route to ongoing work or permanent residence</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note-box">
+      <p>Holders are generally subject to condition 8102, which limits work to the approved training activity. Family members who are included may have different work rights, set by the conditions on their visas. Breaching your conditions can lead to cancellation and affect future applications.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="compare">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Compare Your Options</div>
+      <h2>Training Visa 407 vs Skills in Demand 482: Which Fits?</h2>
+      <p>The two visas can look similar, but they do different jobs.</p>
+    </div>
+    <div class="table-wrap reveal">
+      <table>
+        <caption>Subclass 407 compared with subclass 482</caption>
+        <thead><tr><th>Feature</th><th>407 Training</th><th>482 Skills in Demand</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Purpose</th><td>Structured workplace training or professional development</td><td>Filling a skilled job with an approved sponsor</td></tr>
+          <tr><th scope="row">Maximum stay</th><td>Up to two years</td><td>Up to four years</td></tr>
+          <tr><th scope="row">Work rights</th><td>Limited to the approved training</td><td>Work for the sponsor in the nominated occupation</td></tr>
+          <tr><th scope="row">Pathway to permanent residence</th><td>No direct pathway</td><td>Can lead to the 186 Employer Nomination Scheme</td></tr>
+          <tr><th scope="row">Sponsor approval</th><td>Temporary Activities Sponsor</td><td>Standard business sponsor</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note-box" style="margin-top:20px;"><span style="font-size:13.5px;color:var(--ink-2);">If you would be doing a paid job you can already do, the 482 is usually the right route. Using the 407 for ongoing work is a refusal and compliance risk. Read our <a href="Working%20Visa%20482%20186%20Sub%20Sub%20Landing%20Page.html">Working Visa (482/186)</a> guide to compare.</span></p>
+  </div>
+</section>
+
+<section class="section bg-alt" id="how-to-apply">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>The Process</div>
+      <h2>How to Apply for the Training Visa (Subclass 407)</h2>
+      <p>A typical path from first conversation to starting your training.</p>
+    </div>
+    <div class="step-list">
+      <div class="step reveal"><div class="step-num">01</div><div><h3>Free training visa check</h3><p>We look at your goal, your background, the sponsor and the training, and tell you honestly whether the 407, the 482 or another visa fits.</p></div></div>
+      <div class="step reveal"><div class="step-num">02</div><div><h3>Confirm the sponsor</h3><p>We check whether the organisation is, or can become, an approved Temporary Activities Sponsor.</p></div></div>
+      <div class="step reveal"><div class="step-num">03</div><div><h3>Design the training plan</h3><p>We help the sponsor prepare a structured, genuine plan with named trainers, a schedule and a clear outcome.</p></div></div>
+      <div class="step reveal"><div class="step-num">04</div><div><h3>Lodge the nomination</h3><p>The sponsor lodges a decision-ready nomination and we track it until the Department decides.</p></div></div>
+      <div class="step reveal"><div class="step-num">05</div><div><h3>Lodge your visa application</h3><p>Once the sponsor and nomination are approved, we lodge your application with identity, English, health and character evidence.</p></div></div>
+      <div class="step reveal"><div class="step-num">06</div><div><h3>Train, comply and plan</h3><p>You start the training and keep to your conditions, and we plan what comes next before your visa ends.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="documents">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Get Organised</div>
+      <h2>Documents to Prepare for a Training Visa Application</h2>
+      <p>The exact list depends on the sponsor and the training.</p>
+    </div>
+    <ul class="checklist">
+      <li>Passport and identity documents for every person on the application.</li>
+      <li>The sponsor's approval details and the approved nomination reference.</li>
+      <li>The approved training plan and details of the trainers and supervisors.</li>
+      <li>Evidence of your qualifications and work history that link to the training.</li>
+      <li>English test results or evidence of an exemption.</li>
+      <li>Evidence of adequate health insurance for you and any family members.</li>
+      <li>Police certificates for each country where you have lived for the required period.</li>
+      <li>Details of your current visa and its conditions, if you are applying in Australia.</li>
+      <li>Relationship and birth documents for any family members you include.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section bg-alt" id="costs">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Costs</div>
+      <h2>Training Visa 407 Cost</h2>
+      <p>Government visa application charges, in effect since 1 July 2026.</p>
+    </div>
+    <div class="fee-grid">
+      <div class="fee-card reveal"><span class="stream">Main applicant</span><div class="amount">AUD 535</div><p>Base visa application charge for the primary applicant.</p></div>
+      <div class="fee-card reveal"><span class="stream">Each additional adult</span><div class="amount">AUD 535</div><p>For a partner or other applicant aged 18 or over.</p></div>
+      <div class="fee-card reveal"><span class="stream">Each child under 18</span><div class="amount">AUD 135</div><p>For each dependent child included in the application.</p></div>
+    </div>
+    <div class="note-box">
+      <p><strong>Sponsor costs are separate.</strong> The sponsor pays its own sponsorship and nomination charges and cannot recover them from you. Plan separately for health examinations, police certificates, English tests, health insurance and any professional fees. Some onshore applicants pay a subsequent temporary application charge.</p>
+      <p>Charges are set by the Australian Government and normally change each 1 July. Confirm the current amounts in ImmiAccount or on the Department of Home Affairs visa pricing tool before you pay. The visa application charge is generally not refunded if an application is refused.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="processing">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Timing</div>
+      <h2>How Long Does the Training Visa Take?</h2>
+    </div>
+    <div class="prose">
+      <p>There are now three steps in sequence: sponsor approval, nomination approval and then the visa application. The Department does not publish processing times for sponsorship or nomination applications, and published times for the visa itself vary between sources, from a few months to well over a year. Because of the nomination-first rule, the full timeline is longer than it used to be.</p>
+      <p>We do not quote a single figure. Check the Department's live processing times for the visa and plan for months, not weeks. If your current visa is about to expire, talk to us early, because you may need another visa while the approvals are pending.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-alt" id="who">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Fit Check</div>
+      <h2>Is the Training Visa Right for You?</h2>
+    </div>
+    <div class="card-grid two">
+      <div class="card reveal">
+        <h3>The 407 tends to suit you if</h3>
+        <ul class="checklist one" style="margin-top:14px;">
+          <li>You need structured workplace training for registration, a licence or a defined skill.</li>
+          <li>An approved sponsor will nominate a genuine training program for you.</li>
+          <li>You plan to use the skills afterwards, in Australia or overseas.</li>
+          <li>You can wait for the sponsor and nomination to be approved first.</li>
+        </ul>
+      </div>
+      <div class="card reveal">
+        <h3>Consider another route if</h3>
+        <ul class="checklist one" style="margin-top:14px;">
+          <li>You would really be doing a paid job you can already do, which points to the 482.</li>
+          <li>You want to study a course, which points to the Student visa.</li>
+          <li>You want a clear route to permanent residence.</li>
+          <li>You need to start soon and cannot wait for approvals.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="mistakes">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Avoid These</div>
+      <h2>Common Training Visa Mistakes That Lead to Refusal</h2>
+    </div>
+    <div class="card-grid">
+      <div class="card reveal"><h3>Lodging before approval</h3><p>An application lodged before the sponsor and nomination are approved is not valid under the current rules.</p></div>
+      <div class="card reveal"><h3>Using the wrong sponsor approval</h3><p>A business that sponsors 482 workers still needs Temporary Activities Sponsor approval for the 407.</p></div>
+      <div class="card reveal"><h3>A vague training plan</h3><p>Shadowing or general work experience is not enough. The plan needs structure, supervision and an outcome.</p></div>
+      <div class="card reveal"><h3>Training that is really a job</h3><p>Plans that look like filling a vacancy or offering ongoing work can be refused or delayed.</p></div>
+      <div class="card reveal"><h3>Ignoring visa expiry</h3><p>The new sequence takes longer. Plan early if your current visa is about to end.</p></div>
+      <div class="card reveal"><h3>Charging the worker</h3><p>Sponsors cannot recover sponsorship or nomination costs from the worker, and doing so is a compliance risk.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-alt" id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Common Questions</div>
+      <h2>Training Visa (Subclass 407) FAQs</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item"><summary>What is the Training visa (subclass 407)?</summary><p>The Training visa (subclass 407) is a temporary visa for people who come to Australia for structured, workplace-based occupational training or professional development with an approved sponsor. It can be granted for up to two years, and your work is limited to the sponsored training.</p></details>
+      <details class="faq-item"><summary>What changed for the 407 visa in 2026?</summary><p>From 11 March 2026, you can no longer lodge a valid 407 visa application until your sponsor is an approved temporary activities sponsor and, unless the sponsor is a Commonwealth agency, the nomination for your training has been approved. Before that, sponsorship, nomination and the visa application could be lodged together.</p></details>
+      <details class="faq-item"><summary>Who can sponsor me for a Training visa?</summary><p>The sponsor must be approved as a Temporary Activities Sponsor, or be a Commonwealth Government agency. A standard business sponsor approval, used for the 482 and 186 visas, does not by itself allow an employer to sponsor a 407 applicant.</p></details>
+      <details class="faq-item"><summary>Can I work for any employer on a 407 visa?</summary><p>No. The visa is generally subject to condition 8102, which limits your work to the approved training activity. It is not an open work visa and should not be used to fill a job, supplement a workforce or extend a stay.</p></details>
+      <details class="faq-item"><summary>Does the 407 lead to permanent residence?</summary><p>No, it is a temporary visa and not a direct pathway to permanent residence. The experience may help with a later skilled application if you meet that visa's own criteria.</p></details>
+      <details class="faq-item"><summary>How much does the 407 visa cost?</summary><p>The visa application charge in effect from 1 July 2026 is AUD 535 for the main applicant, AUD 535 for each additional applicant aged 18 or over and AUD 135 for each applicant under 18. The sponsor's nomination and sponsorship fees are separate, and a sponsor cannot recover them from you. Confirm the amounts before you lodge.</p></details>
+      <details class="faq-item"><summary>How long does a 407 visa take?</summary><p>Published figures vary, and the Department does not publish processing times for sponsorship or nomination applications. With the nomination-first rule, the total timeline is now longer than before, so employers and applicants should lodge early and expect months, not weeks.</p></details>
+      <details class="faq-item"><summary>What is the difference between the 407 and the 482?</summary><p>The 407 is for training and is tied to an approved training plan, with a stay of up to two years and no pathway to permanent residence. The 482 is for filling a skilled job, can last up to four years and can lead to permanent residence through the 186. We help you decide which fits your situation.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Keep Exploring</div>
+      <h2>Related Services</h2>
+    </div>
+    <div class="card-grid">
+      <a href="Working%20Visa%20482%20186%20Sub%20Sub%20Landing%20Page.html" class="card reveal"><span class="tag">Working Visa</span><h3>Working Visa (482/186)</h3><p>The employer sponsored route for skilled jobs, and how it leads to PR.</p><span class="pillar-link">Working visa <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M8 1L13 5L8 9M13 5H1" stroke="currentColor" stroke-width="1.4"/></svg></span></a>
+      <a href="Recognition%20of%20Prior%20Learning%20RPL%20Sub%20Sub%20Landing%20Page.html" class="card reveal"><span class="tag">RPL</span><h3>Recognition of Prior Learning</h3><p>Having existing skills assessed against an Australian qualification.</p><span class="pillar-link">Read about RPL <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M8 1L13 5L8 9M13 5H1" stroke="currentColor" stroke-width="1.4"/></svg></span></a>
+      <a href="Student%20Visa%20500%20Sub%20Sub%20Landing%20Page.html" class="card reveal"><span class="tag">Student Visa 500</span><h3>Study in Australia</h3><p>The route for course-based study with a registered provider.</p><span class="pillar-link">Student visa <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M8 1L13 5L8 9M13 5H1" stroke="currentColor" stroke-width="1.4"/></svg></span></a>
+    </div>
+  </div>
+</section>
+
+<div class="wrap page-footnote">
+  <p>Reviewed by SuccessVisa's MARA registered migration agents &middot; last updated 26 October 2026. General information only, not migration advice. Visa criteria, charges and processing times are set by the Australian Government and can change. Always confirm against the Department of Home Affairs before you act. <a href="Disclaimer%20Page.html">See full disclaimer and sources</a>.</p>
+</div>
+
+<section class="cta-banner">
+  <div class="wrap">
+    <h2>Plan Your Training Visa Before You Lodge</h2>
+    <p>Book a consultation for an honest check of your sponsor, training plan and timeline, before anyone lodges.</p>
+    <div class="btns">
+      <a href="Booking%20Page.html" class="btn btn-primary">Book Appointment</a>
+      <a href="Services%20Main%20Landing%20Page.html" class="btn btn-ghost">Explore All Services</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="quick-actions" aria-label="Quick contact actions">
+  <a href="tel:+911800000000" class="qa-btn" aria-label="Call us"><span class="qa-label">Call us</span>
+    <svg width="21" height="21" viewBox="0 0 24 24" fill="none"><path d="M4 5c0-1 1-2 2-2h2l2 5-2 1.5c1 2.3 2.7 4 5 5L14.5 12l5 2v2c0 1-1 2-2 2C10.5 18 4 11.5 4 5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></a>
+  <a href="https://wa.me/911800000000" class="qa-btn" aria-label="Chat on WhatsApp" target="_blank" rel="noopener"><span class="qa-label">WhatsApp us</span>
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.7-1.2A9 9 0 1 0 12 3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M8.5 8.8c-.3.6-.3 1.6.6 2.9 1 1.4 2.3 2.6 3.9 3.1 1 .3 1.7.1 2.1-.4l.4-.6-2-1.3-.5.5c-.2.2-.5.2-.8 0-.7-.4-1.5-1.1-2-1.9-.2-.3-.1-.6.1-.8l.5-.5-1.1-2Z" fill="currentColor"/></svg></a>
+  <a href="Booking%20Page.html" class="qa-btn qa-primary" aria-label="Book Appointment"><span class="qa-label">Book Appointment</span>
+    <svg width="21" height="21" viewBox="0 0 24 24" fill="none"><rect x="3.5" y="5" width="17" height="15" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M3.5 9.5h17" stroke="currentColor" stroke-width="1.5"/><path d="M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M8 13.5l2.3 2.3L16 10.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+</div>
+
+<script>
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('nav.primary');
+  toggle.addEventListener('click', () => {
+    const open = nav.style.display === 'block';
+    nav.style.display = open ? 'none' : 'block';
+    if(!open){
+      nav.style.position='absolute';nav.style.top='100%';nav.style.left='0';nav.style.right='0';
+      nav.style.background='var(--paper)';nav.style.borderBottom='1px solid var(--line)';nav.style.padding='20px 28px';
+      nav.querySelector('ul').style.flexDirection='column';nav.querySelector('ul').style.alignItems='flex-start';nav.querySelector('ul').style.gap='16px';
+    }
+  });
+</script>
+
+<script>
+(function(){
+  const targets = document.querySelectorAll('.reveal');
+  if(!targets.length || !('IntersectionObserver' in window)){ targets.forEach(function(el){el.classList.add('in-view');}); return; }
+  let counter = 0;
+  const obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(!entry.isIntersecting) return;
+      const el = entry.target;
+      const delay = (counter++ % 6) * 70;
+      setTimeout(function(){ el.classList.add('in-view'); }, delay);
+      obs.unobserve(el);
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  targets.forEach(function(el){ obs.observe(el); });
+})();
+</script>
+
+<script>
+(function(){
+  document.querySelectorAll('.region-toggle').forEach(function(a){
+    window.addEventListener('pageshow',function(){a.classList.toggle('is-right',a.getAttribute('data-side')==='right');});
+    a.addEventListener('click',function(e){
+      if(e.metaKey||e.ctrlKey||e.shiftKey||e.button===1) return;
+      e.preventDefault();
+      var to=a.getAttribute('data-to');
+      try{localStorage.setItem('sv_region',to);}catch(err){}
+      document.cookie='sv_region='+to+'; path=/; max-age=31536000; SameSite=Lax';
+      a.classList.toggle('is-right');
+      var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      setTimeout(function(){window.location.href=a.href;},reduce?0:320);
+    });
+  });
+})();
+</script>
+</body>
+</html>

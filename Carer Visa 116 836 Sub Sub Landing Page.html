@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<script>document.documentElement.classList.add('js-anim');</script>
+<head>
+<meta charset="UTF-8">
+<script>
+  // Home routing: same logic as the other pages (India visitors -> index.html, everyone else -> International Home.html).
+  (function(){
+    var HOME={'in':'index.html','au':'International%20Home.html'};
+    var r=null;
+    try{r=localStorage.getItem('sv_region');}catch(e){}
+    if(r!=='in'&&r!=='au'){var m=document.cookie.match(/(?:^|; )sv_region=(in|au)/);r=m?m[1]:null;}
+    if(!r){
+      var tz='';
+      try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||'';}catch(e){}
+      if(tz) r=/^Asia\/(Kolkata|Calcutta)$/.test(tz)?'in':'au';
+    }
+    var shown=document.documentElement.getAttribute('data-home')||r;
+    if(shown) document.documentElement.setAttribute('data-region',shown);
+    if(!r) return;
+    document.addEventListener('DOMContentLoaded',function(){
+      document.querySelectorAll('a[data-home-link]').forEach(function(a){a.setAttribute('href',HOME[r]);});
+      if(r!=='au') return;
+      document.querySelectorAll('.region-toggle').forEach(function(a){
+        a.setAttribute('href',HOME['in']);a.setAttribute('data-to','in');a.setAttribute('data-side','right');a.classList.add('is-right');
+        a.setAttribute('aria-label','Viewing the Australia site. Switch to the India site');a.setAttribute('title','Viewing the Australia site. Switch to the India site');
+      });
+    });
+  })();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carer Visa 116 and 836 Australia: Eligibility, Queue and Alternatives | SuccessVisa</title>
+<meta name="description" content="Carer visa (subclass 116 and 836) guide: who qualifies, the medical and no-other-carer tests, the capped queue with a 16-year estimate, and alternatives. Reviewed by MARA agents.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.successvisa.in/carer-visa-116-836.html">
+<link rel="alternate" hreflang="en-au" href="https://www.successvisa.com.au/">
+<link rel="alternate" hreflang="en-in" href="https://www.successvisa.in/">
+<link rel="alternate" hreflang="x-default" href="https://www.successvisa.in/">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="SuccessVisa">
+<meta property="og:title" content="Carer Visa (Subclass 116 and 836): Complete Guide | SuccessVisa">
+<meta property="og:description" content="Who can apply, how the queue works, evidence needed and what to consider instead.">
+<meta property="og:url" content="https://www.successvisa.in/carer-visa-116-836.html">
+<meta property="og:locale" content="en_IN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Carer Visa (Subclass 116 and 836): Complete Guide | SuccessVisa">
+<meta name="twitter:description" content="Who can apply, how the queue works, evidence needed and what to consider instead.">
+<meta name="theme-color" content="#1D184B">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Public+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Carer Visa (Subclass 116 and 836) Australia: Eligibility, Queue and Alternatives",
+  "url": "https://www.successvisa.in/carer-visa-116-836.html",
+  "inLanguage": "en",
+  "dateModified": "2026-10-26",
+  "about": {"@type": "Service", "name": "Carer visa 116 and 836 advice", "serviceType": "Australian family and carer visa advice",
+    "provider": {"@type": "Organization", "name": "SuccessVisa", "identifier": "MARN 2318228", "url": "https://www.successvisa.in/"},
+    "areaServed": ["IN", "AU"]}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.successvisa.in/"},
+    {"@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.successvisa.in/services.html"},
+    {"@type": "ListItem", "position": 3, "name": "Carer Visa (116/836)", "item": "https://www.successvisa.in/carer-visa-116-836.html"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "What is the Carer visa (subclass 116 and 836)?",
+      "acceptedAnswer": {"@type": "Answer", "text": "The Carer visa is a permanent visa for a person who needs to provide long-term care to an Australian relative, or to a relative's family member, who has a medical condition. Subclass 116 is for applicants outside Australia and subclass 836 is for applicants inside Australia."}},
+    {"@type": "Question", "name": "Who can sponsor me for a Carer visa?",
+      "acceptedAnswer": {"@type": "Answer", "text": "The person who needs care, or a family member of the person who needs care, must generally be an Australian citizen, permanent resident or eligible New Zealand citizen aged 18 or over. The sponsor must show the care need and may need to show financial support for the carer. We check the exact sponsor rules for your case."}},
+    {"@type": "Question", "name": "What medical condition qualifies for a Carer visa?",
+      "acceptedAnswer": {"@type": "Answer", "text": "The condition must be long-term or permanent and cause a level of impairment that means the person needs significant care and assistance in daily life for at least two years. A medical assessment is required. Companionship, loneliness or emotional support alone does not meet the test."}},
+    {"@type": "Question", "name": "Why does the Carer visa have such a long wait?",
+      "acceptedAnswer": {"@type": "Answer", "text": "The Carer visa is capped and queued. Demand is higher than the number of places each year, so eligible applications are given a queue date and released in order. The Department of Home Affairs currently estimates 16 years for a new application and, as at 31 August 2026, was releasing applications with a queue date up to 31 December 2023."}},
+    {"@type": "Question", "name": "Can I apply if I am the one who is unwell?",
+      "acceptedAnswer": {"@type": "Answer", "text": "No. The Carer visa is for a capable applicant who will care for someone else. It is not a visa for an overseas applicant who needs care or treatment themselves."}},
+    {"@type": "Question", "name": "What if other relatives or services could provide the care?",
+      "acceptedAnswer": {"@type": "Answer", "text": "You must show that the care cannot reasonably be provided by other relatives in Australia or by community, health or welfare services. Family preference, or relatives being busy or unwilling, is not enough on its own, so evidence is critical."}},
+    {"@type": "Question", "name": "Can I include my partner and children?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Family unit members may be able to be included if they meet the health and character requirements. Check the family member rules for your case before you lodge."}},
+    {"@type": "Question", "name": "What are my options if I cannot wait for a Carer visa?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Options depend on your situation. They can include a temporary visitor visa for family visits, a temporary Sponsored Parent visa, a partner, skilled or employer-sponsored visa if you qualify, or a student visa. We explain the realistic options for you."}}
+  ]
+}
+</script>
+<style>
+  :root{
+    --ink:#1D184B; --ink-2:#322B6E; --paper:#FBFAF7; --paper-2:#F3EEE2;
+    --gold:#F8A51C; --gold-light:#FBC46B; --gold-deep:#8A5A12;
+    --text-muted:#4C5A6E; --line:#D9D2C0; --radius:2px; --maxw:1180px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:'Public Sans',sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:600;line-height:1.25;margin:0 0 .5em;color:var(--ink);letter-spacing:-0.01em;}
+  p{margin:0 0 1em;color:var(--text-muted);}
+  a{color:inherit;text-decoration:none;}
+  ul{margin:0;padding:0;list-style:none;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);display:flex;align-items:center;gap:10px;margin-bottom:16px;}
+  .eyebrow-line{display:inline-block;width:20px;height:2px;background:var(--gold);flex-shrink:0;}
+  :focus-visible{outline:2px solid var(--gold-deep);outline-offset:3px;}
+  .skip-link{position:absolute;left:-999px;top:auto;background:var(--ink);color:var(--paper);padding:10px 16px;z-index:100;}
+  .skip-link:focus{left:16px;top:16px;}
+  @media (prefers-reduced-motion: reduce){ *{animation:none !important; transition:none !important;} }
+
+  /* Header */
+  header.site{position:sticky;top:0;z-index:50;background:rgba(251,250,247,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+  .nav-row{display:flex;align-items:center;justify-content:space-between;padding:16px 28px;max-width:var(--maxw);margin:0 auto;}
+  .logo{display:flex;align-items:center;}
+  .logo img{height:42px;width:auto;display:block;}
+  nav.primary ul{display:flex;gap:34px;align-items:center;}
+  nav.primary a{font-size:14.5px;font-weight:600;color:var(--ink-2);position:relative;padding:4px 0;}
+  nav.primary a.active{color:var(--ink);}
+  nav.primary a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--gold);transition:width .2s ease;}
+  nav.primary a:hover::after,nav.primary a.active::after{width:100%;}
+  .nav-right{display:flex;align-items:center;gap:20px;}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-family:'Public Sans',sans-serif;font-weight:700;font-size:14px;padding:12px 22px;border-radius:var(--radius);cursor:pointer;border:1.5px solid transparent;transition:background .18s ease,color .18s ease,border-color .18s ease;}
+  .btn-primary{background:var(--ink);color:var(--paper);}
+  .btn-primary:hover{background:var(--gold);color:var(--ink);}
+  .btn-ghost{border-color:var(--ink);color:var(--ink);}
+  .btn-ghost:hover{background:var(--ink);color:var(--paper);}
+  .cta-banner .btn-ghost{border-color:var(--paper);color:var(--paper);}
+  .cta-banner .btn-ghost:hover{background:var(--paper);color:var(--ink);}
+  .menu-toggle{display:none;background:none;border:none;cursor:pointer;padding:6px;}
+  .menu-toggle span{display:block;width:22px;height:2px;background:var(--ink);margin:5px 0;}
+  .has-dropdown{position:relative;}
+  .has-dropdown > a{display:flex;align-items:center;gap:5px;}
+  .has-dropdown > a svg{transition:transform .18s ease;flex-shrink:0;}
+  .has-dropdown:hover > a svg,.has-dropdown:focus-within > a svg{transform:rotate(180deg);}
+  .dropdown-menu{position:absolute;top:100%;left:-14px;margin-top:16px;min-width:216px;background:var(--paper);border:1px solid var(--line);box-shadow:0 16px 34px rgba(15,42,74,.13);padding:8px;opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .18s ease,transform .18s ease,visibility .18s ease;}
+  .has-dropdown:hover .dropdown-menu,.has-dropdown:focus-within .dropdown-menu{opacity:1;visibility:visible;transform:translateY(0);}
+  .dropdown-menu a{display:block;padding:9px 12px;font-size:13.5px;font-weight:600;color:var(--ink-2);}
+  .dropdown-menu a:hover{background:var(--paper-2);color:var(--ink);}
+  .nav-offer{display:inline-flex;align-items:center;color:var(--gold) !important;font-weight:700 !important;border:1px solid var(--gold);border-radius:20px;padding:6px 15px !important;transition:background .18s ease,color .18s ease;}
+  .nav-offer:hover{background:var(--gold);color:var(--ink) !important;}
+  @media(max-width:920px){
+    nav.primary{display:none;} .menu-toggle{display:block;}
+    .dropdown-menu{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;margin:6px 0 6px 10px;padding:0;display:flex;flex-direction:column;gap:2px;}
+    .has-dropdown > a svg{margin-left:auto;}
+  }
+
+  /* Region toggle */
+  .region-toggle{display:inline-flex;align-items:center;gap:9px;cursor:pointer;white-space:nowrap;text-decoration:none;}
+  .rt-label{font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:600;letter-spacing:.04em;color:#4C5A6E;transition:color .2s ease;}
+  .rt-track{position:relative;display:block;width:58px;height:30px;border-radius:30px;flex-shrink:0;background:linear-gradient(135deg,#6EE7B7 0%,#5CA9E6 55%,#5B80EA 100%);box-shadow:inset 0 1px 3px rgba(29,24,75,.18);}
+  .rt-knob{position:absolute;top:3px;left:3px;width:24px;height:24px;border-radius:50%;background:#fff;box-shadow:0 3px 8px rgba(29,24,75,.32);transition:transform .3s cubic-bezier(.4,.2,.2,1);}
+  .region-toggle.is-right .rt-knob{transform:translateX(28px);}
+  .region-toggle .rt-in{color:#1D184B;} .region-toggle.is-right .rt-in{color:#4C5A6E;}
+  .region-toggle .rt-au{color:#4C5A6E;} .region-toggle.is-right .rt-au{color:#1D184B;}
+  .region-toggle::after{display:none;}
+  @media(max-width:1240px) and (min-width:1141px){nav.primary ul{gap:22px;} .nav-right{gap:14px;}}
+  @media(max-width:1140px){
+    .nav-row{flex-wrap:wrap;row-gap:10px;column-gap:24px;padding-bottom:12px;}
+    .nav-right{display:contents;}
+    .nav-right .btn{margin-left:auto;margin-right:10px;}
+    .region-toggle{order:5;width:100%;justify-content:center;padding-top:10px;border-top:1px solid #D9D2C0;}
+  }
+  @media(max-width:560px){
+    .nav-row{padding-left:16px;padding-right:16px;column-gap:12px;}
+    .logo img{height:34px;}
+    .nav-right .btn{padding:9px 14px;font-size:13px;margin-right:4px;}
+  }
+
+  /* Breadcrumb */
+  .crumbs{padding:18px 0 0;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.04em;color:var(--text-muted);}
+  .crumbs a{color:var(--gold-deep);text-decoration:underline;text-underline-offset:2px;}
+  .crumbs span{margin:0 6px;}
+
+  /* Hero: split layout with a "points ledger" card */
+  .hero{padding:44px 0 36px;}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;}
+  .hero h1{font-size:clamp(32px,4.2vw,48px);line-height:1.1;max-width:640px;}
+  .hero h1 span{color:var(--gold-deep);}
+  .hero .lede{font-size:16.5px;max-width:580px;color:var(--ink-2);}
+  .hero .buttons{display:flex;gap:14px;flex-wrap:wrap;margin:24px 0 18px;}
+  .hero .credential{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--text-muted);letter-spacing:.03em;margin:0;}
+  .ledger{background:var(--ink);color:var(--paper);border-radius:20px;padding:30px 28px;box-shadow:0 18px 40px rgba(29,24,75,.22);position:relative;}
+  .ledger::before{content:"";position:absolute;inset:10px;border:1.3px dashed rgba(248,165,28,.5);border-radius:14px;pointer-events:none;}
+  .ledger h2{color:var(--paper);font-size:20px;margin-bottom:4px;position:relative;}
+  .ledger .sub{color:#B9C6D6;font-size:13px;margin-bottom:18px;position:relative;}
+  .ledger dl{margin:0;position:relative;}
+  .ledger .row{display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-top:1px solid rgba(255,255,255,.14);font-size:14px;}
+  .ledger dt{color:#B9C6D6;}
+  .ledger dd{margin:0;font-family:'IBM Plex Mono',monospace;font-weight:600;color:var(--gold-light);text-align:right;}
+  @media(max-width:920px){.hero-grid{grid-template-columns:1fr;}}
+
+  /* Sections */
+  .section{padding:64px 0;box-shadow:inset 0 16px 18px -18px rgba(29,24,75,.16);}
+  .bg-alt{background:var(--paper-2);}
+  .section-head{max-width:700px;margin-bottom:34px;}
+  .section-head h2{font-size:30px;}
+  .section-head p{font-size:15.5px;margin-bottom:0;}
+  .prose{max-width:780px;}
+  .prose p{font-size:15.5px;}
+  .prose h3{font-size:21px;margin-top:1.6em;}
+  .prose a,.note-box a,.page-footnote a{color:var(--gold-deep);text-decoration:underline;text-underline-offset:2px;}
+
+  .qf-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+  .qf-card{background:var(--paper);border-radius:16px;padding:22px 18px;text-align:center;box-shadow:0 8px 22px rgba(29,24,75,.07);}
+  .qf-card b{display:block;font-family:'Fraunces',serif;font-size:22px;color:var(--ink);margin-bottom:4px;}
+  .qf-card span{font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--text-muted);}
+  @media(max-width:860px){.qf-grid{grid-template-columns:1fr 1fr;}}
+
+  .checklist{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:14px 28px;}
+  .checklist li{position:relative;padding-left:30px;font-size:14.5px;color:var(--ink-2);line-height:1.6;}
+  .checklist li::before{content:"";position:absolute;left:0;top:3px;width:18px;height:18px;border-radius:50%;border:2px solid var(--gold);background:var(--paper);}
+  .checklist li::after{content:"";position:absolute;left:6px;top:8px;width:6px;height:9px;border-right:2px solid var(--gold);border-bottom:2px solid var(--gold);transform:rotate(45deg);}
+  .checklist.one{grid-template-columns:1fr;}
+  @media(max-width:640px){.checklist{grid-template-columns:1fr;}}
+
+  /* Cards */
+  .card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .card-grid.two{grid-template-columns:repeat(2,1fr);}
+  .card{background:var(--paper);border-radius:20px;padding:28px 26px;box-shadow:0 10px 28px rgba(29,24,75,.08);transition:transform .25s ease,box-shadow .25s ease;}
+  .card:hover{transform:translateY(-5px);box-shadow:0 18px 34px rgba(29,24,75,.14);}
+  .card h3{font-size:19px;margin-bottom:10px;}
+  .card p{font-size:14.2px;margin-bottom:0;}
+  .card .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;background:var(--gold-light);color:var(--ink);display:inline-block;padding:4px 11px;border-radius:20px;margin-bottom:12px;}
+  @media(max-width:920px){.card-grid,.card-grid.two{grid-template-columns:1fr;}}
+
+  /* Tables */
+  .table-wrap{overflow-x:auto;border-radius:14px;box-shadow:0 8px 22px rgba(29,24,75,.07);background:var(--paper);}
+  table{width:100%;border-collapse:collapse;font-size:14.2px;min-width:560px;}
+  caption{text-align:left;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-deep);padding:16px 20px 6px;}
+  th,td{text-align:left;padding:13px 20px;border-top:1px solid var(--line);vertical-align:top;color:var(--ink-2);}
+  th{font-family:'Fraunces',serif;font-weight:600;color:var(--ink);background:var(--paper-2);border-top:none;}
+  .sep{color:var(--gold);font-weight:700;margin:0 .35em;}
+  td.pts{font-family:'IBM Plex Mono',monospace;font-weight:600;color:var(--ink);white-space:nowrap;}
+  tbody th{background:var(--paper);font-size:14.5px;}
+
+  /* Steps */
+  .step-list{position:relative;display:flex;flex-direction:column;gap:6px;}
+  .step-list::before{content:"";position:absolute;left:27px;top:14px;bottom:14px;width:2px;background:var(--line);}
+  .step{display:grid;grid-template-columns:56px 1fr;gap:22px;padding:18px 0;position:relative;}
+  .step-num{position:relative;z-index:1;width:56px;height:56px;border-radius:50%;background:var(--paper);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:700;color:var(--ink);}
+  .step h3{font-size:18px;margin-bottom:6px;}
+  .step p{font-size:14.5px;margin-bottom:0;max-width:700px;}
+
+  /* Fees */
+  .fee-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .fee-card{background:var(--paper);border-radius:18px;padding:26px 22px;box-shadow:0 8px 22px rgba(29,24,75,.07);text-align:center;}
+  .fee-card .stream{font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--gold-deep);margin-bottom:8px;display:block;}
+  .fee-card .amount{font-family:'Fraunces',serif;font-size:28px;color:var(--ink);margin-bottom:6px;}
+  .fee-card p{font-size:13px;margin-bottom:0;}
+  @media(max-width:860px){.fee-grid{grid-template-columns:1fr;}}
+  .note-box{max-width:900px;margin:28px 0 0;background:var(--paper);border-left:4px solid var(--gold);border-radius:4px;padding:18px 22px;}
+  .note-box p{font-size:13.5px;color:var(--ink-2);margin:0;}
+  .note-box p + p{margin-top:8px;}
+
+  /* FAQ */
+  .faq-list{max-width:860px;}
+  .faq-item{background:var(--paper);border-radius:14px;padding:4px 22px;margin-bottom:12px;box-shadow:0 6px 18px rgba(29,24,75,.06);}
+  .faq-item[open]{box-shadow:0 12px 26px rgba(29,24,75,.12);}
+  .faq-item summary{cursor:pointer;list-style:none;font-family:'Fraunces',serif;font-size:17px;font-weight:600;padding:18px 30px 18px 0;position:relative;}
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::after{content:"+";position:absolute;right:0;top:16px;font-family:'Public Sans',sans-serif;font-size:22px;color:var(--gold);transition:transform .2s ease;}
+  .faq-item[open] summary::after{transform:rotate(45deg);}
+  .faq-item p{font-size:14.5px;padding-bottom:20px;max-width:720px;}
+
+  /* Links / resources */
+  .pillar-link{font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:600;color:var(--gold-deep);display:inline-flex;align-items:center;gap:6px;letter-spacing:.04em;text-transform:uppercase;margin-top:14px;}
+  .pillar-link svg{transition:transform .18s ease;}
+  a.card:hover .pillar-link svg{transform:translateX(4px);}
+
+  .page-footnote{border-top:1px solid var(--line);padding:22px 0;}
+  .page-footnote p{font-size:13.5px;line-height:1.6;color:var(--text-muted);margin:0;max-width:900px;}
+
+  .cta-banner{padding:76px 0;text-align:center;background:var(--ink);color:var(--paper);}
+  .cta-banner h2{color:var(--paper);font-size:32px;max-width:620px;margin:0 auto 16px;}
+  .cta-banner p{color:#B9C6D6;max-width:520px;margin:0 auto 28px;}
+  .cta-banner .btns{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;}
+
+  /* Reveal */
+  .js-anim .reveal{opacity:0;transform:translateY(24px);transition:opacity .5s ease, transform .55s cubic-bezier(.22,1,.36,1);}
+  .js-anim .reveal.in-view{opacity:1;transform:none;}
+  @media (prefers-reduced-motion: reduce){.js-anim .reveal{opacity:1 !important;transform:none !important;}}
+
+  /* Quick actions */
+  .quick-actions{position:fixed;right:22px;bottom:22px;z-index:60;display:flex;flex-direction:column;align-items:flex-end;gap:12px;}
+  .qa-btn{position:relative;width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--ink);color:var(--paper);box-shadow:0 6px 18px rgba(29,24,75,.28);transition:transform .18s ease,box-shadow .18s ease;}
+  .qa-btn:hover{transform:translateY(-3px) scale(1.05);}
+  .qa-btn.qa-primary{background:var(--gold);color:var(--ink);}
+  .qa-label{position:absolute;right:64px;top:50%;transform:translateY(-50%) translateX(6px);background:var(--ink);color:var(--paper);font-size:12.5px;font-weight:600;padding:6px 12px;border-radius:6px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .18s ease,transform .18s ease;}
+  .qa-btn:hover .qa-label{opacity:1;transform:translateY(-50%) translateX(0);}
+  @media (max-width:640px){.quick-actions{right:14px;bottom:14px;gap:10px;}.qa-btn{width:46px;height:46px;}.qa-label{display:none;}}
+</style>
+
+<style>
+  /* ---------- Region-aware Services menu: India list or Australian mega menu (html[data-region] is set in <head>) ---------- */
+  html[data-region="au"] .svc-in{display:none !important;}
+  html:not([data-region="au"]) .svc-au{display:none !important;}
+  .dropdown-menu.mega{width:580px;min-width:0;display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;padding:14px;}
+  .mega-group{display:flex;flex-direction:column;}
+  .dropdown-menu .mega-head{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#8A5A12;padding:6px 12px;border-bottom:1px solid #D9D2C0;margin-bottom:4px;}
+  .dropdown-menu .mega-head:hover{background:none;color:#1D184B;}
+  .dropdown-menu .mega-head::after{display:none;}
+  @media(max-width:920px){
+    .dropdown-menu.mega{width:auto;display:flex;flex-direction:column;gap:10px;padding:0;}
+    .dropdown-menu .mega-head{padding:4px 12px;}
+  }
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header class="site">
+  <div class="nav-row">
+    <a href="index.html" data-home-link class="logo"><img src="assets/logo.webp" alt="SuccessVisa" width="300" height="95" decoding="async"></a>
+    <nav class="primary" aria-label="Primary">
+      <ul>
+        <li><a href="index.html" data-home-link>Home</a></li>
+        <li><a href="About%20Us%20Sub%20Landing%20Page.html">About</a></li>
+        <li class="has-dropdown svc-in">
+          <a href="Services%20Main%20Landing%20Page.html" class="active">Services
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.4"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="Education%20Visa%20Landing%20Page.html">Education Visa (500)</a>
+            <a href="Visitor%20Visa%20Landing%20Page.html">Visitor Visa (600)</a>
+            <a href="OSHC%20Sub%20Landing%20Page.html">Health Cover (OSHC)</a>
+          </div>
+        </li>
+        <li class="has-dropdown svc-au">
+          <a href="Australia%20Services%20Main%20Landing%20Page.html" class="active">Services
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.4"/></svg>
+          </a>
+          <div class="dropdown-menu mega">
+            <div class="mega-group">
+              <a href="Australia%20Services%20Main%20Landing%20Page.html#skilled" class="mega-head">Skilled Visas</a>
+              <a href="Skilled%20Independent%20189%20Sub%20Sub%20Landing%20Page.html">Skilled Independent (189)</a>
+              <a href="Skilled%20Nominated%20190%20Sub%20Sub%20Landing%20Page.html">Skilled Nominated (190)</a>
+              <a href="Skilled%20Work%20Regional%20491%20Sub%20Sub%20Landing%20Page.html">Skilled Work Regional (491)</a>
+              <a href="PR%20Skilled%20Regional%20191%20Sub%20Sub%20Landing%20Page.html">PR Skilled Regional (191)</a>
+              <a href="Skilled%20Recognised%20Graduate%20476%20Sub%20Sub%20Landing%20Page.html">Skilled Recognised Graduate (476)</a>
+              <a href="Recognition%20of%20Prior%20Learning%20RPL%20Sub%20Sub%20Landing%20Page.html">Recognition of Prior Learning (RPL)</a>
+            </div>
+            <div class="mega-group">
+              <a href="Australia%20Services%20Main%20Landing%20Page.html#family" class="mega-head">Partner &amp; Family</a>
+              <a href="Partner%20Visa%20820%20801%20Sub%20Sub%20Landing%20Page.html">Partner Visa (820/801)</a>
+              <a href="Family%20Visa%20Sub%20Sub%20Landing%20Page.html">Family Visa</a>
+              <a href="Carer%20Visa%20116%20836%20Sub%20Sub%20Landing%20Page.html">Carer Visa (116/836)</a>
+            </div>
+            <div class="mega-group">
+              <a href="Australia%20Services%20Main%20Landing%20Page.html#study-work" class="mega-head">Student, Working &amp; Training</a>
+              <a href="Student%20Visa%20500%20Sub%20Sub%20Landing%20Page.html">Student Visa (500)</a>
+              <a href="Working%20Visa%20482%20186%20Sub%20Sub%20Landing%20Page.html">Working Visa (482/186)</a>
+              <a href="Training%20Visa%20407%20Sub%20Sub%20Landing%20Page.html">Training Visa (407)</a>
+            </div>
+            <div class="mega-group">
+              <a href="Australia%20Services%20Main%20Landing%20Page.html#visitor-business" class="mega-head">Visitor, Business &amp; Health</a>
+              <a href="Visitor%20Visa%20Landing%20Page.html">Visitor Visa (600)</a>
+              <a href="Australia%20Business%20Visa%20Sub%20Sub%20Landing%20Page.html">Business Visa</a>
+              <a href="Health%20Insurance%20OSHC%20Sub%20Sub%20Landing%20Page.html">Health Insurance (OSHC)</a>
+            </div>
+          </div>
+        </li>
+        <li><a href="Offers%20Demo%20Landing%20Page.html" class="nav-offer">Offers</a></li>
+        <li class="has-dropdown">
+          <a href="resources.html">Resources
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.4"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="resources.html#blog">Blog</a>
+            <a href="resources.html#videos">Videos</a>
+            <a href="resources.html#checklist">Visa Checklists</a>
+            <a href="resources.html#news">Latest News</a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <a href="contact.html">Contact
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.4"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="Chandigarh%20Branch%20Landing%20Page.html">Chandigarh, IN</a>
+            <a href="Parramatta%20Branch%20Landing%20Page.html">Parramatta, NSW</a>
+            <a href="Toongabbie%20Branch%20Landing%20Page.html">Toongabbie, NSW</a>
+            <a href="Melbourne%20CBD%20Branch%20Landing%20Page.html">Melbourne, VIC</a>
+            <a href="Werribee%20Branch%20Landing%20Page.html">Werribee, VIC</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <a href="International%20Home.html" class="region-toggle" data-to="au" data-side="left" aria-label="Viewing the India site. Switch to the Australia site" title="Viewing the India site. Switch to the Australia site">
+        <span class="rt-label rt-in">India</span>
+        <span class="rt-track" aria-hidden="true"><span class="rt-knob"></span></span>
+        <span class="rt-label rt-au">Australia</span>
+      </a>
+      <a href="Booking%20Page.html" class="btn btn-primary">Book Appointment</a>
+      <button class="menu-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html" data-home-link>Home</a><span>/</span><a href="Services%20Main%20Landing%20Page.html">Services</a><span>/</span>Carer Visa (116/836)</nav>
+    <div class="hero-grid" style="margin-top:28px;">
+      <div>
+        <div class="eyebrow"><span class="eyebrow-line"></span>Family Visa Guide</div>
+        <h1>Carer Visa (Subclass 116 and 836): <span>Who Qualifies, How the Queue Works and What to Consider First</span></h1>
+        <p class="lede">The Carer visa is a permanent visa for a person who must provide long-term care to an Australian relative with a medical condition. It is one of the hardest family visas to obtain. Places are capped, applications join a queue, and the Department of Home Affairs currently estimates 16 years for a new application. This guide explains the rules honestly so you can decide.</p>
+        <div class="buttons">
+          <a href="Booking%20Page.html" class="btn btn-primary">Book a Carer Visa Assessment</a>
+          <a href="#queue" class="btn btn-ghost">Understand the Queue</a>
+        </div>
+        <p class="credential">Reviewed by MARA registered migration agents &middot; MARN 2318228</p>
+      </div>
+      <aside class="ledger" aria-label="Carer visa at a glance">
+        <h2>Carer visa at a glance</h2>
+        <p class="sub">The facts to know before you start.</p>
+        <dl>
+          <div class="row"><dt>Outcome</dt><dd>Permanent visa</dd></div>
+          <div class="row"><dt>116 or 836</dt><dd>Offshore or onshore</dd></div>
+          <div class="row"><dt>Care need</dt><dd>At least 2 years</dd></div>
+          <div class="row"><dt>Capped and queued</dt><dd>Yes</dd></div>
+          <div class="row"><dt>Estimated wait</dt><dd>16 years</dd></div>
+        </dl>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="what-is-carer">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>The Basics</div>
+      <h2>What Is the Carer Visa (Subclass 116 and 836)?</h2>
+      <p>A permanent visa built around one person caring for another.</p>
+    </div>
+    <div class="prose">
+      <p>The Carer visa lets a person move to Australia permanently to give long-term care to a relative who has a medical condition, where nobody else can reasonably provide that care. There are two versions. The Carer visa (subclass 116) is for applicants who are outside Australia when they apply, and the Carer visa (subclass 836) is for applicants who are in Australia. The eligibility rules are otherwise the same.</p>
+      <p>The visa is for a capable carer. It is not for a person who is unwell and wants to be cared for in Australia, and it is not a way to reunite with family for emotional support. The Department of Home Affairs looks closely at the medical evidence, the carer's ability and whether other relatives or services in Australia could provide the care instead.</p>
+    </div>
+    <div class="qf-grid" style="margin-top:34px;">
+      <div class="qf-card reveal"><b>116 and 836</b><span>Offshore and onshore versions</span></div>
+      <div class="qf-card reveal"><b>Permanent</b><span>If an application succeeds</span></div>
+      <div class="qf-card reveal"><b>Capped</b><span>Limited places each year</span></div>
+      <div class="qf-card reveal"><b>Queued</b><span>Released in queue date order</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-alt" id="queue">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>The Queue</div>
+      <h2>The Carer Visa Queue: What the Department of Home Affairs Says</h2>
+      <p>This is the most important fact on the page, so we give it first.</p>
+    </div>
+    <div class="table-wrap reveal">
+      <table>
+        <caption>Carer visa capping and queuing, as published by the Department of Home Affairs</caption>
+        <thead><tr><th>Item</th><th>Current position</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Capped and queued</th><td>Carer applications are capped and queued. Once the year's places are used, remaining applications wait for a place in a future program year.</td></tr>
+          <tr><th scope="row">How applications are assessed</th><td>Applications are assessed in lodgement date order against core criteria, including health and character. Eligible applications receive a queue date, and applications that do not meet the core criteria are refused.</td></tr>
+          <tr><th scope="row">Queue release date</th><td>As at 31 August 2026, applications with a queue date up to 31 December 2023 have been released for final processing.</td></tr>
+          <tr><th scope="row">Estimated time for a new application</th><td>16 years, based on the current number of places each year. The Department generally updates this estimate yearly.</td></tr>
+          <tr><th scope="row">Acknowledgement</th><td>Approximately 5 weeks for a new application.</td></tr>
+          <tr><th scope="row">Progress enquiries</th><td>The Department does not respond to individual status enquiries. It writes to you when a queued application is released.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note-box">
+      <p>Because the wait is so long, the care need, the sponsor's circumstances and the family's plans can all change while you are in the queue. If the person who needs care dies or no longer needs care during a pending application, the Department must be told. Please read this section before you pay any charge.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="eligibility">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Eligibility</div>
+      <h2>Carer Visa 116 and 836 Eligibility Requirements</h2>
+      <p>Both the carer and the person who needs care must meet the rules.</p>
+    </div>
+    <div class="table-wrap reveal">
+      <table>
+        <caption>Main eligibility requirements</caption>
+        <thead><tr><th>Requirement</th><th>What it means</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">The carer (you)</th><td>You must be willing and able to provide continuous, significant care and assistance, and understand the medical condition and care needed.</td></tr>
+          <tr><th scope="row">The person who needs care</th><td>This is generally a relative of yours, or a relative's family member, who is an Australian citizen, permanent resident or eligible New Zealand citizen.</td></tr>
+          <tr><th scope="row">Sponsor</th><td>A sponsor who is an Australian citizen, permanent resident or eligible New Zealand citizen aged 18 or over must support the application. Financial support for the carer may need to be shown.</td></tr>
+          <tr><th scope="row">Medical condition</th><td>A long-term or permanent condition causing impairment that means significant care and assistance in daily life are needed for at least two years. A medical assessment is required.</td></tr>
+          <tr><th scope="row">No other reasonable carer</th><td>The care cannot reasonably be provided by other relatives in Australia or by community, health or welfare services.</td></tr>
+          <tr><th scope="row">Onshore (836)</th><td>You must be in Australia and hold, or have held, a substantive visa, other than a Transit (771) visa.</td></tr>
+          <tr><th scope="row">Health, character and debts</th><td>You and any included family members must meet the health and character requirements, and have no unpaid debts to the Australian Government.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note-box">
+      <p>The exact relationship rules, medical assessment steps and sponsor requirements are set by the migration regulations and can change. We confirm each one against your facts before any charge is paid.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-alt" id="tests">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>The Hard Parts</div>
+      <h2>The Medical Assessment and the No-Other-Carer Test</h2>
+      <p>Most refusals turn on these two points, not on paperwork.</p>
+    </div>
+    <div class="card-grid">
+      <div class="card reveal"><span class="tag">Medical</span><h3>A real, long-term condition</h3><p>The condition must be long-term or permanent and need significant care for at least two years. Loneliness, depression or companionship alone does not meet the test. A medical assessment is required, and agent guides note that Bupa Medical Visa Services is commonly involved.</p></div>
+      <div class="card reveal"><span class="tag">Alternatives</span><h3>Others cannot reasonably care</h3><p>You must show that other relatives in Australia and local community, health or welfare services cannot reasonably provide the care. Family preference is not enough, and neither is a relative simply being busy or unwilling, without evidence.</p></div>
+      <div class="card reveal"><span class="tag">The carer</span><h3>A capable applicant</h3><p>The visa is for a capable carer. It is not for an overseas applicant who is sick and needs care, and it does not work as an emergency visa.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="who">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Fit Check</div>
+      <h2>Is the Carer Visa Right for You?</h2>
+    </div>
+    <div class="card-grid two">
+      <div class="card reveal">
+        <h3>The Carer visa may suit you if</h3>
+        <ul class="checklist one" style="margin-top:14px;">
+          <li>A close relative in Australia has a serious, long-term medical condition.</li>
+          <li>You are a capable carer who understands the care needed.</li>
+          <li>You have strong evidence that no one else can reasonably provide it.</li>
+          <li>You can plan around a very long wait.</li>
+        </ul>
+      </div>
+      <div class="card reveal">
+        <h3>Consider another route if</h3>
+        <ul class="checklist one" style="margin-top:14px;">
+          <li>You need to be in Australia soon or in an emergency.</li>
+          <li>The need is companionship or emotional support only.</li>
+          <li>Other relatives or services could provide the care.</li>
+          <li>You qualify for a partner, skilled, employer-sponsored or student visa.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-alt" id="alternatives">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Other Options</div>
+      <h2>Alternatives to the Carer Visa</h2>
+      <p>What to look at while you decide, or if the Carer visa is not realistic.</p>
+    </div>
+    <div class="table-wrap reveal">
+      <table>
+        <caption>Other routes worth checking</caption>
+        <thead><tr><th>Route</th><th>When it may help</th></tr></thead>
+        <tbody>
+          <tr><th scope="row"><a href="Tourist%20Visa%20Sub%20Landing%20Page.html">Visitor visa (600)</a></th><td>Temporary visits to spend time with family or help during a short period. It does not let you stay long term or work.</td></tr>
+          <tr><th scope="row"><a href="Family%20Visa%20Sub%20Sub%20Landing%20Page.html">Other family visas</a></th><td>Parent and other family routes, including a temporary Sponsored Parent visa, if you meet their criteria. Several are capped and queued as well.</td></tr>
+          <tr><th scope="row"><a href="Partner%20Visa%20820%20801%20Sub%20Sub%20Landing%20Page.html">Partner visa (820/801)</a></th><td>If you are the partner of an Australian citizen or permanent resident.</td></tr>
+          <tr><th scope="row"><a href="Working%20Visa%20482%20186%20Sub%20Sub%20Landing%20Page.html">Working visa (482/186)</a></th><td>If you have skills an Australian employer needs and will sponsor.</td></tr>
+          <tr><th scope="row"><a href="Student%20Visa%20500%20Sub%20Sub%20Landing%20Page.html">Student visa (500)</a></th><td>If you want to study in Australia and meet the current requirements.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="after-grant">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>After the Grant</div>
+      <h2>What the Carer Visa Gives You</h2>
+    </div>
+    <div class="card-grid">
+      <div class="card reveal"><span class="tag">Permanent</span><h3>Permanent residence</h3><p>The Carer visa is a permanent visa, so a granted applicant can live in Australia permanently.</p></div>
+      <div class="card reveal"><span class="tag">Benefits</span><h3>Work, study and Medicare</h3><p>Holders can generally work and study in Australia and enrol in Medicare, subject to the rules that apply to permanent residents.</p></div>
+      <div class="card reveal"><span class="tag">Later steps</span><h3>Travel and citizenship</h3><p>A travel facility generally applies for five years from grant, and you may be able to apply for citizenship if you meet the residence requirements.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-alt" id="how-to-apply">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>The Process</div>
+      <h2>How to Apply for the Carer Visa</h2>
+      <p>A typical path, from the first honest conversation to final processing.</p>
+    </div>
+    <div class="step-list">
+      <div class="step reveal"><div class="step-num">01</div><div><h3>Honest eligibility check</h3><p>We review the care need, the sponsor, your relationship and your visa history, and tell you whether the Carer visa is realistic.</p></div></div>
+      <div class="step reveal"><div class="step-num">02</div><div><h3>Collect medical evidence</h3><p>We help the sponsor and treating doctors prepare evidence of the condition and the level of care needed.</p></div></div>
+      <div class="step reveal"><div class="step-num">03</div><div><h3>Build the no-other-carer case</h3><p>We help you document why other relatives and services cannot reasonably provide the care.</p></div></div>
+      <div class="step reveal"><div class="step-num">04</div><div><h3>Lodge and receive a queue date</h3><p>We lodge the application and the Department assesses it in lodgement date order and issues a queue date.</p></div></div>
+      <div class="step reveal"><div class="step-num">05</div><div><h3>Plan while you wait</h3><p>We plan how you stay lawful, keep evidence current and notify the Department of changes.</p></div></div>
+      <div class="step reveal"><div class="step-num">06</div><div><h3>Final processing</h3><p>When your queue date is released, we respond to requests and prepare for health and character checks.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="costs">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Costs</div>
+      <h2>Carer Visa Cost</h2>
+      <p>Expect a significant government charge, and plan for more than one stage.</p>
+    </div>
+    <div class="prose">
+      <p>The Carer visa has a high visa application charge, and a second charge can apply if your application passes the first stage. Charges are set by the Australian Government, usually change each 1 July and depend on the lodgement date. Because published agent figures differ and some are undated, we do not quote a single amount here. Check the Department of Home Affairs visa pricing tool or ImmiAccount for the current charge for you and each family member before you decide.</p>
+      <p>Health examinations, police certificates, medical reports and professional fees are separate, and the visa application charge is generally not refunded if an application is refused or if the wait outlasts your plans. This is another reason to get a candid assessment before you lodge.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-alt" id="documents">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Get Organised</div>
+      <h2>Documents to Prepare for a Carer Visa Application</h2>
+    </div>
+    <ul class="checklist">
+      <li>Passports and identity documents for you and any family members on the application.</li>
+      <li>Evidence of the relationship between you, the sponsor and the person who needs care.</li>
+      <li>Medical reports and evidence of the condition, and of the care needed day to day.</li>
+      <li>Evidence about other relatives in Australia and why they cannot reasonably provide the care.</li>
+      <li>Evidence about community, health and welfare services considered and why they are not suitable.</li>
+      <li>Sponsor's proof of citizenship, permanent residence or eligible New Zealand status, and financial evidence.</li>
+      <li>Police certificates and health examination documents for you and your family.</li>
+      <li>For onshore applicants, details of your current substantive visa.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="mistakes">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Avoid These</div>
+      <h2>Common Carer Visa Mistakes</h2>
+    </div>
+    <div class="card-grid">
+      <div class="card reveal"><h3>Expecting a fast outcome</h3><p>The Department estimates 16 years for a new application. It is not an emergency visa.</p></div>
+      <div class="card reveal"><h3>Applying while unwell</h3><p>The visa is for a capable carer, not for an applicant who needs care.</p></div>
+      <div class="card reveal"><h3>Weak medical evidence</h3><p>A condition that does not clearly need significant care for at least two years can fail the test.</p></div>
+      <div class="card reveal"><h3>Ignoring other carers</h3><p>Not showing why relatives and local services cannot reasonably help is a leading reason for refusal.</p></div>
+      <div class="card reveal"><h3>Not telling the Department of changes</h3><p>A change in the care need, or the death of the person who needs care, must be reported.</p></div>
+      <div class="card reveal"><h3>Overlooking other visas</h3><p>Another visa may suit you better, so check the options before you commit to a long queue.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-alt" id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Common Questions</div>
+      <h2>Carer Visa (Subclass 116 and 836) FAQs</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item"><summary>What is the Carer visa (subclass 116 and 836)?</summary><p>The Carer visa is a permanent visa for a person who needs to provide long-term care to an Australian relative, or to a relative's family member, who has a medical condition. Subclass 116 is for applicants outside Australia and subclass 836 is for applicants inside Australia.</p></details>
+      <details class="faq-item"><summary>Who can sponsor me for a Carer visa?</summary><p>The person who needs care, or a family member of the person who needs care, must generally be an Australian citizen, permanent resident or eligible New Zealand citizen aged 18 or over. The sponsor must show the care need and may need to show financial support for the carer. We check the exact sponsor rules for your case.</p></details>
+      <details class="faq-item"><summary>What medical condition qualifies for a Carer visa?</summary><p>The condition must be long-term or permanent and cause a level of impairment that means the person needs significant care and assistance in daily life for at least two years. A medical assessment is required. Companionship, loneliness or emotional support alone does not meet the test.</p></details>
+      <details class="faq-item"><summary>Why does the Carer visa have such a long wait?</summary><p>The Carer visa is capped and queued. Demand is higher than the number of places each year, so eligible applications are given a queue date and released in order. The Department of Home Affairs currently estimates 16 years for a new application and, as at 31 August 2026, was releasing applications with a queue date up to 31 December 2023.</p></details>
+      <details class="faq-item"><summary>Can I apply if I am the one who is unwell?</summary><p>No. The Carer visa is for a capable applicant who will care for someone else. It is not a visa for an overseas applicant who needs care or treatment themselves.</p></details>
+      <details class="faq-item"><summary>What if other relatives or services could provide the care?</summary><p>You must show that the care cannot reasonably be provided by other relatives in Australia or by community, health or welfare services. Family preference, or relatives being busy or unwilling, is not enough on its own, so evidence is critical.</p></details>
+      <details class="faq-item"><summary>Can I include my partner and children?</summary><p>Family unit members may be able to be included if they meet the health and character requirements. Check the family member rules for your case before you lodge.</p></details>
+      <details class="faq-item"><summary>What are my options if I cannot wait for a Carer visa?</summary><p>Options depend on your situation. They can include a temporary visitor visa for family visits, a temporary Sponsored Parent visa, a partner, skilled or employer-sponsored visa if you qualify, or a student visa. We explain the realistic options for you.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Keep Exploring</div>
+      <h2>Related Services</h2>
+    </div>
+    <div class="card-grid">
+      <a href="Family%20Visa%20Sub%20Sub%20Landing%20Page.html" class="card reveal"><span class="tag">Family Visa</span><h3>Family visa overview</h3><p>Parent, child and other family streams, and how queues and caps work.</p><span class="pillar-link">Family visas <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M8 1L13 5L8 9M13 5H1" stroke="currentColor" stroke-width="1.4"/></svg></span></a>
+      <a href="Partner%20Visa%20820%20801%20Sub%20Sub%20Landing%20Page.html" class="card reveal"><span class="tag">Partner Visa</span><h3>Partner Visa (820/801)</h3><p>For partners of Australian citizens and permanent residents.</p><span class="pillar-link">Partner visa <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M8 1L13 5L8 9M13 5H1" stroke="currentColor" stroke-width="1.4"/></svg></span></a>
+      <a href="Tourist%20Visa%20Sub%20Landing%20Page.html" class="card reveal"><span class="tag">Visitor Visa</span><h3>Visitor visas</h3><p>Temporary visits to see family in Australia.</p><span class="pillar-link">Visitor visa <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M8 1L13 5L8 9M13 5H1" stroke="currentColor" stroke-width="1.4"/></svg></span></a>
+    </div>
+  </div>
+</section>
+
+<div class="wrap page-footnote">
+  <p>Reviewed by SuccessVisa's MARA registered migration agents &middot; last updated 26 October 2026. General information only, not migration advice. Visa criteria, charges and processing times are set by the Australian Government and can change. Always confirm against the Department of Home Affairs before you act. <a href="Disclaimer%20Page.html">See full disclaimer</a>.</p>
+</div>
+
+<section class="cta-banner">
+  <div class="wrap">
+    <h2>Get an Honest Carer Visa Assessment</h2>
+    <p>Book a consultation to check whether the Carer visa is realistic for your family, and what else to consider.</p>
+    <div class="btns">
+      <a href="Booking%20Page.html" class="btn btn-primary">Book Appointment</a>
+      <a href="Services%20Main%20Landing%20Page.html" class="btn btn-ghost">Explore All Services</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="quick-actions" aria-label="Quick contact actions">
+  <a href="tel:+911800000000" class="qa-btn" aria-label="Call us"><span class="qa-label">Call us</span>
+    <svg width="21" height="21" viewBox="0 0 24 24" fill="none"><path d="M4 5c0-1 1-2 2-2h2l2 5-2 1.5c1 2.3 2.7 4 5 5L14.5 12l5 2v2c0 1-1 2-2 2C10.5 18 4 11.5 4 5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></a>
+  <a href="https://wa.me/911800000000" class="qa-btn" aria-label="Chat on WhatsApp" target="_blank" rel="noopener"><span class="qa-label">WhatsApp us</span>
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.7-1.2A9 9 0 1 0 12 3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M8.5 8.8c-.3.6-.3 1.6.6 2.9 1 1.4 2.3 2.6 3.9 3.1 1 .3 1.7.1 2.1-.4l.4-.6-2-1.3-.5.5c-.2.2-.5.2-.8 0-.7-.4-1.5-1.1-2-1.9-.2-.3-.1-.6.1-.8l.5-.5-1.1-2Z" fill="currentColor"/></svg></a>
+  <a href="Booking%20Page.html" class="qa-btn qa-primary" aria-label="Book Appointment"><span class="qa-label">Book Appointment</span>
+    <svg width="21" height="21" viewBox="0 0 24 24" fill="none"><rect x="3.5" y="5" width="17" height="15" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M3.5 9.5h17" stroke="currentColor" stroke-width="1.5"/><path d="M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M8 13.5l2.3 2.3L16 10.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+</div>
+
+<script>
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('nav.primary');
+  toggle.addEventListener('click', () => {
+    const open = nav.style.display === 'block';
+    nav.style.display = open ? 'none' : 'block';
+    if(!open){
+      nav.style.position='absolute';nav.style.top='100%';nav.style.left='0';nav.style.right='0';
+      nav.style.background='var(--paper)';nav.style.borderBottom='1px solid var(--line)';nav.style.padding='20px 28px';
+      nav.querySelector('ul').style.flexDirection='column';nav.querySelector('ul').style.alignItems='flex-start';nav.querySelector('ul').style.gap='16px';
+    }
+  });
+</script>
+
+<script>
+(function(){
+  const targets = document.querySelectorAll('.reveal');
+  if(!targets.length || !('IntersectionObserver' in window)){ targets.forEach(function(el){el.classList.add('in-view');}); return; }
+  let counter = 0;
+  const obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(!entry.isIntersecting) return;
+      const el = entry.target;
+      const delay = (counter++ % 6) * 70;
+      setTimeout(function(){ el.classList.add('in-view'); }, delay);
+      obs.unobserve(el);
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  targets.forEach(function(el){ obs.observe(el); });
+})();
+</script>
+
+<script>
+(function(){
+  document.querySelectorAll('.region-toggle').forEach(function(a){
+    window.addEventListener('pageshow',function(){a.classList.toggle('is-right',a.getAttribute('data-side')==='right');});
+    a.addEventListener('click',function(e){
+      if(e.metaKey||e.ctrlKey||e.shiftKey||e.button===1) return;
+      e.preventDefault();
+      var to=a.getAttribute('data-to');
+      try{localStorage.setItem('sv_region',to);}catch(err){}
+      document.cookie='sv_region='+to+'; path=/; max-age=31536000; SameSite=Lax';
+      a.classList.toggle('is-right');
+      var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      setTimeout(function(){window.location.href=a.href;},reduce?0:320);
+    });
+  });
+})();
+</script>
+</body>
+</html>

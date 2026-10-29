@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="en-FJ">
+<head>
+<meta charset="utf-8">
+<script>
+  // Home routing: a visitor from India has index.html as their homepage, everyone else has
+  // International Home.html. The India/Australia toggle saves the choice (sv_region); until then the
+  // device time zone decides. Home/logo links (data-home-link) and the toggle follow that choice,
+  // and opening the other homepage sends the visitor to their own. Crawlers are never redirected.
+  (function(){
+    var HOME={'in':'index.html','au':'International%20Home.html'};
+    var r=null;
+    try{r=localStorage.getItem('sv_region');}catch(e){}
+    if(r!=='in'&&r!=='au'){var m=document.cookie.match(/(?:^|; )sv_region=(in|au)/);r=m?m[1]:null;}
+    if(!r){
+      var tz='';
+      try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||'';}catch(e){}
+      if(tz) r=/^Asia\/(Kolkata|Calcutta)$/.test(tz)?'in':'au';
+    }
+    var shown=document.documentElement.getAttribute('data-home')||r;
+    if(shown) document.documentElement.setAttribute('data-region',shown);
+    if(!r) return;
+    var page=document.documentElement.getAttribute('data-home');
+    if(page&&page!==r&&!/bot|crawl|spider|slurp|lighthouse|headless/i.test(navigator.userAgent)){
+      location.replace(HOME[r]+location.search+location.hash);
+      return;
+    }
+    document.addEventListener('DOMContentLoaded',function(){
+      document.querySelectorAll('a[data-home-link]').forEach(function(a){a.setAttribute('href',HOME[r]);});
+      if(page||r!=='au') return;
+      document.querySelectorAll('.region-toggle').forEach(function(a){
+        a.setAttribute('href',HOME['in']);a.setAttribute('data-to','in');a.setAttribute('data-side','right');a.classList.add('is-right');
+        a.setAttribute('aria-label','Viewing the Australia site. Switch to the India site');a.setAttribute('title','Viewing the Australia site. Switch to the India site');
+      });
+    });
+  })();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- ============ PRIMARY SEO ============ -->
+<title>Australia Visa Consultants in Fiji | SuccessVisa Fiji Branch</title>
+<meta name="description" content="MARA-registered Australian migration agents for Fiji. Student visa, skilled PR, partner and visitor visa advice for people in Suva, Nadi, Lautoka and Labasa.">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="author" content="SuccessVisa">
+<meta name="geo.region" content="FJ">
+<meta name="geo.placename" content="Fiji">
+<meta name="theme-color" content="#0A2A5E">
+<!-- TODO: confirm final URL slug on your CMS -->
+<link rel="canonical" href="https://www.successvisa.com.au/fiji">
+<link rel="alternate" hreflang="en-FJ" href="https://www.successvisa.com.au/fiji">
+<link rel="alternate" hreflang="x-default" href="https://www.successvisa.com.au/fiji">
+
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SuccessVisa">
+<meta property="og:locale" content="en_FJ">
+<meta property="og:title" content="Australia Visa Consultants in Fiji | SuccessVisa Fiji Branch">
+<meta property="og:description" content="Study, skilled migration, partner and visitor visa advice for Fiji, from MARA-registered migration agents.">
+<meta property="og:url" content="https://www.successvisa.com.au/fiji">
+<!-- TODO: upload a 1200x630 Fiji branch image and update this path -->
+<meta property="og:image" content="https://www.successvisa.com.au/assets/images/successvisa-fiji-og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Australia Visa Consultants in Fiji | SuccessVisa">
+<meta name="twitter:description" content="MARA-registered agents helping Fijian students, families and skilled workers reach Australia.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- ============ STRUCTURED DATA (entities) ============ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.successvisa.com.au/fiji#webpage",
+      "url": "https://www.successvisa.com.au/fiji",
+      "name": "Australia Visa Consultants in Fiji | SuccessVisa Fiji Branch",
+      "description": "MARA-registered Australian migration agents for Fiji: student visa, skilled migration, partner and visitor visa advice.",
+      "inLanguage": "en-FJ",
+      "isPartOf": { "@id": "https://www.successvisa.com.au/#website" },
+      "about": [
+        { "@type": "Country", "name": "Fiji", "sameAs": "https://en.wikipedia.org/wiki/Fiji" },
+        { "@type": "Country", "name": "Australia", "sameAs": "https://en.wikipedia.org/wiki/Australia" }
+      ],
+      "mainEntity": { "@id": "https://www.successvisa.com.au/fiji#branch" },
+      "dateModified": "2026-10-07",
+      "breadcrumb": { "@id": "https://www.successvisa.com.au/fiji#breadcrumb" }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.successvisa.com.au/#website",
+      "url": "https://www.successvisa.com.au/",
+      "name": "SuccessVisa"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.successvisa.com.au/fiji#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.successvisa.com.au/" },
+        { "@type": "ListItem", "position": 2, "name": "Our Branches", "item": "https://www.successvisa.com.au/" },
+        { "@type": "ListItem", "position": 3, "name": "Fiji", "item": "https://www.successvisa.com.au/fiji" }
+      ]
+    },
+    {
+      "@type": ["ProfessionalService", "LocalBusiness"],
+      "@id": "https://www.successvisa.com.au/fiji#branch",
+      "name": "SuccessVisa Fiji Branch",
+      "alternateName": "SuccessVisa - Australian Migration and Education Consultants, Fiji",
+      "description": "Australian migration and education consultancy serving Fiji. Advice from MARA-registered migration agents on student visas, skilled migration, partner visas, visitor visas and employer-sponsored visas.",
+      "url": "https://www.successvisa.com.au/fiji",
+      "email": "info@successvisa.com.au",
+      "telephone": "+61468791726",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Shop 7, Ground Floor, Parade Building",
+        "addressLocality": "Suva",
+        "addressCountry": "FJ"
+      },
+      "hasMap": "https://www.google.com/maps?q=Parade+Building%2C+Suva%2C+Fiji",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "17:30"
+        }
+      ],
+      "areaServed": [
+        { "@type": "Country", "name": "Fiji", "sameAs": "https://en.wikipedia.org/wiki/Fiji" },
+        { "@type": "City", "name": "Suva" },
+        { "@type": "City", "name": "Nadi" },
+        { "@type": "City", "name": "Lautoka" },
+        { "@type": "City", "name": "Labasa" }
+      ],
+      "knowsAbout": [
+        "Australian student visa (subclass 500)",
+        "Skilled Independent visa (subclass 189)",
+        "Skilled Nominated visa (subclass 190)",
+        "Skilled Work Regional visa (subclass 491)",
+        "Temporary Graduate visa (subclass 485)",
+        "Skills in Demand visa (subclass 482)",
+        "Partner visa (subclasses 820, 801, 309, 100)",
+        "Visitor visa (subclass 600)",
+        "Pacific Engagement visa (subclass 192)",
+        "Overseas Student Health Cover (OSHC)"
+      ],
+      "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Registered migration agent, Office of the Migration Agents Registration Authority (OMARA)",
+        "credentialCategory": "Professional registration",
+        "recognizedBy": { "@type": "GovernmentOrganization", "name": "Office of the Migration Agents Registration Authority", "url": "https://www.mara.gov.au/" }
+      },
+      "identifier": [
+        { "@type": "PropertyValue", "name": "MARN", "value": "2318228" },
+        { "@type": "PropertyValue", "name": "MARN", "value": "2418515" }
+      ],
+      "parentOrganization": { "@type": "Organization", "name": "SuccessVisa", "url": "https://www.successvisa.com.au/" },
+      "sameAs": [
+        "https://www.facebook.com/successvisaau",
+        "https://www.instagram.com/successvisaau/",
+        "https://www.linkedin.com/company/successvisaau/",
+        "https://www.youtube.com/channel/UC1ElINfQPzM7Plrm4c86ekg/"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.successvisa.com.au/fiji#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "Do I Need a Migration Agent to Apply for an Australian Visa From Fiji?",
+          "acceptedAnswer": { "@type": "Answer", "text": "You are not legally required to use an agent, and you can apply directly through the Department of Home Affairs. If you do pay someone for immigration assistance, they must be registered with OMARA, with limited exceptions such as Australian legal practitioners. Check the OMARA register before you hand over documents or money." } },
+        { "@type": "Question", "name": "Is SuccessVisa Registered to Give Australian Immigration Advice?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Advice is provided by MARA-registered migration agents (MARN 2318228 and 2418515). You can verify any agent on the public register at mara.gov.au." } },
+        { "@type": "Question", "name": "How Can I Study in Australia From Fiji?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Most Fijian students apply for a Student visa (subclass 500). The usual order is: choose a CRICOS-registered course, receive an offer, accept it and pay the deposit to get your Confirmation of Enrolment (CoE), arrange Overseas Student Health Cover, then lodge the visa from outside Australia with English evidence, financial evidence and your Genuine Student responses." } },
+        { "@type": "Question", "name": "What Is the Best Visa for Fijian Citizens Who Want to Live in Australia Permanently?",
+          "acceptedAnswer": { "@type": "Answer", "text": "There is no single best visa. Skilled migration (subclasses 189, 190 and 491), employer sponsorship, a partner visa, or the Pacific Engagement visa ballot can each suit different people. The right choice depends on your age, occupation, qualifications, English level, work history and family situation." } },
+        { "@type": "Question", "name": "Is There a Special Australian Visa for People From Fiji and the Pacific?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. The Pacific Engagement visa (subclass 192) is a permanent visa allocated by ballot to citizens of eligible Pacific countries, including Fiji. Registration costs AUD 25, main applicants must be aged 18 to 45, and you need a genuine job offer in Australia. The 2026-27 ballot closed on 29 July 2026, so watch Home Affairs for the next one. Be cautious of anyone who promises to guarantee a ballot place." } },
+        { "@type": "Question", "name": "Can I Work While I Study in Australia?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Most Student visa holders can currently work up to 48 hours per fortnight while their course is in session and without a set limit during official course breaks. The rule has changed in recent years, so check your visa conditions on VEVO and confirm the current limit with us." } },
+        { "@type": "Question", "name": "Can SuccessVisa Guarantee My Visa?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. Only the Department of Home Affairs decides visa applications, and no registered agent can guarantee an outcome. What we can do is assess your options honestly, prepare a complete application and tell you early if a pathway is unlikely to work." } },
+        { "@type": "Question", "name": "I Was Refused an Australian Visa Before. Can You Still Help?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Often yes, but it depends on the reason for refusal and whether review rights apply. We read your refusal letter, explain what went wrong and tell you whether a new application, a review or a different visa is more realistic." } },
+        { "@type": "Question", "name": "Do I Need IELTS or PTE to Study or Migrate From Fiji?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Many applicants need an approved English test such as IELTS or PTE Academic, and tests must be taken in person at a secure test centre. Some education providers accept other evidence for admission, and certain visas have their own English rules. We check the requirement for your exact course and visa." } },
+        { "@type": "Question", "name": "Can I Bring My Spouse or Children When I Study in Australia?",
+          "acceptedAnswer": { "@type": "Answer", "text": "From 2 October 2026, Student visa applicants generally cannot include a partner or dependent children, and family cannot be added after the visa is granted. Exemptions include PhD students, DFAT or Defence sponsored students, foreign government scholarship holders and eligible students from a Pacific country or an ASEAN member country. We check whether you qualify before you commit to a course." } },
+        { "@type": "Question", "name": "Can I Switch to a Student Visa After I Arrive in Australia on a Visitor Visa?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Generally no. From 2 October 2026, most temporary visa holders in Australia, including visitor visa holders, can no longer lodge a Student visa application while in Australia. You would need to be outside Australia when you lodge and when the visa is granted, so plan your study visa before you travel." } },
+        { "@type": "Question", "name": "Will the Vuvale Union Change Visa Rules for Fijians?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Australia and Fiji signed the Vuvale Union on 6 July 2026, and it includes commitments on mobility, education and skills. The treaty is still going through parliamentary approval, and Home Affairs must publish any new visa settings before they apply. Until then, the current visa rules stand." } },
+        { "@type": "Question", "name": "How Do I Book a Consultation From Fiji?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Use the enquiry form, message us on WhatsApp or email info@successvisa.com.au. Fiji is only one to two hours ahead of Sydney and Melbourne, so online calls are easy to arrange." } }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+  :root{
+    /* Palette: deep blue + gold + white, aligned to the SuccessVisa brand */
+    --navy-950:#061A3E;
+    --navy-900:#0A2A5E;
+    --navy-800:#0F3A7D;
+    --navy-100:#E4ECF8;
+    --sky-50:#F4F8FD;
+    --gold-500:#F5B800;
+    --gold-400:#FFC93A;
+    --gold-100:#FFF3CC;
+    --ink:#10213F;
+    --muted:#4A5B7A;
+    --line:#D6E0F0;
+    --white:#fff;
+    --radius:14px;
+    --font-display:"Bricolage Grotesque", "Segoe UI", Arial, sans-serif;
+    --font-body:"Figtree", "Segoe UI", Arial, sans-serif;
+    box-sizing:border-box;
+  }
+  *,*::before,*::after{box-sizing:inherit}
+  html{scroll-behavior:smooth;scroll-padding-top:84px}
+  body{margin:0;font-family:var(--font-body);color:var(--ink);background:var(--white);line-height:1.65;font-size:17px;-webkit-font-smoothing:antialiased}
+  img,svg{max-width:100%;display:block}
+  a{color:var(--navy-800)}
+  a:hover{color:var(--navy-950)}
+  :focus-visible{outline:3px solid var(--gold-500);outline-offset:3px;border-radius:4px}
+  .skip{position:absolute;left:-999px;top:8px;background:var(--gold-500);color:var(--navy-950);padding:10px 16px;font-weight:700;z-index:100}
+  .skip:focus{left:8px}
+  h1,h2,h3{font-family:var(--font-display);line-height:1.12;margin:0;color:var(--navy-950);letter-spacing:-.01em}
+  h2{font-size:clamp(1.9rem,3.6vw,2.7rem);font-weight:800}
+  h3{font-size:1.28rem;font-weight:700}
+  p{margin:0 0 1em}
+  .wrap{width:min(1160px,100% - 40px);margin-inline:auto}
+  .measure{max-width:68ch}
+  section{padding:84px 0}
+  .tint{background:var(--sky-50)}
+  .sec-head{margin-bottom:40px}
+  .sec-head p{color:var(--muted);font-size:1.08rem;margin-top:14px}
+
+  /* Buttons */
+  .btn{display:inline-flex;align-items:center;gap:10px;font:700 1rem var(--font-body);padding:14px 24px;border-radius:999px;text-decoration:none;border:2px solid transparent;cursor:pointer;transition:transform .15s,background .15s,color .15s}
+  .btn:active{transform:translateY(1px)}
+  .btn-gold{background:var(--gold-500);color:var(--navy-950)}
+  .btn-gold:hover{background:var(--gold-400);color:var(--navy-950)}
+  .btn-ghost{border-color:rgba(255,255,255,.55);color:#fff}
+  .btn-ghost:hover{background:#fff;color:var(--navy-950)}
+  .btn-navy{background:var(--navy-900);color:#fff}
+  .btn-navy:hover{background:var(--navy-950);color:#fff}
+
+  /* Header */
+  header.site{position:sticky;top:0;z-index:50;background:var(--navy-950);color:#fff;border-bottom:3px solid var(--gold-500)}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:68px}
+  .brand{display:flex;align-items:center;gap:12px;color:#fff;text-decoration:none;font:800 1.35rem var(--font-display)}
+  .brand small{font:600 .78rem var(--font-body);background:var(--gold-500);color:var(--navy-950);padding:3px 10px;border-radius:999px}
+  .nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0}
+  .nav ul a{color:#E4ECF8;text-decoration:none;font-weight:500;font-size:.96rem}
+  .nav ul a:hover{color:var(--gold-400)}
+  .nav .btn{padding:10px 20px;font-size:.93rem}
+  .menu-btn{display:none;background:none;border:2px solid rgba(255,255,255,.4);color:#fff;border-radius:8px;padding:8px 12px;font:600 .9rem var(--font-body)}
+
+  /* Hero */
+  .hero{background:#D9E6F4;color:var(--ink);padding:0;overflow:hidden}
+  .hero-stage{background:#D9E6F4 url("assets/fiji-hero.gif") center/cover no-repeat;aspect-ratio:16/9;display:flex;align-items:center;padding:48px 0}
+  @media (min-width:981px) and (max-width:1299px){
+    .hero-stage{aspect-ratio:auto;min-height:56.25vw;background-color:#EAF2FA;background-image:linear-gradient(rgba(234,242,250,0) 50vw,#EAF2FA 56.25vw),url("assets/fiji-hero.gif");background-size:100% 100%,100% auto;background-position:0 0,center top}
+  }
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+  .hero h1{color:var(--navy-950);font-size:clamp(2.3rem,5vw,3.9rem);font-weight:800}
+  .hero h1 em{font-style:normal;color:var(--navy-800)}
+  .hero .lede{font-size:1.15rem;color:#22365C;max-width:56ch;margin:22px 0 28px}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:14px}
+  .hero .btn-ghost{border-color:var(--navy-900);color:var(--navy-900)}
+  .hero .btn-ghost:hover{background:var(--navy-900);color:#fff}
+  .hero-places{margin-top:26px;color:#3A4F75;font-size:.95rem}
+  .hero-places b{color:var(--navy-950);font-weight:600}
+  .hero .trust{margin-top:0}
+  .mapbox{position:relative}
+  .mapbox svg{width:100%;height:auto}
+  .land{fill:#17407F;stroke:#2E5CA8;stroke-width:1.5}
+  .isle{fill:#1E4E98;stroke:var(--gold-400);stroke-width:1.5}
+  .grid-l{stroke:rgba(255,255,255,.07);stroke-width:1}
+  .sea{fill:#7F98C6;font:italic 500 11px var(--font-body);letter-spacing:.06em}
+  .city{fill:#fff;font:700 12px var(--font-body)}
+  .code{fill:var(--gold-400);font:700 10px var(--font-body);letter-spacing:.12em}
+  .route{fill:none;stroke:var(--gold-400);stroke-width:2.2;stroke-dasharray:3 7;stroke-linecap:round}
+  .route.second{stroke:#8FB0E8;stroke-width:1.6;opacity:.8}
+  .pin{fill:var(--gold-500);stroke:var(--navy-950);stroke-width:2}
+  .plane{offset-path:path("M418 150 Q300 40 172 290");offset-rotate:auto;offset-distance:0%;animation:fly 5s .6s cubic-bezier(.45,.05,.3,1) forwards}
+  @keyframes fly{to{offset-distance:100%}}
+
+  /* Boarding pass */
+  .pass{display:grid;grid-template-columns:1fr auto;background:#fff;color:var(--ink);border-radius:var(--radius);box-shadow:0 24px 50px rgba(0,0,0,.35);margin-top:-18px;position:relative}
+  .pass-main{padding:20px 24px;display:grid;grid-template-columns:1fr auto 1fr;gap:6px 14px;align-items:center}
+  .pass .lab{font:600 .72rem var(--font-body);color:var(--muted);letter-spacing:.04em}
+  .pass .big{font:800 1.5rem var(--font-display);color:var(--navy-950);line-height:1.1}
+  .pass .mid{color:var(--gold-500);font-size:1.5rem}
+  .pass .meta{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:6px 28px;border-top:1px dashed var(--line);padding-top:12px;margin-top:6px;font-size:.9rem}
+  .pass-stub{border-left:2px dashed var(--line);padding:20px 22px;display:flex;align-items:center;position:relative}
+  .pass-stub::before,.pass-stub::after{content:"";position:absolute;left:-11px;width:20px;height:20px;border-radius:50%;background:var(--navy-900)}
+  .pass-stub::before{top:-10px}.pass-stub::after{bottom:-10px}
+
+  /* Trust band */
+  .trust{background:var(--gold-500);color:var(--navy-950);padding:0;margin-top:44px}
+  .trust ul{list-style:none;margin:0;padding:22px 0;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .trust li{font-weight:600;font-size:.95rem;line-height:1.35;padding-left:14px;border-left:3px solid var(--navy-950)}
+  .trust li b{display:block;font:800 1.15rem var(--font-display)}
+
+  /* Answer table */
+  .tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);background:#fff}
+  table{border-collapse:collapse;width:100%;min-width:640px}
+  th,td{text-align:left;padding:15px 20px;border-bottom:1px solid var(--line);vertical-align:top;font-size:.98rem}
+  th{background:var(--navy-900);color:#fff;font-weight:600}
+  tr:last-child td{border-bottom:0}
+  td:first-child{font-weight:600;color:var(--navy-950)}
+
+  /* Services */
+  .svc-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:20px}
+  .svc{grid-column:span 2;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;display:flex;flex-direction:column}
+  .svc.feature{grid-column:span 4;background:var(--navy-900);border-color:var(--navy-900);color:#D3DEF3}
+  .svc.feature h3{color:#fff;font-size:1.7rem}
+  .svc.feature a.more{color:var(--gold-400)}
+  .svc h3{margin-bottom:10px}
+  .svc p{color:var(--muted);flex:1}
+  .svc.feature p{color:#D3DEF3}
+  .svc ul{margin:0 0 16px;padding-left:18px;color:inherit}
+  .svc a.more{font-weight:700;text-decoration:none;border-bottom:2px solid var(--gold-500);align-self:flex-start}
+  .svc .tag{align-self:flex-start;font:700 .75rem var(--font-body);background:var(--gold-100);color:#6B4E00;padding:3px 10px;border-radius:999px;margin-bottom:12px}
+
+  /* Two column text */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+  .callout{background:var(--gold-100);border-left:5px solid var(--gold-500);padding:20px 24px;border-radius:0 var(--radius) var(--radius) 0;color:#4A3800}
+  .callout strong{color:var(--navy-950)}
+  .checks{list-style:none;padding:0;margin:0}
+  .checks li{padding:12px 0 12px 34px;border-bottom:1px solid var(--line);position:relative}
+  .checks li::before{content:"";position:absolute;left:0;top:17px;width:18px;height:18px;border-radius:50%;background:var(--gold-500)}
+  .checks li::after{content:"";position:absolute;left:6px;top:21px;width:5px;height:9px;border:solid var(--navy-950);border-width:0 2px 2px 0;transform:rotate(40deg)}
+
+  /* Process */
+  .steps{counter-reset:s;list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative}
+  .steps li{counter-increment:s;padding:0 18px 0 0;position:relative}
+  .steps li::before{content:counter(s);display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:var(--navy-900);color:var(--gold-400);font:800 1.2rem var(--font-display);position:relative;z-index:1}
+  .steps li::after{content:"";position:absolute;top:22px;left:46px;right:0;border-top:2px dashed var(--gold-500)}
+  .steps li:last-child::after{display:none}
+  .steps h3{font-size:1.08rem;margin:16px 0 6px}
+  .steps p{font-size:.95rem;color:var(--muted);margin:0}
+
+  /* Pacific */
+  .pacific{background:linear-gradient(160deg,var(--navy-950),var(--navy-900));color:#D3DEF3}
+  .pacific h2,.pacific h3{color:#fff}
+  .pacific .sec-head p{color:#B9C9E6}
+  .cards2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:var(--radius);padding:26px}
+  .card h3{margin-bottom:10px}
+  .card p:last-child{margin:0}
+  .warn{margin-top:26px;background:var(--gold-500);color:var(--navy-950);padding:18px 24px;border-radius:var(--radius);font-weight:500}
+
+  /* Offices */
+  .offices{display:grid;grid-template-columns:repeat(6,1fr);gap:20px}
+  .offices>.office{grid-column:span 2}
+  .offices>.office:nth-child(4):nth-last-child(2){grid-column:2/span 2}
+  .office{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px;display:flex;flex-direction:column;box-shadow:0 1px 2px rgba(6,26,62,.05);transition:transform .2s,box-shadow .2s,border-color .2s}
+  .office:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(6,26,62,.10);border-color:#C6D4EC}
+  .office-tag{align-self:flex-start;font:700 .7rem var(--font-body);letter-spacing:.08em;text-transform:uppercase;background:var(--navy-100);color:var(--navy-800);padding:4px 10px;border-radius:999px;margin-bottom:12px}
+  .office-tag.in{background:var(--gold-100);color:#6B4E00}
+  .office h3{font-size:1.2rem;margin-bottom:18px}
+  .office ul{list-style:none;margin:0;padding:0;display:grid;gap:12px;flex:1;align-content:start}
+  .office li{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:center;font-size:.94rem;line-height:1.5;color:var(--ink)}
+  .office .ic{width:34px;height:34px;border-radius:50%;background:var(--sky-50);color:var(--navy-800);display:grid;place-items:center}
+  .office .ic svg{width:16px;height:16px}
+  .office li a{color:var(--navy-800);text-decoration:none;font-weight:600;overflow-wrap:anywhere}
+  .office li a:hover{text-decoration:underline}
+  .office li small{display:block;color:var(--muted);font-size:.86rem}
+  .office .dir{margin-top:20px;padding-top:16px;border-top:1px dashed var(--line);font-weight:700;font-size:.93rem;color:var(--navy-900);text-decoration:none}
+  .office .dir:hover{color:var(--navy-950);text-decoration:underline}
+
+  /* Fiji branch location */
+  #visit{padding-bottom:0}
+  #visit+section .wrap{border-top:1px solid var(--line);padding-top:72px}
+  .visit{display:grid;grid-template-columns:1fr 1.15fr;gap:40px;align-items:stretch}
+  .visit-card{background:#fff;border:1px solid var(--line);border-top:4px solid var(--gold-500);border-radius:var(--radius);padding:30px}
+  .visit-card h3{font-size:1.1rem;margin:0 0 8px}
+  .visit-card h3+p{margin:0}
+  .visit-card address{font-style:normal;font-size:1.05rem;color:var(--ink);line-height:1.6}
+  .visit-block+.visit-block{margin-top:24px;padding-top:22px;border-top:1px dashed var(--line)}
+  .hours{width:100%;border-collapse:collapse;font-size:.98rem}
+  .hours th,.hours td{background:none;color:var(--ink);padding:7px 0;border:0;text-align:left;font-weight:500}
+  .hours td{text-align:right;font-weight:600;color:var(--navy-950)}
+  .hours td.closed{color:var(--muted);font-weight:500}
+  .visit-note{margin:10px 0 0;color:var(--muted);font-size:.9rem}
+  .visit-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+  .visit-map{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);min-height:420px;background:var(--sky-50)}
+  .visit-map iframe{display:block;width:100%;height:100%;min-height:420px;border:0}
+  .ph{background:#fff;border:1px dashed #B58900;padding:1px 8px;border-radius:6px;font-size:.9rem;color:#6B4E00}
+
+  /* FAQ */
+  .faq{max-width:860px}
+  details{border-bottom:1px solid var(--line);padding:4px 0}
+  summary{cursor:pointer;list-style:none;font:700 1.12rem var(--font-display);color:var(--navy-950);padding:18px 40px 18px 0;position:relative}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";position:absolute;right:6px;top:50%;transform:translateY(-50%);font:700 1.6rem var(--font-body);color:var(--navy-800);transition:transform .2s}
+  details[open] summary::after{content:"\2212"}
+  details .ans{padding:0 40px 20px 0;color:var(--muted)}
+
+  /* Contact */
+  .contact{background:var(--navy-950);color:#D3DEF3}
+  .contact h2{color:#fff}
+  .contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
+  .contact a{color:var(--gold-400)}
+  .contact ul{list-style:none;padding:0;margin:26px 0 0}
+  .contact li{padding:10px 0;border-bottom:1px solid rgba(255,255,255,.12)}
+  form{background:#fff;color:var(--ink);padding:30px;border-radius:var(--radius);display:grid;gap:16px;grid-template-columns:1fr 1fr}
+  form .full{grid-column:1/-1}
+  label{display:block;font-weight:600;font-size:.92rem;margin-bottom:6px;color:var(--navy-950)}
+  input,select,textarea{width:100%;font:inherit;padding:12px 14px;border:1.5px solid #B9C7E0;border-radius:10px;background:#fff;color:var(--ink)}
+  input:focus,select:focus,textarea:focus{outline:3px solid var(--gold-500);border-color:var(--navy-800)}
+  textarea{min-height:100px;resize:vertical}
+  .consent{display:flex;gap:10px;align-items:flex-start;font-size:.88rem;color:var(--muted)}
+  .consent input{width:auto;margin-top:5px}
+  .note{font-size:.85rem;color:var(--muted);margin:0}
+
+  /* Footer */
+  footer{background:#041230;color:#9FB2D6;padding:56px 0 100px;font-size:.93rem}
+  footer a{color:#D3DEF3}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px}
+  footer h3{color:#fff;font-size:1rem;margin-bottom:12px}
+  footer ul{list-style:none;margin:0;padding:0}
+  footer li{padding:4px 0}
+  .legal{border-top:1px solid rgba(255,255,255,.12);margin-top:36px;padding-top:24px;font-size:.85rem}
+
+  .sticky-cta{display:none}
+
+  @media (max-width:980px){
+    section{padding:64px 0}
+    .hero-grid,.split,.contact-grid{grid-template-columns:1fr}
+    .hero-stage{aspect-ratio:auto;display:block;background-color:#EAF2FA;background-image:linear-gradient(rgba(234,242,250,0) 50vw,#EAF2FA 56.25vw),url("assets/fiji-hero.gif");background-size:100% 100%,100% auto;background-position:0 0,center top;padding:calc(56.25vw + 28px) 0 48px}
+    .svc{grid-column:span 3}.svc.feature{grid-column:span 6}
+    .steps{grid-template-columns:1fr;gap:26px}
+    .steps li{padding:0 0 0 64px}
+    .steps li::before{position:absolute;left:0;top:0}
+    .steps li::after{display:none}
+    .steps h3{margin-top:0}
+    .cards2,.offices,.visit{grid-template-columns:1fr}
+    .offices>.office,.offices>.office:nth-child(4):nth-last-child(2){grid-column:auto}
+    .visit-map,.visit-map iframe{min-height:320px}
+    .foot-grid{grid-template-columns:1fr 1fr}
+    .trust ul{grid-template-columns:1fr 1fr}
+    .nav ul{display:none;position:absolute;top:71px;left:0;right:0;background:var(--navy-950);flex-direction:column;padding:16px 20px 22px;gap:14px;border-bottom:3px solid var(--gold-500)}
+    .nav ul.open{display:flex}
+    .menu-btn{display:block}
+    .nav>.btn{display:none}
+    .sticky-cta{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:60;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+  }
+  @media (max-width:620px){
+    .svc,.svc.feature{grid-column:span 6}
+    form{grid-template-columns:1fr}
+    .pass{grid-template-columns:1fr}
+    .pass-stub{border-left:0;border-top:2px dashed var(--line);justify-content:center}
+    .pass-stub::before,.pass-stub::after{top:-10px;bottom:auto}
+    .pass-stub::before{left:-10px}.pass-stub::after{left:auto;right:-10px}
+    .pass-main{grid-template-columns:1fr auto 1fr}
+    .foot-grid{grid-template-columns:1fr}
+    body{font-size:16px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .plane{animation:none;offset-distance:100%}
+    .hero-stage{background-image:url("assets/fiji-hero-still.jpg")}
+    .btn,.office{transition:none}
+    .office:hover{transform:none}
+  }
+  @media (prefers-reduced-motion:reduce) and (max-width:1299px){
+    .hero-stage{background-image:linear-gradient(rgba(234,242,250,0) 50vw,#EAF2FA 56.25vw),url("assets/fiji-hero-still.jpg")}
+  }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+  /* ---------- Site-wide header (copied from index.html, scoped to .svnav) ---------- */
+  .svnav{position:sticky;top:0;z-index:50;background:rgba(251,250,247,.92);backdrop-filter:blur(8px);border-bottom:1px solid #D9D2C0;color:#1D184B;font-family:'Public Sans',sans-serif;line-height:1.6;}
+  .svnav ul{margin:0;padding:0;list-style:none;}
+  .svnav a{color:inherit;text-decoration:none;}
+  .svnav .nav-row{display:flex;flex-wrap:nowrap;gap:0;align-items:center;justify-content:space-between;padding:16px 28px;max-width:1180px;margin:0 auto;}
+  .svnav .logo{display:flex;align-items:center;gap:0;font-size:inherit;}
+  .svnav .logo img{height:42px;width:auto;display:block;}
+  .svnav nav.primary ul{display:flex;gap:34px;align-items:center;}
+  .svnav nav.primary a{font-size:14.5px;font-weight:600;color:#322B6E;position:relative;padding:4px 0;}
+  .svnav nav.primary a.active{color:#1D184B;}
+  .svnav nav.primary a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:#F8A51C;transition:width .2s ease;}
+  .svnav nav.primary a:hover::after,.svnav nav.primary a.active::after{width:100%;}
+  .svnav .nav-right{display:flex;align-items:center;gap:20px;}
+  .svnav .btn{display:inline-flex;align-items:center;gap:8px;min-height:0;font-family:'Public Sans',sans-serif;font-weight:700;font-size:14px;line-height:1.6;padding:12px 22px;border-radius:2px;cursor:pointer;border:1.5px solid transparent;transition:background .18s ease,color .18s ease,border-color .18s ease;}
+  .svnav .btn-primary{background:#1D184B;color:#FBFAF7;}
+  .svnav .btn-primary:hover{background:#F8A51C;color:#1D184B;}
+  .svnav .menu-toggle{display:none;background:none;border:none;cursor:pointer;padding:6px;}
+  .svnav .menu-toggle span{display:block;width:22px;height:2px;background:#1D184B;margin:5px 0;}
+  .svnav .has-dropdown{position:relative;}
+  .svnav .has-dropdown > a{display:flex;align-items:center;gap:5px;}
+  .svnav .has-dropdown > a svg{transition:transform .18s ease;flex-shrink:0;}
+  .svnav .has-dropdown:hover > a svg,.svnav .has-dropdown:focus-within > a svg{transform:rotate(180deg);}
+  .svnav .dropdown-menu{position:absolute;top:100%;left:-14px;margin-top:16px;min-width:216px;background:#FBFAF7;border:1px solid #D9D2C0;box-shadow:0 16px 34px rgba(15,42,74,.13);padding:8px;opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .18s ease,transform .18s ease,visibility .18s ease;}
+  .svnav .has-dropdown:hover .dropdown-menu,.svnav .has-dropdown:focus-within .dropdown-menu{opacity:1;visibility:visible;transform:translateY(0);}
+  .svnav .dropdown-menu a{display:block;padding:9px 12px;font-size:13.5px;font-weight:600;color:#322B6E;}
+  .svnav .dropdown-menu a:hover{background:#F3EEE2;color:#1D184B;}
+  .svnav .nav-offer{display:inline-flex;align-items:center;color:#F8A51C !important;font-weight:700 !important;border:1px solid #F8A51C;border-radius:20px;padding:6px 15px !important;transition:background .18s ease,color .18s ease;}
+  .svnav .nav-offer:hover{background:#F8A51C;color:#1D184B !important;}
+  @media(max-width:960px){ .svnav .nav-offer{padding:7px 14px !important;} }
+  @media(max-width:920px){
+    .svnav nav.primary{display:none;} .svnav .menu-toggle{display:block;}
+    .svnav .dropdown-menu{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;margin:6px 0 6px 10px;padding:0;display:flex;flex-direction:column;gap:2px;}
+    .svnav .has-dropdown > a svg{margin-left:auto;}
+  }
+</style>
+
+<style>
+  /* ---------- Region toggle (India <-> Australia homepage), same as International Home ---------- */
+  .svnav .region-toggle{display:inline-flex;align-items:center;gap:9px;cursor:pointer;white-space:nowrap;text-decoration:none;}
+  .svnav .rt-label{font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:600;letter-spacing:.04em;color:#4C5A6E;transition:color .2s ease;}
+  .svnav .rt-track{position:relative;display:block;width:58px;height:30px;border-radius:30px;flex-shrink:0;background:linear-gradient(135deg,#6EE7B7 0%,#5CA9E6 55%,#5B80EA 100%);box-shadow:inset 0 1px 3px rgba(29,24,75,.18);}
+  .svnav .rt-knob{position:absolute;top:3px;left:3px;width:24px;height:24px;border-radius:50%;background:#fff;box-shadow:0 3px 8px rgba(29,24,75,.32);transition:transform .3s cubic-bezier(.4,.2,.2,1);}
+  .svnav .region-toggle.is-right .rt-knob{transform:translateX(28px);}
+  .svnav .region-toggle .rt-in{color:#1D184B;}
+  .svnav .region-toggle.is-right .rt-in{color:#4C5A6E;}
+  .svnav .region-toggle .rt-au{color:#4C5A6E;}
+  .svnav .region-toggle.is-right .rt-au{color:#1D184B;}
+  .svnav .region-toggle:hover .rt-track{filter:brightness(1.05);}
+  .svnav .region-toggle:focus-visible{outline:2px solid #8A5A12;outline-offset:6px;border-radius:30px;}
+  .svnav .region-toggle::after{display:none;}
+  @media(max-width:1240px) and (min-width:1141px){.svnav nav.primary ul{gap:22px;} .svnav .nav-right{gap:14px;}}
+  @media(max-width:1140px){
+    .svnav .nav-row{flex-wrap:wrap;row-gap:10px;column-gap:24px;padding-bottom:12px;}
+    .svnav .nav-right{display:contents;}
+    .svnav .nav-right .btn{margin-left:auto;margin-right:10px;}
+    .svnav .region-toggle{order:5;width:100%;justify-content:center;padding-top:10px;border-top:1px solid #D9D2C0;}
+  }
+  @media(max-width:560px){
+    .svnav .nav-row{padding-left:16px;padding-right:16px;column-gap:12px;}
+    .svnav .logo img{height:34px;}
+    .svnav .nav-right .btn{padding:9px 14px;font-size:13px;margin-right:4px;}
+  }
+</style>
+
+<style>
+  /* ---------- Region-aware Services menu: India list or Australian mega menu (html[data-region] is set in <head>) ---------- */
+  html[data-region="au"] .svc-in{display:none !important;}
+  html:not([data-region="au"]) .svc-au{display:none !important;}
+  .svnav .dropdown-menu.mega{width:580px;min-width:0;display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;padding:14px;}
+  .svnav .mega-group{display:flex;flex-direction:column;}
+  .svnav .dropdown-menu .mega-head{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#8A5A12;padding:6px 12px;border-bottom:1px solid #D9D2C0;margin-bottom:4px;}
+  .svnav .dropdown-menu .mega-head:hover{background:none;color:#1D184B;}
+  .svnav .dropdown-menu .mega-head::after{display:none;}
+  @media(max-width:920px){
+    .svnav .dropdown-menu.mega{width:auto;display:flex;flex-direction:column;gap:10px;padding:0;}
+    .svnav .dropdown-menu .mega-head{padding:4px 12px;}
+  }
+</style>
+</head>
+
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+
+<header class="svnav">
+  <div class="nav-row">
+    <a href="index.html" data-home-link class="logo"><img src="assets/logo.webp" alt="SuccessVisa" width="300" height="95" decoding="async"></a>
+    <nav class="primary" aria-label="Primary">
+      <ul>
+        <li><a href="index.html" data-home-link>Home</a></li>
+        <li><a href="About%20Us%20Sub%20Landing%20Page.html">About</a></li>
+        <li class="has-dropdown svc-in">
+          <a href="Services%20Main%20Landing%20Page.html">Services
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.4"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="Education%20Visa%20Landing%20Page.html">Education Visa (500)</a>
+            <a href="Visitor%20Visa%20Landing%20Page.html">Visitor Visa (600)</a>
+            <a href="OSHC%20Sub%20Landing%20Page.html">Health Cover (OSHC)</a>
+          </div>
+        </li>
+        <li class="has-dropdown svc-au">
+          <a href="Australia%20Services%20Main%20Landing%20Page.html">Services
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.4"/></svg>
+          </a>
+          <div class="dropdown-menu mega">
+            <div class="mega-group">
+              <a href="Australia%20Services%20Main%20Landing%20Page.html#skilled" class="mega-head">Skilled Visas</a>
+              <a href="Skilled%20Independent%20189%20Sub%20Sub%20Landing%20Page.html">Skilled Independent (189)</a>
+              <a href="Skilled%20Nominated%20190%20Sub%20Sub%20Landing%20Page.html">Skilled Nominated (190)</a>
+              <a href="Skilled%20Work%20Regional%20491%20Sub%20Sub%20Landing%20Page.html">Skilled Work Regional (491)</a>
+              <a href="PR%20Skilled%20Regional%20191%20Sub%20Sub%20Landing%20Page.html">PR Skilled Regional (191)</a>
+              <a href="Skilled%20Recognised%20Graduate%20476%20Sub%20Sub%20Landing%20Page.html">Skilled Recognised Graduate (476)</a>
+              <a href="Recognition%20of%20Prior%20Learning%20RPL%20Sub%20Sub%20Landing%20Page.html">Recognition of Prior Learning (RPL)</a>
+            </div>
+            <div class="mega-group">
+              <a href="Australia%20Services%20Main%20Landing%20Page.html#family" class="mega-head">Partner &amp; Family</a>
+              <a href="Partner%20Visa%20820%20801%20Sub%20Sub%20Landing%20Page.html">Partner Visa (820/801)</a>
+              <a href="Family%20Visa%20Sub%20Sub%20Landing%20Page.html">Family Visa</a>
+              <a href="Carer%20Visa%20116%20836%20Sub%20Sub%20Landing%20Page.html">Carer Visa (116/836)</a>
+            </div>
+            <div class="mega-group">
+              <a href="Australia%20Services%20Main%20Landing%20Page.html#study-work" class="mega-head">Student, Working &amp; Training</a>
+              <a href="Student%20Visa%20500%20Sub%20Sub%20Landing%20Page.html">Student Visa (500)</a>
+              <a href="Working%20Visa%20482%20186%20Sub%20Sub%20Landing%20Page.html">Working Visa (482/186)</a>
+              <a href="Training%20Visa%20407%20Sub%20Sub%20Landing%20Page.html">Training Visa (407)</a>
+            </div>
+            <div class="mega-group">
+              <a href="Australia%20Services%20Main%20Landing%20Page.html#visitor-business" class="mega-head">Visitor, Business &amp; Health</a>
+              <a href="Visitor%20Visa%20Landing%20Page.html">Visitor Visa (600)</a>
+              <a href="Australia%20Business%20Visa%20Sub%20Sub%20Landing%20Page.html">Business Visa</a>
+              <a href="Health%20Insurance%20OSHC%20Sub%20Sub%20Landing%20Page.html">Health Insurance (OSHC)</a>
+            </div>
+          </div>
+        </li>
+        <li><a href="Offers%20Demo%20Landing%20Page.html" class="nav-offer">Offers</a></li>
+        <li class="has-dropdown">
+          <a href="resources.html">Resources
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.4"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="resources.html#blog">Blog</a>
+            <a href="resources.html#videos">Videos</a>
+            <a href="resources.html#checklist">Visa Checklists</a>
+            <a href="resources.html#news">Latest News</a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <a href="contact.html">Contact
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.4"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="Chandigarh%20Branch%20Landing%20Page.html">Chandigarh, IN</a>
+            <a href="Parramatta%20Branch%20Landing%20Page.html">Parramatta, NSW</a>
+            <a href="Toongabbie%20Branch%20Landing%20Page.html">Toongabbie, NSW</a>
+            <a href="Melbourne%20CBD%20Branch%20Landing%20Page.html">Melbourne, VIC</a>
+            <a href="Werribee%20Branch%20Landing%20Page.html">Werribee, VIC</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <a href="International%20Home.html" class="region-toggle" data-to="au" data-side="left" aria-label="Viewing the India site. Switch to the Australia site" title="Viewing the India site. Switch to the Australia site">
+        <span class="rt-label rt-in">India</span>
+        <span class="rt-track" aria-hidden="true"><span class="rt-knob"></span></span>
+        <span class="rt-label rt-au">Australia</span>
+      </a>
+      <a href="Booking%20Page.html" class="btn btn-primary">Book Appointment</a>
+      <button class="menu-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ================= HERO ================= -->
+<div class="hero">
+  <div class="hero-stage">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Australia Visa Consultants in Fiji for <em>Study, Work, Family and PR</em></h1>
+      <p class="lede">Bula! Whether you are in Suva, Nadi, Lautoka or Labasa, our MARA-registered migration agents work out which Australian visa fits your life, then prepare your application from first document to final decision.</p>
+      <div class="hero-cta">
+        <a class="btn btn-gold" href="#contact">Book a free consultation</a>
+        <a class="btn btn-ghost" href="https://api.whatsapp.com/send?phone=61468791726&amp;text=Bula%20SuccessVisa%2C%20I%20am%20in%20Fiji%20and%20want%20to%20ask%20about%20an%20Australian%20visa." rel="noopener">Message us on WhatsApp</a>
+      </div>
+      <p class="hero-places"><b>Serving Fiji:</b> Suva, Nadi, Lautoka, Labasa, Savusavu and across Viti Levu and Vanua Levu. Fiji is only one to two hours ahead of Sydney and Melbourne, so online calls are easy.</p>
+    </div>
+  </div>
+  </div>
+
+  <div class="trust">
+    <div class="wrap">
+      <ul>
+        <li><b>MARA-registered</b>MARN 2318228 and 2418515</li>
+        <li><b>5+ years</b>Advising on Australian visas</li>
+        <li><b>4 Australian offices</b>Parramatta, Toongabbie, Melbourne CBD, Werribee</li>
+        <li><b>Local Business Award winner</b>Australian small business recognition</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ================= QUICK ANSWER ================= -->
+<section id="visas" aria-labelledby="h-visas">
+  <div class="wrap">
+    <div class="sec-head measure">
+      <h2 id="h-visas">Which Australian Visa Suits People in Fiji?</h2>
+      <p>The short answer depends on your goal. This table shows the visas Fijian clients ask us about most, and what each one usually needs first. Government rules change, so we confirm current requirements before you lodge.</p>
+    </div>
+    <div class="tbl-wrap" tabindex="0" role="region" aria-label="Australian visa options for Fiji citizens">
+      <table>
+        <thead><tr><th scope="col">Your goal</th><th scope="col">Common visa</th><th scope="col">Where you usually start</th></tr></thead>
+        <tbody>
+          <tr><td>Study at an Australian university, TAFE or college</td><td><a href="Student%20Visa%20500%20Sub%20Sub%20Landing%20Page.html">Student visa (subclass 500)</a></td><td>A course offer, Confirmation of Enrolment, English and funds evidence</td></tr>
+          <tr><td>Stay and work after you graduate</td><td>Temporary Graduate visa (subclass 485)</td><td>Qualifying Australian study completed; age limits apply (generally 35 or under, with limited exceptions)</td></tr>
+          <tr><td>Live in Australia permanently as a skilled worker</td><td><a href="Australia%20Services%20Main%20Landing%20Page.html#skilled">Skilled visas 189, 190 and 491</a></td><td>Skills assessment, points test and an Expression of Interest in SkillSelect</td></tr>
+          <tr><td>Work for an Australian employer</td><td>Skills in Demand (subclass 482), Employer Nomination (186), Skilled Employer Sponsored Regional (494)</td><td>A sponsoring employer and a suitable occupation</td></tr>
+          <tr><td>Join an Australian partner or family member</td><td><a href="Partner%20Visa%20820%20801%20Sub%20Sub%20Landing%20Page.html">Partner visas</a> (820/801, 309/100) and <a href="Australia%20Services%20Main%20Landing%20Page.html#family">family visas</a></td><td>Relationship or family evidence and sponsor eligibility</td></tr>
+          <tr><td>Visit relatives, holiday or attend business meetings</td><td><a href="Visitor%20Visa%20Landing%20Page.html">Visitor visa (subclass 600)</a></td><td>Funds, ties to Fiji and a clear travel purpose</td></tr>
+          <tr><td>Apply for a Pacific permanent visa</td><td>Pacific Engagement visa (subclass 192)</td><td>Selection in the Home Affairs ballot (ages 18 to 45). The 2026–27 ballot closed on 29 July 2026</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section class="tint" id="services" aria-labelledby="h-services">
+  <div class="wrap">
+    <div class="sec-head measure">
+      <h2 id="h-services">Australian Migration and Education Services for Fijian Clients</h2>
+      <p>SuccessVisa is an Australian migration and education consultancy. Our Fiji branch brings the same registered-agent advice to students, families and professionals across Fiji.</p>
+    </div>
+    <div class="svc-grid">
+      <article class="svc feature">
+        <span class="tag">Most requested in Fiji</span>
+        <h3>Study in Australia From Fiji</h3>
+        <p>We help you choose a CRICOS-registered course that matches your goals and budget, apply to universities, TAFE institutes and colleges, secure your Confirmation of Enrolment, arrange Overseas Student Health Cover (OSHC) and lodge your Student visa (subclass 500).</p>
+        <ul>
+          <li>Course and provider shortlisting</li>
+          <li>Genuine Student requirement preparation</li>
+          <li>Financial evidence planning</li>
+          <li>Advice on whether family members can be included under the new rules</li>
+          <li>Guidance on the path from study to the Temporary Graduate visa (485)</li>
+        </ul>
+        <a class="more" href="Student%20Visa%20500%20Sub%20Sub%20Landing%20Page.html">Student visa services</a>
+      </article>
+      <article class="svc">
+        <h3>Skilled Migration and PR</h3>
+        <p>Points assessment, skills assessment guidance and Expression of Interest strategy for the Skilled Independent (189), Skilled Nominated (190) and Skilled Work Regional (491) visas.</p>
+        <a class="more" href="Australia%20Services%20Main%20Landing%20Page.html#skilled">Skilled visas</a>
+      </article>
+      <article class="svc">
+        <h3>Partner and Family Visas</h3>
+        <p>For couples and families separated between Fiji and Australia. We organise relationship evidence, statutory declarations and sponsor documents into a clear, consistent application.</p>
+        <a class="more" href="Partner%20Visa%20820%20801%20Sub%20Sub%20Landing%20Page.html">Partner visas</a>
+      </article>
+      <article class="svc">
+        <h3>Employer-Sponsored Visas</h3>
+        <p>Advice for Fijian professionals and Australian employers on the Skills in Demand (subclass 482), Employer Nomination (186) and regional (494) pathways.</p>
+        <a class="more" href="Working%20Visa%20482%20186%20Sub%20Sub%20Landing%20Page.html">Work visas</a>
+      </article>
+      <article class="svc">
+        <h3>Visitor Visas</h3>
+        <p>For Fijian relatives travelling to Sydney, Melbourne or elsewhere in Australia for family events, holidays or business. We focus on evidence and honest travel purpose.</p>
+        <a class="more" href="Visitor%20Visa%20Landing%20Page.html">Visitor visas</a>
+      </article>
+      <article class="svc">
+        <h3>Refused or Complex Cases</h3>
+        <p>Visa refused, cancelled or complicated by character, health or past compliance issues? We review the decision and tell you which options are realistic.</p>
+        <a class="more" href="Australia%20Services%20Main%20Landing%20Page.html">All services</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STUDY ================= -->
+<section id="study" aria-labelledby="h-study">
+  <div class="wrap split">
+    <div>
+      <h2 id="h-study">How to Study in Australia From Fiji</h2>
+      <p style="margin-top:18px">Australia offers universities, TAFE institutes and private colleges with clear pathways from study to work. A Fiji passport holder normally applies for the Student visa (subclass 500) through the Department of Home Affairs once an Australian education provider has offered a place.</p>
+      <p>Applicants from Fiji often come from the University of the South Pacific (USP), Fiji National University (FNU), or straight from Year 12 and Year 13. Each starting point leads to a different course level, credit transfer and English-test discussion, so we plan the route with you rather than hand you a generic list.</p>
+      <p>Australian intakes usually start in February or March and again in July. Because the Fiji school year ends in November or December, we suggest you begin four to six months ahead for the February or March intake.</p>
+      <div class="callout"><strong>New rules from 2 October 2026:</strong> apply from outside Australia, such as from Fiji. Partners and children generally cannot be included, unless an exemption applies, such as for eligible Pacific students (<a href="https://immi.homeaffairs.gov.au/Visa-subsite/files/changes-to-student-visa-applications-factsheet.pdf" rel="noopener">Home Affairs factsheet</a>).
+        <span style="display:block;margin-top:10px"><strong>Honest note:</strong> your course, provider, city and career goals must fit together to meet the Genuine Student requirement. We will tell you if a plan looks weak.</span></div>
+    </div>
+    <div>
+      <h3 style="margin-bottom:14px">What a Fijian Student Visa Application Usually Needs</h3>
+      <ul class="checks">
+        <li>A valid Fiji passport and a clear record of your study and work history</li>
+        <li>A Confirmation of Enrolment (CoE) from a CRICOS-registered provider</li>
+        <li>Overseas Student Health Cover (OSHC) for your stay</li>
+        <li>English evidence such as IELTS or PTE Academic, unless an exemption applies</li>
+        <li>Proof of funds for tuition, living costs and travel, with a clear source of funds</li>
+        <li>Honest answers to the Genuine Student questions, consistent with your documents</li>
+        <li>Fiji police clearance and health examinations with a Home Affairs approved panel physician where required</li>
+        <li>Certified English translations of any documents not in English</li>
+      </ul>
+      <p style="margin-top:20px" class="note">Requirements vary by course level, provider and your personal history. This list is a guide, not a substitute for advice on your own case.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FIJI-SPECIFIC ================= -->
+<section class="tint" aria-labelledby="h-fiji">
+  <div class="wrap">
+    <div class="sec-head measure">
+      <h2 id="h-fiji">What Fijian Applicants Should Know Before They Apply</h2>
+      <p>Practical points for people applying from Fiji. Knowing them early can save weeks.</p>
+    </div>
+    <div class="cards2" style="gap:22px">
+      <div class="svc"><h3>Match Names Across Every Document</h3><p>iTaukei and Indo-Fijian names can appear in different forms on a passport, birth certificate and school records. Differences can cause delays, so we check name consistency before lodging and prepare a name-explanation statement when it is needed.</p></div>
+      <div class="svc"><h3>Start Police Clearance Early</h3><p>Police clearances can take time to arrange, and some visas require certificates from every country you have lived in for a set period. Ask for them as soon as your visa pathway is confirmed.</p></div>
+      <div class="svc"><h3>Show Where Your Money Comes From</h3><p>Funds may come from savings, family support or other sources. Home Affairs expects a clear, genuine source of funds, with bank records and supporting letters, and cautions against large deposits made just before you apply. We help you organise this honestly.</p></div>
+      <div class="svc"><h3>Translate and Certify Properly</h3><p>Documents in Fijian or Hindi need accurate English translations. Poor translations and uncertified copies are avoidable reasons for requests for more information.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PATHWAYS ================= -->
+<section id="pathways" aria-labelledby="h-path">
+  <div class="wrap split">
+    <div>
+      <h2 id="h-path">Permanent Residency and Work Visas for Fijian Citizens</h2>
+      <p style="margin-top:18px">Many Fijians reach permanent residency through one of three routes: skilled migration, employer sponsorship, or a partner visa. The right one depends on your occupation, age, English level and relationships.</p>
+      <h3 style="margin:26px 0 8px">Skilled Migration: 189, 190 and 491</h3>
+      <p>These points-tested visas begin with a skills assessment from the relevant authority for your occupation (for example Engineers Australia, ACS, VETASSESS, Trades Recognition Australia or ANMAC). You then submit an Expression of Interest in SkillSelect. The pass mark is 65 points and applicants must generally be under 45 when invited, but invitations are competitive and depend on your occupation and score. Home Affairs has signalled a review of the points test, so we confirm the settings that apply on the day you lodge. Try our <a href="Australia%20Services%20Main%20Landing%20Page.html#find-your-visa">PR points calculator</a> for a first estimate.</p>
+      <p>Subclass 190 needs state or territory nomination. Subclass 491 is for regional Australia and can lead to permanent residency after living and working there for the required period.</p>
+    </div>
+    <div>
+      <h3 style="margin-bottom:8px">Post-Study and Employer Routes</h3>
+      <p>After completing an eligible Australian qualification, many graduates apply for the Temporary Graduate visa (subclass 485) to gain Australian work experience. The Temporary Graduate visa generally has an age limit of 35 or under, with limited exceptions. Employer-sponsored options include the Skills in Demand visa (subclass 482, with Core Skills and Specialist Skills streams), the Employer Nomination Scheme (186) and the Skilled Employer Sponsored Regional visa (494).</p>
+      <h3 style="margin:26px 0 8px">Partner and Family Visas</h3>
+      <p>If your partner is an Australian citizen, permanent resident or eligible New Zealand citizen, you may qualify for a partner visa. Applicants outside Australia usually use subclass 309/100. Applicants already in Australia may use subclass 820/801. These applications turn on the quality and consistency of relationship evidence, not on how long you have been together alone.</p>
+      <div class="callout"><strong>No guarantees:</strong> we assess your options openly, including when the honest answer is "not yet." We never promise a visa outcome. Only the Department of Home Affairs makes that decision.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PACIFIC ================= -->
+<section class="pacific" id="pacific" aria-labelledby="h-pac">
+  <div class="wrap">
+    <div class="sec-head measure">
+      <h2 id="h-pac">Pacific Schemes Open to People in Fiji</h2>
+      <p>Australia and Fiji signed the Vuvale Union treaty on 6 July 2026, building on the 2023 Vuvale Partnership, and more than 100,000 people in Australia have Fijian heritage. The treaty is still going through parliamentary processes, so any new visa settings apply only once Home Affairs implements them. Two Australian Government programs are already open to Fijians.</p>
+    </div>
+    <div class="cards2">
+      <div class="card">
+        <h3>Pacific Engagement Visa (Subclass 192)</h3>
+        <p>A permanent visa for citizens of eligible Pacific countries and Timor-Leste, including Fiji, with 300 places for Fiji each year. You must register in a Home Affairs ballot (AUD 25) and be selected before you can apply. Main applicants must be aged 18 to 45 when the ballot opens, and need a genuine job offer in Australia. The 2026–27 ballot ran from 1 July to 29 July 2026. Watch the Home Affairs ballot status page for the next opening.</p>
+      </div>
+      <div class="card">
+        <h3>Pacific Australia Labour Mobility (PALM)</h3>
+        <p>An Australian Government scheme that places Pacific workers with approved employers for short-term work of up to nine months or long-term work of up to four years. Fijians take part through Fiji's Ministry of Employment, Productivity and Workplace Relations. We can explain how it compares with other visa options, but we do not recruit for the scheme.</p>
+      </div>
+    </div>
+    <p class="warn"><strong>Scam warning:</strong> nobody can buy you a place in a government ballot or guarantee a job. Home Affairs warns of scams targeting Pacific Islanders, so deal only with official Australian Government channels. Always confirm an agent is on the <a href="https://www.mara.gov.au/" rel="noopener" style="color:var(--navy-950)">OMARA register</a> and use official Home Affairs pages at <a href="https://immi.homeaffairs.gov.au/" rel="noopener" style="color:var(--navy-950)">immi.homeaffairs.gov.au</a>.</p>
+  </div>
+</section>
+
+<!-- ================= PROCESS ================= -->
+<section id="process" aria-labelledby="h-proc">
+  <div class="wrap">
+    <div class="sec-head measure">
+      <h2 id="h-proc">How Our Fiji Branch Handles Your Australian Visa</h2>
+      <p>Each step happens in order, and you always know what comes next.</p>
+    </div>
+    <ol class="steps">
+      <li><h3>Free Consultation</h3><p>Tell us your goals, background and timeline in person in Fiji or online.</p></li>
+      <li><h3>Eligibility Review</h3><p>A registered agent compares your options and flags risks in plain language.</p></li>
+      <li><h3>Written Plan and Fees</h3><p>You receive a clear scope and fee agreement before any work starts.</p></li>
+      <li><h3>Documents and Lodgement</h3><p>We build your evidence checklist, review each document and lodge through ImmiAccount.</p></li>
+      <li><h3>Decision and Next Steps</h3><p>We handle Home Affairs requests, and guide you on arrival, enrolment and later visas.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= WHY ================= -->
+<section class="tint" aria-labelledby="h-why">
+  <div class="wrap split">
+    <div>
+      <h2 id="h-why">Why Fijian Families Choose SuccessVisa</h2>
+      <p style="margin-top:18px">Choosing a migration agent is a trust decision. These are the facts behind ours.</p>
+      <p>SuccessVisa is an Australian entity with offices in Parramatta and Toongabbie in Sydney, Melbourne CBD and Werribee in Victoria, plus a branch in Chandigarh, India. Your Fiji consultation connects you to an Australian team that works with Home Affairs rules every day, and to colleagues who can meet you in person once you arrive.</p>
+      <p>Our advice follows the <a href="https://www.mara.gov.au/tools-for-registered-agents/code-of-conduct" rel="noopener">OMARA Code of Conduct</a>. You can read the <a href="https://www.mara.gov.au/notices-and-reports/guides-and-factsheets/consumer-guide" rel="noopener">OMARA Consumer Guide</a> to understand your rights as a client.</p>
+    </div>
+    <ul class="checks">
+      <li><strong>Registered advice.</strong> Immigration advice comes from MARA-registered agents (MARN 2318228 and 2418515).</li>
+      <li><strong>Written agreement first.</strong> Services and fees are set out before work starts.</li>
+      <li><strong>Straight answers.</strong> If your case looks unlikely, we say so early and suggest alternatives.</li>
+      <li><strong>Full journey.</strong> Admissions, visas, OSHC and health insurance guidance in one team.</li>
+      <li><strong>Recognised locally.</strong> Local Business Award winner and Australian small business champion.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= FIJI BRANCH LOCATION ================= -->
+<section id="visit" aria-labelledby="h-visit">
+  <div class="wrap">
+    <div class="sec-head measure">
+      <h2 id="h-visit">Visit Our Fiji Branch in Suva</h2>
+      <p>Meet a migration adviser in person at our Suva office, or book a video call if you are elsewhere in Fiji.</p>
+    </div>
+    <div class="visit">
+      <div class="visit-card">
+        <div class="visit-block">
+          <h3>Address</h3>
+          <address>SuccessVisa Fiji Branch<br>Shop 7, Ground Floor, Parade Building<br>Suva, Fiji</address>
+        </div>
+        <div class="visit-block">
+          <h3>Opening hours</h3>
+          <table class="hours">
+            <tr><th scope="row">Monday to Friday</th><td>9:00am - 5:30pm</td></tr>
+            <tr><th scope="row">Saturday</th><td>By appointment only</td></tr>
+            <tr><th scope="row">Sunday</th><td class="closed">Closed</td></tr>
+          </table>
+          <p class="visit-note">All times are Fiji time.</p>
+        </div>
+        <div class="visit-block">
+          <h3>Contact</h3>
+          <p>WhatsApp: <a href="https://api.whatsapp.com/send?phone=61468791726">+61 468 791 726</a><br>Email: <a href="mailto:info@successvisa.com.au">info@successvisa.com.au</a></p>
+        </div>
+        <div class="visit-cta">
+          <a class="btn btn-gold" href="Booking%20Page.html">Book an appointment</a>
+          <a class="btn btn-navy" href="https://www.google.com/maps/dir/?api=1&amp;destination=Parade+Building%2C+Suva%2C+Fiji" rel="noopener" target="_blank">Get directions</a>
+        </div>
+      </div>
+      <div class="visit-map">
+        <iframe src="https://www.google.com/maps?q=Parade+Building%2C+Suva%2C+Fiji&amp;output=embed" title="Map showing the SuccessVisa Fiji Branch at the Parade Building, Suva" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= OFFICES ================= -->
+<section id="offices" aria-labelledby="h-off">
+  <div class="wrap">
+    <div class="sec-head measure">
+      <h2 id="h-off">Our Other Offices</h2>
+      <p>When you arrive in Australia, our four Australian offices are ready to help. We also have a branch in India.</p>
+    </div>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+      <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+      <symbol id="i-web" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></symbol>
+    </svg>
+    <div class="offices">
+      <article class="office">
+        <span class="office-tag">Sydney, NSW</span>
+        <h3>Parramatta Branch</h3>
+        <ul>
+          <li><span class="ic"><svg aria-hidden="true"><use href="#i-pin"/></svg></span><span>251 Church St, Parramatta NSW 2150</span></li>
+          <li><span class="ic"><svg aria-hidden="true"><use href="#i-phone"/></svg></span><a href="tel:+61468791726">+61 468 791 726</a></li>
+          <li><span class="ic"><svg aria-hidden="true"><use href="#i-mail"/></svg></span><a href="mailto:info@successvisa.com.au">info@successvisa.com.au</a></li>
+          <li><span class="ic"><svg aria-hidden="true"><use href="#i-clock"/></svg></span><span>Mon to Fri, 9:00am - 5:30pm<small>Saturday by appointment only</small></span></li>
+        </ul>
+        <a class="dir" href="https://www.google.com/maps/dir/?api=1&amp;destination=251+Church+St%2C+Parramatta+NSW+2150" target="_blank" rel="noopener">Get directions &rarr;</a>
+      </article>
+      <article class="office">
+        <span class="office-tag">Sydney, NSW</span>
+        <h3>Toongabbie Branch</h3>
+        <ul>
+          <li><span class="ic"><svg aria-hidden="true"><use href="#i-pin"/></svg></span><span>30 Aurelia St, Toongabbie NSW 2146</span></li>
+          <li><span class="ic"><svg aria-hidden="true"><use href="#i-phone"/></svg></span><a href="tel:+61468791726">+61 468 791 726</a></li>
+          <li><span class="ic"><svg aria-hidden="true"><use href="#i-mail"/></svg></span><a href="mailto:info@successvisa.com.au">info@successvisa.com.au</a></li>
+          <li><span class="ic"><svg aria-hidden="true"><use href="#i-clock"/></svg></span><span>Mon to Fri, 9:00am - 5:30pm<small>Saturday by appointment only</small></span></li>
+        </ul>
+        <a class="dir" href="https://www.google.com/maps/dir/?api=1&amp;destination=30+Aurelia+St%2C+Toongabbie+NSW+2146" target="_blank" rel="noopener">Get directions &rarr;</a>
+      </article>
+      <article class="office">
+        <span class="office-tag">Melbourne, VIC</span>
+        <h3>Melbourne CBD Branch</h3>
+        <ul>
+          <li><span class="ic"><svg aria-hidden="true"><use href="#i-pin"/></svg></span><span>Level 3, Suite 301/227 Collins St, Melbourne VIC 3000</span></li>
+          <li><span class="ic"><svg aria-hidden="true"><use href="#i-phone"/></svg></span><a href="tel:+61416946158">+61 416 946 158</a></li>
+          <li><span class="ic"><svg aria-hidden="true"><use href="#i-mail"/></svg></span><a href="mailto:melbourne@successvisa.com.au">melbourne@successvisa.com.au</a></li>
+          <li><span class="ic"><svg aria-hidden="true"><use href="#i-clock"/></svg></span><span>Mon to Fri, 9:00am - 5:30pm</span></li>
+        </ul>
+        <a class="dir" href="https://www.google.com/maps/dir/?api=1&amp;destination=227+Collins+St%2C+Melbourne+VIC+3000" target="_blank" rel="noopener">Get directions &rarr;</a>
+      </article>
+      <article class="office">
+        <span class="office-tag">Melbourne, VIC</span>
+        <h3>Werribee Branch</h3>
+        <ul>
+          <li><span class="ic"><svg aria-hidden="true"><use href="#i-pin"/></svg></span><span>70 Watton Street, Werribee VIC 3030</span></li>
+          <li><span class="ic"><svg aria-hidden="true"><use href="#i-phone"/></svg></span><a href="tel:+61416946158">+61 416 946 158</a></li>
+          <li><span class="ic"><svg aria-hidden="true"><use href="#i-mail"/></svg></span><a href="mailto:melbourne@successvisa.com.au">melbourne@successvisa.com.au</a></li>
+          <li><span class="ic"><svg aria-hidden="true"><use href="#i-clock"/></svg></span><span>Mon to Fri, 9:00am - 5:30pm<small>Saturday by appointment only</small></span></li>
+        </ul>
+        <a class="dir" href="https://www.google.com/maps/dir/?api=1&amp;destination=70+Watton+Street%2C+Werribee+VIC+3030" target="_blank" rel="noopener">Get directions &rarr;</a>
+      </article>
+      <article class="office">
+        <span class="office-tag in">India</span>
+        <h3>Chandigarh Branch</h3>
+        <ul>
+          <li><span class="ic"><svg aria-hidden="true"><use href="#i-pin"/></svg></span><span>SCO 437-438, 35C, Sector 35, Chandigarh 160022</span></li>
+          <li><span class="ic"><svg aria-hidden="true"><use href="#i-phone"/></svg></span><a href="tel:+919034899620">+91 90348-99620</a></li>
+          <li><span class="ic"><svg aria-hidden="true"><use href="#i-mail"/></svg></span><a href="mailto:info@successvisa.in">info@successvisa.in</a></li>
+          <li><span class="ic"><svg aria-hidden="true"><use href="#i-web"/></svg></span><a href="index.html" rel="noopener">www.successvisa.in</a></li>
+          <li><span class="ic"><svg aria-hidden="true"><use href="#i-clock"/></svg></span><span>Mon to Sat, 9:00am - 5:30pm</span></li>
+        </ul>
+        <a class="dir" href="https://www.google.com/maps/dir/?api=1&amp;destination=SCO+437-438%2C+Sector+35C%2C+Chandigarh+160022" target="_blank" rel="noopener">Get directions &rarr;</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="tint" id="faq" aria-labelledby="h-faq">
+  <div class="wrap">
+    <div class="sec-head measure">
+      <h2 id="h-faq">Frequently Asked Questions About Australian Visas From Fiji</h2>
+    </div>
+    <div class="faq">
+      <details><summary>Do I Need a Migration Agent to Apply for an Australian Visa From Fiji?</summary><div class="ans">You are not legally required to use one, and you can apply directly through the Department of Home Affairs. If you pay someone for immigration assistance, they must be registered with OMARA, with limited exceptions such as Australian legal practitioners. Check the OMARA register before you hand over documents or money.</div></details>
+      <details><summary>Is SuccessVisa Registered to Give Australian Immigration Advice?</summary><div class="ans">Yes. Advice is provided by MARA-registered migration agents (MARN 2318228 and 2418515). You can verify any agent on the public register at mara.gov.au.</div></details>
+      <details><summary>How Can I Study in Australia From Fiji?</summary><div class="ans">Most Fijian students apply for a Student visa (subclass 500). The usual order is to choose a CRICOS-registered course, receive an offer, accept it and pay the deposit to get your Confirmation of Enrolment (CoE), arrange Overseas Student Health Cover, then lodge the visa from outside Australia with English evidence, financial evidence and your Genuine Student responses.</div></details>
+      <details><summary>What Is the Best Visa for Fijian Citizens Who Want to Live in Australia Permanently?</summary><div class="ans">There is no single best visa. Skilled migration (189, 190, 491), employer sponsorship, a partner visa, or the Pacific Engagement visa ballot can each suit different people. The right choice depends on your age, occupation, qualifications, English level, work history and family situation.</div></details>
+      <details><summary>Is There a Special Australian Visa for People From Fiji and the Pacific?</summary><div class="ans">Yes. The Pacific Engagement visa (subclass 192) is a permanent visa allocated by ballot to citizens of eligible Pacific countries, including Fiji. Registration costs AUD 25, main applicants must be aged 18 to 45, and you need a genuine job offer in Australia. The 2026–27 ballot closed on 29 July 2026, so watch Home Affairs for the next one. Be cautious of anyone who promises to guarantee a ballot place.</div></details>
+      <details><summary>Can I Work While I Study in Australia?</summary><div class="ans">Most Student visa holders can currently work up to 48 hours per fortnight while their course is in session and without a set limit during official course breaks. The rule has changed in recent years, so check your visa conditions on VEVO and confirm the current limit with us.</div></details>
+      <details><summary>Can SuccessVisa Guarantee My Visa?</summary><div class="ans">No. Only the Department of Home Affairs decides visa applications, and no registered agent can guarantee an outcome. What we can do is assess your options honestly, prepare a complete application and tell you early if a pathway is unlikely to work.</div></details>
+      <details><summary>I Was Refused an Australian Visa Before. Can You Still Help?</summary><div class="ans">Often yes, but it depends on the reason for refusal and whether review rights apply. We read your refusal letter, explain what went wrong and tell you whether a new application, a review or a different visa is more realistic.</div></details>
+      <details><summary>Do I Need IELTS or PTE to Study or Migrate From Fiji?</summary><div class="ans">Many applicants need an approved English test such as IELTS or PTE Academic, and tests must be taken in person at a secure test centre. Some education providers accept other evidence for admission, and certain visas have their own English rules. We check the requirement for your exact course and visa.</div></details>
+      <details><summary>Can I Bring My Spouse or Children When I Study in Australia?</summary><div class="ans">From 2 October 2026, Student visa applicants generally cannot include a partner or dependent children, and family cannot be added after the visa is granted. Exemptions include PhD students, DFAT or Defence sponsored students, foreign government scholarship holders and eligible students from a Pacific country or an ASEAN member country. We check whether you qualify before you commit to a course.</div></details>
+      <details><summary>Can I Switch to a Student Visa After I Arrive in Australia on a Visitor Visa?</summary><div class="ans">Generally no. From 2 October 2026, most temporary visa holders in Australia, including visitor visa holders, can no longer lodge a Student visa application while in Australia. You would need to be outside Australia when you lodge and when the visa is granted, so plan your study visa before you travel.</div></details>
+      <details><summary>Will the Vuvale Union Change Visa Rules for Fijians?</summary><div class="ans">Australia and Fiji signed the Vuvale Union on 6 July 2026, and it includes commitments on mobility, education and skills. The treaty is still going through parliamentary approval, and Home Affairs must publish any new visa settings before they apply. Until then, the current visa rules stand.</div></details>
+      <details><summary>How Do I Book a Consultation From Fiji?</summary><div class="ans">Use the enquiry form below, message us on WhatsApp or email info@successvisa.com.au. Fiji is only one to two hours ahead of Sydney and Melbourne, so online calls are easy to arrange.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="contact" id="contact" aria-labelledby="h-contact">
+  <div class="wrap contact-grid">
+    <div>
+      <h2 id="h-contact">Talk to a Registered Migration Agent About Your Australian Visa</h2>
+      <p style="margin-top:18px">Tell us where you are in Fiji, what you want to do in Australia and when. We reply with next steps, not a sales script.</p>
+      <ul>
+        <li><strong>WhatsApp:</strong> <a href="https://api.whatsapp.com/send?phone=61468791726">+61 468 791 726</a></li>
+        <li><strong>Email:</strong> <a href="mailto:info@successvisa.com.au">info@successvisa.com.au</a></li>
+        <li><strong>Hours:</strong> Monday to Friday, 9:00am to 5:30pm Sydney time</li>
+        <li><strong>Also on:</strong> <a href="https://www.facebook.com/successvisaau" rel="noopener">Facebook</a>, <a href="https://www.instagram.com/successvisaau/" rel="noopener">Instagram</a>, <a href="https://www.linkedin.com/company/successvisaau/" rel="noopener">LinkedIn</a></li>
+      </ul>
+    </div>
+
+    <!-- TODO: connect this form to your CRM or email endpoint. Until then it opens a pre-filled WhatsApp message. -->
+    <form id="enq" novalidate>
+      <div><label for="fn">Full name</label><input id="fn" name="name" autocomplete="name" required></div>
+      <div><label for="ph">WhatsApp number</label><input id="ph" name="phone" type="tel" autocomplete="tel" placeholder="+679 ..." required></div>
+      <div><label for="em">Email</label><input id="em" name="email" type="email" autocomplete="email"></div>
+      <div><label for="lc">Where are you in Fiji?</label>
+        <select id="lc" name="location"><option>Suva</option><option>Nadi</option><option>Lautoka</option><option>Labasa</option><option>Other in Fiji</option><option>Already in Australia</option></select></div>
+      <div class="full"><label for="gl">What do you want to do?</label>
+        <select id="gl" name="goal"><option>Study in Australia (Student visa)</option><option>Skilled migration / PR (189, 190, 491)</option><option>Work with an Australian employer</option><option>Partner or family visa</option><option>Visitor visa</option><option>Pacific Engagement visa</option><option>Visa refused, need help</option><option>Not sure yet</option></select></div>
+      <div class="full"><label for="ms">Tell us a little about your situation</label><textarea id="ms" name="message"></textarea></div>
+      <div class="full consent"><input type="checkbox" id="cs" required><label for="cs" style="font-weight:400;color:var(--muted);margin:0">I agree to be contacted by the SuccessVisa team about my enquiry.</label></div>
+      <div class="full"><button class="btn btn-gold" type="submit">Send my enquiry</button></div>
+      <p class="note full" id="formmsg" role="status" aria-live="polite">We keep your details private and use them only to respond to your enquiry.</p>
+    </form>
+  </div>
+</section>
+
+
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h3>SuccessVisa Fiji Branch</h3>
+        <p>Australian migration and education consultants helping people in Fiji reach Australia. Advice is provided by MARA-registered migration agents (MARN 2318228, 2418515).</p>
+      </div>
+      <div>
+        <h3>Education</h3>
+        <ul>
+          <li><a href="Student%20Visa%20500%20Sub%20Sub%20Landing%20Page.html">Student visa</a></li>
+          <li><a href="Admission%20Course%20Sub%20Landing%20Page.html">Student admission</a></li>
+          <li><a href="Admission%20Course%20Sub%20Landing%20Page.html">Student counselling</a></li>
+          <li><a href="Health%20Insurance%20OSHC%20Sub%20Sub%20Landing%20Page.html">Health insurance (OSHC)</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Migration</h3>
+        <ul>
+          <li><a href="Australia%20Services%20Main%20Landing%20Page.html#skilled">Skilled visas</a></li>
+          <li><a href="Partner%20Visa%20820%20801%20Sub%20Sub%20Landing%20Page.html">Partner visa</a></li>
+          <li><a href="Visitor%20Visa%20Landing%20Page.html">Visitor visa</a></li>
+          <li><a href="Working%20Visa%20482%20186%20Sub%20Sub%20Landing%20Page.html">Work visa</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Company</h3>
+        <ul>
+          <li><a href="About%20Us%20Sub%20Landing%20Page.html">About SuccessVisa</a></li>
+          <li><a href="resources.html#blog">Immigration news</a></li>
+          <li><a href="Privacy%20Policy%20Page.html">Privacy policy</a></li>
+          <li><a href="Disclaimer%20Page.html">Disclaimer</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <p><strong>General information only.</strong> This page is not legal advice and does not guarantee any visa outcome. Visa rules, fees, processing times and work limits are set by the Australian Government and change often. Advice for your case is given after a consultation with a MARA-registered migration agent. Last reviewed 7 October 2026.</p>
+      <p>&copy; <span id="yr">2026</span> SuccessVisa (An Australian Entity). All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<a class="btn btn-gold sticky-cta" href="#contact">Book a free consultation</a>
+
+<script>
+  document.getElementById('yr').textContent=new Date().getFullYear();
+
+  // Enquiry form: opens a pre-filled WhatsApp message (replace with your CRM endpoint when ready)
+  document.getElementById('enq').addEventListener('submit',function(e){
+    e.preventDefault();
+    var f=e.target,msg=document.getElementById('formmsg');
+    if(!f.name.value.trim()||!f.phone.value.trim()||!document.getElementById('cs').checked){
+      msg.textContent='Please add your name, WhatsApp number and tick the consent box.';return;
+    }
+    var t='Bula SuccessVisa. My name is '+f.name.value.trim()+'.\n'+
+      'Location: '+f.location.value+'\n'+
+      'Goal: '+f.goal.value+'\n'+
+      'Phone: '+f.phone.value.trim()+
+      (f.email.value?'\nEmail: '+f.email.value.trim():'')+
+      (f.message.value?'\nAbout me: '+f.message.value.trim():'');
+    window.open('https://api.whatsapp.com/send?phone=61468791726&text='+encodeURIComponent(t),'_blank','noopener');
+    msg.textContent='Thank you. Your WhatsApp message is ready to send.';
+  });
+</script>
+
+<script>
+  // Mobile menu (same behaviour as index.html)
+  (function(){
+    var toggle = document.querySelector('.svnav .menu-toggle');
+    var nav = document.querySelector('.svnav nav.primary');
+    toggle.addEventListener('click', function(){
+      var open = nav.style.display === 'block';
+      nav.style.display = open ? 'none' : 'block';
+      if(!open){
+        nav.style.position='absolute';nav.style.top='100%';nav.style.left='0';nav.style.right='0';
+        nav.style.background='#FBFAF7';nav.style.borderBottom='1px solid #D9D2C0';nav.style.padding='20px 28px';
+        nav.querySelector('ul').style.flexDirection='column';nav.querySelector('ul').style.alignItems='flex-start';nav.querySelector('ul').style.gap='16px';
+      }
+    });
+  })();
+</script>
+
+<script>
+(function(){
+  var links=document.querySelectorAll('.region-toggle');
+  links.forEach(function(a){
+    window.addEventListener('pageshow',function(){a.classList.toggle('is-right',a.getAttribute('data-side')==='right');});
+    a.addEventListener('click',function(e){
+      if(e.metaKey||e.ctrlKey||e.shiftKey||e.button===1) return;
+      e.preventDefault();
+      var to=a.getAttribute('data-to');
+      try{localStorage.setItem('sv_region',to);}catch(err){}
+      document.cookie='sv_region='+to+'; path=/; max-age=31536000; SameSite=Lax';
+      a.classList.toggle('is-right');
+      var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      setTimeout(function(){window.location.href=a.href;},reduce?0:320);
+    });
+  });
+})();
+</script>
+</body>
+</html>
