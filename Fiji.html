@@ -565,6 +565,12 @@
   .visit-card .branch-ico{position:absolute;top:20px;right:24px;width:76px;height:76px;object-fit:contain;transition:transform .8s cubic-bezier(.45,.05,.25,1);}
   .visit-card:hover .branch-ico{transform:rotateY(360deg);}
   @media (prefers-reduced-motion:reduce){.visit-card .branch-ico{transition:none;}.visit-card:hover .branch-ico{transform:none;}}
+
+  /* Branch landmark icon on the office cards, spins on hover */
+  .office{position:relative;}
+  .office .branch-ico{position:absolute;top:16px;right:20px;width:64px;height:64px;object-fit:contain;transition:transform .8s cubic-bezier(.45,.05,.25,1);}
+  .office:hover .branch-ico{transform:rotateY(360deg);}
+  @media (prefers-reduced-motion:reduce){.office .branch-ico{transition:none;}.office:hover .branch-ico{transform:none;}}
 </style>
 </head>
 
@@ -939,6 +945,7 @@
     </svg>
     <div class="offices">
       <article class="office">
+        <img class="branch-ico" src="assets/branch-parramatta.webp" width="320" height="320" alt="" aria-hidden="true" loading="lazy" decoding="async">
         <span class="office-tag">Sydney, NSW</span>
         <h3>Parramatta Branch</h3>
         <ul>
@@ -950,6 +957,7 @@
         <a class="dir" href="https://www.google.com/maps/dir/?api=1&amp;destination=251+Church+St%2C+Parramatta+NSW+2150" target="_blank" rel="noopener">Get directions &rarr;</a>
       </article>
       <article class="office">
+        <img class="branch-ico" src="assets/branch-toongabbie.webp" width="320" height="320" alt="" aria-hidden="true" loading="lazy" decoding="async">
         <span class="office-tag">Sydney, NSW</span>
         <h3>Toongabbie Branch</h3>
         <ul>
@@ -961,6 +969,7 @@
         <a class="dir" href="https://www.google.com/maps/dir/?api=1&amp;destination=30+Aurelia+St%2C+Toongabbie+NSW+2146" target="_blank" rel="noopener">Get directions &rarr;</a>
       </article>
       <article class="office">
+        <img class="branch-ico" src="assets/branch-melbourne.webp" width="320" height="320" alt="" aria-hidden="true" loading="lazy" decoding="async">
         <span class="office-tag">Melbourne, VIC</span>
         <h3>Melbourne CBD Branch</h3>
         <ul>
@@ -972,6 +981,7 @@
         <a class="dir" href="https://www.google.com/maps/dir/?api=1&amp;destination=227+Collins+St%2C+Melbourne+VIC+3000" target="_blank" rel="noopener">Get directions &rarr;</a>
       </article>
       <article class="office">
+        <img class="branch-ico" src="assets/branch-werribee.webp" width="320" height="320" alt="" aria-hidden="true" loading="lazy" decoding="async">
         <span class="office-tag">Melbourne, VIC</span>
         <h3>Werribee Branch</h3>
         <ul>
@@ -983,6 +993,7 @@
         <a class="dir" href="https://www.google.com/maps/dir/?api=1&amp;destination=70+Watton+Street%2C+Werribee+VIC+3030" target="_blank" rel="noopener">Get directions &rarr;</a>
       </article>
       <article class="office">
+        <img class="branch-ico" src="assets/branch-chandigarh.webp" width="320" height="320" alt="" aria-hidden="true" loading="lazy" decoding="async">
         <span class="office-tag in">India</span>
         <h3>Chandigarh Branch</h3>
         <ul>
