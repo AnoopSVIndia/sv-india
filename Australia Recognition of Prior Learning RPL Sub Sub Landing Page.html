@@ -15,6 +15,10 @@
       try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||'';}catch(e){}
       if(tz) r=/^Asia\/(Kolkata|Calcutta)$/.test(tz)?'in':'au';
     }
+    // The homepage this tab came through (or the last toggle click) wins, so a page opened from
+    // International Home shows Australia and one opened from index.html shows India.
+    var ctx=/(?:^|;)sv_ctx=(in|au)/.exec(window.name||'');
+    if(ctx&&!document.documentElement.getAttribute('data-home')) r=ctx[1];
     var shown=document.documentElement.getAttribute('data-home')||r;
     if(shown) document.documentElement.setAttribute('data-region',shown);
     if(!r) return;
@@ -752,6 +756,7 @@
       e.preventDefault();
       var to=a.getAttribute('data-to');
       try{localStorage.setItem('sv_region',to);}catch(err){}
+      window.name='sv_ctx='+to;
       document.cookie='sv_region='+to+'; path=/; max-age=31536000; SameSite=Lax';
       a.classList.toggle('is-right');
       var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;

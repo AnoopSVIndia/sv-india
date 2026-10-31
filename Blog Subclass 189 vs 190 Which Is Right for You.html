@@ -15,6 +15,10 @@
       try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||'';}catch(e){}
       if(tz) r=/^Asia\/(Kolkata|Calcutta)$/.test(tz)?'in':'au';
     }
+    // The homepage this tab came through (or the last toggle click) wins, so a page opened from
+    // International Home shows Australia and one opened from index.html shows India.
+    var ctx=/(?:^|;)sv_ctx=(in|au)/.exec(window.name||'');
+    if(ctx&&!document.documentElement.getAttribute('data-home')) r=ctx[1];
     var shown=document.documentElement.getAttribute('data-home')||r;
     if(shown) document.documentElement.setAttribute('data-region',shown);
     if(!r) return;
@@ -281,6 +285,16 @@
 .post-layout{display:grid;grid-template-columns:230px minmax(0,1fr);gap:56px;padding-top:44px;padding-bottom:64px;align-items:start;}
 .post-toc{position:sticky;top:110px;}
 .toc-title{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:10px;}
+/* foldable contents: open by default, the title toggles it */
+.toc-fold summary{display:flex;align-items:center;justify-content:space-between;gap:10px;cursor:pointer;list-style:none;user-select:none;}
+.toc-fold summary::-webkit-details-marker{display:none;}
+.toc-fold summary:hover{color:var(--ink);}
+.toc-fold summary:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px;}
+.toc-chev{flex:none;width:22px;height:22px;border:1px solid var(--line);border-radius:50%;position:relative;transition:transform .2s ease,border-color .2s ease;}
+.toc-chev::before{content:"";position:absolute;left:7px;top:6px;width:6px;height:6px;border-right:1.6px solid currentColor;border-bottom:1.6px solid currentColor;transform:rotate(45deg);}
+.toc-fold summary:hover .toc-chev{border-color:var(--gold);}
+.toc-fold:not([open]) .toc-chev{transform:rotate(-90deg);}
+.toc-fold:not([open]) summary{margin-bottom:0;}
 .post-toc ol{margin:0;padding:0;list-style:none;border-left:2px solid var(--line);}
 .post-toc a{display:block;padding:6px 0 6px 14px;margin-left:-2px;border-left:2px solid transparent;font-size:13.5px;font-weight:600;color:var(--ink-2);}
 .post-toc a:hover{border-left-color:var(--gold);color:var(--ink);}
@@ -476,7 +490,8 @@
 
 <div class="wrap post-layout">
   <aside class="post-toc" aria-label="In this article">
-    <p class="toc-title">In this article</p>
+    <details class="toc-fold" open>
+    <summary class="toc-title">In this article<span class="toc-chev" aria-hidden="true"></span></summary>
     <ol>
       <li><a href="#what-is-189">What is the 189?</a></li>
       <li><a href="#what-is-190">What is the 190?</a></li>
@@ -489,6 +504,7 @@
       <li><a href="#mistakes">Common mistakes</a></li>
       <li><a href="#faq">FAQs</a></li>
     </ol>
+    </details>
   </aside>
 
   <div class="prose post-body">
@@ -808,6 +824,7 @@
       e.preventDefault();
       var to=a.getAttribute('data-to');
       try{localStorage.setItem('sv_region',to);}catch(err){}
+      window.name='sv_ctx='+to;
       document.cookie='sv_region='+to+'; path=/; max-age=31536000; SameSite=Lax';
       a.classList.toggle('is-right');
       var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
