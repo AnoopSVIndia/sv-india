@@ -576,6 +576,12 @@ html{scroll-behavior:smooth}
     .svnav .dropdown-menu.mega{width:auto;display:flex;flex-direction:column;gap:10px;padding:0;}
     .svnav .dropdown-menu .mega-head{padding:4px 12px;}
   }
+
+  /* Branch landmark icon on the contact card, spins on hover */
+  .office-card{position:relative;}
+  .office-card .branch-ico{position:absolute;top:20px;right:24px;width:76px;height:76px;object-fit:contain;transition:transform .8s cubic-bezier(.45,.05,.25,1);}
+  .office-card:hover .branch-ico{transform:rotateY(360deg);}
+  @media (prefers-reduced-motion:reduce){.office-card .branch-ico{transition:none;}.office-card:hover .branch-ico{transform:none;}}
 </style>
 </head>
 <body>
@@ -800,6 +806,7 @@ html{scroll-behavior:smooth}
     </div>
     <div class="office">
       <div class="office-card">
+        <img class="branch-ico" src="assets/branch-melbourne.webp" width="320" height="320" alt="" aria-hidden="true" loading="lazy" decoding="async">
         <h3>Melbourne CBD Branch</h3>
         <div class="orow">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 22s7-7.58 7-12.5A7 7 0 0 0 5 9.5C5 14.42 12 22 12 22Z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9.5" r="2.5" stroke="currentColor" stroke-width="1.6"/></svg>

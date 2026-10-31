@@ -375,9 +375,10 @@
   .office-card:hover{transform:translateY(-5px);box-shadow:0 18px 34px rgba(29,24,75,.14);}
   .office-card.hq{border-top-color:var(--gold);}
   .oc-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px;}
-  .oc-icon{width:46px;height:46px;border-radius:50%;background:var(--paper-2);display:flex;align-items:center;justify-content:center;color:var(--ink);transition:background .25s ease,transform .25s ease;}
-  .oc-icon svg{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
-  .office-card:hover .oc-icon{background:var(--gold-light);transform:scale(1.08);}
+  .oc-icon{width:72px;height:72px;display:flex;align-items:center;justify-content:center;perspective:600px;}
+  .oc-icon img{width:100%;height:100%;object-fit:contain;transition:transform .8s cubic-bezier(.45,.05,.25,1);}
+  .office-card:hover .oc-icon img,.office-card:focus-visible .oc-icon img{transform:rotateY(360deg);}
+  @media (prefers-reduced-motion:reduce){.oc-icon img{transition:none;}.office-card:hover .oc-icon img{transform:none;}}
   .oc-tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);background:var(--gold-light);padding:4px 11px;border-radius:20px;}
   .office-card h3{font-size:24px;margin-bottom:2px;}
   .office-card p.oc-region{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:12px;}
@@ -578,42 +579,42 @@
     </div>
     <div class="office-grid">
       <a href="Parramatta%20Branch%20Landing%20Page.html" class="office-card au hq" id="office-parramatta">
-        <div class="oc-top"><span class="oc-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 29s9-8.2 9-15a9 9 0 0 0-18 0c0 6.800 9 15 9 15Z"/><circle cx="16" cy="14" r="3.2"/></svg></span><span class="oc-tag">Australian head office</span></div>
+        <div class="oc-top"><span class="oc-icon"><img src="assets/branch-parramatta.webp" width="320" height="320" alt="" aria-hidden="true" loading="lazy" decoding="async"></span><span class="oc-tag">Australian head office</span></div>
         <h3>Parramatta</h3>
         <p class="oc-region">NSW, Australia</p>
         <p>Our head office in western Sydney. A good first choice if you live in Sydney or elsewhere in New South Wales and want to meet a registered migration agent in person.</p>
         <span class="pillar-link">Visit the Parramatta office page <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M8 1L13 5L8 9M13 5H1" stroke="currentColor" stroke-width="1.4"/></svg></span>
       </a>
       <a href="Toongabbie%20Branch%20Landing%20Page.html" class="office-card au" id="office-toongabbie">
-        <div class="oc-top"><span class="oc-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 29s9-8.2 9-15a9 9 0 0 0-18 0c0 6.800 9 15 9 15Z"/><circle cx="16" cy="14" r="3.2"/></svg></span><span class="oc-tag">Sydney office</span></div>
+        <div class="oc-top"><span class="oc-icon"><img src="assets/branch-toongabbie.webp" width="320" height="320" alt="" aria-hidden="true" loading="lazy" decoding="async"></span><span class="oc-tag">Sydney office</span></div>
         <h3>Toongabbie</h3>
         <p class="oc-region">NSW, Australia</p>
         <p>A second Sydney office, convenient for clients in western Sydney who prefer a face-to-face consultation close to home.</p>
         <span class="pillar-link">Visit the Toongabbie office page <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M8 1L13 5L8 9M13 5H1" stroke="currentColor" stroke-width="1.4"/></svg></span>
       </a>
       <a href="Melbourne%20CBD%20Branch%20Landing%20Page.html" class="office-card au" id="office-melbourne">
-        <div class="oc-top"><span class="oc-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 29s9-8.2 9-15a9 9 0 0 0-18 0c0 6.800 9 15 9 15Z"/><circle cx="16" cy="14" r="3.2"/></svg></span><span class="oc-tag">Melbourne CBD office</span></div>
+        <div class="oc-top"><span class="oc-icon"><img src="assets/branch-melbourne.webp" width="320" height="320" alt="" aria-hidden="true" loading="lazy" decoding="async"></span><span class="oc-tag">Melbourne CBD office</span></div>
         <h3>Melbourne</h3>
         <p class="oc-region">VIC, Australia</p>
         <p>Our Melbourne CBD office, for clients across Melbourne and Victoria, including people who work in the city.</p>
         <span class="pillar-link">Visit the Melbourne office page <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M8 1L13 5L8 9M13 5H1" stroke="currentColor" stroke-width="1.4"/></svg></span>
       </a>
       <a href="Werribee%20Branch%20Landing%20Page.html" class="office-card au" id="office-werribee">
-        <div class="oc-top"><span class="oc-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 29s9-8.2 9-15a9 9 0 0 0-18 0c0 6.800 9 15 9 15Z"/><circle cx="16" cy="14" r="3.2"/></svg></span><span class="oc-tag">Melbourne west office</span></div>
+        <div class="oc-top"><span class="oc-icon"><img src="assets/branch-werribee.webp" width="320" height="320" alt="" aria-hidden="true" loading="lazy" decoding="async"></span><span class="oc-tag">Melbourne west office</span></div>
         <h3>Werribee</h3>
         <p class="oc-region">VIC, Australia</p>
         <p>Our office in Melbourne's western suburbs, for clients in Werribee and the surrounding area.</p>
         <span class="pillar-link">Visit the Werribee office page <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M8 1L13 5L8 9M13 5H1" stroke="currentColor" stroke-width="1.4"/></svg></span>
       </a>
       <a href="Chandigarh%20Branch%20Landing%20Page.html" class="office-card in" id="office-chandigarh">
-        <div class="oc-top"><span class="oc-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 29s9-8.2 9-15a9 9 0 0 0-18 0c0 6.800 9 15 9 15Z"/><circle cx="16" cy="14" r="3.2"/></svg></span><span class="oc-tag">India office</span></div>
+        <div class="oc-top"><span class="oc-icon"><img src="assets/branch-chandigarh.webp" width="320" height="320" alt="" aria-hidden="true" loading="lazy" decoding="async"></span><span class="oc-tag">India office</span></div>
         <h3>Chandigarh</h3>
         <p class="oc-region">India</p>
         <p>Our India office. It handles most Australian student visa and tourist visa enquiries from Punjab, Haryana and Delhi.</p>
         <span class="pillar-link">Visit the Chandigarh office page <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M8 1L13 5L8 9M13 5H1" stroke="currentColor" stroke-width="1.4"/></svg></span>
       </a>
       <a href="Fiji.html" class="office-card fj" id="office-suva">
-        <div class="oc-top"><span class="oc-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 29s9-8.2 9-15a9 9 0 0 0-18 0c0 6.800 9 15 9 15Z"/><circle cx="16" cy="14" r="3.2"/></svg></span><span class="oc-tag">Fiji office</span></div>
+        <div class="oc-top"><span class="oc-icon"><img src="assets/branch-suva.webp" width="320" height="320" alt="" aria-hidden="true" loading="lazy" decoding="async"></span><span class="oc-tag">Fiji office</span></div>
         <h3>Suva</h3>
         <p class="oc-region">Fiji</p>
         <p>Our newest office, supporting applicants who live in Fiji and are planning a move, a course or a visit to Australia.</p>

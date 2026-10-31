@@ -559,6 +559,12 @@
     .svnav .dropdown-menu.mega{width:auto;display:flex;flex-direction:column;gap:10px;padding:0;}
     .svnav .dropdown-menu .mega-head{padding:4px 12px;}
   }
+
+  /* Branch landmark icon on the contact card, spins on hover */
+  .visit-card{position:relative;}
+  .visit-card .branch-ico{position:absolute;top:20px;right:24px;width:76px;height:76px;object-fit:contain;transition:transform .8s cubic-bezier(.45,.05,.25,1);}
+  .visit-card:hover .branch-ico{transform:rotateY(360deg);}
+  @media (prefers-reduced-motion:reduce){.visit-card .branch-ico{transition:none;}.visit-card:hover .branch-ico{transform:none;}}
 </style>
 </head>
 
@@ -887,6 +893,7 @@
     </div>
     <div class="visit">
       <div class="visit-card">
+        <img class="branch-ico" src="assets/branch-suva.webp" width="320" height="320" alt="" aria-hidden="true" loading="lazy" decoding="async">
         <div class="visit-block">
           <h3>Address</h3>
           <address>SuccessVisa Fiji<br>Shop 7, Ground Floor, Parade Building<br>Suva, Fiji</address>

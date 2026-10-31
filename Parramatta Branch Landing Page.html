@@ -604,6 +604,12 @@ html{scroll-behavior:smooth}
     .svnav .dropdown-menu.mega{width:auto;display:flex;flex-direction:column;gap:10px;padding:0;}
     .svnav .dropdown-menu .mega-head{padding:4px 12px;}
   }
+
+  /* Branch landmark icon on the contact card, spins on hover */
+  .office-card{position:relative;}
+  .office-card .branch-ico{position:absolute;top:20px;right:24px;width:76px;height:76px;object-fit:contain;transition:transform .8s cubic-bezier(.45,.05,.25,1);}
+  .office-card:hover .branch-ico{transform:rotateY(360deg);}
+  @media (prefers-reduced-motion:reduce){.office-card .branch-ico{transition:none;}.office-card:hover .branch-ico{transform:none;}}
 </style>
 </head>
 <body>
@@ -720,8 +726,14 @@ html{scroll-behavior:smooth}
         <a href="https://www.google.com/maps/dir/?api=1&amp;destination=251+Church+St%2C+Parramatta+NSW+2150" target="_blank" rel="noopener" class="btn btn-g">Get Directions</a>
       </div>
     </div>
-    <div class="hero-visual" id="hero-animation" role="img" aria-label="Space reserved for a hero animation">
-      <span>Hero animation area<br>Place your animation here<br>(Lottie, WebP, GIF or video, 500 x 500)</span>
+    <div style="background:#1D184B;color:#fff;border-radius:22px;padding:30px 28px;box-shadow:0 14px 34px rgba(29,24,75,.25);">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:#FBC46B;margin-bottom:10px;">Parramatta Branch</div>
+      <div style="font-family:'Fraunces',serif;font-size:26px;line-height:1.25;margin-bottom:14px;">251 Church St, Parramatta NSW 2150</div>
+      <div style="font-size:15.5px;line-height:1.8;color:rgba(255,255,255,.88);">
+        <a href="tel:+61468791726" style="color:#fff;">+61 468 791 726</a><br>
+        <a href="mailto:info@successvisa.com.au" style="color:#fff;">info@successvisa.com.au</a><br>
+        Mon to Fri, 9:00 am to 5:30 pm<br>Sat by appointment only
+      </div>
     </div>
   </div>
 </section>
@@ -943,6 +955,7 @@ html{scroll-behavior:smooth}
     </div>
     <div class="office">
       <div class="office-card">
+        <img class="branch-ico" src="assets/branch-parramatta.webp" width="320" height="320" alt="" aria-hidden="true" loading="lazy" decoding="async">
         <h3>Parramatta Branch</h3>
         <div class="orow">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 22s7-7.58 7-12.5A7 7 0 0 0 5 9.5C5 14.42 12 22 12 22Z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9.5" r="2.5" stroke="currentColor" stroke-width="1.6"/></svg>
