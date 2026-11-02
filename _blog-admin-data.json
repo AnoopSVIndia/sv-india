@@ -1,0 +1,170 @@
+{
+  "authors": [
+    {
+      "id": "successvisa",
+      "name": "SuccessVisa",
+      "credential": "MARA registered (MARN 2318228)",
+      "bio": ""
+    }
+  ],
+  "categories": [
+    {
+      "id": "student-visa",
+      "name": "Student Visa",
+      "slug": "student-visa"
+    },
+    {
+      "id": "training-visa",
+      "name": "Training Visa",
+      "slug": "training-visa"
+    },
+    {
+      "id": "health-cover",
+      "name": "Health Cover",
+      "slug": "health-cover"
+    },
+    {
+      "id": "business",
+      "name": "Business",
+      "slug": "business"
+    },
+    {
+      "id": "skilled-migration",
+      "name": "Skilled Migration",
+      "slug": "skilled-migration"
+    },
+    {
+      "id": "partner-and-family",
+      "name": "Partner and Family",
+      "slug": "partner-and-family"
+    }
+  ],
+  "posts": [
+    {
+      "id": "671c4a94bead",
+      "title": "Subclass 189 vs 190: Which Is Right for You?",
+      "slug": "subclass-189-vs-190",
+      "excerpt": "Nomination, points, occupation lists, where you must live, cost and processing times for the 189 and 190, explained in plain words.",
+      "content": "",
+      "authorId": "successvisa",
+      "categoryId": "skilled-migration",
+      "featuredImage": "",
+      "featuredAlt": "",
+      "date": "2026-10-29",
+      "metaDescription": "",
+      "status": "published",
+      "file": "Blog Subclass 189 vs 190 Which Is Right for You.html",
+      "legacy": true,
+      "createdAt": "2026-11-02T08:38:49.741Z",
+      "updatedAt": "2026-11-02T08:38:49.741Z"
+    },
+    {
+      "id": "a6f56cc4c3a9",
+      "title": "Student Visa Changes from 2 October 2026: What Applicants Need to Know",
+      "slug": "student-visa-changes-from-2-october-2026-what-applicants-need-to-know",
+      "excerpt": "A plain-English look at the new Student visa rules, who is affected and what to check before you enrol or lodge.",
+      "content": "",
+      "authorId": "successvisa",
+      "categoryId": "student-visa",
+      "featuredImage": "",
+      "featuredAlt": "",
+      "date": "2026-10-26",
+      "metaDescription": "",
+      "status": "draft",
+      "file": "",
+      "legacy": false,
+      "createdAt": "2026-11-02T08:38:49.741Z",
+      "updatedAt": "2026-11-02T08:38:49.741Z"
+    },
+    {
+      "id": "45f793295e2a",
+      "title": "Training Visa (407): Why the Sponsor and Nomination Now Come First",
+      "slug": "training-visa-407-why-the-sponsor-and-nomination-now-come-first",
+      "excerpt": "How the 2026 change affects sponsors and trainees, and what to prepare before anything is lodged.",
+      "content": "",
+      "authorId": "successvisa",
+      "categoryId": "training-visa",
+      "featuredImage": "",
+      "featuredAlt": "",
+      "date": "2026-10-22",
+      "metaDescription": "",
+      "status": "draft",
+      "file": "",
+      "legacy": false,
+      "createdAt": "2026-11-02T08:38:49.741Z",
+      "updatedAt": "2026-11-02T08:38:49.741Z"
+    },
+    {
+      "id": "8aca5df5fb79",
+      "title": "What Does OSHC Cover? A Plain-English Guide for Students",
+      "slug": "what-does-oshc-cover-a-plain-english-guide-for-students",
+      "excerpt": "What Overseas Student Health Cover pays for, what it does not, and how to compare approved providers.",
+      "content": "",
+      "authorId": "successvisa",
+      "categoryId": "health-cover",
+      "featuredImage": "",
+      "featuredAlt": "",
+      "date": "2026-10-18",
+      "metaDescription": "",
+      "status": "draft",
+      "file": "",
+      "legacy": false,
+      "createdAt": "2026-11-02T08:38:49.741Z",
+      "updatedAt": "2026-11-02T08:38:49.741Z"
+    },
+    {
+      "id": "023f4b9f23db",
+      "title": "Business Visa Options After the 188 Closure",
+      "slug": "business-visa-options-after-the-188-closure",
+      "excerpt": "Which business-related visas are still open, who can use them and what to do instead.",
+      "content": "",
+      "authorId": "successvisa",
+      "categoryId": "business",
+      "featuredImage": "",
+      "featuredAlt": "",
+      "date": "2026-10-14",
+      "metaDescription": "",
+      "status": "draft",
+      "file": "",
+      "legacy": false,
+      "createdAt": "2026-11-02T08:38:49.741Z",
+      "updatedAt": "2026-11-02T08:38:49.741Z"
+    },
+    {
+      "id": "2f03901d325a",
+      "title": "Skilled Visa Points: Common Mistakes to Avoid",
+      "slug": "skilled-visa-points-common-mistakes-to-avoid",
+      "excerpt": "The slips that cost applicants points or delay invitations, and how to avoid them.",
+      "content": "",
+      "authorId": "successvisa",
+      "categoryId": "skilled-migration",
+      "featuredImage": "",
+      "featuredAlt": "",
+      "date": "2026-10-10",
+      "metaDescription": "",
+      "status": "draft",
+      "file": "",
+      "legacy": false,
+      "createdAt": "2026-11-02T08:38:49.741Z",
+      "updatedAt": "2026-11-02T08:38:49.741Z"
+    },
+    {
+      "id": "9e1e37da9ce8",
+      "title": "Partner Visa: How to Prepare Your Relationship Evidence",
+      "slug": "partner-visa-how-to-prepare-your-relationship-evidence",
+      "excerpt": "What kinds of evidence matter, how to organise it and what to avoid when preparing your application.",
+      "content": "",
+      "authorId": "successvisa",
+      "categoryId": "partner-and-family",
+      "featuredImage": "",
+      "featuredAlt": "",
+      "date": "2026-10-06",
+      "metaDescription": "",
+      "status": "draft",
+      "file": "",
+      "legacy": false,
+      "createdAt": "2026-11-02T08:38:49.741Z",
+      "updatedAt": "2026-11-02T08:38:49.741Z"
+    }
+  ]
+}
