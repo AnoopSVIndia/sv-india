@@ -331,7 +331,10 @@
 .recent-here .recent-name{color:var(--gold-deep);}
 .recent-here .recent-date::after{content:" · Reading now";}
 .recent-all{display:inline-block;margin-top:14px;font-size:13.5px;font-weight:700;color:var(--ink);text-decoration:underline;text-underline-offset:3px;}
-@media(max-width:1180px){
+/* three next-step buttons on one line next to the sidebar */
+.next-step-btns{gap:10px;}
+.next-step-btns .btn{padding-left:15px;padding-right:15px;}
+@media(max-width:1279px){
   .wrap.post-layout{grid-template-columns:210px minmax(0,1fr);}
   .post-recent{grid-column:2;position:static;}
 }
@@ -391,6 +394,17 @@
 .rich .post-cta{margin:18px 0 24px;}
 .rich pre,.rich code{font-family:'IBM Plex Mono',monospace;font-size:14px;}
 .rich pre{background:var(--paper-2);padding:14px 16px;border-radius:8px;overflow-x:auto;}
+/* Blog tables: navy header, striped rows */
+.post-body .table-wrap{border:1px solid var(--line);border-radius:14px;box-shadow:0 10px 26px rgba(29,24,75,.08);background:#fff;}
+.post-body th p,.post-body td p{margin:0;font-size:inherit;color:inherit;line-height:1.55;}
+.post-body thead th,.post-body .rich tbody tr:first-child th{background:var(--ink);color:#fff;font-family:'Fraunces',serif;font-size:15px;font-weight:600;letter-spacing:.01em;padding:15px 20px;border-top:none;border-bottom:3px solid var(--gold);vertical-align:bottom;}
+.post-body thead th a,.post-body .rich tbody tr:first-child th a{color:var(--gold-light);}
+.post-body tbody td,.post-body tbody th[scope="row"]{padding:14px 20px;background:#fff;transition:background .15s ease;}
+.post-body tbody tr:nth-child(even) td,.post-body tbody tr:nth-child(even) th[scope="row"]{background:#F8F5EE;}
+.post-body tbody tr:hover td,.post-body tbody tr:hover th[scope="row"]{background:#FDF1D8;}
+.post-body .rich tbody td:first-child,.post-body tbody th[scope="row"]{font-weight:600;color:var(--ink);}
+.post-body tbody th[scope="row"]{border-top:1px solid var(--line);}
+.post-body tr.total th,.post-body tr.total td{background:var(--paper-2);font-weight:700;color:var(--ink);}
 </style>
 </head>
 <body>
@@ -724,7 +738,7 @@
 <p>Home Affairs also asks people not to chase for updates while their case is within the normal range. Use your ImmiAccount instead.</p>
 <h2 id="how-much-does-the-permanent-partner-visa-cost">How Much Does the Permanent Partner Visa Cost?</h2>
 <p>There is no extra government fee for the permanent stage. It was paid when you lodged the combined application.</p>
-<p>From 1 July 2026, the combined partner visa charge is A$11,710 for the main applicant. Extra applicants add to this. You may still pay for new police checks, medicals, translations or agent fees.</p>
+<p>From 1 July 2026, the combined partner visa charge is A$11,710 for the main applicant. Extra applicants add to this. You may still pay for new police checks, medicals, translations or <a href="Blog%20Migration%20Agent%20Fees%20for%20Partner%20Visa%20Australia.html">agent fees</a>.</p>
 <h2 id="what-are-the-new-partner-visa-rules-for-australia-in-2026">What Are the New Partner Visa Rules for Australia in 2026?</h2>
 <p>Two changes matter most for people on the 820/801 path.</p>
 <ul>
@@ -815,9 +829,9 @@
       <h2 id="next-step">Ready to Take the Next Step?</h2>
       <p>The permanent stage is easier to plan when someone checks your dates and your evidence. Our MARA-registered agents at SuccessVisa can confirm your eligibility date, review your evidence and tell you what to update before the decision.</p>
       <div class="next-step-btns">
-        <a href="Booking%20Page.html" class="btn btn-gold">Book a consultation</a>
-        <a href="Australia%20Partner%20Visa%20820%20801%20Sub%20Sub%20Landing%20Page.html" class="btn btn-line">Partner visa guide</a>
-        <a href="Australia%20Family%20Visa%20Sub%20Sub%20Landing%20Page.html" class="btn btn-line">Family and partner visas</a>
+        <a href="Booking%20Page.html" class="btn btn-gold">Book a Consultation</a>
+        <a href="Australia%20Partner%20Visa%20820%20801%20Sub%20Sub%20Landing%20Page.html" class="btn btn-line">Partner Visa Guide</a>
+        <a href="Australia%20Family%20Visa%20Sub%20Sub%20Landing%20Page.html" class="btn btn-line">Family and Partner Visas</a>
       </div>
       <p class="next-step-offices">You can meet our team at one of our six offices, or <a href="Booking%20Page.html">talk to us online</a>. Find your nearest office on our <a href="Contact%20Us%20Landing%20Page.html">Contact Us</a> page.</p>
     </section>
@@ -829,8 +843,9 @@
   <aside class="post-recent" aria-label="Recent articles">
     <p class="recent-title">Recent Articles</p>
     <ol class="recent-list">
+      <li><a href="Blog%20Migration%20Agent%20Fees%20for%20Partner%20Visa%20Australia.html"><span class="recent-cat">Partner and Family</span><span class="recent-name">Migration Agent Fees for Partner Visa Australia</span><span class="recent-date">4 Nov 2026</span></a></li>
+      <li><div class="recent-here" aria-current="page"><span class="recent-cat">Partner and Family</span><span class="recent-name">Permanent Partner Visa: Your Two-Year Wait Plan</span><span class="recent-date">3 Nov 2026</span></div></li>
       <li><a href="Blog%20Subclass%20189%20vs%20190%20Which%20Is%20Right%20for%20You.html"><span class="recent-cat">Skilled Migration</span><span class="recent-name">Subclass 189 vs 190: Which Is Right for You?</span><span class="recent-date">29 Oct 2026</span></a></li>
-      <li><div class="recent-here" aria-current="page"><span class="recent-cat">Partner and Family</span><span class="recent-name">Permanent Partner Visa: Your Two-Year Wait Plan</span><span class="recent-date">26 Oct 2026</span></div></li>
     </ol>
     <a class="recent-all" href="Blog%20Sub%20Sub%20Landing%20Page.html">All articles</a>
   </aside>
@@ -871,9 +886,9 @@
 </main>
 
 <div class="quick-actions" aria-label="Quick contact actions">
-  <a href="tel:+911800000000" class="qa-btn" aria-label="Call us"><span class="qa-label">Call us</span>
+  <a href="tel:+911800000000" class="qa-btn" aria-label="Call us"><span class="qa-label">Call Us</span>
     <svg width="21" height="21" viewBox="0 0 24 24" fill="none"><path d="M4 5c0-1 1-2 2-2h2l2 5-2 1.5c1 2.3 2.7 4 5 5L14.5 12l5 2v2c0 1-1 2-2 2C10.5 18 4 11.5 4 5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></a>
-  <a href="https://wa.me/911800000000" class="qa-btn" aria-label="Chat on WhatsApp" target="_blank" rel="noopener"><span class="qa-label">WhatsApp us</span>
+  <a href="https://wa.me/911800000000" class="qa-btn" aria-label="Chat on WhatsApp" target="_blank" rel="noopener"><span class="qa-label">WhatsApp Us</span>
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.7-1.2A9 9 0 1 0 12 3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M8.5 8.8c-.3.6-.3 1.6.6 2.9 1 1.4 2.3 2.6 3.9 3.1 1 .3 1.7.1 2.1-.4l.4-.6-2-1.3-.5.5c-.2.2-.5.2-.8 0-.7-.4-1.5-1.1-2-1.9-.2-.3-.1-.6.1-.8l.5-.5-1.1-2Z" fill="currentColor"/></svg></a>
   <a href="Booking%20Page.html" class="qa-btn qa-primary" aria-label="Book Appointment"><span class="qa-label">Book Appointment</span>
     <svg width="21" height="21" viewBox="0 0 24 24" fill="none"><rect x="3.5" y="5" width="17" height="15" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M3.5 9.5h17" stroke="currentColor" stroke-width="1.5"/><path d="M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M8 13.5l2.3 2.3L16 10.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
