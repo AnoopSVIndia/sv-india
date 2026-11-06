@@ -536,6 +536,7 @@ tr.row-expired .t-title{color:var(--grey-exp)}
     .site-header .dropdown-menu.mega{width:auto;display:flex;flex-direction:column;gap:10px;padding:0;}
     .site-header .dropdown-menu .mega-head{padding:4px 12px;}
   }
+.flag-ico{display:inline-block;width:18px;height:13.5px;margin-right:6px;vertical-align:-2px;border-radius:2px;object-fit:cover;box-shadow:0 0 0 1px rgba(0,0,0,.12);}
 </style>
 </head>
 <body>
@@ -737,12 +738,12 @@ tr.row-expired .t-title{color:var(--grey-exp)}
         </div>
         <div class="footer-col">
           <h4>Our Branches</h4>
-          <div class="branch"><b>🇮🇳 Chandigarh</b>SCO 437-438, 35C, Sector 35, Chandigarh, 160022</div>
-          <div class="branch"><b>🇦🇺 Parramatta</b>251 Church St, Parramatta NSW 2150, Australia</div>
-          <div class="branch"><b>🇦🇺 Toongabbie</b>30 Aurelia St, Toongabbie, NSW 2146</div>
-          <div class="branch"><b>🇦🇺 Melbourne</b>Level 3, Suite 301/227 Collins St, Melbourne, VIC 3000</div>
-          <div class="branch"><b>🇦🇺 Werribee</b>70 Watton Street, Werribee, VIC 3030</div>
-          <div class="branch"><b>🇫🇯 Suva</b>Shop 7, Ground Floor, Parade Building, Suva, Fiji</div>
+          <div class="branch"><b><img class="flag-ico" src="assets/flags/in.svg" alt="">Chandigarh</b>SCO 437-438, 35C, Sector 35, Chandigarh, 160022</div>
+          <div class="branch"><b><img class="flag-ico" src="assets/flags/au.svg" alt="">Parramatta</b>251 Church St, Parramatta NSW 2150, Australia</div>
+          <div class="branch"><b><img class="flag-ico" src="assets/flags/au.svg" alt="">Toongabbie</b>30 Aurelia St, Toongabbie, NSW 2146</div>
+          <div class="branch"><b><img class="flag-ico" src="assets/flags/au.svg" alt="">Melbourne</b>Level 3, Suite 301/227 Collins St, Melbourne, VIC 3000</div>
+          <div class="branch"><b><img class="flag-ico" src="assets/flags/au.svg" alt="">Werribee</b>70 Watton Street, Werribee, VIC 3030</div>
+          <div class="branch"><b><img class="flag-ico" src="assets/flags/fj.svg" alt="">Suva</b>Shop 7, Ground Floor, Parade Building, Suva, Fiji</div>
         </div>
         <div class="footer-col">
           <h4>Quick Links</h4>
@@ -820,13 +821,13 @@ tr.row-expired .t-title{color:var(--grey-exp)}
           <div class="field">
             <label>Branch <span class="opt">(applicable location)</span></label>
             <select id="fBranch">
-              <option value="All Branches">🌐 All Branches</option>
-              <option value="Chandigarh">🇮🇳 Chandigarh</option>
-              <option value="Parramatta">🇦🇺 Parramatta</option>
-              <option value="Toongabbie">🇦🇺 Toongabbie</option>
-              <option value="Melbourne">🇦🇺 Melbourne</option>
-              <option value="Werribee">🇦🇺 Werribee</option>
-              <option value="Suva">🇫🇯 Suva</option>
+              <option value="All Branches">All Branches</option>
+              <option value="Chandigarh">Chandigarh</option>
+              <option value="Parramatta">Parramatta</option>
+              <option value="Toongabbie">Toongabbie</option>
+              <option value="Melbourne">Melbourne</option>
+              <option value="Werribee">Werribee</option>
+              <option value="Suva">Suva</option>
             </select>
           </div>
           <div class="field">
@@ -952,12 +953,12 @@ const CAT={
 };
 const BRANCH={
   'All Branches':'🌐 All Branches',
-  'Parramatta':'🇦🇺 Parramatta',
-  'Toongabbie':'🇦🇺 Toongabbie',
-  'Melbourne':'🇦🇺 Melbourne',
-  'Werribee':'🇦🇺 Werribee',
-  'Chandigarh':'🇮🇳 Chandigarh',
-  'Suva':'🇫🇯 Suva'
+  'Parramatta':'<img class="flag-ico" src="assets/flags/au.svg" alt="">Parramatta',
+  'Toongabbie':'<img class="flag-ico" src="assets/flags/au.svg" alt="">Toongabbie',
+  'Melbourne':'<img class="flag-ico" src="assets/flags/au.svg" alt="">Melbourne',
+  'Werribee':'<img class="flag-ico" src="assets/flags/au.svg" alt="">Werribee',
+  'Chandigarh':'<img class="flag-ico" src="assets/flags/in.svg" alt="">Chandigarh',
+  'Suva':'<img class="flag-ico" src="assets/flags/fj.svg" alt="">Suva'
 };
 const AU_WA='+61468791726', MEL_WA='+61416946158', IN_WA='+919034899620';
 function waForBranch(branch){
