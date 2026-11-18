@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-page-region="au">
 <script>document.documentElement.classList.add('js-anim');</script>
 <head>
 <meta charset="UTF-8">
@@ -19,6 +19,9 @@
     // International Home shows Australia and one opened from index.html shows India.
     var ctx=/(?:^|;)sv_ctx=(in|au)/.exec(window.name||'');
     if(ctx&&!document.documentElement.getAttribute('data-home')) r=ctx[1];
+    // A page that belongs to one region (data-page-region) switches the site to that region.
+    var pr=document.documentElement.getAttribute('data-page-region');
+    if(pr==='in'||pr==='au'){r=pr;try{localStorage.setItem('sv_region',pr);}catch(e){} document.cookie='sv_region='+pr+'; path=/; max-age=31536000; SameSite=Lax'; window.name='sv_ctx='+pr;}
     var shown=document.documentElement.getAttribute('data-home')||r;
     if(shown) document.documentElement.setAttribute('data-region',shown);
     if(!r) return;
@@ -989,11 +992,11 @@
   <aside class="post-recent" aria-label="Recent articles">
     <p class="recent-title">Recent Articles</p>
     <ol class="recent-list">
+      <li><a href="Blog%20Australia%20Student%20Visa%20Refused%20What%20to%20Do%20Next.html"><span class="recent-cat">Student Visa</span><span class="recent-name">Australia Student Visa Refused: What to Do Next</span><span class="recent-date">18 Nov 2026</span></a></li>
       <li><a href="Blog%20Visitor%20Visa%20Refusal%20Australia%20What%20to%20Do%20Next.html"><span class="recent-cat">Tourist Visa</span><span class="recent-name">Visitor Visa Refusal Australia: What to Do Next</span><span class="recent-date">16 Nov 2026</span></a></li>
       <li><a href="Blog%208503%20Waiver%20How%20to%20Request%20a%20No%20Further%20Stay%20Waiver.html"><span class="recent-cat">Tourist Visa</span><span class="recent-name">8503 Waiver: How to Request a No Further Stay Waiver</span><span class="recent-date">16 Nov 2026</span></a></li>
       <li><a href="Blog%20Training%20Visa%20Subclass%20407%20Changes%20in%202026.html"><span class="recent-cat">Training Visa</span><span class="recent-name">Training Visa Subclass 407 Changes in 2026</span><span class="recent-date">15 Nov 2026</span></a></li>
       <li><a href="Blog%20Business%20Owner%20Visa%20Australia%20What%20s%20Open%20in%202026.html"><span class="recent-cat">Business</span><span class="recent-name">Business Owner Visa Australia: What’s Open in 2026</span><span class="recent-date">15 Nov 2026</span></a></li>
-      <li><a href="Blog%20How%20to%20Renew%20OSHC%20for%20a%20Visa%20Extension.html"><span class="recent-cat">Health Cover</span><span class="recent-name">How to Renew OSHC for a Visa Extension</span><span class="recent-date">14 Nov 2026</span></a></li>
     </ol>
     <a class="recent-all" href="Blog%20Sub%20Sub%20Landing%20Page.html">All articles</a>
   </aside>
