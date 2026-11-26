@@ -406,6 +406,34 @@
       <!--BLOG-CHIPS-END--></div>
     <div class="bl-grid">
 <!--BLOG-CARDS-START-->
+      <article class="bl-card reveal" data-cat="skilled-migration partner-and-family">
+        <div class="bl-img" aria-hidden="true">
+          <img src="blog-images/bridging-visa-b-travel-rules-f13f1.png" alt="" loading="lazy">
+          <span class="bl-cat">#SKILLEDMIGRATION</span>
+        </div>
+        <div class="bl-body">
+          <h3><a href="Blog%20Bridging%20Visa%20B%20Explained%20How%20It%20Compares%20With%20Bridging%20Visa%20A%20and%20C.html" class="bl-link">Bridging Visa B Explained: How It Compares with Bridging Visa A and C</a></h3>
+          <p>Bridging Visa B explained: who can apply, travel rules, cost, processing and how it differs from Bridging Visa A and C. Updated Nov 2026.</p>
+          <div class="bl-foot">
+            <span class="bl-more"><span class="bl-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Read more</span>
+            <span class="bl-date">26 Nov 2026<span class="bl-line"></span></span>
+          </div>
+        </div>
+      </article>
+      <article class="bl-card reveal" data-cat="student-visa pr">
+        <div class="bl-img" aria-hidden="true">
+          <img src="blog-images/pr-courses-in-australia-1cd86.png" alt="" loading="lazy">
+          <span class="bl-cat">#STUDENTVISA</span>
+        </div>
+        <div class="bl-body">
+          <h3><a href="Blog%20PR%20Courses%20in%20Australia%20What%20Really%20Leads%20to%20PR.html" class="bl-link">PR Courses in Australia: What Really Leads to PR</a></h3>
+          <p>Looking at PR courses in Australia? See what really leads to PR, which fields and trades help, 2026 costs and new rules. Updated Nov 2026.</p>
+          <div class="bl-foot">
+            <span class="bl-more"><span class="bl-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Read more</span>
+            <span class="bl-date">26 Nov 2026<span class="bl-line"></span></span>
+          </div>
+        </div>
+      </article>
       <article class="bl-card reveal" data-cat="pr">
         <div class="bl-img" aria-hidden="true">
           <img src="blog-images/how-to-take-pr-in-australia-7b522.png" alt="" loading="lazy">
@@ -704,7 +732,7 @@
   chips.forEach(function(c){c.addEventListener('click',function(){
     chips.forEach(function(x){x.classList.remove('is-active');});c.classList.add('is-active');
     var f=c.getAttribute('data-filter'),n=0;
-    cards.forEach(function(card){var show=f==='all'||card.getAttribute('data-cat')===f;card.hidden=!show;if(show)n++;});
+    cards.forEach(function(card){var show=f==='all'||(' '+card.getAttribute('data-cat')+' ').indexOf(' '+f+' ')>-1;card.hidden=!show;if(show)n++;});
     empty.style.display=n?'none':'block';
   });});
 })();
